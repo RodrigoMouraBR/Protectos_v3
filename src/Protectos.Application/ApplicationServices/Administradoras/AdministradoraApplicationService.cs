@@ -9,7 +9,6 @@ namespace Protectos.Application.ApplicationServices.Administradoras
 {
     public class AdministradoraApplicationService : IAdministradoraApplicationService
     {
-
         private readonly IAdministradoraRepository _administradoraRepository;
         private readonly IAdministradoraService _administradoraService;
         public AdministradoraApplicationService(
@@ -21,82 +20,67 @@ namespace Protectos.Application.ApplicationServices.Administradoras
             _administradoraService = administradoraService;
         }
 
-        public AdministradoraViewModel Adicionar(AdministradoraViewModel beneficiarioViewModel)
+        public AdministradoraViewModel AdministradoraAdicionar(AdministradoraViewModel administradoraViewModel)
         {
             throw new NotImplementedException();
         }
-
-        public AdministradoraEnderecoViewModel Adicionar(AdministradoraEnderecoViewModel beneficiarioEnderecoViewModel)
+        public AdministradoraViewModel AdministradoraAtualizar(AdministradoraViewModel administradoraViewModel)
         {
             throw new NotImplementedException();
         }
-
-        public AdministradoraEmailViewModel Adicionar(AdministradoraEmailViewModel administradoraEmailViewModel)
+        public AdministradoraEmailViewModel AdministradoraEmailAdicionar(AdministradoraEmailViewModel administradoraEmailViewModel)
         {
             throw new NotImplementedException();
         }
-
-        public AdministradoraTelefoneViewModel Adicionar(AdministradoraTelefoneViewModel administradoraTelefoneViewModel)
+        public AdministradoraEmailViewModel AdministradoraEmailAtualizar(AdministradoraEmailViewModel administradoraEmailViewModel)
         {
             throw new NotImplementedException();
         }
-
-        public AdministradoraViewModel Atualizar(AdministradoraViewModel beneficiarioViewModel)
+        public IEnumerable<AdministradoraEmailViewModel> AdministradoraEmailObterTodos()
         {
             throw new NotImplementedException();
         }
-
-        public AdministradoraEnderecoViewModel Atualizar(AdministradoraEnderecoViewModel beneficiarioEnderecoViewModel)
+        public AdministradoraEnderecoViewModel AdministradoraEnderecoAdicionar(AdministradoraEnderecoViewModel administradoraEnderecoViewModel)
         {
             throw new NotImplementedException();
         }
-
-        public AdministradoraEmailViewModel Atualizar(AdministradoraEmailViewModel administradoraEmailViewModel)
+        public AdministradoraEnderecoViewModel AdministradoraEnderecoAtualizar(AdministradoraEnderecoViewModel administradoraEnderecoViewModel)
         {
             throw new NotImplementedException();
         }
-
-        public AdministradoraTelefoneViewModel Atualizar(AdministradoraTelefoneViewModel administradoraTelefoneViewModel)
+        public IEnumerable<AdministradoraEnderecoViewModel> AdministradoraEnderecoObterTodos()
         {
             throw new NotImplementedException();
         }
-
-        public IEnumerable<AdministradoraTelefoneViewModel> BeneficiarioTelefoneObterTodos()
+        public IEnumerable<AdministradoraViewModel> AdministradoraObterAtivo()
         {
             throw new NotImplementedException();
         }
-
-        public IEnumerable<AdministradoraEmailViewModel> ObterAdministradoraEmailTodos()
+        public IEnumerable<AdministradoraViewModel> AdministradoraObterInativo()
         {
             throw new NotImplementedException();
         }
-
-        public IEnumerable<AdministradoraViewModel> ObterBeneficiarioAtivo()
+        public AdministradoraViewModel AdministradoraObterPorCpf(string cnpj)
         {
             throw new NotImplementedException();
         }
-
-        public IEnumerable<AdministradoraEnderecoViewModel> ObterBeneficiarioEnderecoTodos()
+        public AdministradoraViewModel AdministradoraObterPorId(Guid id)
         {
             throw new NotImplementedException();
         }
-
-        public IEnumerable<AdministradoraViewModel> ObterBeneficiarioInativo()
+        public IEnumerable<AdministradoraViewModel> AdministradoraObterTodos()
         {
             throw new NotImplementedException();
         }
-
-        public AdministradoraViewModel ObterBeneficiarioPorCpf(string cpf)
+        public AdministradoraTelefoneViewModel AdministradoraTelefoneAdicionar(AdministradoraTelefoneViewModel administradoraTelefoneViewModel)
         {
             throw new NotImplementedException();
         }
-
-        public AdministradoraViewModel ObterPorId(Guid id)
+        public AdministradoraTelefoneViewModel AdministradoraTelefoneAtualizar(AdministradoraTelefoneViewModel administradoraTelefoneViewModel)
         {
             throw new NotImplementedException();
         }
-
-        public IEnumerable<AdministradoraViewModel> ObterTodos()
+        public IEnumerable<AdministradoraTelefoneViewModel> AdministradoraTelefoneObterTodos()
         {
             throw new NotImplementedException();
         }

@@ -5,29 +5,28 @@ namespace Protectos.Application.Interfaces.Administradoras
 {
     public interface IAdministradoraApplicationService
     {
-        //BeneFiciario
-        AdministradoraViewModel ObterPorId(Guid id);
-        AdministradoraViewModel ObterBeneficiarioPorCpf(string cpf);
-        IEnumerable<AdministradoraViewModel> ObterTodos();
-        IEnumerable<AdministradoraViewModel> ObterBeneficiarioAtivo();
-        IEnumerable<AdministradoraViewModel> ObterBeneficiarioInativo();
-        AdministradoraViewModel Adicionar(AdministradoraViewModel beneficiarioViewModel);
-        AdministradoraViewModel Atualizar(AdministradoraViewModel beneficiarioViewModel);
-       
-        //Endereco        
-        IEnumerable<AdministradoraEnderecoViewModel> ObterBeneficiarioEnderecoTodos();
-        AdministradoraEnderecoViewModel Adicionar(AdministradoraEnderecoViewModel beneficiarioEnderecoViewModel);
-        AdministradoraEnderecoViewModel Atualizar(AdministradoraEnderecoViewModel beneficiarioEnderecoViewModel);
+        //Administrador//
+        AdministradoraViewModel AdministradoraObterPorId(Guid id);
+        AdministradoraViewModel AdministradoraObterPorCpf(string cnpj);
+        IEnumerable<AdministradoraViewModel> AdministradoraObterTodos();
+        IEnumerable<AdministradoraViewModel> AdministradoraObterAtivo();
+        IEnumerable<AdministradoraViewModel> AdministradoraObterInativo();
+        AdministradoraViewModel AdministradoraAdicionar(AdministradoraViewModel administradoraViewModel);
+        AdministradoraViewModel AdministradoraAtualizar(AdministradoraViewModel administradoraViewModel);
         
-        //Email      
-        IEnumerable<AdministradoraEmailViewModel> ObterAdministradoraEmailTodos();
-        AdministradoraEmailViewModel Adicionar(AdministradoraEmailViewModel administradoraEmailViewModel);
-        AdministradoraEmailViewModel Atualizar(AdministradoraEmailViewModel administradoraEmailViewModel);
-       
-        //Telefone     
-        IEnumerable<AdministradoraTelefoneViewModel> BeneficiarioTelefoneObterTodos();
-        AdministradoraTelefoneViewModel Adicionar(AdministradoraTelefoneViewModel administradoraTelefoneViewModel);
-        AdministradoraTelefoneViewModel Atualizar(AdministradoraTelefoneViewModel administradoraTelefoneViewModel);
+        //Endereco//        
+        IEnumerable<AdministradoraEnderecoViewModel> AdministradoraEnderecoObterTodos();
+        AdministradoraEnderecoViewModel AdministradoraEnderecoAdicionar(AdministradoraEnderecoViewModel administradoraEnderecoViewModel);
+        AdministradoraEnderecoViewModel AdministradoraEnderecoAtualizar(AdministradoraEnderecoViewModel administradoraEnderecoViewModel);
         
+        //Email//      
+        IEnumerable<AdministradoraEmailViewModel> AdministradoraEmailObterTodos();
+        AdministradoraEmailViewModel AdministradoraEmailAdicionar(AdministradoraEmailViewModel administradoraEmailViewModel);
+        AdministradoraEmailViewModel AdministradoraEmailAtualizar(AdministradoraEmailViewModel administradoraEmailViewModel);
+        
+        //Telefone//     
+        IEnumerable<AdministradoraTelefoneViewModel> AdministradoraTelefoneObterTodos();
+        AdministradoraTelefoneViewModel AdministradoraTelefoneAdicionar(AdministradoraTelefoneViewModel administradoraTelefoneViewModel);
+        AdministradoraTelefoneViewModel AdministradoraTelefoneAtualizar(AdministradoraTelefoneViewModel administradoraTelefoneViewModel);
     }
 }

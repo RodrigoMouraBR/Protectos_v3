@@ -3,10 +3,6 @@ using Protectos.Application.ViewModels.Beneficiarios;
 using Protectos.Domain.Entities.Beneficiarios.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Protectos.Application.ApplicationServices.Beneficiarios
 {
     public class BeneficiarioApplicationService : IBeneficiarioApplicationService
@@ -16,123 +12,95 @@ namespace Protectos.Application.ApplicationServices.Beneficiarios
         {
             _beneficiarioRepository = beneficiarioRepository;
         }
-
-        public BeneficiarioViewModel Adicionar(BeneficiarioViewModel beneficiarioViewModel)
+        public BeneficiarioViewModel BeneficiarioAdicionar(BeneficiarioViewModel beneficiarioViewModel)
         {
             throw new NotImplementedException();
         }
-
-        public BeneficiarioDependenteViewModel Adicionar(BeneficiarioDependenteViewModel beneficiarioDependenteViewModel)
+        public BeneficiarioViewModel BeneficiarioAtualizar(BeneficiarioViewModel beneficiarioViewModel)
         {
             throw new NotImplementedException();
         }
-
-        public BeneficiarioEnderecoViewModel Adicionar(BeneficiarioEnderecoViewModel beneficiarioEnderecoViewModel)
+        public BeneficiarioDependenteViewModel BeneficiarioDependenteAdicionar(BeneficiarioDependenteViewModel beneficiarioDependenteViewModel)
         {
             throw new NotImplementedException();
         }
-
-        public BeneficiarioEmailViewModel Adicionar(BeneficiarioEmailViewModel beneficiarioEmailViewModel)
+        public BeneficiarioDependenteViewModel BeneficiarioDependenteAtualizar(BeneficiarioDependenteViewModel beneficiarioDependenteViewModel)
         {
             throw new NotImplementedException();
         }
-
-        public BeneficiarioTelefoneViewModel Adicionar(BeneficiarioTelefoneViewModel beneficiarioTelefoneViewModel)
+        public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterAtivo()
         {
             throw new NotImplementedException();
         }
-
-        public BeneficiarioViewModel Atualizar(BeneficiarioViewModel beneficiarioViewModel)
+        public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterInativo()
         {
             throw new NotImplementedException();
         }
-
-        public BeneficiarioDependenteViewModel Atualizar(BeneficiarioDependenteViewModel beneficiarioDependenteViewModel)
+        public BeneficiarioDependenteViewModel BeneficiarioDependenteObterPorCpf(string cpf)
         {
             throw new NotImplementedException();
         }
-
-        public BeneficiarioEnderecoViewModel Atualizar(BeneficiarioEnderecoViewModel beneficiarioEnderecoViewModel)
+        public BeneficiarioDependenteViewModel BeneficiarioDependenteObterPorId(Guid id)
         {
             throw new NotImplementedException();
         }
-
-        public BeneficiarioEmailViewModel Atualizar(BeneficiarioEmailViewModel beneficiarioEmailViewModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public BeneficiarioTelefoneViewModel Atualizar(BeneficiarioTelefoneViewModel beneficiarioTelefoneViewModel)
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterTodos()
         {
             throw new NotImplementedException();
         }
-
+        public BeneficiarioEmailViewModel BeneficiarioEmailAdicionar(BeneficiarioEmailViewModel beneficiarioEmailViewModel)
+        {
+            throw new NotImplementedException();
+        }
+        public BeneficiarioEmailViewModel BeneficiarioEmailAtualizar(BeneficiarioEmailViewModel beneficiarioEmailViewModel)
+        {
+            throw new NotImplementedException();
+        }
+        public IEnumerable<BeneficiarioEmailViewModel> BeneficiarioEmailObterTodos()
+        {
+            throw new NotImplementedException();
+        }
+        public BeneficiarioEnderecoViewModel BeneficiarioEnderecoAdicionar(BeneficiarioEnderecoViewModel beneficiarioEnderecoViewModel)
+        {
+            throw new NotImplementedException();
+        }
+        public BeneficiarioEnderecoViewModel BeneficiarioEnderecoAtualizar(BeneficiarioEnderecoViewModel beneficiarioEnderecoViewModel)
+        {
+            throw new NotImplementedException();
+        }
         public IEnumerable<BeneficiarioEnderecoViewModel> BeneficiarioEnderecoObterTodos()
         {
             throw new NotImplementedException();
         }
-
+        public IEnumerable<BeneficiarioViewModel> BeneficiarioObterAtivo()
+        {
+            throw new NotImplementedException();
+        }
+        public IEnumerable<BeneficiarioViewModel> BeneficiarioObterInativo()
+        {
+            throw new NotImplementedException();
+        }
+        public BeneficiarioViewModel BeneficiarioObterPorCpf(string cpf)
+        {
+            throw new NotImplementedException();
+        }
+        public BeneficiarioViewModel BeneficiarioObterPorId(Guid id)
+        {
+            throw new NotImplementedException();
+        }
         public IEnumerable<BeneficiarioViewModel> BeneficiarioObterTodos()
         {
             throw new NotImplementedException();
         }
-
+        public BeneficiarioTelefoneViewModel BeneficiarioTelefoneAdicionar(BeneficiarioTelefoneViewModel beneficiarioTelefoneViewModel)
+        {
+            throw new NotImplementedException();
+        }
+        public BeneficiarioTelefoneViewModel BeneficiarioTelefoneAtualizar(BeneficiarioTelefoneViewModel beneficiarioTelefoneViewModel)
+        {
+            throw new NotImplementedException();
+        }
         public IEnumerable<BeneficiarioTelefoneViewModel> BeneficiarioTelefoneObterTodos()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void deleteBeneficiarioEmailViewModel()
-        {
-            throw new NotImplementedException();
-        }
-
-        public BeneficiarioDependenteViewModel ObterBenediciarioDependentePorId(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<BeneficiarioViewModel> ObterBeneficiarioAtivo()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<BeneficiarioDependenteViewModel> ObterBeneficiarioDependenteAtivo()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<BeneficiarioDependenteViewModel> ObterBeneficiarioDependenteInativo()
-        {
-            throw new NotImplementedException();
-        }
-
-        public BeneficiarioDependenteViewModel ObterBeneficiarioDependentePorCpf(string cpf)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<BeneficiarioEmailViewModel> ObterBeneficiarioEmailTodos()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<BeneficiarioViewModel> ObterBeneficiarioInativo()
-        {
-            throw new NotImplementedException();
-        }
-
-        public BeneficiarioViewModel ObterBeneficiarioPorCpf(string cpf)
-        {
-            throw new NotImplementedException();
-        }
-
-        public BeneficiarioViewModel ObterPorId(Guid id)
         {
             throw new NotImplementedException();
         }

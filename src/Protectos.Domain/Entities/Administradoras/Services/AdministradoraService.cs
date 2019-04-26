@@ -3,6 +3,6 @@ namespace Protectos.Domain.Entities.Administradoras.Services
 {
     public class AdministradoraService : IAdministradoraService
     {
-        
+       
     }
 }
