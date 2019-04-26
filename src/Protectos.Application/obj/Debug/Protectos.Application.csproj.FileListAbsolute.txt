@@ -8,3 +8,12 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.csproj.CoreCompileInputs.cache
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Application.dll
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Application.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Domain.dll
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Domain.Core.dll
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\FluentValidation.dll
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Domain.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Domain.Core.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\FluentValidation.xml
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.csproj.CopyComplete
