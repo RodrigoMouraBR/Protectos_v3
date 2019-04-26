@@ -1,5 +1,6 @@
 ﻿using Protectos.Application.Interfaces.Administradoras;
 using Protectos.Application.ViewModels.Administradoras;
+using Protectos.Domain.Entities.Administradoras.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,11 @@ namespace Protectos.Application.ApplicationServices.Administradoras
     public class AdministradoraApplicationService : IAdministradoraApplicationService
     {
 
-       
+        private readonly IAdministradoraRepository _administradoraRepository;
+        public AdministradoraApplicationService(IAdministradoraRepository administradoraRepository)
+        {
+            _administradoraRepository = administradoraRepository;
+        }
 
         public AdministradoraViewModel Adicionar(AdministradoraViewModel beneficiarioViewModel)
         {
