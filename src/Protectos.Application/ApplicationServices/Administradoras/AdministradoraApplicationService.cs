@@ -11,7 +11,7 @@ namespace Protectos.Application.ApplicationServices.Administradoras
     public class AdministradoraApplicationService : IAdministradoraApplicationService
     {
 
-        private
+       
 
         public AdministradoraViewModel Adicionar(AdministradoraViewModel beneficiarioViewModel)
         {

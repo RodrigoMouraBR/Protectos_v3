@@ -9,7 +9,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
     public class Beneficiario : Entity<Beneficiario>
     {
         public Beneficiario(string nome, string sobrenome, DateTime dataNascimento,
-                             ESexo sexo, string cpf, string rG,
+                             ESexo sexo, CPF cpf, string rG,
                              string orgaoEmissor,
                              EEstadoCivil estadoCivil,
                              bool ativo
@@ -65,7 +65,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
             int idade = CalculaIdadeBeneficiario(DataNascimento);
             if (idade >= 8)
             {
-                RuleFor(c => c.Cpf)
+                RuleFor(c => c.Cpf.Numero)
                     .NotEmpty().WithErrorCode("O Campo CPF � Obrigatorio!")
                     .Length(11, 11).WithMessage("O nome do evento precisa 11 caracteres");
             }
