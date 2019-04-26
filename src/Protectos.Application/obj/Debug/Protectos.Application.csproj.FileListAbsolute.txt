@@ -1,0 +1,6 @@
+C:\Users\rodri\Documents\Repositorio\Protectos_v2\Protectos\src\Protectos.Application\bin\Debug\Protectos.Application.dll
+C:\Users\rodri\Documents\Repositorio\Protectos_v2\Protectos\src\Protectos.Application\bin\Debug\Protectos.Application.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v2\Protectos\src\Protectos.Application\obj\Debug\Protectos.Application.csprojAssemblyReference.cache
+C:\Users\rodri\Documents\Repositorio\Protectos_v2\Protectos\src\Protectos.Application\obj\Debug\Protectos.Application.csproj.CoreCompileInputs.cache
+C:\Users\rodri\Documents\Repositorio\Protectos_v2\Protectos\src\Protectos.Application\obj\Debug\Protectos.Application.dll
+C:\Users\rodri\Documents\Repositorio\Protectos_v2\Protectos\src\Protectos.Application\obj\Debug\Protectos.Application.pdb
