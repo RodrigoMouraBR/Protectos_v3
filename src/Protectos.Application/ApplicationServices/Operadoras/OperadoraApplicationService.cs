@@ -9,6 +9,7 @@ namespace Protectos.Application.ApplicationServices.Operadoras
     {
         public OperadoraViewModel OperadoraAdicionar(OperadoraViewModel operadoraViewModel)
         {
+            //IMPLEMENTANDO SERVIÇO APPLICATIONS
             throw new NotImplementedException();
         }
         public OperadoraViewModel OperadoraAtualizar(OperadoraViewModel operadoraViewModel)
