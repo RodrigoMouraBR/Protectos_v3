@@ -76,6 +76,10 @@
     <Compile Include="Entities\Corretoras\Interfaces\Repositories\ICorretoraEnderecoRepository.cs" />
     <Compile Include="Entities\Corretoras\Interfaces\Repositories\ICorretoraRepository.cs" />
     <Compile Include="Entities\Corretoras\Interfaces\Repositories\ICorretoraTelefoneRepository.cs" />
+    <Compile Include="Entities\Entidades\Entidade.cs" />
+    <Compile Include="Entities\Faturas\Enums\EFaturaTipo.cs" />
+    <Compile Include="Entities\Faturas\Fatura.cs" />
+    <Compile Include="Entities\Faturas\FaturaCarencia.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraEmailRepository.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraEnderecoRepository.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraRepository.cs" />
@@ -84,9 +88,13 @@
     <Compile Include="Entities\Operadoras\OperadoraEmail.cs" />
     <Compile Include="Entities\Operadoras\OperadoraEndereco.cs" />
     <Compile Include="Entities\Operadoras\OperadoraTelefone.cs" />
+    <Compile Include="Entities\Planos\Enums\EPlanoTipo.cs" />
+    <Compile Include="Entities\Planos\Plano.cs" />
+    <Compile Include="Entities\TabelaPreco\Precificacao.cs" />
     <Compile Include="Generics\Enums\EParentesco.cs" />
     <Compile Include="Generics\Enums\EEstadoCivil.cs" />
     <Compile Include="Generics\Enums\ESexo.cs" />
+    <Compile Include="Generics\Enums\EStatus.cs" />
     <Compile Include="Generics\Enums\ETipoEmail.cs" />
     <Compile Include="Generics\Enums\ETipoEmailEmpresa.cs" />
     <Compile Include="Generics\Enums\ETipoTelefone.cs" />
@@ -101,7 +109,9 @@
   <ItemGroup>
     <Folder Include="DTO\" />
     <Folder Include="Entities\Beneficiarios\Interfaces\Services\" />
+    <Folder Include="Entities\Cobrancas\" />
     <Folder Include="Entities\Corretoras\Interfaces\Services\" />
+    <Folder Include="Entities\Propostas\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
