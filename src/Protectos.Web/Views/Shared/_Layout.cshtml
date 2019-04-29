@@ -271,8 +271,9 @@ desired effect
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a asp-area="Administradora" asp-controller="Cadastro" asp-action="Index">Configuração</a></li>
-                            <li><a asp-area="Administradora" asp-controller="Cadastro" asp-action="Nova">Cadastrar</a></li>
+                            <li><a href="~/administradora/index">Configurações</a></li>
+                            <li><a href="~/administradora/incluir">Cadastrar</a></li>
+                            
                         </ul>
                     </li>
                     <li class="treeview">
@@ -283,9 +284,8 @@ desired effect
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a asp-area="beneficiario" asp-controller="cliente" asp-action="listar">Listar</a></li>
-                            <li><a asp-area="beneficiario" asp-controller="cliente" asp-action="Index">Cliente</a></li>
-
+                            <li><a href="~/beneficiario/listar">Configurações</a></li>
+                            <li><a href="~/beneficiario/Index">Cadastrar</a></li>
                         </ul>
                     </li>
                 </ul>

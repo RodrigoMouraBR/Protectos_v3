@@ -6,12 +6,19 @@ using System.Web.Mvc;
 
 namespace Protectos.Web.Controllers
 {
+    
     public class AdministradoraController : Controller
     {
-        // GET: Administradora
+      
         public ActionResult Index()
         {
             return View();
         }
+
+        public ActionResult Incluir()
+        {
+            return View();
+        }
+
     }
 }
