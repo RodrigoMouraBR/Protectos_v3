@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.8.1.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,14 +45,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationServices\Administradoras\AdministradoraApplicationService.cs" />
+    <Compile Include="ApplicationServices\ApplicationService.cs" />
     <Compile Include="ApplicationServices\Beneficiarios\BeneficiarioApplicationService.cs" />
     <Compile Include="ApplicationServices\Corretoras\CorretoraApplicationService.cs" />
     <Compile Include="ApplicationServices\Operadoras\OperadoraApplicationService.cs" />
+    <Compile Include="AutoMapper\AutoMapperConfig.cs" />
+    <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Interfaces\Administradoras\IAdministradoraApplicationService.cs" />
     <Compile Include="Interfaces\Beneficiarios\IBeneficiarioApplicationService.cs" />
     <Compile Include="Interfaces\Corretoras\ICorretoraApplicationService.cs" />
     <Compile Include="Interfaces\Operadoras\IOperadoraApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Administradoras\AdministradoraDtoViewModel.cs" />
     <Compile Include="ViewModels\Administradoras\AdministradoraEmailViewModel.cs" />
     <Compile Include="ViewModels\Administradoras\AdministradoraEnderecoViewModel.cs" />
     <Compile Include="ViewModels\Administradoras\AdministradoraTelefoneViewModel.cs" />
@@ -59,10 +67,12 @@
     <Compile Include="ViewModels\Beneficiarios\BeneficiarioEnderecoViewModel.cs" />
     <Compile Include="ViewModels\Beneficiarios\BeneficiarioTelefoneViewModel.cs" />
     <Compile Include="ViewModels\Beneficiarios\BeneficiarioViewModel.cs" />
+    <Compile Include="ViewModels\Corretoras\CorretoraDtoViewModel.cs" />
     <Compile Include="ViewModels\Corretoras\CorretoraEmailViewModel.cs" />
     <Compile Include="ViewModels\Corretoras\CorretoraEnderecoViewModel.cs" />
     <Compile Include="ViewModels\Corretoras\CorretoraTelefoneViewModel.cs" />
     <Compile Include="ViewModels\Corretoras\CorretoraViewModel.cs" />
+    <Compile Include="ViewModels\Operadoras\OperadoraDtoViewModel.cs" />
     <Compile Include="ViewModels\Operadoras\OperadoraEmailViewModel.cs" />
     <Compile Include="ViewModels\Operadoras\OperadoraEnderecoViewModel.cs" />
     <Compile Include="ViewModels\Operadoras\OperadoraTelefoneViewModel.cs" />
@@ -73,6 +83,13 @@
       <Project>{A4D67B2C-9F59-4D2F-A109-F82C4B338736}</Project>
       <Name>Protectos.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Protectos.Infra.Data\Protectos.Infra.Data.csproj">
+      <Project>{955272FD-2B5A-4E65-8594-59C3D3B9AB7C}</Project>
+      <Name>Protectos.Infra.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
