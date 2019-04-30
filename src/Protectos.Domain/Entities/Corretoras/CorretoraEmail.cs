@@ -7,19 +7,19 @@ namespace Protectos.Domain.Entities.Corretoras
 {
     public class CorretoraEmail : Entity<CorretoraEmail>
     {
-        public CorretoraEmail(string email, Guid beneficiarioId, ETipoEmailEmpresa tipoEmail)
+        public CorretoraEmail(string email, ETipoEmailEmpresa tipoEmail, Guid corretoraId)
         {
             Email = email;
-            BeneficiarioId = beneficiarioId;
             TipoEmail = tipoEmail;
+            CorretoraId = corretoraId;
         }
         protected CorretoraEmail()
         {
-
         }
-        public string Email { get; private set; }
-        public Guid BeneficiarioId { get; private set; }
+        public string Email { get; private set; }       
         public ETipoEmailEmpresa TipoEmail { get; private set; }
+        public Guid CorretoraId { get; private set; }
+        public virtual Corretora Corretora { get; private set; }
         public override bool IsValid()
         {
             Validation();

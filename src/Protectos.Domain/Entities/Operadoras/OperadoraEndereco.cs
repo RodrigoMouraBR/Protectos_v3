@@ -1,19 +1,24 @@
 ﻿using FluentValidation;
 using Protectos.Domain.Core.Models;
 using Protectos.Domain.ValuesObjects;
+using System;
+
 namespace Protectos.Domain.Entities.Operadoras
 {
     public class OperadoraEndereco : Entity<OperadoraEndereco>
     {
-        public OperadoraEndereco(Endereco endereco)
+        public OperadoraEndereco(Endereco endereco, Guid operadoraId)
         {
             Endereco = endereco;
+            OperadoraId = operadoraId;
         }
         protected OperadoraEndereco()
         {
 
         }
         public Endereco Endereco { get; private set; }
+        public Guid OperadoraId { get; private set; }
+        public virtual Operadora Operadora { get; private set; }
         public override bool IsValid()
         {
             Validation();

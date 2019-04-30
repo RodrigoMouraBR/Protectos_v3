@@ -10,6 +10,26 @@ namespace Protectos.Infra.Data.Mappings.Corretoras
 {
     public class CorretoraTelefoneMapping : EntityTypeConfiguration<CorretoraTelefone>
     {
+        public CorretoraTelefoneMapping()
+        {
+            HasKey(c => c.Id);
+            Property(c => c.Prefixo)
+                .HasColumnType("char")
+                .HasMaxLength(5)
+                .IsRequired();
+            Property(c => c.Numero)
+                .HasMaxLength(10)
+                .HasColumnType("varchar")
+                .IsRequired();
+            Property(c => c.TipoTelefone)                
+                .IsRequired();
+            HasRequired(c => c.Corretora)
+                .WithMany(a => a.Telefones)
+                .HasForeignKey(c => c.CorretoraId);
+            Ignore(c => c.CascadeMode);
+            Ignore(c => c.ValidationResult);
+            ToTable("CorretoraTelefone");
+        }
     }
 }
 

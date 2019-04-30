@@ -1,8 +1,7 @@
-using System;
-using System.Collections.Generic;
 using FluentValidation;
 using Protectos.Domain.Core.Models;
 using Protectos.Domain.ValuesObjects;
+using System.Collections.Generic;
 namespace Protectos.Domain.Entities.Administradoras
 {
     public class Administradora : Entity<Administradora>
@@ -12,9 +11,11 @@ namespace Protectos.Domain.Entities.Administradoras
             Empresa = empresa;
         }
         public Empresa Empresa { get; private set; }
-        public virtual IEnumerable<AdministradoraEndereco> Enderecos { get; private set; }
-        public virtual IEnumerable<AdministradoraTelefone> Telefones { get; private set; }
-        public virtual IEnumerable<AdministradoraEmail> Emails { get; private set; }
+        public virtual ICollection<AdministradoraEndereco> Enderecos { get; private set; }
+        public virtual ICollection<AdministradoraTelefone> Telefones { get; private set; }
+        public virtual ICollection<AdministradoraEmail> Emails { get; private set; }    
+
+
         public override bool IsValid()
         {
             Validation();

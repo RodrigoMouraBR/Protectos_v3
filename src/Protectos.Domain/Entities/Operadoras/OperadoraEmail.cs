@@ -11,19 +11,21 @@ namespace Protectos.Domain.Entities.Operadoras
 {
     public class OperadoraEmail : Entity<OperadoraEmail>
     {
-        public OperadoraEmail(string email, Guid beneficiarioId, ETipoEmailEmpresa tipoEmail)
+        public OperadoraEmail(string email, ETipoEmailEmpresa tipoEmail, Guid operadoraId)
         {
             Email = email;
-            BeneficiarioId = beneficiarioId;
             TipoEmail = tipoEmail;
+            OperadoraId = operadoraId;
         }
         protected OperadoraEmail()
         {
 
         }
-        public string Email { get; private set; }
-        public Guid BeneficiarioId { get; private set; }
+        public string Email { get; private set; }        
         public ETipoEmailEmpresa TipoEmail { get; private set; }
+        public Guid OperadoraId { get; private set; }
+        public virtual Operadora Operadora { get; private set; }
+
         public override bool IsValid()
         {
             Validation();

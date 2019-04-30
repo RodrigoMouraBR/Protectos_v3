@@ -1,6 +1,8 @@
 ﻿using FluentValidation;
 using Protectos.Domain.Core.Models;
 using Protectos.Domain.Generics.Enums;
+using System;
+
 namespace Protectos.Domain.Entities.Beneficiarios
 {
     public class BeneficiarioTelefone : Entity<BeneficiarioTelefone>
@@ -17,6 +19,8 @@ namespace Protectos.Domain.Entities.Beneficiarios
         public string Prefixo { get; private set; }
         public string Numero { get; private set; }
         public ETipoTelefone TipoTelefone { get; private set; }
+        public Guid BeneficiarioId { get; private set; }
+        public virtual Beneficiario Beneficiario { get; private set; }
         public override bool IsValid()
         {
             Validation();

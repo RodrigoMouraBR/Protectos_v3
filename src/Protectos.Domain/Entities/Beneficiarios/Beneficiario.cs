@@ -37,10 +37,10 @@ namespace Protectos.Domain.Entities.Beneficiarios
         public string OrgaoEmissor { get; private set; }
         public EEstadoCivil EstadoCivil { get; private set; }
         public bool Ativo { get; private set; }
-        public virtual IEnumerable<BeneficiarioEndereco> BeneficiarioEndereco { get; private set; }
-        public virtual IEnumerable<BeneficiarioTelefone> BeneficiarioTelefone { get; private set; }
-        public virtual IEnumerable<BeneficiarioEmail> BeneficiarioEmail { get; private set; }
-        public virtual IEnumerable<BeneficiarioDependente> BeneficiarioDependente { get; private set; }
+        public virtual ICollection<BeneficiarioEndereco> Enderecos { get; private set; }
+        public virtual ICollection<BeneficiarioTelefone> Telefones { get; private set; }
+        public virtual ICollection<BeneficiarioEmail> Emails { get; private set; }
+        public virtual ICollection<BeneficiarioDependente> Dependentes { get; private set; }
         public override bool IsValid()
         {
             Validation();

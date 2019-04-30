@@ -11,15 +11,18 @@ namespace Protectos.Domain.Entities.Corretoras
 {
     public class CorretoraEndereco : Entity<CorretoraEndereco>
     {
-        public CorretoraEndereco(Endereco endereco)
+        public CorretoraEndereco(Endereco endereco, Guid corretoraId)
         {
             Endereco = endereco;
+            CorretoraId = corretoraId;
         }
         protected CorretoraEndereco()
         {
 
         }
         public Endereco Endereco { get; private set; }
+        public Guid CorretoraId { get; private set; }
+        public virtual Corretora Corretora { get; private set; }
         public override bool IsValid()
         {
             Validation();

@@ -2,15 +2,18 @@
 using FluentValidation.Results;
 using Protectos.Domain.Core.Models;
 using Protectos.Domain.Generics.Enums;
+using System;
+
 namespace Protectos.Domain.Entities.Operadoras
 {
     public class OperadoraTelefone : Entity<OperadoraTelefone>
     {
-        public OperadoraTelefone(string prefixo, string numero, ETipoTelefoneEmpresa tipoTelefone)
+        public OperadoraTelefone(string prefixo, string numero, ETipoTelefoneEmpresa tipoTelefone, Guid operadoraId)
         {
             Prefixo = prefixo;
             Numero = numero;
             TipoTelefone = tipoTelefone;
+            OperadoraId = operadoraId;
         }
         protected OperadoraTelefone()
         {
@@ -18,7 +21,8 @@ namespace Protectos.Domain.Entities.Operadoras
         public string Prefixo { get; private set; }
         public string Numero { get; private set; }
         public ETipoTelefoneEmpresa TipoTelefone { get; private set; }
-
+        public Guid OperadoraId { get; private set; }
+        public virtual Operadora Operadora { get; private set; }
         public override bool IsValid()
         {
             Validation();

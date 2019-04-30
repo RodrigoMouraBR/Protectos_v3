@@ -10,3 +10,9 @@ C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.Cro
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\obj\Debug\Protectos.Infra.CrossCutting.IoC.csproj.CoreCompileInputs.cache
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\obj\Debug\Protectos.Infra.CrossCutting.IoC.dll
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\obj\Debug\Protectos.Infra.CrossCutting.IoC.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\bin\Debug\Protectos.Infra.CrossCutting.IoC.dll
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\bin\Debug\Protectos.Infra.CrossCutting.IoC.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\obj\Debug\Protectos.Infra.CrossCutting.IoC.csprojAssemblyReference.cache
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\obj\Debug\Protectos.Infra.CrossCutting.IoC.csproj.CoreCompileInputs.cache
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\obj\Debug\Protectos.Infra.CrossCutting.IoC.dll
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\obj\Debug\Protectos.Infra.CrossCutting.IoC.pdb

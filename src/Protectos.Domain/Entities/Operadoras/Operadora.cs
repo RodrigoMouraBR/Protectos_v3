@@ -15,8 +15,10 @@ namespace Protectos.Domain.Entities.Operadoras
         {
 
         }
-        public Empresa Empresa { get; private set; }
-        public virtual IEnumerable<OperadoraEndereco> Endereco { get; private set; }
+        public Empresa Empresa { get; private set; }       
+        public virtual ICollection<OperadoraEndereco> Enderecos { get; private set; }
+        public virtual ICollection<OperadoraTelefone> Telefones { get; private set; }
+        public virtual ICollection<OperadoraEmail> Emails { get; private set; }
         public override bool IsValid()
         {
             Validation();

@@ -1,16 +1,18 @@
 ﻿using FluentValidation;
 using Protectos.Domain.Core.Models;
 using Protectos.Domain.Generics.Enums;
-
+using Protectos.Domain.ValuesObjects;
 using System;
 namespace Protectos.Domain.Entities.Beneficiarios
 {
     public class BeneficiarioDependente : Entity<BeneficiarioDependente>
     {
-        public BeneficiarioDependente(string nome, string sobrenome, DateTime dataNascimento,
-                                      ESexo sexo, string cpf, string rG, string orgaoEmissor,
-                                      EEstadoCivil estadoCivil, bool ativo, Guid beneficiarioId,
-                                      EParentesco beneficiarioParentesco)
+       
+        protected BeneficiarioDependente()
+        {
+        }
+
+        public BeneficiarioDependente(string nome, string sobrenome, DateTime dataNascimento, ESexo sexo, CPF cpf, string rG, string orgaoEmissor, EEstadoCivil estadoCivil, bool ativo, Guid beneficiarioId, EParentesco beneficiarioParentesco)
         {
             Nome = nome;
             Sobrenome = sobrenome;
@@ -24,14 +26,12 @@ namespace Protectos.Domain.Entities.Beneficiarios
             BeneficiarioId = beneficiarioId;
             BeneficiarioParentesco = beneficiarioParentesco;
         }
-        protected BeneficiarioDependente()
-        {
-        }
+
         public string Nome { get; private set; }
         public string Sobrenome { get; private set; }
         public DateTime DataNascimento { get; private set; }
         public ESexo Sexo { get; private set; }
-        public string Cpf { get; private set; }
+        public CPF Cpf { get; private set; }
         public string RG { get; private set; }
         public string OrgaoEmissor { get; private set; }
         public EEstadoCivil EstadoCivil { get; private set; }
@@ -65,7 +65,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
             int idade = CalculaIdadeBeneficiario(DataNascimento);
             if (idade >= 8)
             {
-                RuleFor(c => c.Cpf)
+                RuleFor(c => c.Cpf.Numero)
                     .NotEmpty().WithErrorCode("O Campo CPF � Obrigatorio!")
                     .Length(11, 11).WithMessage("O nome do evento precisa 11 caracteres");
             }

@@ -5,5 +5,21 @@ namespace Protectos.Infra.Data.Mappings.Operadoras
 {
     public class OperadoraEmailMapping : EntityTypeConfiguration<OperadoraEmail>
     {
+        public OperadoraEmailMapping()
+        {
+            HasKey(c => c.Id);
+            Property(c => c.Email)
+                .HasColumnType("varchar")
+                .HasMaxLength(50)
+                .IsRequired();
+            Property(c => c.TipoEmail)                
+                .IsRequired();
+            HasRequired(c => c.Operadora)
+                .WithMany(a => a.Emails)
+                .HasForeignKey(c => c.OperadoraId);
+            Ignore(c => c.CascadeMode);
+            Ignore(c => c.ValidationResult);
+            ToTable("OperadoraEmail");
+        }
     }
 }

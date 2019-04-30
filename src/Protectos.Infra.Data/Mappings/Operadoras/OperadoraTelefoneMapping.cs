@@ -5,5 +5,25 @@ namespace Protectos.Infra.Data.Mappings.Operadoras
 {
     public class OperadoraTelefoneMapping : EntityTypeConfiguration<OperadoraTelefone>
     {
+        public OperadoraTelefoneMapping()
+        {
+            HasKey(c => c.Id);
+            Property(c => c.Prefixo)
+                .HasColumnType("char")
+                .HasMaxLength(5)
+                .IsRequired();
+            Property(c => c.Numero)
+                .HasMaxLength(10)
+                .HasColumnType("varchar")
+                .IsRequired();
+            Property(c => c.TipoTelefone)               
+                .IsRequired();
+            HasRequired(c => c.Operadora)
+                .WithMany(a => a.Telefones)
+                .HasForeignKey(c => c.OperadoraId);
+            Ignore(c => c.CascadeMode);
+            Ignore(c => c.ValidationResult);
+            ToTable("OperadoraTelefone");
+        }
     }
 }
