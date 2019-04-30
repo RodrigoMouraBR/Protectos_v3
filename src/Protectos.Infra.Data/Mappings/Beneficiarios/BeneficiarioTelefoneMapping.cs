@@ -16,8 +16,7 @@ namespace Protectos.Infra.Data.Mappings.Beneficiarios
                     .HasMaxLength(10)
                     .HasColumnType("varchar")
                     .IsRequired();
-            Property(c => c.TipoTelefone)
-                    .HasColumnType("char")
+            Property(c => c.TipoTelefone)                  
                     .IsRequired();
             HasRequired(c => c.Beneficiario)
                     .WithMany(a => a.Telefones)
