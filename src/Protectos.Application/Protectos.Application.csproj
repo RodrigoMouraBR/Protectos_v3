@@ -79,6 +79,10 @@
     <Compile Include="ViewModels\Operadoras\OperadoraViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Protectos.Domain.Core\Protectos.Domain.Core.csproj">
+      <Project>{5A548C53-282E-47C4-8A11-4517BAE41FCB}</Project>
+      <Name>Protectos.Domain.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Protectos.Domain\Protectos.Domain.csproj">
       <Project>{A4D67B2C-9F59-4D2F-A109-F82C4B338736}</Project>
       <Name>Protectos.Domain</Name>

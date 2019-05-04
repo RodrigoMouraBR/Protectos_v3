@@ -1,5 +1,7 @@
-﻿using Protectos.Application.Interfaces.Administradoras;
+﻿using AutoMapper;
+using Protectos.Application.Interfaces.Administradoras;
 using Protectos.Application.ViewModels.Administradoras;
+using Protectos.Domain.Entities.Administradoras;
 using Protectos.Domain.Entities.Administradoras.Interfaces.Repositories;
 using Protectos.Domain.Entities.Administradoras.Interfaces.Services;
 using Protectos.Infra.Data.Interfaces;
@@ -19,15 +21,21 @@ namespace Protectos.Application.ApplicationServices.Administradoras
             _administradoraRepository = administradoraRepository;
             _administradoraService = administradoraService;
         }
-
         public AdministradoraViewModel AdministradoraAdicionar(AdministradoraViewModel administradoraViewModel)
         {
-            throw new NotImplementedException();
+            var administradora = Mapper.Map<Administradora>(administradoraViewModel);
+            _administradoraService.AdministradoraAdicionar(administradora);
+            Commit();
+            return administradoraViewModel;
         }
         public AdministradoraViewModel AdministradoraAtualizar(AdministradoraViewModel administradoraViewModel)
         {
-            throw new NotImplementedException();
+            var administradora = Mapper.Map<Administradora>(administradoraViewModel);
+            _administradoraService.AdministradoraAtualizar(administradora);
+            Commit();
+            return administradoraViewModel;
         }
+
         public AdministradoraEmailViewModel AdministradoraEmailAdicionar(AdministradoraEmailViewModel administradoraEmailViewModel)
         {
             throw new NotImplementedException();
@@ -60,6 +68,7 @@ namespace Protectos.Application.ApplicationServices.Administradoras
         {
             throw new NotImplementedException();
         }
+
         public AdministradoraViewModel AdministradoraObterPorCpf(string cnpj)
         {
             throw new NotImplementedException();
