@@ -12,7 +12,7 @@ namespace Protectos.Infra.Data.Context
 {
     public class ProtectosContext : DbContext
     {
-        public ProtectosContext() : base("ProtectosConnection")
+        public ProtectosContext() : base("DefaultConnection")
         {
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
