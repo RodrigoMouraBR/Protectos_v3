@@ -38,3 +38,11 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\AutoMapper.pdb
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\AutoMapper.xml
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\EntityFramework.xml
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\AutoMapper.dll
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Infra.Data.dll
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\EntityFramework.dll
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Infra.Data.pdb
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Infra.Data.dll.config
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\AutoMapper.pdb
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\AutoMapper.xml
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\EntityFramework.xml
