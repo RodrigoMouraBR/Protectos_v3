@@ -3,7 +3,10 @@
     public class AdministradoraDtoViewModel
     {
         public AdministradoraDtoViewModel(
-                                           AdministradoraViewModel administradora,                                           AdministradoraEnderecoViewModel endereco,                                        AdministradoraTelefoneViewModel telefone,                                        AdministradoraEmailViewModel email
+                                           AdministradoraViewModel administradora,                                           
+                                           AdministradoraEnderecoViewModel endereco,                                        
+                                           AdministradoraTelefoneViewModel telefone,                                       
+                                           AdministradoraEmailViewModel email
                                          )
         {
             Administradora = administradora;

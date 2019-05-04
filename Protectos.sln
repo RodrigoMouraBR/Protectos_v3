@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protectos.Application", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protectos.Web", "src\Protectos.Web\Protectos.Web.csproj", "{3794ABAE-5A98-4657-B33E-F6E1DC4A68B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protectos.Test", "src\Protectos.Test\Protectos.Test.csproj", "{ED586B74-9CAF-4F04-813D-1D13BD06B281}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{3794ABAE-5A98-4657-B33E-F6E1DC4A68B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3794ABAE-5A98-4657-B33E-F6E1DC4A68B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3794ABAE-5A98-4657-B33E-F6E1DC4A68B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED586B74-9CAF-4F04-813D-1D13BD06B281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED586B74-9CAF-4F04-813D-1D13BD06B281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED586B74-9CAF-4F04-813D-1D13BD06B281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED586B74-9CAF-4F04-813D-1D13BD06B281}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{6BC002AD-DC92-4819-BD2C-1801705F3157} = {C60EB84B-FCA5-498D-B46B-6C1A3A294DBA}
 		{0379C7B9-A59E-4913-B97E-E9521F870629} = {C5E2E529-A65E-48BA-81A1-57C17CA4C745}
 		{3794ABAE-5A98-4657-B33E-F6E1DC4A68B6} = {32EFD1DD-77EA-414F-8EFA-004C16FF5C74}
+		{ED586B74-9CAF-4F04-813D-1D13BD06B281} = {32EFD1DD-77EA-414F-8EFA-004C16FF5C74}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C3839CE0-53AE-4343-803B-BE189A463404}
