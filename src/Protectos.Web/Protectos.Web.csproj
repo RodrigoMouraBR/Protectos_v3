@@ -440,6 +440,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministradoraController.cs" />
+    <Compile Include="Controllers\BeneficiarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -7404,6 +7405,8 @@
     <Content Include="Views\Shared\_LayoutContent.cshtml" />
     <Content Include="Views\Administradora\Index.cshtml" />
     <Content Include="Views\Administradora\Incluir.cshtml" />
+    <Content Include="Views\Beneficiario\Listar.cshtml" />
+    <Content Include="Views\Beneficiario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Content\AdminLTE\bower_components\moment\moment.d.ts" />
