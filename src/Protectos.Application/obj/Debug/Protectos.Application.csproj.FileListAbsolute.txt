@@ -19,17 +19,26 @@ C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Applicati
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.pdb
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Application.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Application.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\AutoMapper.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Domain.dll
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Infra.Data.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Domain.Core.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\FluentValidation.dll
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\EntityFramework.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Domain.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Infra.Data.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Infra.Data.dll.config
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\AutoMapper.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\AutoMapper.xml
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Domain.Core.pdb
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\FluentValidation.xml
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\EntityFramework.xml
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.csprojAssemblyReference.cache
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.csproj.CoreCompileInputs.cache
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.csproj.CopyComplete
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.pdb
+<<<<<<< HEAD
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\AutoMapper.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Infra.Data.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\EntityFramework.dll
@@ -46,3 +55,5 @@ C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Applicati
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\AutoMapper.pdb
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\AutoMapper.xml
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\EntityFramework.xml
+=======
+>>>>>>> desenv
