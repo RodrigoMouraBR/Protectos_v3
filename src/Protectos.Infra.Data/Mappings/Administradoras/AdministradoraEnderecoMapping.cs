@@ -1,11 +1,5 @@
 ﻿using Protectos.Domain.Entities.Administradoras;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Protectos.Infra.Data.Mappings.Administradoras
 {
     public class AdministradoraEnderecoMapping : EntityTypeConfiguration<AdministradoraEndereco>
@@ -51,12 +45,9 @@ namespace Protectos.Infra.Data.Mappings.Administradoras
             HasRequired(c => c.Administradora)
                 .WithMany(a => a.Enderecos)
                 .HasForeignKey(c => c.AdministradoraId);
-
             Ignore(c => c.CascadeMode);
             Ignore(c => c.ValidationResult);
-
             ToTable("AdministradoraEndereco");
-
         }
     }
 }

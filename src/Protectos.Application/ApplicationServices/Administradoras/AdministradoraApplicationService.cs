@@ -2,19 +2,19 @@
 using Protectos.Application.ViewModels.Administradoras;
 using Protectos.Domain.Entities.Administradoras.Interfaces.Repositories;
 using Protectos.Domain.Entities.Administradoras.Interfaces.Services;
+using Protectos.Infra.Data.Interfaces;
 using System;
 using System.Collections.Generic;
-
 namespace Protectos.Application.ApplicationServices.Administradoras
 {
-    public class AdministradoraApplicationService : IAdministradoraApplicationService
+    public class AdministradoraApplicationService : ApplicationService, IAdministradoraApplicationService
     {
         private readonly IAdministradoraRepository _administradoraRepository;
         private readonly IAdministradoraService _administradoraService;
         public AdministradoraApplicationService(
                                                  IAdministradoraRepository administradoraRepository,
-                                                 IAdministradoraService administradoraService
-                                               )
+                                                 IAdministradoraService administradoraService, IUnitOfWork uow) : base(uow)
+
         {
             _administradoraRepository = administradoraRepository;
             _administradoraService = administradoraService;
