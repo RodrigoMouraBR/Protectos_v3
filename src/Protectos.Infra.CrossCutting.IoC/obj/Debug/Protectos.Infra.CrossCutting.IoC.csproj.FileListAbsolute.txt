@@ -19,3 +19,6 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutti
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\bin\Debug\SimpleInjector.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\bin\Debug\SimpleInjector.xml
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\obj\Debug\Protectos.Infra.CrossCutting.IoC.csproj.CopyComplete
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\bin\Debug\SimpleInjector.dll
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\bin\Debug\SimpleInjector.xml
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\obj\Debug\Protectos.Infra.CrossCutting.IoC.csproj.CopyComplete
