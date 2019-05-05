@@ -46,6 +46,20 @@ namespace Protectos.Domain.Entities.Beneficiarios.Services
             throw new NotImplementedException();
         }
 
+        //Email
+        public BeneficiarioEmail BeneficiarioEmailAdicionar(BeneficiarioEmail beneficiarioEmail)
+        {
+            throw new NotImplementedException();
+        }
+        public BeneficiarioEmail BeneficiarioEmailAtualizar(BeneficiarioEmail beneficiarioEmail)
+        {
+            throw new NotImplementedException();
+        }
+        public void BeneficiarioEmailDelete(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         //Telefone
         public BeneficiarioTelefone BeneficiarioTelefoneAdicionar(BeneficiarioTelefone beneficiarioTelefone)
         {

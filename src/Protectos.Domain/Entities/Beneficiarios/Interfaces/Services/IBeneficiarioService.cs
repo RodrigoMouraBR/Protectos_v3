@@ -18,5 +18,9 @@ namespace Protectos.Domain.Entities.Beneficiarios.Interfaces.Services
         BeneficiarioTelefone BeneficiarioTelefoneAdicionar(BeneficiarioTelefone beneficiarioTelefone);
         BeneficiarioTelefone BeneficiarioTelefoneAtualizar(BeneficiarioTelefone beneficiarioTelefone);
         void BeneficiariTelefoneDelete(Guid id);
+
+        BeneficiarioEmail BeneficiarioEmailAdicionar(BeneficiarioEmail beneficiarioEmail);
+        BeneficiarioEmail BeneficiarioEmailAtualizar(BeneficiarioEmail beneficiarioEmail);
+        void BeneficiarioEmailDelete(Guid id);
     }
 }
