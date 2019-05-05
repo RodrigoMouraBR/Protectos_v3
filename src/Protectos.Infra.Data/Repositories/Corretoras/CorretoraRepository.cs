@@ -20,7 +20,7 @@ namespace Protectos.Infra.Data.Repositories.Corretoras
         {
             throw new System.NotImplementedException();
         }
-        public Corretora CorretoraObterPorCpf(string cnpj)
+        public Corretora CorretoraObterPorCnpj(string cnpj)
         {
             return Search(c => c.Empresa.Cnpj.Numero == cnpj).FirstOrDefault();
         }

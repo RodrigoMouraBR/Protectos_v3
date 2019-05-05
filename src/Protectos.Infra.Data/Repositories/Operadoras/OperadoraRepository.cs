@@ -20,7 +20,7 @@ namespace Protectos.Infra.Data.Repositories.Operadoras
         {
             throw new System.NotImplementedException();
         }
-        public Operadora OperadoraObterPorCpf(string cnpj)
+        public Operadora OperadoraObterPorCnpj(string cnpj)
         {
             return Search(c => c.Empresa.Cnpj.Numero == cnpj).FirstOrDefault();
         }

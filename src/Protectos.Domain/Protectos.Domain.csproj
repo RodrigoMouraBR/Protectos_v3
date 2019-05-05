@@ -68,6 +68,8 @@
     <Compile Include="Entities\Beneficiarios\Interfaces\Repositories\IBeneficiarioEnderecoRepository.cs" />
     <Compile Include="Entities\Beneficiarios\Interfaces\Repositories\IBeneficiarioRepository.cs" />
     <Compile Include="Entities\Beneficiarios\Interfaces\Repositories\IBeneficiarioTelefoneRepository.cs" />
+    <Compile Include="Entities\Beneficiarios\Interfaces\Services\IBeneficiarioService.cs" />
+    <Compile Include="Entities\Beneficiarios\Services\BeneficiarioService.cs" />
     <Compile Include="Entities\Corretoras\Corretora.cs" />
     <Compile Include="Entities\Corretoras\CorretoraEmail.cs" />
     <Compile Include="Entities\Corretoras\CorretoraEndereco.cs" />
@@ -76,6 +78,8 @@
     <Compile Include="Entities\Corretoras\Interfaces\Repositories\ICorretoraEnderecoRepository.cs" />
     <Compile Include="Entities\Corretoras\Interfaces\Repositories\ICorretoraRepository.cs" />
     <Compile Include="Entities\Corretoras\Interfaces\Repositories\ICorretoraTelefoneRepository.cs" />
+    <Compile Include="Entities\Corretoras\Interfaces\Services\ICorretoraService.cs" />
+    <Compile Include="Entities\Corretoras\Services\CorretoraService.cs" />
     <Compile Include="Entities\Entidades\Entidade.cs" />
     <Compile Include="Entities\Faturas\Enums\EFaturaTipo.cs" />
     <Compile Include="Entities\Faturas\Fatura.cs" />
@@ -84,10 +88,12 @@
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraEnderecoRepository.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraRepository.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraTelefoneRepository.cs" />
+    <Compile Include="Entities\Operadoras\Interfaces\Services\IOperadoraService.cs" />
     <Compile Include="Entities\Operadoras\Operadora.cs" />
     <Compile Include="Entities\Operadoras\OperadoraEmail.cs" />
     <Compile Include="Entities\Operadoras\OperadoraEndereco.cs" />
     <Compile Include="Entities\Operadoras\OperadoraTelefone.cs" />
+    <Compile Include="Entities\Operadoras\Services\OperadoraService.cs" />
     <Compile Include="Entities\Planos\Enums\EPlanoTipo.cs" />
     <Compile Include="Entities\Planos\Plano.cs" />
     <Compile Include="Entities\TabelaPreco\Precificacao.cs" />
@@ -108,9 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTO\" />
-    <Folder Include="Entities\Beneficiarios\Interfaces\Services\" />
     <Folder Include="Entities\Cobrancas\" />
-    <Folder Include="Entities\Corretoras\Interfaces\Services\" />
     <Folder Include="Entities\Propostas\" />
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,7 @@ namespace Protectos.Domain.Entities.Corretoras.Interfaces.Repositories
 {
     public interface ICorretoraRepository : IRepository<Corretora>
     {
-        Corretora CorretoraObterPorCpf(string cnpj);
+        Corretora CorretoraObterPorCnpj(string cnpj);
         IEnumerable<Corretora> CorretoraObterAtivo();
         IEnumerable<Corretora> CorretoraObterInativo();
     }
