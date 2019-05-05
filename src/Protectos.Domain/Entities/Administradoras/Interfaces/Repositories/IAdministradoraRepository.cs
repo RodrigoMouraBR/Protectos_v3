@@ -6,7 +6,7 @@ namespace Protectos.Domain.Entities.Administradoras.Interfaces.Repositories
 
     public interface IAdministradoraRepository : IRepository<Administradora>
     {
-        Administradora AdministradoraObterPorCpf(string cnpj);
+        Administradora AdministradoraObterPorCnpj(string cnpj);
         IEnumerable<Administradora> AdministradoraObterAtivo();
         IEnumerable<Administradora> AdministradoraObterInativo();
     }

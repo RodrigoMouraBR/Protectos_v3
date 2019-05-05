@@ -20,7 +20,7 @@ namespace Protectos.Infra.Data.Repositories.Administradoras
         {
             throw new System.NotImplementedException();
         }
-        public Administradora AdministradoraObterPorCpf(string cnpj)
+        public Administradora AdministradoraObterPorCnpj(string cnpj)
         {
             return Search(c => c.Empresa.Cnpj.Numero == cnpj).FirstOrDefault();
         }
