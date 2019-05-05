@@ -108,39 +108,43 @@ namespace Protectos.Application.ApplicationServices.Beneficiarios
         //Repository
         public IEnumerable<BeneficiarioTelefoneViewModel> BeneficiarioTelefoneObterTodos()
         {
-            throw new NotImplementedException();
+            return Mapper.Map<IEnumerable<BeneficiarioTelefoneViewModel>>(_beneficiarioTelefoneRepository.GetAll());
         }
         public IEnumerable<BeneficiarioEmailViewModel> BeneficiarioEmailObterTodos()
         {
-            throw new NotImplementedException();
+            return Mapper.Map<IEnumerable<BeneficiarioEmailViewModel>>(_beneficiarioEmailRepository.GetAll());
         }        
         public IEnumerable<BeneficiarioEnderecoViewModel> BeneficiarioEnderecoObterTodos()
         {
-            throw new NotImplementedException();
+            return Mapper.Map<IEnumerable<BeneficiarioEnderecoViewModel>>(_beneficiarioEnderecoRepository.GetAll());
         }
-        public IEnumerable<BeneficiarioViewModel> BeneficiarioObterAtivo()
+        public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterTodos()
         {
-            throw new NotImplementedException();
-        }
-        public IEnumerable<BeneficiarioViewModel> BeneficiarioObterInativo()
-        {
-            throw new NotImplementedException();
-        }
-        public BeneficiarioViewModel BeneficiarioObterPorCpf(string cpf)
-        {
-            throw new NotImplementedException();
-        }
-        public BeneficiarioViewModel BeneficiarioObterPorId(Guid id)
-        {
-            throw new NotImplementedException();
+            return Mapper.Map<IEnumerable<BeneficiarioDependenteViewModel>>(_beneficiarioDependenteRepository.GetAll());
         }
         public IEnumerable<BeneficiarioViewModel> BeneficiarioObterTodos()
+        {
+            return Mapper.Map<IEnumerable<BeneficiarioViewModel>>(_beneficiarioRepository.GetAll());
+        }
+        public IEnumerable<BeneficiarioViewModel> BeneficiarioObterAtivo()
         {
             throw new NotImplementedException();
         }
         public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterAtivo()
         {
             throw new NotImplementedException();
+        }
+        public IEnumerable<BeneficiarioViewModel> BeneficiarioObterInativo()
+        {
+            return Mapper.Map<IEnumerable<BeneficiarioViewModel>>(_beneficiarioRepository.BeneficiarioObterInativo());
+        }        
+        public BeneficiarioViewModel BeneficiarioObterPorCpf(string cpf)
+        {
+            return Mapper.Map<BeneficiarioViewModel>(_beneficiarioRepository.BeneficiarioObterPorCpf(cpf));
+        }
+        public BeneficiarioViewModel BeneficiarioObterPorId(Guid id)
+        {
+            return Mapper.Map<BeneficiarioViewModel>(_beneficiarioRepository.GetbyId(id));
         }
         public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterInativo()
         {
@@ -154,9 +158,6 @@ namespace Protectos.Application.ApplicationServices.Beneficiarios
         {
             throw new NotImplementedException();
         }
-        public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterTodos()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
