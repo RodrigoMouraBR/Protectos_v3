@@ -1,8 +1,9 @@
 ﻿using Protectos.Domain.Entities.Corretoras.Interfaces.Repositories;
+using Protectos.Domain.Entities.Corretoras.Interfaces.Services;
 using System;
 namespace Protectos.Domain.Entities.Corretoras.Services
 {
-    public class CorretoraService
+    public class CorretoraService : ICorretoraService
     {
         private readonly ICorretoraRepository _CorretoraRepository;
         private readonly ICorretoraEmailRepository _CorretoraEmailRepository;
@@ -32,7 +33,7 @@ namespace Protectos.Domain.Entities.Corretoras.Services
         }
         public void DeleteCorretora(Guid id)
         {
-            throw new NotImplementedException();
+            _CorretoraRepository.Delete(id);
         }
         //Endereco
         public CorretoraEndereco CorretoraEnderecoAdicionar(CorretoraEndereco corretoraEndereco)
@@ -48,7 +49,7 @@ namespace Protectos.Domain.Entities.Corretoras.Services
         }
         public void DeleteCorretoraEndereco(Guid id)
         {
-            throw new NotImplementedException();
+            _CorretoraEnderecoRepository.Delete(id);
         }
         //Email
         public CorretoraEmail CorretoraEmailAdicionar(CorretoraEmail corretoraEmail)
@@ -64,7 +65,7 @@ namespace Protectos.Domain.Entities.Corretoras.Services
         }
         public void DeleteCorretoraEmail(Guid id)
         {
-            throw new NotImplementedException();
+            _CorretoraEmailRepository.Delete(id);
         }
         //Telefone
         public CorretoraTelefone CorretoraTelefoneAdicionar(CorretoraTelefone corretoraTelefone)
@@ -80,7 +81,7 @@ namespace Protectos.Domain.Entities.Corretoras.Services
         }
         public void DeleteCorretoraTelefone(Guid id)
         {
-            throw new NotImplementedException();
+            _CorretoraTelefoneRepository.Delete(id);
         }
     }
 }

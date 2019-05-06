@@ -14,11 +14,11 @@ namespace Protectos.Application.Interfaces.Beneficiarios
         BeneficiarioViewModel BeneficiarioAdicionar(BeneficiarioViewModel beneficiarioViewModel);
         BeneficiarioViewModel BeneficiarioAtualizar(BeneficiarioViewModel beneficiarioViewModel);
         //Dependente//
-        BeneficiarioDependenteViewModel BeneficiarioDependenteObterPorId(Guid id);
-        BeneficiarioDependenteViewModel BeneficiarioDependenteObterPorCpf(string cpf);
+        BeneficiarioDependenteViewModel BeneficiarioDependenteObterPorId(Guid id);       
         IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterTodos();
         IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterAtivo();
         IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterInativo();
+        BeneficiarioDependenteViewModel BeneficiarioDependenteObterPorCpf(string cpf);
         BeneficiarioDependenteViewModel BeneficiarioDependenteAdicionar(BeneficiarioDependenteViewModel beneficiarioDependenteViewModel);
         BeneficiarioDependenteViewModel BeneficiarioDependenteAtualizar(BeneficiarioDependenteViewModel beneficiarioDependenteViewModel);        
         //Endereco//        

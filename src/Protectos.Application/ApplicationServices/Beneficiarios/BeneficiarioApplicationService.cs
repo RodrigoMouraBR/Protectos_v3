@@ -18,6 +18,7 @@ namespace Protectos.Application.ApplicationServices.Beneficiarios
         private readonly IBeneficiarioEmailRepository _beneficiarioEmailRepository;
         private readonly IBeneficiarioService _beneficiarioService;
 
+
         public BeneficiarioApplicationService(IBeneficiarioRepository beneficiarioRepository,
             IBeneficiarioDependenteRepository beneficiarioDependenteRepository,
             IBeneficiarioEnderecoRepository beneficiarioEnderecoRepository,
@@ -106,6 +107,10 @@ namespace Protectos.Application.ApplicationServices.Beneficiarios
         }
 
         //Repository
+        public IEnumerable<BeneficiarioViewModel> BeneficiarioObterTodos()
+        {
+            return Mapper.Map<IEnumerable<BeneficiarioViewModel>>(_beneficiarioRepository.GetAll());
+        }              
         public IEnumerable<BeneficiarioTelefoneViewModel> BeneficiarioTelefoneObterTodos()
         {
             return Mapper.Map<IEnumerable<BeneficiarioTelefoneViewModel>>(_beneficiarioTelefoneRepository.GetAll());
@@ -113,7 +118,7 @@ namespace Protectos.Application.ApplicationServices.Beneficiarios
         public IEnumerable<BeneficiarioEmailViewModel> BeneficiarioEmailObterTodos()
         {
             return Mapper.Map<IEnumerable<BeneficiarioEmailViewModel>>(_beneficiarioEmailRepository.GetAll());
-        }        
+        }
         public IEnumerable<BeneficiarioEnderecoViewModel> BeneficiarioEnderecoObterTodos()
         {
             return Mapper.Map<IEnumerable<BeneficiarioEnderecoViewModel>>(_beneficiarioEnderecoRepository.GetAll());
@@ -121,43 +126,40 @@ namespace Protectos.Application.ApplicationServices.Beneficiarios
         public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterTodos()
         {
             return Mapper.Map<IEnumerable<BeneficiarioDependenteViewModel>>(_beneficiarioDependenteRepository.GetAll());
-        }
-        public IEnumerable<BeneficiarioViewModel> BeneficiarioObterTodos()
-        {
-            return Mapper.Map<IEnumerable<BeneficiarioViewModel>>(_beneficiarioRepository.GetAll());
-        }
-        public IEnumerable<BeneficiarioViewModel> BeneficiarioObterAtivo()
-        {
-            throw new NotImplementedException();
-        }
-        public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterAtivo()
-        {
-            throw new NotImplementedException();
-        }
-        public IEnumerable<BeneficiarioViewModel> BeneficiarioObterInativo()
-        {
-            return Mapper.Map<IEnumerable<BeneficiarioViewModel>>(_beneficiarioRepository.BeneficiarioObterInativo());
         }        
-        public BeneficiarioViewModel BeneficiarioObterPorCpf(string cpf)
+        public BeneficiarioDependenteViewModel BeneficiarioDependenteObterPorId(Guid id)
         {
-            return Mapper.Map<BeneficiarioViewModel>(_beneficiarioRepository.BeneficiarioObterPorCpf(cpf));
+            throw new NotImplementedException();
         }
         public BeneficiarioViewModel BeneficiarioObterPorId(Guid id)
         {
             return Mapper.Map<BeneficiarioViewModel>(_beneficiarioRepository.GetbyId(id));
         }
-        public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterInativo()
+
+        //Especificado
+        public BeneficiarioViewModel BeneficiarioObterPorCpf(string cpf)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<BeneficiarioViewModel>(_beneficiarioRepository.BeneficiarioObterPorCpf(cpf));
+        }
+        public IEnumerable<BeneficiarioViewModel> BeneficiarioObterAtivo()
+        {
+            return Mapper.Map<IEnumerable<BeneficiarioViewModel>>(_beneficiarioRepository.BeneficiarioObterAtivo());
+        }
+        public IEnumerable<BeneficiarioViewModel> BeneficiarioObterInativo()
+        {
+            return Mapper.Map<IEnumerable<BeneficiarioViewModel>>(_beneficiarioRepository.BeneficiarioObterInativo());
         }
         public BeneficiarioDependenteViewModel BeneficiarioDependenteObterPorCpf(string cpf)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<BeneficiarioDependenteViewModel>(_beneficiarioDependenteRepository.BeneficiarioDependenteObterPorCpf(cpf));
         }
-        public BeneficiarioDependenteViewModel BeneficiarioDependenteObterPorId(Guid id)
+        public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterAtivo()
         {
-            throw new NotImplementedException();
+            return Mapper.Map<IEnumerable<BeneficiarioDependenteViewModel>>(_beneficiarioDependenteRepository.BeneficiarioDependenteObterAtivo());
         }
-       
+        public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterInativo()
+        {
+            return Mapper.Map<IEnumerable<BeneficiarioDependenteViewModel>>(_beneficiarioDependenteRepository.BeneficiarioDependenteObterInativo());
+        }
     }
 }

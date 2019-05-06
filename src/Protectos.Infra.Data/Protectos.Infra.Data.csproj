@@ -80,6 +80,7 @@
     <Compile Include="Repositories\Administradoras\AdministradoraEnderecoRepository.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraRepository.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraTelefoneRepository.cs" />
+    <Compile Include="Repositories\Beneficiarios\BeneficiarioDependenteRepository.cs" />
     <Compile Include="Repositories\Beneficiarios\BeneficiarioEmailRepository.cs" />
     <Compile Include="Repositories\Beneficiarios\BeneficiarioEnderecoRepository.cs" />
     <Compile Include="Repositories\Beneficiarios\BeneficiarioRepository.cs" />

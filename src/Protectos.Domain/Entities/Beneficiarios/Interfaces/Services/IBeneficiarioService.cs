@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace Protectos.Domain.Entities.Beneficiarios.Interfaces.Services
 {
     public interface IBeneficiarioService
@@ -22,5 +24,9 @@ namespace Protectos.Domain.Entities.Beneficiarios.Interfaces.Services
         BeneficiarioEmail BeneficiarioEmailAdicionar(BeneficiarioEmail beneficiarioEmail);
         BeneficiarioEmail BeneficiarioEmailAtualizar(BeneficiarioEmail beneficiarioEmail);
         void BeneficiarioEmailDelete(Guid id);
+
+        
+        
+
     }
 }
