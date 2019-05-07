@@ -17,10 +17,10 @@ namespace Protectos.Presentation.Test
             var administradora = new Administradora(empresa);
 
             var repo = MockRepository.GenerateStub<IAdministradoraRepository>();
-            repo.Stub(s => s.AdministradoraObterPorCpf("20138220000193")).Return(administradora);
+            repo.Stub(s => s.AdministradoraObterPorCnpj("20138220000193")).Return(administradora);
 
             // Act
-            var admReturn = repo.AdministradoraObterPorCpf("20138220000193");
+            var admReturn = repo.AdministradoraObterPorCnpj("20138220000193");
             // Assert
             Assert.IsTrue(admReturn.IsValid());
         }
@@ -38,7 +38,7 @@ namespace Protectos.Presentation.Test
             repo.Stub(s => s.Add(administradora)).Return(administradora);
 
             // Act
-            var admReturn = repo.AdministradoraObterPorCpf("20138220000193");
+            var admReturn = repo.AdministradoraObterPorCnpj("20138220000193");
             // Assert
             Assert.IsTrue(admReturn.IsValid());
         }
