@@ -8,6 +8,10 @@ namespace Protectos.Application.ViewModels.Administradoras
 {
     public class AdministradoraEnderecoViewModel
     {
+        public AdministradoraEnderecoViewModel()
+        {
+
+        }
         public Guid Id { get; set; }
         public string Logradouro { get; set; }
         public string Numero { get; set; }

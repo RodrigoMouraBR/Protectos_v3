@@ -1,4 +1,6 @@
-﻿namespace Protectos.Application.ViewModels.Administradoras
+﻿using System.Collections.Generic;
+
+namespace Protectos.Application.ViewModels.Administradoras
 {
     public class AdministradoraDtoViewModel
     {
