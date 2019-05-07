@@ -25,6 +25,7 @@ namespace Protectos.Web.Controllers
             return View(_administradoraApplicationService.AdministradoraObterTodos());
         }
 
+        [Route("novo")]
         public ActionResult Incluir()
         {
             return View();

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Protectos.Application.ViewModels.Administradoras.AdministradoraDtoViewModel;
+@{
     ViewData["Title"] = "Nova";
     Layout = "~/Views/Shared/_LayoutContent.cshtml";
 }
@@ -34,7 +35,9 @@
                         <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                        @Html.EditorFor(e => e.Administradora.Cnpj)
+
+                        @*<input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">*@
                     </div>
                     <!-- /.input group -->
                 </div>
