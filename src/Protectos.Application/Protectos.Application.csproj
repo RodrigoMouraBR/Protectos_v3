@@ -56,6 +56,7 @@
     <Compile Include="ApplicationServices\Beneficiarios\BeneficiarioApplicationService.cs" />
     <Compile Include="ApplicationServices\Corretoras\CorretoraApplicationService.cs" />
     <Compile Include="ApplicationServices\Entidades\EntidadeApplicationService.cs" />
+    <Compile Include="ApplicationServices\Faturas\FaturaApplicationService.cs" />
     <Compile Include="ApplicationServices\Operadoras\OperadoraApplicationService.cs" />
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Interfaces\Beneficiarios\IBeneficiarioApplicationService.cs" />
     <Compile Include="Interfaces\Corretoras\ICorretoraApplicationService.cs" />
     <Compile Include="Interfaces\Entidades\IEntidadeApplicationService.cs" />
+    <Compile Include="Interfaces\Fatura\IFaturaApplicationService.cs" />
     <Compile Include="Interfaces\Operadoras\IOperadoraApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Administradoras\AdministradoraDtoViewModel.cs" />
@@ -85,6 +87,7 @@
     <Compile Include="ViewModels\Entidades\EntidadeEnderecoViewModel.cs" />
     <Compile Include="ViewModels\Entidades\EntidadeTelefoneViewModel.cs" />
     <Compile Include="ViewModels\Entidades\EntidadeViewModel.cs" />
+    <Compile Include="ViewModels\Faturas\FaturaViewModel.cs" />
     <Compile Include="ViewModels\Operadoras\OperadoraDtoViewModel.cs" />
     <Compile Include="ViewModels\Operadoras\OperadoraEmailViewModel.cs" />
     <Compile Include="ViewModels\Operadoras\OperadoraEnderecoViewModel.cs" />

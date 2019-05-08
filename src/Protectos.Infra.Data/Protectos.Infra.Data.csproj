@@ -93,6 +93,7 @@
     <Compile Include="Repositories\Entidades\EntidadeEnderecoRepository.cs" />
     <Compile Include="Repositories\Entidades\EntidadeRepository.cs" />
     <Compile Include="Repositories\Entidades\EntidadeTelefoneRepository.cs" />
+    <Compile Include="Repositories\Faturas\FaturaRepository.cs" />
     <Compile Include="Repositories\Operadoras\OperadoraEmailRepository.cs" />
     <Compile Include="Repositories\Operadoras\OperadoraEnderecoRepository.cs" />
     <Compile Include="Repositories\Operadoras\OperadoraRepository.cs" />

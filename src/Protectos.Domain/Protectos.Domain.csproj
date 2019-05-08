@@ -93,6 +93,10 @@
     <Compile Include="Entities\Faturas\Enums\EFaturaTipo.cs" />
     <Compile Include="Entities\Faturas\Fatura.cs" />
     <Compile Include="Entities\Faturas\FaturaCarencia.cs" />
+    <Compile Include="Entities\Faturas\Interfaces\Repositories\IFaturaCarencia.cs" />
+    <Compile Include="Entities\Faturas\Interfaces\Repositories\IFaturaRepository.cs" />
+    <Compile Include="Entities\Faturas\Interfaces\Services\IFaturaService.cs" />
+    <Compile Include="Entities\Faturas\Services\FaturaService.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraEmailRepository.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraEnderecoRepository.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraRepository.cs" />
@@ -106,6 +110,7 @@
     <Compile Include="Entities\Planos\Enums\EPlanoTipo.cs" />
     <Compile Include="Entities\Planos\Plano.cs" />
     <Compile Include="Entities\TabelaPreco\Precificacao.cs" />
+    <Compile Include="Generics\Enums\EFaturaPlanoTipo.cs" />
     <Compile Include="Generics\Enums\EParentesco.cs" />
     <Compile Include="Generics\Enums\EEstadoCivil.cs" />
     <Compile Include="Generics\Enums\ESexo.cs" />
