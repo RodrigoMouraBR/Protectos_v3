@@ -8,6 +8,15 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v2\Protectos\src\Protectos.Domain
 C:\Users\rodri\Documents\Repositorio\Protectos_v2\Protectos\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.csproj.CopyComplete
 C:\Users\rodri\Documents\Repositorio\Protectos_v2\Protectos\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v2\Protectos\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.pdb
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\Debug\Protectos.Domain.Core.dll
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\Debug\Protectos.Domain.Core.pdb
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\Debug\FluentValidation.dll
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\Debug\FluentValidation.xml
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.csproj.CoreCompileInputs.cache
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.csproj.CopyComplete
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.dll
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.pdb
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\Debug\Protectos.Domain.Core.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\Debug\Protectos.Domain.Core.pdb
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\Debug\FluentValidation.dll
@@ -18,6 +27,7 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.csproj.CopyComplete
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.pdb
+<<<<<<< HEAD
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\Debug\Protectos.Domain.Core.dll
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\Debug\Protectos.Domain.Core.pdb
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\Debug\FluentValidation.dll
@@ -28,3 +38,5 @@ C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Co
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.csproj.CopyComplete
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.dll
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.pdb
+=======
+>>>>>>> desenv
