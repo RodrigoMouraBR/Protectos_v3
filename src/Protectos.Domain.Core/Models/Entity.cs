@@ -8,8 +8,11 @@ namespace Protectos.Domain.Core.Models
         protected Entity()
         {
             ValidationResult = new ValidationResult();
+            Id = Guid.NewGuid();
+            Ativo = true;
         }
         public Guid Id { get; protected set; }
+        public bool Ativo { get; protected set; }
         public abstract bool IsValid();
         public ValidationResult ValidationResult { get; protected set; }
         public override bool Equals(object obj)

@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Protectos.Domain.Entities.Operadoras;
+﻿using Protectos.Domain.Entities.Operadoras;
 using Protectos.Domain.Entities.Operadoras.Interfaces;
 using Protectos.Infra.Data.Context;
 using Protectos.Infra.Data.Generics.Repositories;
+using System.Collections.Generic;
+using System.Linq;
 namespace Protectos.Infra.Data.Repositories.Operadoras
 {
     public class OperadoraRepository : Repository<Operadora>, IOperadoraRepository
@@ -14,11 +14,11 @@ namespace Protectos.Infra.Data.Repositories.Operadoras
         }
         public IEnumerable<Operadora> OperadoraObterAtivo()
         {
-            throw new System.NotImplementedException();
+            return Search(c => c.Ativo == true).ToList();
         }
         public IEnumerable<Operadora> OperadoraObterInativo()
         {
-            throw new System.NotImplementedException();
+            return Search(c => c.Ativo == false).ToList();
         }
         public Operadora OperadoraObterPorCnpj(string cnpj)
         {

@@ -11,8 +11,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
         public Beneficiario(string nome, string sobrenome, DateTime dataNascimento,
                              ESexo sexo, CPF cpf, string rG,
                              string orgaoEmissor,
-                             EEstadoCivil estadoCivil,
-                             bool ativo
+                             EEstadoCivil estadoCivil                            
                              )
         {
             Nome = nome;
@@ -22,8 +21,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
             Cpf = cpf;
             RG = rG;
             OrgaoEmissor = orgaoEmissor;
-            EstadoCivil = estadoCivil;
-            Ativo = ativo;
+            EstadoCivil = estadoCivil;           
         }
         protected Beneficiario()
         {
@@ -35,8 +33,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
         public CPF Cpf { get; private set; }
         public string RG { get; private set; }
         public string OrgaoEmissor { get; private set; }
-        public EEstadoCivil EstadoCivil { get; private set; }
-        public bool Ativo { get; private set; }
+        public EEstadoCivil EstadoCivil { get; private set; }        
         public virtual ICollection<BeneficiarioEndereco> Enderecos { get; private set; }
         public virtual ICollection<BeneficiarioTelefone> Telefones { get; private set; }
         public virtual ICollection<BeneficiarioEmail> Emails { get; private set; }
@@ -62,16 +59,13 @@ namespace Protectos.Domain.Entities.Beneficiarios
                .GreaterThan(DateTime.Now).WithErrorCode("O Campo data de Nascimento n�o poder� ser maior que a data vigente");
             RuleFor(c => c.Sexo)
                 .NotEmpty().WithMessage("O campo sexo � obrigatorio!");
-
             int idade = CalculaIdadeBeneficiario(DataNascimento);
-
             if (idade >= 8)
             {
                 RuleFor(c => c.Cpf.Numero)
                     .NotEmpty().WithErrorCode("O Campo CPF � Obrigatorio!")
                     .Length(11, 11).WithMessage("O nome do evento precisa 11 caracteres");
             }
-
             RuleFor(c => c.RG)
                    .NotEmpty().WithErrorCode("O Campo Registro Geral � Obrigatorio!")
                    .Length(9, 11).WithMessage("O nome do evento precisa 11 caracteres");

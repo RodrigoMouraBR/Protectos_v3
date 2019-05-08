@@ -14,11 +14,11 @@ namespace Protectos.Infra.Data.Repositories.Administradoras
         }
         public IEnumerable<Administradora> AdministradoraObterAtivo()
         {
-            throw new System.NotImplementedException();
+            return Search(c => c.Ativo == true).ToList();
         }
         public IEnumerable<Administradora> AdministradoraObterInativo()
         {
-            throw new System.NotImplementedException();
+            return Search(c => c.Ativo == false).ToList();
         }
         public Administradora AdministradoraObterPorCnpj(string cnpj)
         {

@@ -89,6 +89,10 @@
     <Compile Include="Repositories\Corretoras\CorretoraEnderecoRepository.cs" />
     <Compile Include="Repositories\Corretoras\CorretoraRepository.cs" />
     <Compile Include="Repositories\Corretoras\CorretoraTelefoneRepository.cs" />
+    <Compile Include="Repositories\Entidades\EntidadeEmailRepository.cs" />
+    <Compile Include="Repositories\Entidades\EntidadeEnderecoRepository.cs" />
+    <Compile Include="Repositories\Entidades\EntidadeRepository.cs" />
+    <Compile Include="Repositories\Entidades\EntidadeTelefoneRepository.cs" />
     <Compile Include="Repositories\Operadoras\OperadoraEmailRepository.cs" />
     <Compile Include="Repositories\Operadoras\OperadoraEnderecoRepository.cs" />
     <Compile Include="Repositories\Operadoras\OperadoraRepository.cs" />

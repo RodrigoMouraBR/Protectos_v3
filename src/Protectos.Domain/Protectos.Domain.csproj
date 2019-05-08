@@ -81,6 +81,15 @@
     <Compile Include="Entities\Corretoras\Interfaces\Services\ICorretoraService.cs" />
     <Compile Include="Entities\Corretoras\Services\CorretoraService.cs" />
     <Compile Include="Entities\Entidades\Entidade.cs" />
+    <Compile Include="Entities\Entidades\EntidadeEmail.cs" />
+    <Compile Include="Entities\Entidades\EntidadeEndereco.cs" />
+    <Compile Include="Entities\Entidades\EntidadeTelefone.cs" />
+    <Compile Include="Entities\Entidades\Interfaces\Repositories\IEntidadeEmailRepository.cs" />
+    <Compile Include="Entities\Entidades\Interfaces\Repositories\IEntidadeEnderecoRepository.cs" />
+    <Compile Include="Entities\Entidades\Interfaces\Repositories\IEntidadeRepository.cs" />
+    <Compile Include="Entities\Entidades\Interfaces\Repositories\IEntidadeTelefoneRepository.cs" />
+    <Compile Include="Entities\Entidades\Interfaces\Services\IEntidadeService.cs" />
+    <Compile Include="Entities\Entidades\Services\EntidadeService.cs" />
     <Compile Include="Entities\Faturas\Enums\EFaturaTipo.cs" />
     <Compile Include="Entities\Faturas\Fatura.cs" />
     <Compile Include="Entities\Faturas\FaturaCarencia.cs" />
