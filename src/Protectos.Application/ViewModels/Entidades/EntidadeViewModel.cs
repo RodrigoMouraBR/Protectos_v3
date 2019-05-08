@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Protectos.Application.ViewModels.Entidades
 {
     public class EntidadeViewModel
-    {3
+    {
         public EntidadeViewModel()
         {
             Id = Guid.NewGuid();
