@@ -9,6 +9,9 @@ namespace Protectos.Domain.Entities.Administradoras
         public Administradora(Empresa empresa)
         {
             Empresa = empresa;
+            Enderecos = new List<AdministradoraEndereco>();
+            Telefones = new List<AdministradoraTelefone>();
+            Emails = new List<AdministradoraEmail>();
         }
         public Empresa Empresa { get; private set; }
         public virtual ICollection<AdministradoraEndereco> Enderecos { get; private set; }
