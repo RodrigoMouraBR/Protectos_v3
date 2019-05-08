@@ -22,15 +22,3 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.csproj.CopyComplete
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.pdb
-C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\bin\Debug\Protectos.Domain.dll
-C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\bin\Debug\Protectos.Domain.pdb
-C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\bin\Debug\FluentValidation.dll
-C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\bin\Debug\Protectos.Domain.Core.dll
-C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\bin\Debug\System.ComponentModel.Annotations.dll
-C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\bin\Debug\Protectos.Domain.Core.pdb
-C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\bin\Debug\FluentValidation.xml
-C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.csprojAssemblyReference.cache
-C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.csproj.CoreCompileInputs.cache
-C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.csproj.CopyComplete
-C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.dll
-C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.pdb
