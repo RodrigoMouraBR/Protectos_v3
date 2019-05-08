@@ -10,6 +10,9 @@ namespace Protectos.Domain.Entities.Corretoras
         public Corretora(Empresa empresa)
         {
             Empresa = empresa;
+            Enderecos = new List<CorretoraEndereco>();
+            Telefones = new List<CorretoraTelefone>();
+            Emails = new List<CorretoraEmail>();
         }
         public Empresa Empresa { get; private set; }        
         public virtual ICollection<CorretoraEndereco> Enderecos { get; private set; }

@@ -10,6 +10,9 @@ namespace Protectos.Domain.Entities.Operadoras
         public Operadora(Empresa empresa)
         {
             Empresa = empresa;
+            Enderecos = new List<OperadoraEndereco>();
+            Telefones = new List<OperadoraTelefone>();
+            Emails = new List<OperadoraEmail>();
         }
         protected Operadora()
         {

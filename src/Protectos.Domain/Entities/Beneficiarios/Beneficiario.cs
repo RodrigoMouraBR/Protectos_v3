@@ -21,7 +21,10 @@ namespace Protectos.Domain.Entities.Beneficiarios
             Cpf = cpf;
             RG = rG;
             OrgaoEmissor = orgaoEmissor;
-            EstadoCivil = estadoCivil;           
+            EstadoCivil = estadoCivil;
+            Enderecos = new List<BeneficiarioEndereco>();
+            Telefones = new List<BeneficiarioTelefone>();
+            Emails = new List<BeneficiarioEmail>();
         }
         protected Beneficiario()
         {

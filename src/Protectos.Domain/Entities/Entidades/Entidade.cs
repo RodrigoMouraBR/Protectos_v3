@@ -10,6 +10,9 @@ namespace Protectos.Domain.Entities.Entidades
         public Entidade(Empresa empresa)
         {
             Empresa = empresa;
+            Enderecos = new List<EntidadeEndereco>();
+            Telefones = new List<EntidadeTelefone>();
+            Emails = new List<EntidadeEmail>();
         }
         protected Entidade()
         {
