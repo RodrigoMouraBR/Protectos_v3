@@ -2,7 +2,6 @@
 using Protectos.Domain.Entities.Entidades.Interfaces.Repositories;
 using Protectos.Infra.Data.Context;
 using Protectos.Infra.Data.Generics.Repositories;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,15 +12,15 @@ namespace Protectos.Infra.Data.Repositories.Entidades
         public EntidadeRepository(ProtectosContext protectosContext) : base(protectosContext)
         {
         }
-        public IEnumerable<Entidade> AdministradoraObterAtivo()
+        public IEnumerable<Entidade> EntidadeObterAtivo()
         {
             return Search(c => c.Ativo == true).ToList();
         }
-        public IEnumerable<Entidade> AdministradoraObterInativo()
+        public IEnumerable<Entidade> EntidadeObterInativo()
         {
             return Search(c => c.Ativo == false).ToList();
         }
-        public Entidade AdministradoraObterPorCnpj(string cnpj)
+        public Entidade EntidadeObterPorCnpj(string cnpj)
         {
             return Search(c => c.Empresa.Cnpj.Numero == cnpj).FirstOrDefault();
         }

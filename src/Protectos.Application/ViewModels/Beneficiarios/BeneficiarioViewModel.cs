@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
 namespace Protectos.Application.ViewModels.Beneficiarios
 {
     public class BeneficiarioViewModel
@@ -18,5 +20,8 @@ namespace Protectos.Application.ViewModels.Beneficiarios
         public virtual IEnumerable<BeneficiarioTelefoneViewModel> BeneficiarioTelefone { get; set; }
         public virtual IEnumerable<BeneficiarioEmailViewModel> BeneficiarioEmail { get; set; }
         public virtual IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependente { get; set; }
+
+        [ScaffoldColumn(false)]
+        public FluentValidation.Results.ValidationResult ValidationResult { get; set; }
     }
 }

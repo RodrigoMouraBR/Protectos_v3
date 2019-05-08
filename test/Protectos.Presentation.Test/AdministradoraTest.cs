@@ -3,6 +3,7 @@ using Protectos.Domain.Entities.Administradoras;
 using Protectos.Domain.Entities.Administradoras.Interfaces.Repositories;
 using Protectos.Domain.ValuesObjects;
 using Rhino.Mocks;
+using System;
 
 namespace Protectos.Presentation.Test
 {
@@ -13,7 +14,7 @@ namespace Protectos.Presentation.Test
         [TestMethod]
         public void AdicionarAdministradoraValidaTest()
         {
-            var empresa = new Empresa("POTENCIAL ADMINSTRADORA DE BENEFICIOS LTDA", "POTENCIAL", new CNPJ("20138220000193"), "274764511950", "", "http://www.potencial.com.br");
+            var empresa = new Empresa("POTENCIAL ADMINSTRADORA DE BENEFICIOS LTDA", "POTENCIAL", new CNPJ("20138220000193"), "274764511950", "", "http://www.potencial.com.br", DateTime.Now);
             var administradora = new Administradora(empresa);
 
             var repo = MockRepository.GenerateStub<IAdministradoraRepository>();
@@ -31,7 +32,7 @@ namespace Protectos.Presentation.Test
         {
 
 
-            var empresa = new Empresa("POTENCIAL ADMINSTRADORA DE BENEFICIOS LTDA", "POTENCIAL", new CNPJ("20138220000193"), "274764511950", "", "http://www.potencial.com.br");
+            var empresa = new Empresa("POTENCIAL ADMINSTRADORA DE BENEFICIOS LTDA", "POTENCIAL", new CNPJ("20138220000193"), "274764511950", "", "http://www.potencial.com.br",DateTime.Now);
             var administradora = new Administradora(empresa);
 
             var repo = MockRepository.GenerateStub<IAdministradoraRepository>();

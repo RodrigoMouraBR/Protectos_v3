@@ -10,14 +10,24 @@ using Protectos.Domain.Entities.Administradoras.Interfaces.Repositories;
 using Protectos.Domain.Entities.Administradoras.Interfaces.Services;
 using Protectos.Domain.Entities.Administradoras.Services;
 using Protectos.Domain.Entities.Beneficiarios.Interfaces.Repositories;
+using Protectos.Domain.Entities.Beneficiarios.Interfaces.Services;
+using Protectos.Domain.Entities.Beneficiarios.Services;
 using Protectos.Domain.Entities.Corretoras.Interfaces.Repositories;
+using Protectos.Domain.Entities.Corretoras.Interfaces.Services;
+using Protectos.Domain.Entities.Corretoras.Services;
+using Protectos.Domain.Entities.Entidades.Interfaces.Services;
+using Protectos.Domain.Entities.Entidades.Services;
 using Protectos.Domain.Entities.Operadoras.Interfaces;
+using Protectos.Domain.Entities.Operadoras.Interfaces.Services;
+using Protectos.Domain.Entities.Operadoras.Services;
+using Protectos.Infra.Data.Context;
+using Protectos.Infra.Data.Interfaces;
 using Protectos.Infra.Data.Repositories.Administradoras;
 using Protectos.Infra.Data.Repositories.Beneficiarios;
 using Protectos.Infra.Data.Repositories.Corretoras;
 using Protectos.Infra.Data.Repositories.Operadoras;
+using Protectos.Infra.Data.UoW;
 using SimpleInjector;
-
 namespace Protectos.Infra.CrossCutting.IoC
 {
     public class Bootstrap
@@ -45,10 +55,10 @@ namespace Protectos.Infra.CrossCutting.IoC
             container.Register<IBeneficiarioRepository, BeneficiarioRepository>(Lifestyle.Scoped);            
             container.Register<IBeneficiarioEnderecoRepository, BeneficiarioEnderecoRepository>(Lifestyle.Scoped);
             container.Register<IBeneficiarioEmailRepository, BeneficiarioEmailRepository>(Lifestyle.Scoped);
-            container.Register<IBeneficiarioTelefoneRepository, BeneficiarioTelefoneRepository>(Lifestyle.Scoped);
+            container.Register<IBeneficiarioTelefoneRepository, BeneficiarioTelefoneRepository>(Lifestyle.Scoped);            
 
             ////////////////////////////////Application//////////////////////////////////////////////////////////
-            
+
             container.Register<IAdministradoraApplicationService, AdministradoraApplicationService>(Lifestyle.Scoped);
             container.Register<IOperadoraApplicationService, OperadoraApplicationService>(Lifestyle.Scoped);
             container.Register<IBeneficiarioApplicationService, BeneficiarioApplicationService>(Lifestyle.Scoped);
@@ -56,7 +66,18 @@ namespace Protectos.Infra.CrossCutting.IoC
 
             ////////////////////////////////Domain Service//////////////////////////////////////////////////////////
             container.Register<IAdministradoraService, AdministradoraService>(Lifestyle.Scoped);
-            
+            container.Register<IBeneficiarioService, BeneficiarioService>(Lifestyle.Scoped);
+            container.Register<ICorretoraService, CorretoraService>(Lifestyle.Scoped);
+            container.Register<IOperadoraService, OperadoraService>(Lifestyle.Scoped);
+            container.Register<IEntidadeService, EntidadeService>(Lifestyle.Scoped);
+
+
+
+            //UoC
+            container.Register<IUnitOfWork, UnitOfWOrk>(Lifestyle.Scoped);
+            //Context
+            container.Register<ProtectosContext>(Lifestyle.Scoped);
+
         }
     }
 }

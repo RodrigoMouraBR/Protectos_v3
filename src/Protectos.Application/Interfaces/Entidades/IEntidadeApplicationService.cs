@@ -1,41 +1,37 @@
-﻿using Protectos.Application.ViewModels.Administradoras;
+﻿using Protectos.Application.ViewModels.Entidades;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Protectos.Application.Interfaces.Entidades
 {
     public interface IEntidadeApplicationService
     {
         //Administrador//
-        AdministradoraViewModel AdministradoraObterPorId(Guid id);
-        AdministradoraViewModel AdministradoraObterPorCnpj(string cnpj);
-        IEnumerable<AdministradoraViewModel> AdministradoraObterTodos();
-        IEnumerable<AdministradoraViewModel> AdministradoraObterAtivo();
-        IEnumerable<AdministradoraViewModel> AdministradoraObterInativo();
-        AdministradoraViewModel AdministradoraAdicionar(AdministradoraViewModel administradoraViewModel);
-        AdministradoraViewModel AdministradoraAtualizar(AdministradoraViewModel administradoraViewModel);
-        void DeleteAdministradora(Guid id);
+        EntidadeViewModel EntidadeObterPorId(Guid id);
+        EntidadeViewModel EntidadeObterPorCnpj(string cnpj);
+        IEnumerable<EntidadeViewModel> EntidadeObterTodos();
+        IEnumerable<EntidadeViewModel> EntidadeObterAtivo();
+        IEnumerable<EntidadeViewModel> EntidadeObterInativo();
+        EntidadeViewModel EntidadeAdicionar(EntidadeViewModel entidadeViewModel);
+        EntidadeViewModel EntidadeAtualizar(EntidadeViewModel entidadeViewModel);
+        void DeleteEntidade(Guid id);
 
 
         //Endereco//        
-        IEnumerable<AdministradoraEnderecoViewModel> AdministradoraEnderecoObterTodos();
-        AdministradoraEnderecoViewModel AdministradoraEnderecoAdicionar(AdministradoraEnderecoViewModel administradoraEnderecoViewModel);
-        AdministradoraEnderecoViewModel AdministradoraEnderecoAtualizar(AdministradoraEnderecoViewModel administradoraEnderecoViewModel);
-        void DeleteAdministradoraEndereco(Guid id);
+        IEnumerable<EntidadeEnderecoViewModel> EntidadeEnderecoObterTodos();
+        EntidadeEnderecoViewModel EntidadeEnderecoAdicionar(EntidadeEnderecoViewModel entidadeEnderecoViewModel);
+        EntidadeEnderecoViewModel EntidadeEnderecoAtualizar(EntidadeEnderecoViewModel entidadeEnderecoViewModel);
+        void DeleteEntidadeEndereco(Guid id);
 
         //Email//      
-        IEnumerable<AdministradoraEmailViewModel> AdministradoraEmailObterTodos();
-        AdministradoraEmailViewModel AdministradoraEmailAdicionar(AdministradoraEmailViewModel administradoraEmailViewModel);
-        AdministradoraEmailViewModel AdministradoraEmailAtualizar(AdministradoraEmailViewModel administradoraEmailViewModel);
-        void DeleteAdministradoraEmail(Guid id);
+        IEnumerable<EntidadeEmailViewModel> EntidadeEmailObterTodos();
+        EntidadeEmailViewModel EntidadeEmailAdicionar(EntidadeEmailViewModel entidadeEmailViewModel);
+        EntidadeEmailViewModel EntidadeEmailAtualizar(EntidadeEmailViewModel entidadeEmailViewModel);
+        void DeleteEntidadeEmail(Guid id);
 
         //Telefone//     
-        IEnumerable<AdministradoraTelefoneViewModel> AdministradoraTelefoneObterTodos();
-        AdministradoraTelefoneViewModel AdministradoraTelefoneAdicionar(AdministradoraTelefoneViewModel administradoraTelefoneViewModel);
-        AdministradoraTelefoneViewModel AdministradoraTelefoneAtualizar(AdministradoraTelefoneViewModel administradoraTelefoneViewModel);
-        void DeleteAdministradoraTelefone(Guid id);
+        IEnumerable<EntidadeTelefoneViewModel> EntidadeTelefoneObterTodos();
+        EntidadeTelefoneViewModel EntidadeTelefoneAdicionar(EntidadeTelefoneViewModel entidadeTelefoneViewModel);
+        EntidadeTelefoneViewModel EntidadeTelefoneAtualizar(EntidadeTelefoneViewModel entidadeTelefoneViewModel);
+        void DeleteEntidadeTelefone(Guid id);
     }
 }

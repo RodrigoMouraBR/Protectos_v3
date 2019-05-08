@@ -9,8 +9,8 @@ namespace Protectos.Domain.Entities.Entidades.Interfaces.Repositories
 {
     public interface IEntidadeRepository : IRepository<Entidade>
     {
-        Entidade AdministradoraObterPorCnpj(string cnpj);
-        IEnumerable<Entidade> AdministradoraObterAtivo();
-        IEnumerable<Entidade> AdministradoraObterInativo();
+        Entidade EntidadeObterPorCnpj(string cnpj);
+        IEnumerable<Entidade> EntidadeObterAtivo();
+        IEnumerable<Entidade> EntidadeObterInativo();
     }
 }
