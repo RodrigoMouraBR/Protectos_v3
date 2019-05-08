@@ -21,8 +21,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
             Cpf = cpf;
             RG = rG;
             OrgaoEmissor = orgaoEmissor;
-            EstadoCivil = estadoCivil;
-            Ativo = ativo;
+            EstadoCivil = estadoCivil;           
             BeneficiarioId = beneficiarioId;
             BeneficiarioParentesco = beneficiarioParentesco;
         }
@@ -34,8 +33,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
         public CPF Cpf { get; private set; }
         public string RG { get; private set; }
         public string OrgaoEmissor { get; private set; }
-        public EEstadoCivil EstadoCivil { get; private set; }
-        public bool Ativo { get; private set; }
+        public EEstadoCivil EstadoCivil { get; private set; }       
         public Guid BeneficiarioId { get; private set; }
         public EParentesco BeneficiarioParentesco { get; private set; }
         public virtual Beneficiario Beneficiario { get; private set; }
