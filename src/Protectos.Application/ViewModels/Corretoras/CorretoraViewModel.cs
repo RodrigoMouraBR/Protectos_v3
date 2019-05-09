@@ -37,9 +37,9 @@ namespace Protectos.Application.ViewModels.Corretoras
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]
         public DateTime DataCadastro { get; set; }
-        public virtual IEnumerable<CorretoraEnderecoViewModel> Enderecos { get; set; }
-        public virtual IEnumerable<CorretoraTelefoneViewModel> Telefones { get; set; }
-        public virtual IEnumerable<CorretoraEmailViewModel> Emails { get; set; }
+        public virtual ICollection<CorretoraEnderecoViewModel> Enderecos { get; set; }
+        public virtual ICollection<CorretoraTelefoneViewModel> Telefones { get; set; }
+        public virtual ICollection<CorretoraEmailViewModel> Emails { get; set; }
 
         [ScaffoldColumn(false)]
         public FluentValidation.Results.ValidationResult ValidationResult { get; set; }

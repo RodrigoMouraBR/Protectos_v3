@@ -1,10 +1,14 @@
 ﻿using Protectos.Domain.Entities.Administradoras;
 using Protectos.Domain.Entities.Beneficiarios;
 using Protectos.Domain.Entities.Corretoras;
+using Protectos.Domain.Entities.Entidades;
+using Protectos.Domain.Entities.Faturas;
 using Protectos.Domain.Entities.Operadoras;
+using Protectos.Domain.Entities.Planos;
 using Protectos.Infra.Data.Mappings.Administradoras;
 using Protectos.Infra.Data.Mappings.Beneficiarios;
 using Protectos.Infra.Data.Mappings.Corretoras;
+using Protectos.Infra.Data.Mappings.Entidades;
 using Protectos.Infra.Data.Mappings.Operadoras;
 using System;
 using System.Data.Entity;
@@ -44,6 +48,11 @@ namespace Protectos.Infra.Data.Context
             modelBuilder.Configurations.Add(new AdministradoraEnderecoMapping());
             modelBuilder.Configurations.Add(new AdministradoraEmailMapping());
             modelBuilder.Configurations.Add(new AdministradoraTelefoneMapping());
+
+            modelBuilder.Configurations.Add(new EntidadeMapping());
+            modelBuilder.Configurations.Add(new EntidadeEnderecoMapping());
+            modelBuilder.Configurations.Add(new EntidadeEmailMapping());
+            modelBuilder.Configurations.Add(new EntidadeTelefoneMapping());
             //modelBuilder.Configurations.Add(new ());
 
             modelBuilder.Properties<string>()
@@ -52,7 +61,6 @@ namespace Protectos.Infra.Data.Context
                 .Configure(p => p.HasMaxLength(100));            
             base.OnModelCreating(modelBuilder);
         }
-
         public override int SaveChanges()
         {
             foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
@@ -89,5 +97,15 @@ namespace Protectos.Infra.Data.Context
         public DbSet<OperadoraEmail> OperadoraEmail { get; set; }
         public DbSet<OperadoraEndereco> OperadoraEndereco { get; set; }
         public DbSet<OperadoraTelefone> OperadoraTelefone { get; set; }
+
+        public DbSet<Entidade> Entidade { get; set; }
+        public DbSet<EntidadeEmail> EntidadeEmail { get; set; }
+        public DbSet<EntidadeEndereco> EntidadeEndereco { get; set; }
+        public DbSet<EntidadeTelefone> EntidadeTelefone { get; set; }
+
+        public DbSet<Fatura> Fatura { get; set; }
+        public DbSet<FaturaCarencia> FaturaCarencia { get; set; }
+
+        public DbSet<Plano> Plano { get; set; }
     }
 }

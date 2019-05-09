@@ -37,9 +37,9 @@ namespace Protectos.Application.ViewModels.Operadoras
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]
         public DateTime DataCadastro { get; set; }
-        public virtual IEnumerable<OperadoraEnderecoViewModel> Enderecos { get; set; }
-        public virtual IEnumerable<OperadoraTelefoneViewModel> Telefones { get; set; }
-        public virtual IEnumerable<OperadoraEmailViewModel> Emails { get; set; }
+        public virtual ICollection<OperadoraEnderecoViewModel> Enderecos { get; set; }
+        public virtual ICollection<OperadoraTelefoneViewModel> Telefones { get; set; }
+        public virtual ICollection<OperadoraEmailViewModel> Emails { get; set; }
 
         [ScaffoldColumn(false)]
         public FluentValidation.Results.ValidationResult ValidationResult { get; set; }

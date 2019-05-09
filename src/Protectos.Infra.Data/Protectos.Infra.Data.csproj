@@ -70,14 +70,24 @@
     <Compile Include="Mappings\Corretoras\CorretoraEnderecoMapping.cs" />
     <Compile Include="Mappings\Corretoras\CorretoraMapping.cs" />
     <Compile Include="Mappings\Corretoras\CorretoraTelefoneMapping.cs" />
+    <Compile Include="Mappings\Entidades\EntidadeEmailMapping.cs" />
+    <Compile Include="Mappings\Entidades\EntidadeEnderecoMapping.cs" />
+    <Compile Include="Mappings\Entidades\EntidadeMapping.cs" />
+    <Compile Include="Mappings\Entidades\EntidadeTelefoneMapping.cs" />
+    <Compile Include="Mappings\Faturas\FaturaCarenciaMapping.cs" />
+    <Compile Include="Mappings\Faturas\FaturaMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraEmailMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraEnderecoMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraTelefoneMapping.cs" />
+<<<<<<< HEAD
     <Compile Include="Migrations\201905080408137_inicial.cs" />
     <Compile Include="Migrations\201905080408137_inicial.Designer.cs">
       <DependentUpon>201905080408137_inicial.cs</DependentUpon>
     </Compile>
+=======
+    <Compile Include="Mappings\Planos\PlanoMapping.cs" />
+>>>>>>> desenv
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraEmailRepository.cs" />
