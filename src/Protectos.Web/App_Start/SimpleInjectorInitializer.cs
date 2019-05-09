@@ -21,7 +21,7 @@ namespace Protectos.Web.App_Start
 
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
             
-            container.Verify();
+            //container.Verify();
             
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
         }

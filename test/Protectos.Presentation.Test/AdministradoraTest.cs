@@ -27,6 +27,7 @@ namespace Protectos.Presentation.Test
         }
 
 
+<<<<<<< HEAD
         [TestMethod]
         public void AdicionarAdministradoraValida2Test()
         {
@@ -43,6 +44,8 @@ namespace Protectos.Presentation.Test
             // Assert
             Assert.IsTrue(admReturn.IsValid());
         }
+=======
+>>>>>>> desenv
 
     }
 }
