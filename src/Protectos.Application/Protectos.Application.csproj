@@ -68,7 +68,6 @@
     <Compile Include="Interfaces\Fatura\IFaturaApplicationService.cs" />
     <Compile Include="Interfaces\Operadoras\IOperadoraApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\Administradoras\AdministradoraDtoViewModel.cs" />
     <Compile Include="ViewModels\Administradoras\AdministradoraEmailViewModel.cs" />
     <Compile Include="ViewModels\Administradoras\AdministradoraEnderecoViewModel.cs" />
     <Compile Include="ViewModels\Administradoras\AdministradoraTelefoneViewModel.cs" />
@@ -104,10 +103,6 @@
     <ProjectReference Include="..\Protectos.Domain\Protectos.Domain.csproj">
       <Project>{A4D67B2C-9F59-4D2F-A109-F82C4B338736}</Project>
       <Name>Protectos.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Protectos.Infra.Data\Protectos.Infra.Data.csproj">
-      <Project>{955272FD-2B5A-4E65-8594-59C3D3B9AB7C}</Project>
-      <Name>Protectos.Infra.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

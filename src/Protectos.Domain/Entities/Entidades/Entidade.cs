@@ -20,12 +20,12 @@ namespace Protectos.Domain.Entities.Entidades
 
         }
         public Empresa Empresa { get; private set; }
-        public virtual ICollection<EntidadeEndereco> Enderecos { get; private set; }
-        public virtual ICollection<EntidadeEmail> Emails { get; private set; }
-        public virtual ICollection<EntidadeTelefone> Telefones { get; private set; }
+        public virtual IEnumerable<EntidadeEndereco> Enderecos { get; private set; }
+        public virtual IEnumerable<EntidadeEmail> Emails { get; private set; }
+        public virtual IEnumerable<EntidadeTelefone> Telefones { get; private set; }
 
         //
-        public virtual ICollection<Fatura> Faturas { get; private set; }
+        public virtual IEnumerable<Fatura> Faturas { get; private set; }
 
 
         public override bool IsValid()

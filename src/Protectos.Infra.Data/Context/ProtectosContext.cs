@@ -9,6 +9,7 @@ using Protectos.Infra.Data.Mappings.Administradoras;
 using Protectos.Infra.Data.Mappings.Beneficiarios;
 using Protectos.Infra.Data.Mappings.Corretoras;
 using Protectos.Infra.Data.Mappings.Entidades;
+using Protectos.Infra.Data.Mappings.Faturas;
 using Protectos.Infra.Data.Mappings.Operadoras;
 using System;
 using System.Data.Entity;
@@ -33,7 +34,7 @@ namespace Protectos.Infra.Data.Context
             modelBuilder.Configurations.Add(new BeneficiarioEmailMapping());
             modelBuilder.Configurations.Add(new BeneficiarioEnderecoMapping());
             modelBuilder.Configurations.Add(new BeneficiarioTelefoneMapping());
-            
+
             modelBuilder.Configurations.Add(new OperadoraMapping());
             modelBuilder.Configurations.Add(new OperadoraEnderecoMapping());
             modelBuilder.Configurations.Add(new OperadoraTelefoneMapping());
@@ -43,7 +44,7 @@ namespace Protectos.Infra.Data.Context
             modelBuilder.Configurations.Add(new CorretoraEnderecoMapping());
             modelBuilder.Configurations.Add(new CorretoraEmailMapping());
             modelBuilder.Configurations.Add(new CorretoraTelefoneMapping());
-           
+
             modelBuilder.Configurations.Add(new AdministradoraMapping());
             modelBuilder.Configurations.Add(new AdministradoraEnderecoMapping());
             modelBuilder.Configurations.Add(new AdministradoraEmailMapping());
@@ -53,6 +54,9 @@ namespace Protectos.Infra.Data.Context
             modelBuilder.Configurations.Add(new EntidadeEnderecoMapping());
             modelBuilder.Configurations.Add(new EntidadeEmailMapping());
             modelBuilder.Configurations.Add(new EntidadeTelefoneMapping());
+
+            modelBuilder.Configurations.Add(new FaturaMapping());
+            modelBuilder.Configurations.Add(new FaturaCarenciaMapping());
             //modelBuilder.Configurations.Add(new ());
 
             modelBuilder.Properties<string>()
@@ -106,6 +110,6 @@ namespace Protectos.Infra.Data.Context
         public DbSet<Fatura> Fatura { get; set; }
         public DbSet<FaturaCarencia> FaturaCarencia { get; set; }
 
-        public DbSet<Plano> Plano { get; set; }
+        //public DbSet<Plano> Plano { get; set; }
     }
 }

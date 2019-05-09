@@ -14,6 +14,7 @@ namespace Protectos.Application.ViewModels.Administradoras
             Id = Guid.NewGuid();
             Ativo = true;
         }
+        [Key]
         public Guid Id { get; set; }
         [Required(ErrorMessage = "Preencha o campo Logradouro")]
         [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]

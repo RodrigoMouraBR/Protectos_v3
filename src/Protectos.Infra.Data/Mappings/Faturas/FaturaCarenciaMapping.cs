@@ -12,7 +12,7 @@ namespace Protectos.Infra.Data.Mappings.Faturas
     {
         public FaturaCarenciaMapping()
         {
-
+            HasKey(c => c.Id);
         }
     }
 }
