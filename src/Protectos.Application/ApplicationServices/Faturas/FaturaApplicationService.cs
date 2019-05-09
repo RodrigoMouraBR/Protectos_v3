@@ -1,5 +1,7 @@
-﻿using Protectos.Application.Interfaces.Fatura;
+﻿using AutoMapper;
+using Protectos.Application.Interfaces.Fatura;
 using Protectos.Application.ViewModels.Faturas;
+using Protectos.Domain.Entities.Faturas;
 using Protectos.Domain.Entities.Faturas.Interfaces.Interfaces.Services;
 using Protectos.Domain.Entities.Faturas.Interfaces.Repositories;
 using Protectos.Infra.Data.Interfaces;
@@ -20,35 +22,41 @@ namespace Protectos.Application.ApplicationServices.Faturas
         }
         public void DeleteFatura(Guid id)
         {
-            throw new NotImplementedException();
+            _faturaService.DeleteFatura(id);
         }
         public FaturaViewModel FaturaAdicionar(FaturaViewModel faturaViewModel)
         {
-            throw new NotImplementedException();
+            var fatura = Mapper.Map<Fatura>(faturaViewModel);
+            _faturaService.FaturaAdicionar(fatura);
+            Commit();
+            return faturaViewModel;
         }
         public FaturaViewModel FaturaAtualizar(FaturaViewModel faturaViewModel)
         {
-            throw new NotImplementedException();
+            var fatura = Mapper.Map<Fatura>(faturaViewModel);
+            _faturaService.FaturaAtualizar(fatura);
+            Commit();
+            return faturaViewModel;
         }
         public IEnumerable<FaturaViewModel> FaturaObterAtivo()
         {
-            throw new NotImplementedException();
+            return Mapper.Map<IEnumerable<FaturaViewModel>>(_faturaRepository.FaturaObterAtivo());
         }
         public IEnumerable<FaturaViewModel> FaturaObterInativo()
         {
-            throw new NotImplementedException();
+            return Mapper.Map<IEnumerable<FaturaViewModel>>(_faturaRepository.FaturaObterInativo());
         }
         public FaturaViewModel FaturaObterPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<FaturaViewModel>(_faturaRepository.GetbyId(id));
         }
         public FaturaViewModel FaturaObterPorNumero(string numeroFatura)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<FaturaViewModel>(_faturaRepository.FaturaObterPorNumero(numeroFatura));
         }
         public IEnumerable<FaturaViewModel> FaturaObterTodos()
         {
-            throw new NotImplementedException();
+            return Mapper.Map<IEnumerable<FaturaViewModel>>(_faturaRepository.GetAll());
         }
     }
 }

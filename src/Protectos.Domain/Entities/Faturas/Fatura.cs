@@ -1,9 +1,12 @@
 ﻿using Protectos.Domain.Core.Models;
+using Protectos.Domain.Entities.Configuracoes;
 using Protectos.Domain.Entities.Entidades;
 using Protectos.Domain.Entities.Faturas.Enums;
 using Protectos.Domain.Entities.Operadoras;
 using Protectos.Domain.Generics.Enums;
 using System;
+using System.Collections.Generic;
+
 namespace Protectos.Domain.Entities.Faturas
 {
     public class Fatura : Entity<Fatura>
@@ -61,8 +64,12 @@ namespace Protectos.Domain.Entities.Faturas
         public EStatus Status { get; private set; }
         public Guid EntidadeId { get; private set; }
         public Guid OperadoraId { get; private set; }
+
         public virtual Entidade Entidade { get; private set; }
         public virtual Operadora Operadora { get; private set; }
+
+        public virtual IEnumerable<RelacaoFaturaPlano> FaturaPlano { get; private set; }
+
         public override bool IsValid()
         {
             throw new NotImplementedException();

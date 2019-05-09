@@ -70,6 +70,8 @@
     <Compile Include="Entities\Beneficiarios\Interfaces\Repositories\IBeneficiarioTelefoneRepository.cs" />
     <Compile Include="Entities\Beneficiarios\Interfaces\Services\IBeneficiarioService.cs" />
     <Compile Include="Entities\Beneficiarios\Services\BeneficiarioService.cs" />
+    <Compile Include="Entities\Configuracoes\RelacaoFaturaPlano.cs" />
+    <Compile Include="Entities\Configuracoes\RelacaoOperadoraEntidade.cs" />
     <Compile Include="Entities\Corretoras\Corretora.cs" />
     <Compile Include="Entities\Corretoras\CorretoraEmail.cs" />
     <Compile Include="Entities\Corretoras\CorretoraEndereco.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="Entities\Faturas\Enums\EFaturaTipo.cs" />
     <Compile Include="Entities\Faturas\Fatura.cs" />
     <Compile Include="Entities\Faturas\FaturaCarencia.cs" />
+    <Compile Include="Entities\Faturas\FaturaPlano.cs" />
     <Compile Include="Entities\Faturas\Interfaces\Repositories\IFaturaCarencia.cs" />
     <Compile Include="Entities\Faturas\Interfaces\Repositories\IFaturaRepository.cs" />
     <Compile Include="Entities\Faturas\Interfaces\Services\IFaturaService.cs" />

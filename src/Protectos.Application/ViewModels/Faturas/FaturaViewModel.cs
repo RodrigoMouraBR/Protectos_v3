@@ -1,6 +1,8 @@
-﻿using Protectos.Application.ViewModels.Entidades;
+﻿using Protectos.Application.ViewModels.Configuracoes;
+using Protectos.Application.ViewModels.Entidades;
 using Protectos.Application.ViewModels.Operadoras;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Protectos.Application.ViewModels.Faturas
@@ -14,11 +16,11 @@ namespace Protectos.Application.ViewModels.Faturas
         [Key]
         public Guid Id { get; set; }
         [Required(ErrorMessage = "Preencha o campo")]
-        [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
+        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
         public string NomeFatura { get; set; }
         [Required(ErrorMessage = "Preencha o campo")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
+        [MaxLength(50, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
         public string NumeroFatura { get; set; }
         [Required(ErrorMessage = "Preencha o campo")]
@@ -65,5 +67,7 @@ namespace Protectos.Application.ViewModels.Faturas
         public Guid OperadoraId { get; set; }
         public virtual EntidadeViewModel Entidade { get; set; }
         public virtual OperadoraViewModel Operadora { get; set; }
+
+        public virtual ICollection<RelacaoFaturaPlanoViewModel> FaturaPlano { get; set; }
     }
 }

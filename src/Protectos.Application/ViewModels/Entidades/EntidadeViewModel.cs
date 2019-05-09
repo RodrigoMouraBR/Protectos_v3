@@ -40,9 +40,9 @@ namespace Protectos.Application.ViewModels.Entidades
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]
         public DateTime DataCadastro { get; set; }
-        public virtual IEnumerable<EntidadeEnderecoViewModel> Enderecos { get; set; }
-        public virtual IEnumerable<EntidadeTelefoneViewModel> Telefones { get; set; }
-        public virtual IEnumerable<EntidadeEmailViewModel> Emails { get; set; }
+        public virtual ICollection<EntidadeEnderecoViewModel> Enderecos { get; set; }
+        public virtual ICollection<EntidadeTelefoneViewModel> Telefones { get; set; }
+        public virtual ICollection<EntidadeEmailViewModel> Emails { get; set; }
 
         [ScaffoldColumn(false)]
         public FluentValidation.Results.ValidationResult ValidationResult { get; set; }

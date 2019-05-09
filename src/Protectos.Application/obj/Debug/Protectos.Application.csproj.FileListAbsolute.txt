@@ -19,3 +19,4 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.csproj.CopyComplete
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\System.ComponentModel.Annotations.dll

@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Protectos.Domain.Core.Models;
+using Protectos.Domain.Entities.Faturas;
 using Protectos.Domain.ValuesObjects;
 using System.Collections.Generic;
 
@@ -22,6 +23,10 @@ namespace Protectos.Domain.Entities.Operadoras
         public virtual ICollection<OperadoraEndereco> Enderecos { get; private set; }
         public virtual ICollection<OperadoraTelefone> Telefones { get; private set; }
         public virtual ICollection<OperadoraEmail> Emails { get; private set; }
+
+        //
+        public virtual ICollection<Fatura> Faturas { get; private set; }
+
         public override bool IsValid()
         {
             Validation();

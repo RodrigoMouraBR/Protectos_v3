@@ -78,6 +78,8 @@
     <Compile Include="ViewModels\Beneficiarios\BeneficiarioEnderecoViewModel.cs" />
     <Compile Include="ViewModels\Beneficiarios\BeneficiarioTelefoneViewModel.cs" />
     <Compile Include="ViewModels\Beneficiarios\BeneficiarioViewModel.cs" />
+    <Compile Include="ViewModels\Configuracoes\RelacaoFaturaPlanoViewModel.cs" />
+    <Compile Include="ViewModels\Configuracoes\RelacaoOperadoraEntidadeViewModel.cs" />
     <Compile Include="ViewModels\Corretoras\CorretoraDtoViewModel.cs" />
     <Compile Include="ViewModels\Corretoras\CorretoraEmailViewModel.cs" />
     <Compile Include="ViewModels\Corretoras\CorretoraEnderecoViewModel.cs" />
