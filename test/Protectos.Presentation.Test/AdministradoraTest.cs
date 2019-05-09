@@ -26,22 +26,6 @@ namespace Protectos.Presentation.Test
         }
 
 
-        [TestMethod]
-        public void AdicionarAdministradoraValida2Test()
-        {
-
-
-            var empresa = new Empresa("POTENCIAL ADMINSTRADORA DE BENEFICIOS LTDA", "POTENCIAL", new CNPJ("20138220000193"), "274764511950", "", "http://www.potencial.com.br");
-            var administradora = new Administradora(empresa);
-
-            var repo = MockRepository.GenerateStub<IAdministradoraRepository>();
-            repo.Stub(s => s.Add(administradora)).Return(administradora);
-
-            // Act
-            var admReturn = repo.AdministradoraObterPorCnpj("20138220000193");
-            // Assert
-            Assert.IsTrue(admReturn.IsValid());
-        }
 
     }
 }
