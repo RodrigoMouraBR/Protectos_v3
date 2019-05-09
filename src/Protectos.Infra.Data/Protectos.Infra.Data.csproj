@@ -80,14 +80,14 @@
     <Compile Include="Mappings\Operadoras\OperadoraEnderecoMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraTelefoneMapping.cs" />
-<<<<<<< HEAD
+
     <Compile Include="Migrations\201905080408137_inicial.cs" />
     <Compile Include="Migrations\201905080408137_inicial.Designer.cs">
       <DependentUpon>201905080408137_inicial.cs</DependentUpon>
     </Compile>
-=======
+
     <Compile Include="Mappings\Planos\PlanoMapping.cs" />
->>>>>>> desenv
+
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraEmailRepository.cs" />
