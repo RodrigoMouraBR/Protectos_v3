@@ -2,7 +2,7 @@ using System;
 
 namespace Protectos.Domain.Entities.Administradoras.Interfaces.Services
 {
-    public interface IAdministradoraService
+    public interface IAdministradoraService : IDisposable
     {
         //Administradora
         Administradora AdministradoraAdicionar(Administradora administradora);

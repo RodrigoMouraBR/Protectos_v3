@@ -118,5 +118,14 @@ namespace Protectos.Domain.Entities.Beneficiarios.Services
         {
             _beneficiarioTelefoneRepository.Delete(id);
         }
+
+        public void Dispose()
+        {
+            _beneficiarioRepository.Dispose();
+            _beneficiarioEmailRepository.Dispose();
+            _beneficiarioTelefoneRepository.Dispose();
+            _beneficiarioEnderecoRepository.Dispose();
+            _beneficiarioDependenteRepository.Dispose();
+        }
     }
 }

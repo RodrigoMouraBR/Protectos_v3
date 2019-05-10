@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 namespace Protectos.Application.Interfaces.Beneficiarios
 {
-    public interface IBeneficiarioApplicationService
+    public interface IBeneficiarioApplicationService : IDisposable
     {
         //BeneFiciario//
         BeneficiarioViewModel BeneficiarioObterPorId(Guid id);

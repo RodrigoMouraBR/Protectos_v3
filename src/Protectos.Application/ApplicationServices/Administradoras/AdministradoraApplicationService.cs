@@ -28,7 +28,8 @@ namespace Protectos.Application.ApplicationServices.Administradoras
             _administradoraTelefoneRepository = administradoraTelefoneRepository;
             _administradoraEndrecoRepository = administradoraEndrecoRepository;
             _administradoraService = administradoraService;
-        }
+        }       
+
         //AdministradoraServices
         public AdministradoraViewModel AdministradoraAdicionar(AdministradoraViewModel administradoraViewModel)
         {
@@ -135,6 +136,15 @@ namespace Protectos.Application.ApplicationServices.Administradoras
         public AdministradoraViewModel AdministradoraObterPorId(Guid id)
         {
             return Mapper.Map<AdministradoraViewModel>(_administradoraRepository.GetbyId(id));
-        }        
+        }
+        public void Dispose()
+        {
+            _administradoraRepository.Dispose();
+            _administradoraEmailRepository.Dispose();
+            _administradoraTelefoneRepository.Dispose();
+            _administradoraEndrecoRepository.Dispose();
+            _administradoraService.Dispose();
+        }
+
     }
 }

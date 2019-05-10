@@ -83,5 +83,13 @@ namespace Protectos.Domain.Entities.Entidades.Services
         {
             _entidadeTelefoneRepository.Delete(id);
         }
+
+        public void Dispose()
+        {
+            _entidadeRepository.Dispose();
+            _entidadeEmailRepository.Dispose();
+            _entidadeTelefoneRepository.Dispose();
+            _entidadeEnderecoRepository.Dispose();
+        }
     }
 }

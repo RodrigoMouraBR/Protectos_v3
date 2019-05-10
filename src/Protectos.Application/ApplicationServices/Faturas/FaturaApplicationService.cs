@@ -58,5 +58,11 @@ namespace Protectos.Application.ApplicationServices.Faturas
         {
             return Mapper.Map<IEnumerable<FaturaViewModel>>(_faturaRepository.GetAll());
         }
+
+        public void Dispose()
+        {
+            _faturaRepository.Dispose();
+            _faturaService.Dispose();
+        }
     }
 }

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 namespace Protectos.Application.Interfaces.Operadoras
 {
-    public interface IOperadoraApplicationService
+    public interface IOperadoraApplicationService : IDisposable
     {
         //Operadora//
         OperadoraViewModel OperadoraObterPorId(Guid id);

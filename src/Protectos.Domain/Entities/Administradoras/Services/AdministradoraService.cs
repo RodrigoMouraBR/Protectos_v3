@@ -83,5 +83,13 @@ namespace Protectos.Domain.Entities.Administradoras.Services
         {
             throw new NotImplementedException();
         }
+
+        public void Dispose()
+        {
+            _administradoraRepository.Dispose();
+            _administradoraEmailRepository.Dispose();
+            _administradoraTelefoneRepository.Dispose();
+            _administradoraEnderecoRepository.Dispose();
+        }
     }
 }

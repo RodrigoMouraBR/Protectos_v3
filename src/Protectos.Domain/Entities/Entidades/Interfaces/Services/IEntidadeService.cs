@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Protectos.Domain.Entities.Entidades.Interfaces.Services
 {
-    public interface IEntidadeService
+    public interface IEntidadeService : IDisposable
     {
         Entidade EntidadeAdicionar(Entidade entidade);
         Entidade EntidadeAtualizar(Entidade entidade);

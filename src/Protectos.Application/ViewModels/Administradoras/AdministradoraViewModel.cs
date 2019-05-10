@@ -38,9 +38,9 @@ namespace Protectos.Application.ViewModels.Administradoras
         public bool Ativo { get;  set; }
         [ScaffoldColumn(false)]
         public DateTime DataCadastro { get; set; }
-        public virtual ICollection<AdministradoraEnderecoViewModel> Enderecos { get; set; }
-        public virtual ICollection<AdministradoraTelefoneViewModel> Telefones { get;  set; }
-        public virtual ICollection<AdministradoraEmailViewModel> Emails { get;  set; }
+        public virtual IEnumerable<AdministradoraEnderecoViewModel> Enderecos { get; set; }
+        public virtual IEnumerable<AdministradoraTelefoneViewModel> Telefones { get;  set; }
+        public virtual IEnumerable<AdministradoraEmailViewModel> Emails { get;  set; }
 
         [ScaffoldColumn(false)]
         public FluentValidation.Results.ValidationResult ValidationResult { get; set; }

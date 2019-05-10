@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Protectos.Application.Interfaces.Fatura
 {
-    public interface IFaturaApplicationService
+    public interface IFaturaApplicationService : IDisposable
     {
         FaturaViewModel FaturaObterPorId(Guid id);        
         IEnumerable<FaturaViewModel> FaturaObterTodos();        

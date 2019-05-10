@@ -28,5 +28,10 @@ namespace Protectos.Domain.Entities.Faturas.Services
             _faturaRepository.Update(entidadeEmail);
             return entidadeEmail;
         }
+
+        public void Dispose()
+        {
+            _faturaRepository.Dispose();            
+        }
     }
 }

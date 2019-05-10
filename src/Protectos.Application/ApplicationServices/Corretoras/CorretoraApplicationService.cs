@@ -131,6 +131,15 @@ namespace Protectos.Application.ApplicationServices.Corretoras
         public IEnumerable<CorretoraTelefoneViewModel> CorretoraTelefoneObterTodos()
         {
             return Mapper.Map<IEnumerable<CorretoraTelefoneViewModel>>(_corretoraTelefoneRepository.GetAll());
-        }       
+        }
+
+        public void Dispose()
+        {
+            _corretoraRepository.Dispose();
+            _corretoraEmailRepository.Dispose();
+            _corretoraTelefoneRepository.Dispose();
+            _corretoraEndrecoRepository.Dispose();            
+            _corretoraService.Dispose();
+        }
     }
 }

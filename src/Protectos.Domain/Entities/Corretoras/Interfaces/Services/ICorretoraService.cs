@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Protectos.Domain.Entities.Corretoras.Interfaces.Services
 {
-    public interface ICorretoraService
+    public interface ICorretoraService : IDisposable
     {
         Corretora CorretoraAdicionar(Corretora corretora);
         Corretora CorretoraAtualizar(Corretora corretora);

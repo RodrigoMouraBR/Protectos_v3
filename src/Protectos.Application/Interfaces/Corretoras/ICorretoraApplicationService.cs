@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 namespace Protectos.Application.Interfaces.Corretoras
 {
-    public interface ICorretoraApplicationService
+    public interface ICorretoraApplicationService : IDisposable
     {
         //Corretora//
         CorretoraViewModel CorretoraObterPorId(Guid id);

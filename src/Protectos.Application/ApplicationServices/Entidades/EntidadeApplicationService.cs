@@ -137,5 +137,14 @@ namespace Protectos.Application.ApplicationServices.Entidades
         {
             return Mapper.Map<IEnumerable<EntidadeTelefoneViewModel>>(_entidadeTelefoneRepository.GetAll());
         }
+
+        public void Dispose()
+        {
+            _entidadeRepository.Dispose();
+            _entidadeEmailRepository.Dispose();
+            _entidadeTelefoneRepository.Dispose();
+            _entidadeEndrecoRepository.Dispose();
+            _entidadeService.Dispose();
+        }
     }
 }

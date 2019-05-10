@@ -13,8 +13,8 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\Debug\FluentValidation.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\bin\Debug\FluentValidation.xml
-C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.csprojAssemblyReference.cache
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.csproj.CoreCompileInputs.cache
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.csproj.CopyComplete
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.csprojAssemblyReference.cache

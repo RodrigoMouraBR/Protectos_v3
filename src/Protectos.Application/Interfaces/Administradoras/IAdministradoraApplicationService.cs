@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 namespace Protectos.Application.Interfaces.Administradoras
 {
-    public interface IAdministradoraApplicationService
+    public interface IAdministradoraApplicationService : IDisposable
     {
         //Administrador//
         AdministradoraViewModel AdministradoraObterPorId(Guid id);

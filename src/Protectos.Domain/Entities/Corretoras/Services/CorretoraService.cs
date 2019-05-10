@@ -83,5 +83,13 @@ namespace Protectos.Domain.Entities.Corretoras.Services
         {
             _CorretoraTelefoneRepository.Delete(id);
         }
+
+        public void Dispose()
+        {
+            _CorretoraRepository.Dispose();
+            _CorretoraEmailRepository.Dispose();
+            _CorretoraTelefoneRepository.Dispose();
+            _CorretoraEnderecoRepository.Dispose();           
+        }
     }
 }

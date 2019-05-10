@@ -135,5 +135,14 @@ namespace Protectos.Application.ApplicationServices.Operadoras
         {
             return Mapper.Map<OperadoraViewModel>(_OperadoraRepository.GetbyId(id));
         }
+
+        public void Dispose()
+        {
+            _OperadoraRepository.Dispose();
+            _OperadoraEmailRepository.Dispose();
+            _OperadoraTelefoneRepository.Dispose();
+            _OperadoraEndrecoRepository.Dispose();
+            _OperadoraService.Dispose();
+        }
     }
 }

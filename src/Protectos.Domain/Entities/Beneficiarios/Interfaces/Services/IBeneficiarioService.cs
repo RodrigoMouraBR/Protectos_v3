@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Protectos.Domain.Entities.Beneficiarios.Interfaces.Services
 {
-    public interface IBeneficiarioService
+    public interface IBeneficiarioService : IDisposable
     {
         Beneficiario BeneficiarioAdicionar(Beneficiario beneficiario);
         Beneficiario BeneficiarioAtualizar(Beneficiario beneficiario);

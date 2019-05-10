@@ -19,6 +19,9 @@ namespace Protectos.Domain.Entities.Operadoras.Services
             _operadoraTelefoneRepository = operadoraTelefoneRepository;
             _operadoraEnderecoRepository = operadoraEnderecoRepository;
         }
+
+        
+
         //Operadora
         public Operadora OperadoraAdicionar(Operadora operadora)
         {
@@ -83,5 +86,13 @@ namespace Protectos.Domain.Entities.Operadoras.Services
         {
             throw new NotImplementedException();
         }
+        public void Dispose()
+        {
+            _operadoraRepository.Dispose();
+            _operadoraEmailRepository.Dispose();
+            _operadoraTelefoneRepository.Dispose();
+            _operadoraEnderecoRepository.Dispose();
+        }
+
     }
 }

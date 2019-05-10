@@ -2,10 +2,14 @@
 using Protectos.Application.ViewModels.Administradoras;
 using Protectos.Application.ViewModels.Beneficiarios;
 using Protectos.Application.ViewModels.Corretoras;
+using Protectos.Application.ViewModels.Entidades;
+using Protectos.Application.ViewModels.Faturas;
 using Protectos.Application.ViewModels.Operadoras;
 using Protectos.Domain.Entities.Administradoras;
 using Protectos.Domain.Entities.Beneficiarios;
 using Protectos.Domain.Entities.Corretoras;
+using Protectos.Domain.Entities.Entidades;
+using Protectos.Domain.Entities.Faturas;
 using Protectos.Domain.Entities.Operadoras;
 
 namespace Protectos.Application.AutoMapper
@@ -33,6 +37,14 @@ namespace Protectos.Application.AutoMapper
             CreateMap<AdministradoraEnderecoViewModel, AdministradoraEndereco>();
             CreateMap<AdministradoraEmailViewModel, AdministradoraEmail>();
             CreateMap<AdministradoraTelefoneViewModel, AdministradoraTelefone>();
+
+            CreateMap<EntidadeViewModel, Entidade>();
+            CreateMap<EntidadeEnderecoViewModel, EntidadeEndereco>();
+            CreateMap<EntidadeEmailViewModel, EntidadeEmail>();
+            CreateMap<EntidadeTelefoneViewModel, EntidadeTelefone>();
+
+            CreateMap<FaturaViewModel, Fatura>();
+            
         }
     }
 }

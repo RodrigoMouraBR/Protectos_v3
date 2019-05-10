@@ -161,5 +161,15 @@ namespace Protectos.Application.ApplicationServices.Beneficiarios
         {
             return Mapper.Map<IEnumerable<BeneficiarioDependenteViewModel>>(_beneficiarioDependenteRepository.BeneficiarioDependenteObterInativo());
         }
+
+        public void Dispose()
+        {
+            _beneficiarioRepository.Dispose();
+            _beneficiarioEmailRepository.Dispose();
+            _beneficiarioTelefoneRepository.Dispose();
+            _beneficiarioEnderecoRepository.Dispose();
+            _beneficiarioDependenteRepository.Dispose();
+            _beneficiarioService.Dispose();
+        }
     }
 }

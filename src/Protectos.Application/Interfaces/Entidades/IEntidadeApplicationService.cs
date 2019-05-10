@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 namespace Protectos.Application.Interfaces.Entidades
 {
-    public interface IEntidadeApplicationService
+    public interface IEntidadeApplicationService : IDisposable
     {
         //Administrador//
         EntidadeViewModel EntidadeObterPorId(Guid id);

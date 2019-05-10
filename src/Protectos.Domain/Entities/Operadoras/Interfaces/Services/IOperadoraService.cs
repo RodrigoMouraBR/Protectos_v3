@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Protectos.Domain.Entities.Operadoras.Interfaces.Services
 {
-    public interface IOperadoraService
+    public interface IOperadoraService : IDisposable
     {
         Operadora OperadoraAdicionar(Operadora operadora);
         Operadora OperadoraAtualizar(Operadora operadora);
