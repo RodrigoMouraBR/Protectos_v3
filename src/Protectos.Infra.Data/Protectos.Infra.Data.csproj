@@ -80,6 +80,7 @@
     <Compile Include="Mappings\Operadoras\OperadoraEnderecoMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraTelefoneMapping.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraEmailRepository.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraEnderecoRepository.cs" />
@@ -119,9 +120,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mappings\Planos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

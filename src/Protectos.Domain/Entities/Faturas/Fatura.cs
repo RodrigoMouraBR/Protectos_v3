@@ -67,8 +67,8 @@ namespace Protectos.Domain.Entities.Faturas
 
         public virtual Entidade Entidade { get; private set; }
         public virtual Operadora Operadora { get; private set; }
-
-       // public virtual IEnumerable<RelacaoFaturaPlano> FaturaPlano { get; private set; }
+        public virtual ICollection<FaturaCarencia> FaturaCarencia { get; private set; }
+        // public virtual IEnumerable<RelacaoFaturaPlano> FaturaPlano { get; private set; }
 
         public override bool IsValid()
         {

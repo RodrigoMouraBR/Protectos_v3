@@ -13,6 +13,15 @@ namespace Protectos.Infra.Data.Mappings.Faturas
         public FaturaCarenciaMapping()
         {
             HasKey(c => c.Id);
+            HasRequired(c => c.Fatura)
+               .WithMany(a => a.FaturaCarencia)
+               .HasForeignKey(c => c.FaturaId);
+            Ignore(c => c.CascadeMode);
+            Ignore(c => c.ValidationResult);
+
+            ToTable("FaturaCarencia");
+
+
         }
     }
 }

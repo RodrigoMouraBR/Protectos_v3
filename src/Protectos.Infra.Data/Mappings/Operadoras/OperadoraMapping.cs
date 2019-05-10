@@ -32,8 +32,6 @@ namespace Protectos.Infra.Data.Mappings.Operadoras
             Property(c => c.Empresa.Site)
                 .HasColumnType("varchar")
                 .HasMaxLength(50);
-
-
             Ignore(c => c.CascadeMode);
             Ignore(c => c.ValidationResult);
             ToTable("Operadora");

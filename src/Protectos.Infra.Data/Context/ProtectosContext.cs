@@ -4,7 +4,6 @@ using Protectos.Domain.Entities.Corretoras;
 using Protectos.Domain.Entities.Entidades;
 using Protectos.Domain.Entities.Faturas;
 using Protectos.Domain.Entities.Operadoras;
-using Protectos.Domain.Entities.Planos;
 using Protectos.Infra.Data.Mappings.Administradoras;
 using Protectos.Infra.Data.Mappings.Beneficiarios;
 using Protectos.Infra.Data.Mappings.Corretoras;
@@ -40,6 +39,11 @@ namespace Protectos.Infra.Data.Context
             modelBuilder.Configurations.Add(new OperadoraTelefoneMapping());
             modelBuilder.Configurations.Add(new OperadoraEmailMapping());
 
+            modelBuilder.Configurations.Add(new EntidadeMapping());
+            modelBuilder.Configurations.Add(new EntidadeEnderecoMapping());
+            modelBuilder.Configurations.Add(new EntidadeEmailMapping());
+            modelBuilder.Configurations.Add(new EntidadeTelefoneMapping());
+
             modelBuilder.Configurations.Add(new CorretoraMapping());
             modelBuilder.Configurations.Add(new CorretoraEnderecoMapping());
             modelBuilder.Configurations.Add(new CorretoraEmailMapping());
@@ -50,14 +54,9 @@ namespace Protectos.Infra.Data.Context
             modelBuilder.Configurations.Add(new AdministradoraEmailMapping());
             modelBuilder.Configurations.Add(new AdministradoraTelefoneMapping());
 
-            modelBuilder.Configurations.Add(new EntidadeMapping());
-            modelBuilder.Configurations.Add(new EntidadeEnderecoMapping());
-            modelBuilder.Configurations.Add(new EntidadeEmailMapping());
-            modelBuilder.Configurations.Add(new EntidadeTelefoneMapping());
-
             modelBuilder.Configurations.Add(new FaturaMapping());
             modelBuilder.Configurations.Add(new FaturaCarenciaMapping());
-            //modelBuilder.Configurations.Add(new ());
+
 
             modelBuilder.Properties<string>()
                 .Configure(p => p.HasColumnType("varchar"));
@@ -87,16 +86,6 @@ namespace Protectos.Infra.Data.Context
         public DbSet<BeneficiarioEndereco> BeneficiarioEndereco { get; set; }
         public DbSet<BeneficiarioTelefone> BeneficiarioTelefone { get; set; }
 
-        public DbSet<Administradora> Administradora { get; set; }
-        public DbSet<AdministradoraEmail> AdministradoraEmail { get; set; }
-        public DbSet<AdministradoraEndereco> AdministradoraEndereco { get; set; }
-        public DbSet<AdministradoraTelefone> AdministradoraTelefone { get; set; }
-
-        public DbSet<Corretora> Corretora { get; set; }
-        public DbSet<CorretoraEmail> CorretoraEmail { get; set; }
-        public DbSet<CorretoraEndereco> CorretoraEndereco { get; set; }
-        public DbSet<CorretoraTelefone> CorretoraTelefone { get; set; }
-
         public DbSet<Operadora> Operadora { get; set; }
         public DbSet<OperadoraEmail> OperadoraEmail { get; set; }
         public DbSet<OperadoraEndereco> OperadoraEndereco { get; set; }
@@ -106,6 +95,16 @@ namespace Protectos.Infra.Data.Context
         public DbSet<EntidadeEmail> EntidadeEmail { get; set; }
         public DbSet<EntidadeEndereco> EntidadeEndereco { get; set; }
         public DbSet<EntidadeTelefone> EntidadeTelefone { get; set; }
+
+        public DbSet<Corretora> Corretora { get; set; }
+        public DbSet<CorretoraEmail> CorretoraEmail { get; set; }
+        public DbSet<CorretoraEndereco> CorretoraEndereco { get; set; }
+        public DbSet<CorretoraTelefone> CorretoraTelefone { get; set; }
+
+        public DbSet<Administradora> Administradora { get; set; }
+        public DbSet<AdministradoraEmail> AdministradoraEmail { get; set; }
+        public DbSet<AdministradoraEndereco> AdministradoraEndereco { get; set; }
+        public DbSet<AdministradoraTelefone> AdministradoraTelefone { get; set; }
 
         public DbSet<Fatura> Fatura { get; set; }
         public DbSet<FaturaCarencia> FaturaCarencia { get; set; }

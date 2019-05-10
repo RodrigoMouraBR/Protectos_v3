@@ -51,6 +51,7 @@ namespace Protectos.Infra.Data.Mappings.Faturas
 
             Ignore(c => c.CascadeMode);
             Ignore(c => c.ValidationResult);
+
             ToTable("Fatura");
         }
     }
