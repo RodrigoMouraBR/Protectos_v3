@@ -59,6 +59,10 @@
       <Project>{A4D67B2C-9F59-4D2F-A109-F82C4B338736}</Project>
       <Name>Protectos.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Protectos.Infra.Data\Protectos.Infra.Data.csproj">
+      <Project>{955272fd-2b5a-4e65-8594-59c3d3b9ab7c}</Project>
+      <Name>Protectos.Infra.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
