@@ -22,7 +22,7 @@ namespace Protectos.Infra.Data.Repositories.Entidades
         }
         public Entidade EntidadeObterPorCnpj(string cnpj)
         {
-            return Search(c => c.Empresa.Cnpj.Numero == cnpj).FirstOrDefault();
+            return Search(c => c.Cnpj == cnpj).FirstOrDefault();
         }
     }
 }

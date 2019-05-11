@@ -15,6 +15,7 @@ namespace ProtectosScafold.Controllers
     public class AdministradoraController : BaseController
     {
         private readonly IAdministradoraApplicationService _administradoraApplicationService;
+
         public AdministradoraController(IAdministradoraApplicationService administradoraApplicationService)
         {
             _administradoraApplicationService = administradoraApplicationService;
@@ -112,6 +113,79 @@ namespace ProtectosScafold.Controllers
             }
             base.Dispose(disposing);
         }
+
+        //Endereco
+
+       
+        public ActionResult ListarEnderecos(Guid id)
+        {
+            ViewBag.ClienteId = id;
+            return PartialView("_EnderecosList", _administradoraApplicationService.AdministradoraObterPorId(id).Enderecos);
+        }       
+       
+        public ActionResult AdicionarEndereco(Guid id)
+        {
+            ViewBag.ClienteId = id;
+            return PartialView("_AdicionarEndereco");
+        }       
+       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdicionarEndereco(AdministradoraEnderecoViewModel enderecoViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                _administradoraApplicationService.AdministradoraEnderecoAdicionar(enderecoViewModel);
+                string url = Url.Action("ListarEnderecos", "Administradora", new { id = enderecoViewModel.AdministradoraId });
+                return Json(new { success = true, url = url });
+            }
+
+            return PartialView("_AdicionarEndereco", enderecoViewModel);
+        }        
         
+        public ActionResult AtualizarEndereco(Guid id)
+        {
+            return PartialView("_AtualizarEndereco", _administradoraApplicationService.AdministradoraEnderecoObterPorId(id));
+        }       
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AtualizarEndereco(AdministradoraEnderecoViewModel enderecoViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                _administradoraApplicationService.AdministradoraEnderecoAtualizar(enderecoViewModel);
+
+                string url = Url.Action("ListarEnderecos", "Clientes", new { id = enderecoViewModel.AdministradoraId });
+                return Json(new { success = true, url = url });
+            }
+
+            return PartialView("_AtualizarEndereco", enderecoViewModel);
+        }        
+       
+        public ActionResult DeletarEndereco(Guid? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var enderecoViewModel = _administradoraApplicationService.AdministradoraEnderecoObterPorId(id.Value);
+            if (enderecoViewModel == null)
+            {
+                return HttpNotFound();
+            }
+            return PartialView("_DeletarEndereco", enderecoViewModel);
+        }       
+        
+        [HttpPost, ActionName("DeletarEndereco")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletarEnderecoConfirmed(Guid id)
+        {
+            var clienteId = _administradoraApplicationService.AdministradoraEnderecoObterPorId(id).AdministradoraId;
+            _administradoraApplicationService.DeleteAdministradoraEndereco(id);
+            string url = Url.Action("ListarEnderecos", "Clientes", new { id = clienteId });
+            return Json(new { success = true, url = url });
+        }
     }
 }

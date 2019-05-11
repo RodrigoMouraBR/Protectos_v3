@@ -16,19 +16,22 @@ namespace Protectos.Application.Interfaces.Administradoras
         void DeleteAdministradora(Guid id);
 
 
-        //Endereco//        
+        //Endereco//    
+        AdministradoraEnderecoViewModel AdministradoraEnderecoObterPorId(Guid id);
         IEnumerable<AdministradoraEnderecoViewModel> AdministradoraEnderecoObterTodos();
         AdministradoraEnderecoViewModel AdministradoraEnderecoAdicionar(AdministradoraEnderecoViewModel administradoraEnderecoViewModel);
         AdministradoraEnderecoViewModel AdministradoraEnderecoAtualizar(AdministradoraEnderecoViewModel administradoraEnderecoViewModel);
         void DeleteAdministradoraEndereco(Guid id);
 
-        //Email//      
+        //Email//     
+        AdministradoraEmailViewModel AdministradoraEmailObterPorId(Guid id);
         IEnumerable<AdministradoraEmailViewModel> AdministradoraEmailObterTodos();
         AdministradoraEmailViewModel AdministradoraEmailAdicionar(AdministradoraEmailViewModel administradoraEmailViewModel);
         AdministradoraEmailViewModel AdministradoraEmailAtualizar(AdministradoraEmailViewModel administradoraEmailViewModel);
         void DeleteAdministradoraEmail(Guid id);
 
-        //Telefone//     
+        //Telefone//    
+        AdministradoraTelefoneViewModel AdministradoraTelefoneObterPorId(Guid id);
         IEnumerable<AdministradoraTelefoneViewModel> AdministradoraTelefoneObterTodos();
         AdministradoraTelefoneViewModel AdministradoraTelefoneAdicionar(AdministradoraTelefoneViewModel administradoraTelefoneViewModel);
         AdministradoraTelefoneViewModel AdministradoraTelefoneAtualizar(AdministradoraTelefoneViewModel administradoraTelefoneViewModel);

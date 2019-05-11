@@ -22,7 +22,7 @@ namespace Protectos.Infra.Data.Repositories.Operadoras
         }
         public Operadora OperadoraObterPorCnpj(string cnpj)
         {
-            return Search(c => c.Empresa.Cnpj.Numero == cnpj).FirstOrDefault();
+            return Search(c => c.Cnpj == cnpj).FirstOrDefault();
         }
     }
 }

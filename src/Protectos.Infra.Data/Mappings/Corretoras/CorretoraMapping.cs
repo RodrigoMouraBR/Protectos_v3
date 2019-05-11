@@ -9,27 +9,27 @@ namespace Protectos.Infra.Data.Mappings.Corretoras
         public CorretoraMapping()
         {
             HasKey(c => c.Id);
-            Property(c => c.Empresa.RazaoSocial)
+            Property(c => c.RazaoSocial)
                 .HasColumnType("varchar")
                 .HasMaxLength(100)
                 .IsRequired();
-            Property(c => c.Empresa.NomeFantasia)
+            Property(c => c.NomeFantasia)
                 .HasColumnType("varchar")
                 .HasMaxLength(100)
                 .IsRequired();
-            Property(c => c.Empresa.Cnpj.Numero)
+            Property(c => c.Cnpj)
                .IsRequired()
                .HasMaxLength(14)
                .IsFixedLength()
                .HasColumnAnnotation("Index", new IndexAnnotation(
                    new IndexAttribute("IX_CNPJ_Corretora") { IsUnique = true }));
-            Property(c => c.Empresa.InscricaoEstadual)
+            Property(c => c.InscricaoEstadual)
                 .HasColumnType("char")
                 .HasMaxLength(14);
-            Property(c => c.Empresa.InscricaoMunicipal)
+            Property(c => c.InscricaoMunicipal)
                 .HasColumnType("char")
                 .HasMaxLength(14);
-            Property(c => c.Empresa.Site)
+            Property(c => c.Site)
                 .HasColumnType("varchar")
                 .HasMaxLength(50);
             Ignore(c => c.CascadeMode);

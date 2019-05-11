@@ -4,60 +4,97 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div>
+    <h2>Gestão Administradora</h2>
+</div>
+<hr />
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.RazaoSocial)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NomeFantasia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cnpj)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.InscricaoEstadual)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.InscricaoMunicipal)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Site)
-        </th>
-        <th></th>
-    </tr>
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("Index", "Administradora", FormMethod.Get))
+        {
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    @Html.TextBox("buscar", null, new { @class = "form-control input", @placeholder = "Pesquisar por nome" })
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn" type="submit">
+                            <small><i class="glyphicon glyphicon-search"></i></small>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-8">
+        <div>
+            <div class="pull-right">
+                <a href="@Url.Action("Create", "Administradora")" class="btn btn-primary">
+                    <span title="Detalhes" class="glyphicon glyphicon-plus-sign"></span> Novo
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RazaoSocial)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomeFantasia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cnpj)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InscricaoEstadual)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InscricaoMunicipal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Site)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+<div class="panel panel-default">
+    <table class="table table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RazaoSocial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeFantasia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cnpj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InscricaoEstadual)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InscricaoMunicipal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Site)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RazaoSocial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeFantasia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cnpj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InscricaoEstadual)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InscricaoMunicipal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Site)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", "Edit", new {id = item.Id})" class="btn btn-warning">
+                        <span title="Editar" class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="@Url.Action("Details", "Details", new {id = item.Id})" class="btn btn-primary">
+                        <span title="Detalhes" class="glyphicon glyphicon-search"></span>
+                    </a>
+                    <a href="@Url.Action("Delete", "Delete", new {id = item.Id})" class="btn btn-danger">
+                        <span title="Excluir" class="glyphicon glyphicon-trash"></span>
+                    </a>
+
+                </td>
+            </tr>
+        }
+    </table>
+</div>

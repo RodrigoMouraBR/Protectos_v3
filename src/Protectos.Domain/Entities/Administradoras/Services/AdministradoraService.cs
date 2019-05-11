@@ -33,7 +33,7 @@ namespace Protectos.Domain.Entities.Administradoras.Services
         }  
         public void DeleteAdministradora(Guid id)
         {
-            throw new NotImplementedException();
+            _administradoraRepository.Delete(id);
         }
         //Endereco
         public AdministradoraEndereco AdministradoraEnderecoAdicionar(AdministradoraEndereco administradoraEndereco)
@@ -49,7 +49,7 @@ namespace Protectos.Domain.Entities.Administradoras.Services
         }
         public void DeleteAdministradoraEndereco(Guid id)
         {
-            throw new NotImplementedException();
+            _administradoraEnderecoRepository.Delete(id);
         }
         //Email
         public AdministradoraEmail AdministradoraEmailAdicionar(AdministradoraEmail administradoraEmail)
@@ -65,7 +65,7 @@ namespace Protectos.Domain.Entities.Administradoras.Services
         }
         public void DeleteAdministradoraEmail(Guid id)
         {
-            throw new NotImplementedException();
+            _administradoraEmailRepository.Delete(id);
         }
         //Telefone
         public AdministradoraTelefone AdministradoraTelefoneAdicionar(AdministradoraTelefone administradoraTelefone)
@@ -81,7 +81,7 @@ namespace Protectos.Domain.Entities.Administradoras.Services
         }
         public void DeleteAdministradoraTelefone(Guid id)
         {
-            throw new NotImplementedException();
+            _administradoraTelefoneRepository.Delete(id);
         }
 
         public void Dispose()

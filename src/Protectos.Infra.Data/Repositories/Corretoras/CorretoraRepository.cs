@@ -21,7 +21,7 @@ namespace Protectos.Infra.Data.Repositories.Corretoras
         }
         public Corretora CorretoraObterPorCnpj(string cnpj)
         {
-            return Search(c => c.Empresa.Cnpj.Numero == cnpj).FirstOrDefault();
+            return Search(c => c.Cnpj == cnpj).FirstOrDefault();
         }
     }
 }

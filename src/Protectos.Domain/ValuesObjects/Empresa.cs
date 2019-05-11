@@ -4,7 +4,7 @@ namespace Protectos.Domain.ValuesObjects
 {
     public class Empresa
     {
-        //public Empresa(string razaoSocial, string nomeFantasia, CNPJ cnpj, 
+        //public Empresa(string razaoSocial, string nomeFantasia, CNPJ cnpj,
         //               string inscricaoEstadual, string inscricaoMunicipal, string site, DateTime dataCadastro)
 
         //{

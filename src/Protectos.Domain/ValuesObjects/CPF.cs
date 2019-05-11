@@ -3,13 +3,11 @@ namespace Protectos.Domain.ValuesObjects
 {
     public class CPF
     {
-        public CPF(string numero, DateTime dataEmissao)
+        public CPF(string numero)
         {
-            Numero = numero;
-            DataEmissao = dataEmissao;
+            Numero = numero;           
         }
-        public string Numero { get; private set; }
-        public DateTime DataEmissao { get; private set; }
+        public string Numero { get; private set; }       
         protected CPF() { }
         public bool Validar()
         {

@@ -146,5 +146,19 @@ namespace Protectos.Application.ApplicationServices.Administradoras
             _administradoraService.Dispose();
         }
 
+        public AdministradoraEnderecoViewModel AdministradoraEnderecoObterPorId(Guid id)
+        {
+            return Mapper.Map<AdministradoraEnderecoViewModel>(_administradoraEndrecoRepository.GetbyId(id));
+        }
+
+        public AdministradoraEmailViewModel AdministradoraEmailObterPorId(Guid id)
+        {
+            return Mapper.Map<AdministradoraEmailViewModel>(_administradoraEmailRepository.GetbyId(id));
+        }
+
+        public AdministradoraTelefoneViewModel AdministradoraTelefoneObterPorId(Guid id)
+        {
+            return Mapper.Map<AdministradoraTelefoneViewModel>(_administradoraTelefoneRepository.GetbyId(id));
+        }
     }
 }

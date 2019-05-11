@@ -256,6 +256,12 @@
     <Content Include="Views\Administradora\Details.cshtml" />
     <Content Include="Views\Administradora\Edit.cshtml" />
     <Content Include="Views\Administradora\Index.cshtml" />
+    <Content Include="Views\Administradora\_EnderecosList.cshtml" />
+    <Content Include="Views\Administradora\_Endereco.cshtml" />
+    <Content Include="Views\Administradora\_DeletarEndereco.cshtml" />
+    <Content Include="Views\Administradora\_DadosEndereco.cshtml" />
+    <Content Include="Views\Administradora\_AtualizarEndereco.cshtml" />
+    <Content Include="Views\Administradora\_AdicionarEndereco.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -282,6 +288,10 @@
     <ProjectReference Include="..\..\src\Protectos.Infra.CrossCutting.IoC\Protectos.Infra.CrossCutting.IoC.csproj">
       <Project>{6BC002AD-DC92-4819-BD2C-1801705F3157}</Project>
       <Name>Protectos.Infra.CrossCutting.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Protectos.Infra.Data\Protectos.Infra.Data.csproj">
+      <Project>{955272FD-2B5A-4E65-8594-59C3D3B9AB7C}</Project>
+      <Name>Protectos.Infra.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
