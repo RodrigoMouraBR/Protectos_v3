@@ -43,23 +43,29 @@ namespace ProtectosScafold.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(AdministradoraViewModel administradoraViewModel)
+        public ActionResult Create(AdministradoraCadastroViewModel administradoraCadastroViewModel)
         {
-            administradoraViewModel = _administradoraApplicationService.AdministradoraAdicionar(administradoraViewModel);
-            if (!administradoraViewModel.ValidationResult.IsValid)
+
+            if (ModelState.IsValid)
             {
-                foreach (var erro in administradoraViewModel.ValidationResult.Errors)
+                administradoraCadastroViewModel = _administradoraApplicationService.AdministradoraCadastroAdicionar(administradoraCadastroViewModel);
+
+                if (!administradoraCadastroViewModel.ValidationResult.IsValid)
                 {
-                    ModelState.AddModelError(string.Empty, erro.ErrorMessage);
+                    foreach (var erro in administradoraCadastroViewModel.ValidationResult.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, erro.ErrorMessage);
+                    }
+                    return View(administradoraCadastroViewModel);
                 }
-                return View(administradoraViewModel);
+                if (administradoraCadastroViewModel.ValidationResult.ToString() != string.Empty)
+                {
+                    ViewBag.Sucesso = administradoraCadastroViewModel.ValidationResult.Errors.ToList();
+                    return View(administradoraCadastroViewModel);
+                }
+                return RedirectToAction("Index");
             }
-            if (administradoraViewModel.ValidationResult.ToString() != string.Empty)
-            {
-                ViewBag.Sucesso = administradoraViewModel.ValidationResult.Errors.ToList();
-                return View(administradoraViewModel);
-            }
-            return View(administradoraViewModel);
+            return View(administradoraCadastroViewModel);
         }
         public ActionResult Edit(Guid? id)
         {

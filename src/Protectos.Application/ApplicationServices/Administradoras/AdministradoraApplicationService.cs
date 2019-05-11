@@ -160,5 +160,26 @@ namespace Protectos.Application.ApplicationServices.Administradoras
         {
             return Mapper.Map<AdministradoraTelefoneViewModel>(_administradoraTelefoneRepository.GetbyId(id));
         }
+
+        public AdministradoraCadastroViewModel AdministradoraCadastroAdicionar(AdministradoraCadastroViewModel administradoraCadastroViewModel)
+        {
+            var administradora = Mapper.Map<Administradora>(administradoraCadastroViewModel);
+            var endereco = Mapper.Map<AdministradoraEndereco>(administradoraCadastroViewModel);
+            var telefone = Mapper.Map<AdministradoraTelefone>(administradoraCadastroViewModel);
+            var email = Mapper.Map<AdministradoraEmail>(administradoraCadastroViewModel);
+
+            administradora.Enderecos.Add(endereco);
+            administradora.Telefones.Add(telefone);
+            administradora.Emails.Add(email);
+
+            var administradoraReturn = _administradoraService.AdministradoraAdicionar(administradora);
+            administradoraCadastroViewModel = Mapper.Map<AdministradoraCadastroViewModel>(administradoraReturn);
+            if (!administradoraReturn.ValidationResult.IsValid)
+            {               
+                return administradoraCadastroViewModel;
+            } 
+            Commit();
+            return administradoraCadastroViewModel;
+        }
     }
 }

@@ -7,38 +7,38 @@ namespace Protectos.Infra.Data.Mappings.Administradoras
         public AdministradoraEnderecoMapping()
         {
             HasKey(c => c.Id);
-            Property(c => c.Endereco.Logradouro)
+            Property(c => c.Logradouro)
                 .HasMaxLength(100)
                 .HasColumnType("varchar")
                 .IsRequired();
-            Property(c => c.Endereco.Logradouro)
+            Property(c => c.Logradouro)
                .HasMaxLength(50)
                .HasColumnType("varchar")
                .IsRequired();
-            Property(c => c.Endereco.Bairro)
+            Property(c => c.Bairro)
                .HasMaxLength(100)
                .HasColumnType("varchar")
                .IsRequired();
-            Property(c => c.Endereco.Cep)
+            Property(c => c.Cep)
                .HasMaxLength(10)
                .HasColumnType("char")
                .IsRequired();
-            Property(c => c.Endereco.Complemento)
+            Property(c => c.Complemento)
                .HasMaxLength(100)
                .HasColumnType("varchar");
-            Property(c => c.Endereco.Cidade)
+            Property(c => c.Cidade)
                .HasMaxLength(50)
                .HasColumnType("varchar")
                .IsRequired();
-            Property(c => c.Endereco.Estado)
+            Property(c => c.Estado)
                .HasMaxLength(50)
                .HasColumnType("varchar")
                .IsRequired();
-            Property(c => c.Endereco.Logradouro)
+            Property(c => c.Logradouro)
                .HasMaxLength(2)
                .HasColumnType("char")
                .IsRequired();
-            Property(c => c.Endereco.Pais)
+            Property(c => c.Pais)
                .HasMaxLength(50)
                .HasColumnType("varchar")
                .IsRequired();

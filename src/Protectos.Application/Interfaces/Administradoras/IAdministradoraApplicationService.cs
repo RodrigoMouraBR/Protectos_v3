@@ -5,6 +5,9 @@ namespace Protectos.Application.Interfaces.Administradoras
 {
     public interface IAdministradoraApplicationService : IDisposable
     {
+
+        AdministradoraCadastroViewModel AdministradoraCadastroAdicionar(AdministradoraCadastroViewModel administradoraCadastroViewModel);
+
         //Administrador//
         AdministradoraViewModel AdministradoraObterPorId(Guid id);
         AdministradoraViewModel AdministradoraObterPorCnpj(string cnpj);

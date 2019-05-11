@@ -1,4 +1,6 @@
-﻿namespace Protectos.Application.ViewModels.Administradoras
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Protectos.Application.ViewModels.Administradoras
 {
     public class AdministradoraCadastroViewModel
     {
@@ -6,5 +8,8 @@
         public AdministradoraEnderecoViewModel Endereco { get; set; }
         public AdministradoraEmailViewModel Email { get; set; }
         public AdministradoraTelefoneViewModel Telefones { get; set; }
+
+        [ScaffoldColumn(false)]
+        public FluentValidation.Results.ValidationResult ValidationResult { get; set; }
     }
 }
