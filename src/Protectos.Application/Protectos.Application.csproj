@@ -106,7 +106,7 @@
       <Name>Protectos.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Protectos.Infra.Data\Protectos.Infra.Data.csproj">
-      <Project>{955272FD-2B5A-4E65-8594-59C3D3B9AB7C}</Project>
+      <Project>{955272fd-2b5a-4e65-8594-59c3d3b9ab7c}</Project>
       <Name>Protectos.Infra.Data</Name>
     </ProjectReference>
   </ItemGroup>

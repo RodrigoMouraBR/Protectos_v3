@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Infra.Data.dll.config
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Infra.Data.dll
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Infra.Data.pdb
@@ -19,6 +20,11 @@ C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.Dat
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.Data\obj\Debug\Protectos.Infra.Data.pdb
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.Data\obj\Debug\Protectos.Infra.Data.Migrations.inicial.resources
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.Data\obj\Debug\Protectos.Infra.Data.csproj.GenerateResource.cache
+=======
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\obj\Debug\Protectos.Infra.Data.csprojAssemblyReference.cache
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\obj\Debug\Protectos.Infra.Data.dll
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\obj\Debug\Protectos.Infra.Data.pdb
+>>>>>>> desenv
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Infra.Data.dll.config
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Infra.Data.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Infra.Data.pdb
@@ -36,5 +42,9 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\D
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\obj\Debug\Protectos.Infra.Data.csprojAssemblyReference.cache
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\obj\Debug\Protectos.Infra.Data.csproj.CoreCompileInputs.cache
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\obj\Debug\Protectos.Infra.Data.csproj.CopyComplete
+<<<<<<< HEAD
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\obj\Debug\Protectos.Infra.Data.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\obj\Debug\Protectos.Infra.Data.pdb
+=======
+C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Infra.Data\obj\Debug\Protectos.Infra.Data.csprojResolveAssemblyReference.cache
+>>>>>>> desenv
