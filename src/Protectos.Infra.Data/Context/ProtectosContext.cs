@@ -109,6 +109,5 @@ namespace Protectos.Infra.Data.Context
         public DbSet<Fatura> Fatura { get; set; }
         public DbSet<FaturaCarencia> FaturaCarencia { get; set; }
 
-        //public DbSet<Plano> Plano { get; set; }
     }
 }

@@ -10,10 +10,7 @@ namespace Protectos.Application.ViewModels.Administradoras
     {
         public AdministradoraViewModel()
         {
-            Id = Guid.NewGuid();
-            Enderecos = new List<AdministradoraEnderecoViewModel>();
-            Telefones = new List<AdministradoraTelefoneViewModel>();
-            Emails = new List<AdministradoraEmailViewModel>();
+            Id = Guid.NewGuid();            
         }     
         [Key]
         public Guid Id { get;  set; }

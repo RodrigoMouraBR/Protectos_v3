@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\Paged.cs" />
     <Compile Include="Entities\Administradoras\Administradora.cs" />
     <Compile Include="Entities\Administradoras\AdministradoraEmail.cs" />
     <Compile Include="Entities\Administradoras\AdministradoraEndereco.cs" />
@@ -130,7 +131,6 @@
     <Compile Include="ValuesObjects\Endereco.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTO\" />
     <Folder Include="Entities\Cobrancas\" />
     <Folder Include="Entities\Propostas\" />
   </ItemGroup>

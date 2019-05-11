@@ -1,6 +1,6 @@
-[assembly: WebActivator.PostApplicationStartMethod(typeof(Protectos.Web.App_Start.SimpleInjectorInitializer), "Initialize")]
+[assembly: WebActivator.PostApplicationStartMethod(typeof(ProtectosScafold.App_Start.SimpleInjectorInitializer), "Initialize")]
 
-namespace Protectos.Web.App_Start
+namespace ProtectosScafold.App_Start
 {
     using System.Reflection;
     using System.Web.Mvc;

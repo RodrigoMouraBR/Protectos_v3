@@ -11,8 +11,7 @@ namespace Protectos.Application.ViewModels.Administradoras
     {
         public AdministradoraEnderecoViewModel()
         {
-            Id = Guid.NewGuid();
-            Ativo = true;
+            Id = Guid.NewGuid();            
         }
         [Key]
         public Guid Id { get; set; }

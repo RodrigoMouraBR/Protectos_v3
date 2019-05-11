@@ -1,8 +1,4 @@
 ﻿using Protectos.Application.AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -19,5 +15,8 @@ namespace ProtectosScafold
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutoMapperConfig.RegisterMappings();
         }
+
+       
+
     }
 }

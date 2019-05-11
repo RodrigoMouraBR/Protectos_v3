@@ -22,7 +22,7 @@ namespace Protectos.Infra.Data.Repositories.Administradoras
         }
         public Administradora AdministradoraObterPorCnpj(string cnpj)
         {
-            return Search(c => c.Empresa.Cnpj.Numero == cnpj).FirstOrDefault();
+            return Search(c => c.Cnpj.Numero == cnpj).FirstOrDefault();
         }
     }
 }

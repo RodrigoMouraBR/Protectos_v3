@@ -68,6 +68,7 @@
     <Compile Include="Interfaces\Fatura\IFaturaApplicationService.cs" />
     <Compile Include="Interfaces\Operadoras\IOperadoraApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Administradoras\AdministradoraCadastroViewModel.cs" />
     <Compile Include="ViewModels\Administradoras\AdministradoraEmailViewModel.cs" />
     <Compile Include="ViewModels\Administradoras\AdministradoraEnderecoViewModel.cs" />
     <Compile Include="ViewModels\Administradoras\AdministradoraTelefoneViewModel.cs" />
