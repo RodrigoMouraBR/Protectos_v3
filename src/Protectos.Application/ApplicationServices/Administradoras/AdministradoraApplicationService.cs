@@ -7,6 +7,9 @@ using Protectos.Domain.Entities.Administradoras.Interfaces.Services;
 using Protectos.Infra.Data.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Web;
+
 namespace Protectos.Application.ApplicationServices.Administradoras
 {
     public class AdministradoraApplicationService : ApplicationService, IAdministradoraApplicationService
@@ -169,17 +172,35 @@ namespace Protectos.Application.ApplicationServices.Administradoras
             //var telefone = Mapper.Map<AdministradoraTelefone>(administradoraCadastroViewModel);
             //var email = Mapper.Map<AdministradoraEmail>(administradoraCadastroViewModel);
             administradora.Enderecos.Add(endereco);
+            var foto = administradoraCadastroViewModel.Foto;
             //administradora.Telefones.Add(telefone);
             //administradora.Emails.Add(email);
             BeginTransaction();
             var administradoraReturn = _administradoraService.AdministradoraAdicionar(administradora);
             administradoraCadastroViewModel = Mapper.Map<AdministradoraCadastroViewModel>(administradoraReturn);
+
             if (!administradoraReturn.ValidationResult.IsValid)
             {
                 return administradoraCadastroViewModel;
             }
+
+            if (!SalvarImagemCliente(foto, administradora.Id))
+            {
+                // Tomada de decisão caso a imagem não seja gravada.              
+            }
+
             Commit();
             return administradoraCadastroViewModel;
+        }
+
+        private static bool SalvarImagemCliente(HttpPostedFileBase img, Guid id)
+        {
+            if (img == null || img.ContentLength <= 0) return false;
+
+            const string directory = @"C:\Users\rodri\Pictures\Spartacus\";
+            var fileName = id + Path.GetExtension(img.FileName);
+            img.SaveAs(Path.Combine(directory, fileName));
+            return File.Exists(Path.Combine(directory, fileName));
         }
     }
 }

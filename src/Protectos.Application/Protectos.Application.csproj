@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -104,6 +105,10 @@
     <ProjectReference Include="..\Protectos.Domain\Protectos.Domain.csproj">
       <Project>{A4D67B2C-9F59-4D2F-A109-F82C4B338736}</Project>
       <Name>Protectos.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Protectos.Infra.CrossCutting.MvcFilters\Protectos.Infra.CrossCutting.MvcFilters.csproj">
+      <Project>{FF56073C-4223-4EDC-85AD-680664BC446E}</Project>
+      <Name>Protectos.Infra.CrossCutting.MvcFilters</Name>
     </ProjectReference>
     <ProjectReference Include="..\Protectos.Infra.Data\Protectos.Infra.Data.csproj">
       <Project>{955272fd-2b5a-4e65-8594-59c3d3b9ab7c}</Project>

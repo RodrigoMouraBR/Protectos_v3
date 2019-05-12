@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -183,6 +184,22 @@ namespace ProtectosScafold.Controllers
             _administradoraApplicationService.DeleteAdministradoraEndereco(id);
             string url = Url.Action("ListarEnderecos", "Clientes", new { id = clienteId });
             return Json(new { success = true, url = url });
+        }
+
+        public ActionResult ObterImagemCliente(Guid id)
+        {
+            var root = @"C:\Users\rodri\Pictures\Spartacus\";
+            var foto = Directory.GetFiles(root, id + "*").FirstOrDefault();
+            if (foto != null && !foto.StartsWith(root))
+            {
+                // Validando qualquer acesso indevido além da pasta permitida
+                throw new HttpException(403, "Acesso Negado");
+            }
+            if (foto == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            return File(foto, "image/jpeg");
         }
     }
 }

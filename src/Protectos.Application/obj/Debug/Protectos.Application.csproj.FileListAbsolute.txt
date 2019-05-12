@@ -4,11 +4,13 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\FluentValidation.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Domain.Core.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Domain.dll
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Infra.CrossCutting.MvcFilters.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Infra.Data.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\EntityFramework.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Domain.Core.pdb
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Domain.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Infra.CrossCutting.MvcFilters.pdb
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Infra.Data.pdb
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\Protectos.Infra.Data.dll.config
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\bin\Debug\AutoMapper.pdb
