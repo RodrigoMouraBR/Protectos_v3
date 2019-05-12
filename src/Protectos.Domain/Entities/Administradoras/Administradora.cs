@@ -1,6 +1,5 @@
 using FluentValidation;
 using Protectos.Domain.Core.Models;
-using Protectos.Domain.ValuesObjects;
 using System;
 using System.Collections.Generic;
 namespace Protectos.Domain.Entities.Administradoras
@@ -8,8 +7,7 @@ namespace Protectos.Domain.Entities.Administradoras
     public class Administradora : Entity<Administradora>
     {
         public Administradora()
-        {
-           
+        {           
             Enderecos = new List<AdministradoraEndereco>();
             Telefones = new List<AdministradoraTelefone>();
             Emails = new List<AdministradoraEmail>();

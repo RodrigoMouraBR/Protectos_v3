@@ -14,21 +14,15 @@ namespace Protectos.Application.ViewModels.Administradoras
         }     
         [Key]
         public Guid Id { get;  set; }
-        [Required(ErrorMessage = "Preencha o campo Nome")]
-        [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+       
         public string RazaoSocial { get;  set; }
-        [Required(ErrorMessage = "Preencha o campo Nome")]
-        [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+       
         public string NomeFantasia { get;  set; }
-        [Required(ErrorMessage = "Preencha o campo CPF")]
-        [MaxLength(14, ErrorMessage = "Máximo {0} caracteres")]
-        [DisplayName("CNPJ")]
+      
         public string Cnpj { get;  set; }        
-        [DisplayName("Inscricao Estadual")]
-        public string InscricaoEstadual { get;  set; }        
-        [DisplayName("Inscricao Estadual")]
+       
+        public string InscricaoEstadual { get;  set; }      
+       
         public string InscricaoMunicipal { get;  set; }
         public string Site { get; set; }
         [ScaffoldColumn(false)]

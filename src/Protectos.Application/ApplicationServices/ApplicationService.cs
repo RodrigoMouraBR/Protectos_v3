@@ -8,6 +8,10 @@ namespace Protectos.Application.ApplicationServices
         {
             _uow = uow;
         }
+        public void BeginTransaction()
+        {
+            _uow.BeginTransaction();
+        }
         protected void Commit()
         {
             _uow.Commit();

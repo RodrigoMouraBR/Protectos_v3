@@ -38,12 +38,21 @@ namespace Protectos.Application.AutoMapper
             CreateMap<AdministradoraEmail, AdministradoraEmailViewModel>();
             CreateMap<AdministradoraTelefone, AdministradoraTelefoneViewModel>();
 
+            CreateMap<Administradora, AdministradoraCadastroViewModel>();
+            CreateMap<AdministradoraEndereco, AdministradoraCadastroViewModel>();
+            CreateMap<AdministradoraEmail, AdministradoraCadastroViewModel>();
+            CreateMap<AdministradoraTelefone, AdministradoraCadastroViewModel>();
+
+
             CreateMap<Entidade, EntidadeViewModel>();
             CreateMap<EntidadeEndereco, EntidadeEnderecoViewModel>();
             CreateMap<EntidadeEmail, EntidadeEmailViewModel>();
             CreateMap<EntidadeTelefone, EntidadeTelefoneViewModel>();
 
             CreateMap<Fatura, FaturaViewModel>();
+
+            
+
         }
     }
 }
