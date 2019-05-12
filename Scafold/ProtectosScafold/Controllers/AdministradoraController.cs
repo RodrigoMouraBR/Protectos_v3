@@ -45,7 +45,6 @@ namespace ProtectosScafold.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(AdministradoraCadastroViewModel administradoraCadastroViewModel)
         {
-
             if (ModelState.IsValid)
             {
                var administradora = _administradoraApplicationService.AdministradoraCadastroAdicionar(administradoraCadastroViewModel);

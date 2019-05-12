@@ -83,13 +83,13 @@
                     @Html.DisplayFor(modelItem => item.Site)
                 </td>
                 <td>
-                    <a href="@Url.Action("Edit", "Edit", new {id = item.Id})" class="btn btn-warning">
+                    <a href="@Url.Action("Edit", "Administradora", new {id = item.Id})" class="btn btn-warning btn-xs">
                         <span title="Editar" class="glyphicon glyphicon-pencil"></span>
                     </a>
-                    <a href="@Url.Action("Details", "Details", new {id = item.Id})" class="btn btn-primary">
+                    <a href="@Url.Action("Details", "Administradora", new {id = item.Id})" class="btn btn-primary btn-xs">
                         <span title="Detalhes" class="glyphicon glyphicon-search"></span>
                     </a>
-                    <a href="@Url.Action("Delete", "Delete", new {id = item.Id})" class="btn btn-danger">
+                    <a href="@Url.Action("Delete", "Administradora", new {id = item.Id})" class="btn btn-danger btn-xs">
                         <span title="Excluir" class="glyphicon glyphicon-trash"></span>
                     </a>
 
