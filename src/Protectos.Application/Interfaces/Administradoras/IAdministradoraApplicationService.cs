@@ -14,7 +14,7 @@ namespace Protectos.Application.Interfaces.Administradoras
         IEnumerable<AdministradoraViewModel> AdministradoraObterTodos();
         IEnumerable<AdministradoraViewModel> AdministradoraObterAtivo();
         IEnumerable<AdministradoraViewModel> AdministradoraObterInativo();
-        AdministradoraViewModel AdministradoraAdicionar(AdministradoraViewModel administradoraViewModel);
+        //AdministradoraViewModel AdministradoraAdicionar(AdministradoraViewModel administradoraViewModel);
         AdministradoraViewModel AdministradoraAtualizar(AdministradoraViewModel administradoraViewModel);
         void DeleteAdministradora(Guid id);
 

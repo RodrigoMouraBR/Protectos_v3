@@ -1,6 +1,4 @@
 ﻿using Protectos.Application.AutoMapper;
-using Protectos.Infra.Data.Context;
-using System.Data.Entity;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -16,7 +14,7 @@ namespace ProtectosScafold
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutoMapperConfig.RegisterMappings();
-            Database.SetInitializer<ProtectosContext>(new DropCreateDatabaseIfModelChanges<ProtectosContext>());
+            ///////////Database.SetInitializer<ProtectosContext>(new DropCreateDatabaseIfModelChanges<ProtectosContext>());
         }
 
        

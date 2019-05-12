@@ -14,12 +14,12 @@ namespace Protectos.Application.ApplicationServices.Administradoras
         private readonly IAdministradoraRepository _administradoraRepository;
         private readonly IAdministradoraEmailRepository _administradoraEmailRepository;
         private readonly IAdministradoraTelefoneRepository _administradoraTelefoneRepository;
-        private readonly IAdministradoraEnderecoRepository _administradoraEndrecoRepository;        
+        private readonly IAdministradoraEnderecoRepository _administradoraEndrecoRepository;
         private readonly IAdministradoraService _administradoraService;
-        public AdministradoraApplicationService(IAdministradoraRepository administradoraRepository, 
-                                                IAdministradoraEmailRepository administradoraEmailRepository, 
-                                                IAdministradoraTelefoneRepository administradoraTelefoneRepository, 
-                                                IAdministradoraEnderecoRepository administradoraEndrecoRepository, 
+        public AdministradoraApplicationService(IAdministradoraRepository administradoraRepository,
+                                                IAdministradoraEmailRepository administradoraEmailRepository,
+                                                IAdministradoraTelefoneRepository administradoraTelefoneRepository,
+                                                IAdministradoraEnderecoRepository administradoraEndrecoRepository,
                                                 IAdministradoraService administradoraService,
                                                 IUnitOfWork uow) : base(uow)
         {
@@ -28,16 +28,16 @@ namespace Protectos.Application.ApplicationServices.Administradoras
             _administradoraTelefoneRepository = administradoraTelefoneRepository;
             _administradoraEndrecoRepository = administradoraEndrecoRepository;
             _administradoraService = administradoraService;
-        }       
+        }
 
         //AdministradoraServices
-        public AdministradoraViewModel AdministradoraAdicionar(AdministradoraViewModel administradoraViewModel)
-        {
-            var administradora = Mapper.Map<Administradora>(administradoraViewModel);
-            _administradoraService.AdministradoraAdicionar(administradora);
-            Commit();
-            return administradoraViewModel;
-        }
+        //public AdministradoraViewModel AdministradoraAdicionar(AdministradoraViewModel administradoraViewModel)
+        //{
+        //    var administradora = Mapper.Map<Administradora>(administradoraViewModel);
+        //    _administradoraService.AdministradoraAdicionar(administradora);
+        //    Commit();
+        //    return administradoraViewModel;
+        //}
         public AdministradoraViewModel AdministradoraAtualizar(AdministradoraViewModel administradoraViewModel)
         {
             var administradora = Mapper.Map<Administradora>(administradoraViewModel);
@@ -62,7 +62,7 @@ namespace Protectos.Application.ApplicationServices.Administradoras
             _administradoraService.AdministradoraEmailAtualizar(administradoraEmail);
             Commit();
             return administradoraEmailViewModel;
-        }      
+        }
         public void DeleteAdministradoraEmail(Guid id)
         {
             _administradoraService.DeleteAdministradoraEmail(id);
@@ -163,21 +163,21 @@ namespace Protectos.Application.ApplicationServices.Administradoras
 
         public AdministradoraCadastroViewModel AdministradoraCadastroAdicionar(AdministradoraCadastroViewModel administradoraCadastroViewModel)
         {
-            var administradora = Mapper.Map<Administradora>(administradoraCadastroViewModel);
-            var endereco = Mapper.Map<AdministradoraEndereco>(administradoraCadastroViewModel);
-            var telefone = Mapper.Map<AdministradoraTelefone>(administradoraCadastroViewModel);
-            var email = Mapper.Map<AdministradoraEmail>(administradoraCadastroViewModel);
 
+            var administradora = Mapper.Map<Administradora>(administradoraCadastroViewModel.Administradora);
+            var endereco = Mapper.Map<AdministradoraEndereco>(administradoraCadastroViewModel.Endereco);
+            //var telefone = Mapper.Map<AdministradoraTelefone>(administradoraCadastroViewModel);
+            //var email = Mapper.Map<AdministradoraEmail>(administradoraCadastroViewModel);
             administradora.Enderecos.Add(endereco);
-            administradora.Telefones.Add(telefone);
-            administradora.Emails.Add(email);
-
+            //administradora.Telefones.Add(telefone);
+            //administradora.Emails.Add(email);
+            BeginTransaction();
             var administradoraReturn = _administradoraService.AdministradoraAdicionar(administradora);
             administradoraCadastroViewModel = Mapper.Map<AdministradoraCadastroViewModel>(administradoraReturn);
             if (!administradoraReturn.ValidationResult.IsValid)
-            {               
+            {
                 return administradoraCadastroViewModel;
-            } 
+            }
             Commit();
             return administradoraCadastroViewModel;
         }

@@ -14,41 +14,15 @@ namespace Protectos.Application.ViewModels.Administradoras
             Id = Guid.NewGuid();            
         }
         [Key]
-        public Guid Id { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Logradouro")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Logradouro { get; set; }//
-        [Required(ErrorMessage = "Preencha o campo Numero")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Numero { get; set; }//
-        [Required(ErrorMessage = "Preencha o campo Bairro")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Bairro { get; set; }//
-        [Required(ErrorMessage = "Preencha o campo CEP")]
-        [MaxLength(8, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(8, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Cep { get; set; }//
-        [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Complemento { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Cidade")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Cidade { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Estado")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Estado { get; set; }
-        [Required(ErrorMessage = "Preencha o campo UF")]
-        [MaxLength(2, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string UF { get; set; }
-        [Required(ErrorMessage = "Preencha o campo País")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        public Guid Id { get; set; }        
+        public string Logradouro { get; set; }//        
+        public string Numero { get; set; }//      
+        public string Bairro { get; set; }//      
+        public string Cep { get; set; }//       
+        public string Complemento { get; set; }       
+        public string Cidade { get; set; }     
+        public string Estado { get; set; }     
+        public string UF { get; set; }       
         public string Pais { get; set; }
         [ScaffoldColumn(false)]
         public Guid AdministradoraId { get; set; }

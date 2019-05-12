@@ -34,10 +34,12 @@ namespace Protectos.Infra.Data.Mappings.Administradoras
                .HasMaxLength(50)
                .HasColumnType("varchar")
                .IsRequired();
-            Property(c => c.Logradouro)
+
+            Property(c => c.UF)
                .HasMaxLength(2)
                .HasColumnType("char")
                .IsRequired();
+
             Property(c => c.Pais)
                .HasMaxLength(50)
                .HasColumnType("varchar")
