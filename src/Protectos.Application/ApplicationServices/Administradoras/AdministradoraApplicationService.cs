@@ -106,7 +106,6 @@ namespace Protectos.Application.ApplicationServices.Administradoras
         {
             _administradoraService.DeleteAdministradoraTelefone(id);
         }
-
         //AdministradoraRepositories
         public IEnumerable<AdministradoraEnderecoViewModel> AdministradoraEnderecoObterTodos()
         {
@@ -148,25 +147,20 @@ namespace Protectos.Application.ApplicationServices.Administradoras
             _administradoraEndrecoRepository.Dispose();
             _administradoraService.Dispose();
         }
-
         public AdministradoraEnderecoViewModel AdministradoraEnderecoObterPorId(Guid id)
         {
             return Mapper.Map<AdministradoraEnderecoViewModel>(_administradoraEndrecoRepository.GetbyId(id));
         }
-
         public AdministradoraEmailViewModel AdministradoraEmailObterPorId(Guid id)
         {
             return Mapper.Map<AdministradoraEmailViewModel>(_administradoraEmailRepository.GetbyId(id));
         }
-
         public AdministradoraTelefoneViewModel AdministradoraTelefoneObterPorId(Guid id)
         {
             return Mapper.Map<AdministradoraTelefoneViewModel>(_administradoraTelefoneRepository.GetbyId(id));
         }
-
         public AdministradoraCadastroViewModel AdministradoraCadastroAdicionar(AdministradoraCadastroViewModel administradoraCadastroViewModel)
         {
-
             var administradora = Mapper.Map<Administradora>(administradoraCadastroViewModel.Administradora);
             var endereco = Mapper.Map<AdministradoraEndereco>(administradoraCadastroViewModel.Endereco);
             //var telefone = Mapper.Map<AdministradoraTelefone>(administradoraCadastroViewModel);
@@ -178,25 +172,20 @@ namespace Protectos.Application.ApplicationServices.Administradoras
             BeginTransaction();
             var administradoraReturn = _administradoraService.AdministradoraAdicionar(administradora);
             administradoraCadastroViewModel = Mapper.Map<AdministradoraCadastroViewModel>(administradoraReturn);
-
             if (!administradoraReturn.ValidationResult.IsValid)
             {
                 return administradoraCadastroViewModel;
             }
-
             if (!SalvarImagemCliente(foto, administradora.Id))
             {
                 // Tomada de decisão caso a imagem não seja gravada.              
             }
-
             Commit();
             return administradoraCadastroViewModel;
         }
-
         private static bool SalvarImagemCliente(HttpPostedFileBase img, Guid id)
         {
             if (img == null || img.ContentLength <= 0) return false;
-
             const string directory = @"C:\Users\rodri\Pictures\Spartacus\";
             var fileName = id + Path.GetExtension(img.FileName);
             img.SaveAs(Path.Combine(directory, fileName));
