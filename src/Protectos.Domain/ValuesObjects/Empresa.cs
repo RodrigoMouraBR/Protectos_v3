@@ -16,12 +16,12 @@ namespace Protectos.Domain.ValuesObjects
         //    Site = site;
         //    DataCadastro = dataCadastro;
         //}
-        public string RazaoSocial { get;  set; }
+        public string RazaoSocial { get;   set; }
         public string NomeFantasia { get;  set; }
-        public CNPJ Cnpj { get; private set; }
+        public CNPJ Cnpj { get; set; }
         public string InscricaoEstadual { get;  set; }
         public string InscricaoMunicipal { get;  set; }
         public string Site { get;  set; }
-        public DateTime DataCadastro { get; set; }
+        public DateTime DataCadastro { get;  set; }
     }
 }

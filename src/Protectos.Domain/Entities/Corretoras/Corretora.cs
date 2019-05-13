@@ -8,11 +8,12 @@ namespace Protectos.Domain.Entities.Corretoras
     public class Corretora : Entity<Corretora>
     {
         public Corretora(string razaoSocial,
-                               string nomeFantasia, string cnpj,
-                               string inscricaoEstadual,
-                               string inscricaoMunicipal,
-                               string site,
-                               DateTime dataCadastro)
+                              string nomeFantasia,
+                              string cnpj,
+                              string inscricaoEstadual,
+                              string inscricaoMunicipal,
+                              string site,
+                              DateTime dataCadastro)
         {
             RazaoSocial = razaoSocial;
             NomeFantasia = nomeFantasia;
@@ -21,6 +22,9 @@ namespace Protectos.Domain.Entities.Corretoras
             InscricaoMunicipal = inscricaoMunicipal;
             Site = site;
             DataCadastro = dataCadastro;
+            Enderecos = new List<CorretoraEndereco>();
+            Telefones = new List<CorretoraTelefone>();
+            Emails = new List<CorretoraEmail>();
         }
         protected Corretora()
         {

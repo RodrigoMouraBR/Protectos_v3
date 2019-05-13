@@ -9,20 +9,19 @@ namespace Protectos.Application.ViewModels.Corretoras
     {
         public CorretoraViewModel()
         {
-            Id = Guid.NewGuid();
-            Enderecos = new List<CorretoraEnderecoViewModel>();
-            Telefones = new List<CorretoraTelefoneViewModel>();
-            Emails = new List<CorretoraEmailViewModel>();
+            Id = Guid.NewGuid();           
         }
         [Key]
         public Guid Id { get; set; }
         [Required(ErrorMessage = "Preencha o campo Nome")]
         [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("Razão")]
         public string RazaoSocial { get; set; }
         [Required(ErrorMessage = "Preencha o campo Nome")]
         [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("Fantasia")]
         public string NomeFantasia { get; set; }
         [Required(ErrorMessage = "Preencha o campo CPF")]
         [MaxLength(14, ErrorMessage = "Máximo {0} caracteres")]
@@ -30,8 +29,9 @@ namespace Protectos.Application.ViewModels.Corretoras
         public string Cnpj { get; set; }
         [DisplayName("Inscricao Estadual")]
         public string InscricaoEstadual { get; set; }
-        [DisplayName("Inscricao Estadual")]
+        [DisplayName("Inscricao Municipal")]
         public string InscricaoMunicipal { get; set; }
+        [DisplayName("WebPager")]
         public string Site { get; set; }
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }

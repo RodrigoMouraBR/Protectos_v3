@@ -6,11 +6,20 @@ namespace Protectos.Domain.Entities.Administradoras
 {
     public class AdministradoraEmail : Entity<AdministradoraEmail>
     {
+        public AdministradoraEmail(string email, ETipoEmailEmpresa tipoEmail, Guid administradoraId)
+        {
+            Email = email;
+            TipoEmail = tipoEmail;
+            AdministradoraId = administradoraId;
+        }
+        protected AdministradoraEmail()
+        {
 
-        public string Email { get; set; }
-        public ETipoEmailEmpresa TipoEmail { get; set; }
-        public Guid AdministradoraId { get; set; }
-        public virtual Administradora Administradora { get; set; }
+        }
+        public string Email { get; private set; }
+        public ETipoEmailEmpresa TipoEmail { get; private set; }
+        public Guid AdministradoraId { get; private set; }
+        public virtual Administradora Administradora { get; private set; }
 
         public override bool IsValid()
         {

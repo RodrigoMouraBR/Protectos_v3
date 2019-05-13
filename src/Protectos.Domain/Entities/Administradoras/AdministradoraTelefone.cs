@@ -7,13 +7,22 @@ namespace Protectos.Domain.Entities.Administradoras
 {
     public class AdministradoraTelefone : Entity<AdministradoraTelefone>
     {
+        public AdministradoraTelefone(string prefixo, string numero, ETipoTelefoneEmpresa tipoTelefone, Guid administradoraId)
+        {
+            Prefixo = prefixo;
+            Numero = numero;
+            TipoTelefone = tipoTelefone;
+            AdministradoraId = administradoraId;
+        }
+        protected AdministradoraTelefone()
+        {
 
-
-        public string Prefixo { get; set; }
-        public string Numero { get; set; }
-        public ETipoTelefoneEmpresa TipoTelefone { get; set; }
-        public Guid AdministradoraId { get; set; }
-        public virtual Administradora Administradora { get; set; }
+        }
+        public string Prefixo { get; private set; }
+        public string Numero { get; private set; }
+        public ETipoTelefoneEmpresa TipoTelefone { get; private set; }
+        public Guid AdministradoraId { get; private set; }
+        public virtual Administradora Administradora { get; private set; }
 
         public override bool IsValid()
         {

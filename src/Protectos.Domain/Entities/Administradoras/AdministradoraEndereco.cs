@@ -6,17 +6,42 @@ namespace Protectos.Domain.Entities.Administradoras
 {
     public class AdministradoraEndereco : Entity<AdministradoraEndereco>
     {
-        public string Logradouro { get; set; }
-        public string Numero { get; set; }
-        public string Bairro { get; set; }
-        public string Cep { get; set; }
-        public string Complemento { get; set; }
-        public string Cidade { get; set; }
-        public string Estado { get; set; }
-        public string UF { get; set; }
-        public string Pais { get; set; }
-        public Guid AdministradoraId { get; set; }
-        public virtual Administradora Administradora { get; set; }
+        public AdministradoraEndereco(string logradouro, 
+                                        string numero, 
+                                        string bairro, 
+                                        string cep, 
+                                        string complemento, 
+                                        string cidade, 
+                                        string estado, 
+                                        string uF, 
+                                        string pais, 
+                                        Guid administradoraId)
+        {
+            Logradouro = logradouro;
+            Numero = numero;
+            Bairro = bairro;
+            Cep = cep;
+            Complemento = complemento;
+            Cidade = cidade;
+            Estado = estado;
+            UF = uF;
+            Pais = pais;
+            AdministradoraId = administradoraId;
+        }
+        protected AdministradoraEndereco()
+        {
+        }
+        public string Logradouro { get; private set; }
+        public string Numero { get; private set; }
+        public string Bairro { get; private set; }
+        public string Cep { get; private set; }
+        public string Complemento { get; private set; }
+        public string Cidade { get; private set; }
+        public string Estado { get; private set; }
+        public string UF { get; private set; }
+        public string Pais { get; private set; }
+        public Guid AdministradoraId { get; private set; }
+        public virtual Administradora Administradora { get; private set; }
         public override bool IsValid()
         {
             Validation();

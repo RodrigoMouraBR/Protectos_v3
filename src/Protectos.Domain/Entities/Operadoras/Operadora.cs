@@ -23,10 +23,12 @@ namespace Protectos.Domain.Entities.Operadoras
             InscricaoMunicipal = inscricaoMunicipal;
             Site = site;
             DataCadastro = dataCadastro;
+            Enderecos = new List<OperadoraEndereco>();
+            Telefones = new List<OperadoraTelefone>();
+            Emails = new List<OperadoraEmail>();
         }
         protected Operadora()
         {
-
         }
         public string RazaoSocial { get; private set; }
         public string NomeFantasia { get; private set; }
@@ -39,7 +41,7 @@ namespace Protectos.Domain.Entities.Operadoras
         public virtual ICollection<OperadoraTelefone> Telefones { get; private set; }
         public virtual ICollection<OperadoraEmail> Emails { get; private set; }
 
-        //
+        
         public virtual ICollection<Fatura> Faturas { get; private set; }
 
         public override bool IsValid()
