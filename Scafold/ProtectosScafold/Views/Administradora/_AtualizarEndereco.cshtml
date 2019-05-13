@@ -16,8 +16,8 @@
         <div class="form-horizontal">
 
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.ClienteId)
-            @Html.HiddenFor(model => model.EnderecoId)
+            @Html.HiddenFor(model => model.AdministradoraId)
+            @Html.HiddenFor(model => model.Id)
 
             @Html.Partial("_Endereco")
 

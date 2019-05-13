@@ -78,6 +78,7 @@ namespace ProtectosScafold.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.AdministradoraId = id;
             return View(administradoraViewModel);
         }
         [HttpPost]
@@ -107,8 +108,8 @@ namespace ProtectosScafold.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
-        {            
-            //_administradoraApplicationService.
+        {
+            _administradoraApplicationService.DeleteAdministradora(id);
             return RedirectToAction("Index");
         }
         protected override void Dispose(bool disposing)
@@ -123,12 +124,12 @@ namespace ProtectosScafold.Controllers
         //Endereco       
         public ActionResult ListarEnderecos(Guid id)
         {
-            ViewBag.ClienteId = id;
+            ViewBag.AdministradoraId = id;
             return PartialView("_EnderecosList", _administradoraApplicationService.AdministradoraObterPorId(id).Enderecos);
         }              
         public ActionResult AdicionarEndereco(Guid id)
         {
-            ViewBag.ClienteId = id;
+            ViewBag.AdministradoraId = id;
             return PartialView("_AdicionarEndereco");
         }              
         [HttpPost]
@@ -156,8 +157,8 @@ namespace ProtectosScafold.Controllers
             {
                 _administradoraApplicationService.AdministradoraEnderecoAtualizar(enderecoViewModel);
 
-                string url = Url.Action("ListarEnderecos", "Clientes", new { id = enderecoViewModel.AdministradoraId });
-                return Json(new { success = true, url = url });
+                string url = Url.Action("ListarEnderecos", "Administradora", new { id = enderecoViewModel.AdministradoraId });
+                return Json(new { success = true, url = url });               
             }
 
             return PartialView("_AtualizarEndereco", enderecoViewModel);
@@ -180,9 +181,9 @@ namespace ProtectosScafold.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeletarEnderecoConfirmed(Guid id)
         {
-            var clienteId = _administradoraApplicationService.AdministradoraEnderecoObterPorId(id).AdministradoraId;
+            var administradoraId = _administradoraApplicationService.AdministradoraEnderecoObterPorId(id).AdministradoraId;
             _administradoraApplicationService.DeleteAdministradoraEndereco(id);
-            string url = Url.Action("ListarEnderecos", "Clientes", new { id = clienteId });
+            string url = Url.Action("ListarEnderecos", "Administradora", new { id = administradoraId });
             return Json(new { success = true, url = url });
         }
 

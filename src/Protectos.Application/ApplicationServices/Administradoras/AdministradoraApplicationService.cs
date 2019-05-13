@@ -51,6 +51,7 @@ namespace Protectos.Application.ApplicationServices.Administradoras
         public void DeleteAdministradora(Guid id)
         {
             _administradoraService.DeleteAdministradora(id);
+            Commit();
         }
         public AdministradoraEmailViewModel AdministradoraEmailAdicionar(AdministradoraEmailViewModel administradoraEmailViewModel)
         {
@@ -69,6 +70,7 @@ namespace Protectos.Application.ApplicationServices.Administradoras
         public void DeleteAdministradoraEmail(Guid id)
         {
             _administradoraService.DeleteAdministradoraEmail(id);
+            Commit();
         }
         public AdministradoraEnderecoViewModel AdministradoraEnderecoAdicionar(AdministradoraEnderecoViewModel administradoraEnderecoViewModel)
         {
@@ -76,6 +78,7 @@ namespace Protectos.Application.ApplicationServices.Administradoras
             _administradoraService.AdministradoraEnderecoAdicionar(administradoraEndereco);
             Commit();
             return administradoraEnderecoViewModel;
+
         }
         public AdministradoraEnderecoViewModel AdministradoraEnderecoAtualizar(AdministradoraEnderecoViewModel administradoraEnderecoViewModel)
         {
@@ -87,6 +90,7 @@ namespace Protectos.Application.ApplicationServices.Administradoras
         public void DeleteAdministradoraEndereco(Guid id)
         {
             _administradoraService.DeleteAdministradoraEndereco(id);
+            Commit();
         }
         public AdministradoraTelefoneViewModel AdministradoraTelefoneAdicionar(AdministradoraTelefoneViewModel administradoraTelefoneViewModel)
         {
@@ -105,6 +109,7 @@ namespace Protectos.Application.ApplicationServices.Administradoras
         public void DeleteAdministradoraTelefone(Guid id)
         {
             _administradoraService.DeleteAdministradoraTelefone(id);
+            Commit();
         }
         //AdministradoraRepositories
         public IEnumerable<AdministradoraEnderecoViewModel> AdministradoraEnderecoObterTodos()
