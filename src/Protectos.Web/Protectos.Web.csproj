@@ -7415,6 +7415,7 @@
     <Content Include="Views\Administradora\Incluir.cshtml" />
     <Content Include="Views\Beneficiario\Listar.cshtml" />
     <Content Include="Views\Beneficiario\Index.cshtml" />
+    <Content Include="tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Content\AdminLTE\bower_components\moment\moment.d.ts" />
