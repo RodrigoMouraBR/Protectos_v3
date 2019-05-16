@@ -44,6 +44,7 @@ namespace Protectos.Domain.Entities.Faturas
             Status = status;
             EntidadeId = entidadeId;
             OperadoraId = operadoraId;
+            FaturaCarencia = new List<FaturaCarencia>();
         }
         protected Fatura()
         {

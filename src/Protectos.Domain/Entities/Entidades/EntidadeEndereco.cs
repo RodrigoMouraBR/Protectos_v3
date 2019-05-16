@@ -6,17 +6,31 @@ namespace Protectos.Domain.Entities.Entidades
 {
     public class EntidadeEndereco : Entity<EntidadeEndereco>
     {
-        public EntidadeEndereco(Endereco endereco, Guid entidadeId, Entidade entidade)
+        public EntidadeEndereco(string logradouro, string numero, string bairro, string cep, string complemento, string cidade, string estado, string uF, string pais, Guid entidadeId)
         {
-            Endereco = endereco;
+            Logradouro = logradouro;
+            Numero = numero;
+            Bairro = bairro;
+            Cep = cep;
+            Complemento = complemento;
+            Cidade = cidade;
+            Estado = estado;
+            UF = uF;
+            Pais = pais;
             EntidadeId = entidadeId;
-            Entidade = entidade;
         }
         protected EntidadeEndereco()
         {
-
         }
-        public Endereco Endereco { get; private set; }
+        public string Logradouro { get;private  set; }
+        public string Numero { get; private set; }
+        public string Bairro { get; private set; }
+        public string Cep { get; private set; }
+        public string Complemento { get; private set; }
+        public string Cidade { get; private set; }
+        public string Estado { get; private set; }
+        public string UF { get; private set; }
+        public string Pais { get; private set; }
         public Guid EntidadeId { get; private set; }
         public virtual Entidade Entidade { get; private set; }
         public override bool IsValid()
@@ -31,28 +45,28 @@ namespace Protectos.Domain.Entities.Entidades
         }
         private void ValidationProperties()
         {
-            RuleFor(c => c.Endereco.Logradouro)
+            RuleFor(c => c.Logradouro)
                 .NotEmpty().WithMessage("O endereço precisa ser fornecido")
                 .Length(2, 150).WithMessage("O endereço precisa ter entre 2 e 150 caracteres");
-            RuleFor(c => c.Endereco.Numero)
+            RuleFor(c => c.Numero)
                 .NotEmpty().WithMessage("O número precisa ser fornecido")
                 .Length(1, 10).WithMessage("O número precisa ter entre 2 e 2 caracteres");
-            RuleFor(c => c.Endereco.Bairro)
+            RuleFor(c => c.Bairro)
                 .NotEmpty().WithMessage("O bairro precisa ser fornecido")
                 .Length(3, 50).WithMessage("O bairro precisa ter entre 2 e 150 caracteres");
-            RuleFor(c => c.Endereco.Cep)
+            RuleFor(c => c.Cep)
                 .NotEmpty().WithMessage("O cep precisa ser fornecido")
                 .Length(8).WithMessage("O cep precisa ter 8 caracteres");
-            RuleFor(c => c.Endereco.Cidade)
+            RuleFor(c => c.Cidade)
                 .NotEmpty().WithMessage("A cidade precisa ser fornecido")
                 .Length(3, 50).WithMessage("A cidade precisa ter entre 3 e 50 caracteres");
-            RuleFor(c => c.Endereco.Estado)
+            RuleFor(c => c.Estado)
                 .NotEmpty().WithMessage("O estado precisa ser fornecido")
                 .Length(3, 50).WithMessage("O estado precisa ter entre 3 e 50 caracteres");
-            RuleFor(c => c.Endereco.UF)
+            RuleFor(c => c.UF)
                 .NotEmpty().WithMessage("O UF precisa ser fornecido")
                 .Length(2).WithMessage("O UF precisa ter 2 caracteres");
-            RuleFor(c => c.Endereco.Pais)
+            RuleFor(c => c.Pais)
                 .NotEmpty().WithMessage("O pais precisa ser fornecido")
                 .Length(3, 50).WithMessage("O pais precisa ter entre 2 e 50 caracteres");
         }

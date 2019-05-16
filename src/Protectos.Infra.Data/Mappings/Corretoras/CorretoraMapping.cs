@@ -8,6 +8,7 @@ namespace Protectos.Infra.Data.Mappings.Corretoras
     {
         public CorretoraMapping()
         {
+
             HasKey(c => c.Id);
             Property(c => c.RazaoSocial)
                 .HasColumnType("varchar")

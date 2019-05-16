@@ -7,10 +7,20 @@ namespace Protectos.Domain.Entities.Entidades
 {
     public class EntidadeTelefone : Entity<EntidadeTelefone>
     {
+        public EntidadeTelefone(string prefixo, string numero, ETipoTelefoneEmpresa tipoTelefone, Guid entidadeId)
+        {
+            Prefixo = prefixo;
+            Numero = numero;
+            TipoTelefone = tipoTelefone;
+            EntidadeId = entidadeId;
+        }
+        protected EntidadeTelefone()
+        {
+        }
         public string Prefixo { get; private set; }
-        public string Numero { get; private set; }
-        public ETipoTelefoneEmpresa TipoTelefone { get; private set; }
-        public Guid EntidadeId { get; private set; }
+        public string Numero { get;private  set; }
+        public ETipoTelefoneEmpresa TipoTelefone { get;private  set; }
+        public Guid EntidadeId { get;private  set; }
         public virtual Entidade Entidade { get; private set; }
         public override bool IsValid()
         {

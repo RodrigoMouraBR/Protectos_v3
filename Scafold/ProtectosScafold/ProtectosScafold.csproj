@@ -182,6 +182,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministradoraController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\EntidadeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -265,6 +266,11 @@
     <Content Include="Views\Administradora\_AtualizarEndereco.cshtml" />
     <Content Include="Views\Administradora\_AdicionarEndereco.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Entidade\Create.cshtml" />
+    <Content Include="Views\Entidade\Delete.cshtml" />
+    <Content Include="Views\Entidade\Details.cshtml" />
+    <Content Include="Views\Entidade\Edit.cshtml" />
+    <Content Include="Views\Entidade\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

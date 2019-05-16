@@ -8,11 +8,10 @@ namespace Protectos.Domain.Entities.Beneficiarios
 {
     public class Beneficiario : Entity<Beneficiario>
     {
-        public Beneficiario(string nome, string sobrenome, DateTime dataNascimento,
-                             ESexo sexo, CPF cpf, string rG,
-                             string orgaoEmissor,
-                             EEstadoCivil estadoCivil                            
-                             )
+        protected Beneficiario()
+        {
+        }
+        public Beneficiario(string nome, string sobrenome, DateTime dataNascimento, ESexo sexo, CPF cpf, string rG, string orgaoEmissor, EEstadoCivil estadoCivil)
         {
             Nome = nome;
             Sobrenome = sobrenome;
@@ -25,9 +24,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
             Enderecos = new List<BeneficiarioEndereco>();
             Telefones = new List<BeneficiarioTelefone>();
             Emails = new List<BeneficiarioEmail>();
-        }
-        protected Beneficiario()
-        {
+            Dependentes = new List<BeneficiarioDependente>();
         }
         public string Nome { get; private set; }
         public string Sobrenome { get; private set; }
@@ -36,7 +33,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
         public CPF Cpf { get; private set; }
         public string RG { get; private set; }
         public string OrgaoEmissor { get; private set; }
-        public EEstadoCivil EstadoCivil { get; private set; }        
+        public EEstadoCivil EstadoCivil { get; private set; }
         public virtual ICollection<BeneficiarioEndereco> Enderecos { get; private set; }
         public virtual ICollection<BeneficiarioTelefone> Telefones { get; private set; }
         public virtual ICollection<BeneficiarioEmail> Emails { get; private set; }

@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using Protectos.Domain.Core.Models;
 using Protectos.Domain.Entities.Faturas;
-using Protectos.Domain.ValuesObjects;
 using System;
 using System.Collections.Generic;
 
@@ -9,12 +8,7 @@ namespace Protectos.Domain.Entities.Entidades
 {
     public class Entidade : Entity<Entidade>
     {
-        public Entidade(string razaoSocial,
-                               string nomeFantasia, string cnpj,
-                               string inscricaoEstadual,
-                               string inscricaoMunicipal,
-                               string site,
-                               DateTime dataCadastro)
+        public Entidade(string razaoSocial, string nomeFantasia, string cnpj, string inscricaoEstadual, string inscricaoMunicipal, string site, DateTime dataCadastro)
         {
             RazaoSocial = razaoSocial;
             NomeFantasia = nomeFantasia;
@@ -23,6 +17,9 @@ namespace Protectos.Domain.Entities.Entidades
             InscricaoMunicipal = inscricaoMunicipal;
             Site = site;
             DataCadastro = dataCadastro;
+            Enderecos = new List<EntidadeEndereco>();
+            Telefones = new List<EntidadeTelefone>();
+            Emails = new List<EntidadeEmail>();
         }
         protected Entidade()
         {
@@ -38,16 +35,15 @@ namespace Protectos.Domain.Entities.Entidades
         public virtual ICollection<EntidadeEndereco> Enderecos { get; private set; }
         public virtual ICollection<EntidadeEmail> Emails { get; private set; }
         public virtual ICollection<EntidadeTelefone> Telefones { get; private set; }
-
-        //
-        public virtual ICollection<Fatura> Faturas { get; private set; }
+  
+        public virtual ICollection<Fatura> Faturas { get; set; }
 
 
         public override bool IsValid()
         {
             Validation();
             return ValidationResult.IsValid;
-        }      
+        }
 
         private void Validation()
         {
