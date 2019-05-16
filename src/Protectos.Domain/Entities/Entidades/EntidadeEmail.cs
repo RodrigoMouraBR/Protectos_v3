@@ -7,11 +7,11 @@ namespace Protectos.Domain.Entities.Entidades
 {
     public class EntidadeEmail : Entity<EntidadeEmail>
     {
-        public EntidadeEmail(string email, ETipoEmailEmpresa tipoEmail, Guid corretoraId)
+        public EntidadeEmail(string email, ETipoEmailEmpresa tipoEmail, Guid entidadeId)
         {
             Email = email;
             TipoEmail = tipoEmail;
-            EntidadeId = corretoraId;
+            EntidadeId = entidadeId;
         }
         protected EntidadeEmail()
         {

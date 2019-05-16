@@ -7,13 +7,12 @@ namespace Protectos.Domain.Entities.Beneficiarios
 {
     public class BeneficiarioTelefone : Entity<BeneficiarioTelefone>
     {
-        public BeneficiarioTelefone(string prefixo,
-                                   string numero,
-                                   ETipoTelefone tipoTelefone)
+        public BeneficiarioTelefone(string prefixo, string numero, ETipoTelefone tipoTelefone, Guid beneficiarioId)
         {
             Prefixo = prefixo;
             Numero = numero;
             TipoTelefone = tipoTelefone;
+            BeneficiarioId = beneficiarioId;
         }
         protected BeneficiarioTelefone() { }
         public string Prefixo { get; private set; }

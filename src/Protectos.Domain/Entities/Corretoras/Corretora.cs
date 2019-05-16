@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 using Protectos.Domain.Core.Models;
-using Protectos.Domain.ValuesObjects;
 using System;
 using System.Collections.Generic;
 namespace Protectos.Domain.Entities.Corretoras
@@ -29,7 +28,7 @@ namespace Protectos.Domain.Entities.Corretoras
         protected Corretora()
         {
 
-        }
+        }       
         public string RazaoSocial { get; private set; }
         public string NomeFantasia { get; private set; }
         public string Cnpj { get; private set; }
@@ -44,8 +43,7 @@ namespace Protectos.Domain.Entities.Corretoras
         {
             Validation();
             return ValidationResult.IsValid;
-        }
-       
+        }       
         private void Validation()
         {
             ValidationProperties();

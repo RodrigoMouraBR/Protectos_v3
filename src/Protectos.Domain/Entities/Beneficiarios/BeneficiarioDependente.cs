@@ -11,8 +11,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
         protected BeneficiarioDependente()
         {
         }
-
-        public BeneficiarioDependente(string nome, string sobrenome, DateTime dataNascimento, ESexo sexo, CPF cpf, string rG, string orgaoEmissor, EEstadoCivil estadoCivil, bool ativo, Guid beneficiarioId, EParentesco beneficiarioParentesco)
+        public BeneficiarioDependente(string nome, string sobrenome, DateTime dataNascimento, ESexo sexo, CPF cpf, string rG, string orgaoEmissor, EEstadoCivil estadoCivil, Guid beneficiarioId, EParentesco beneficiarioParentesco)
         {
             Nome = nome;
             Sobrenome = sobrenome;
@@ -21,11 +20,10 @@ namespace Protectos.Domain.Entities.Beneficiarios
             Cpf = cpf;
             RG = rG;
             OrgaoEmissor = orgaoEmissor;
-            EstadoCivil = estadoCivil;           
+            EstadoCivil = estadoCivil;
             BeneficiarioId = beneficiarioId;
             BeneficiarioParentesco = beneficiarioParentesco;
         }
-
         public string Nome { get; private set; }
         public string Sobrenome { get; private set; }
         public DateTime DataNascimento { get; private set; }

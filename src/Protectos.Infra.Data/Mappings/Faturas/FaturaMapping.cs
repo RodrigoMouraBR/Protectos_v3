@@ -41,9 +41,9 @@ namespace Protectos.Infra.Data.Mappings.Faturas
             Property(c => c.Status)
                .IsRequired();
 
-            HasRequired(c => c.Entidade)
-               .WithMany(a => a.Faturas)
-               .HasForeignKey(c => c.EntidadeId);
+            //HasRequired(c => c.Entidade)
+            //   .WithMany(a => a.Faturas)
+            //   .HasForeignKey(c => c.EntidadeId);
 
             HasRequired(c => c.Operadora)
                .WithMany(a => a.Faturas)
