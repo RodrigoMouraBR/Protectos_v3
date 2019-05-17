@@ -6,13 +6,7 @@ namespace Protectos.Domain.Entities.Corretoras
 {
     public class Corretora : Entity<Corretora>
     {
-        public Corretora(string razaoSocial,
-                              string nomeFantasia,
-                              string cnpj,
-                              string inscricaoEstadual,
-                              string inscricaoMunicipal,
-                              string site,
-                              DateTime dataCadastro)
+        public Corretora(string razaoSocial, string nomeFantasia, string cnpj, string inscricaoEstadual, string inscricaoMunicipal, string site)
         {
             RazaoSocial = razaoSocial;
             NomeFantasia = nomeFantasia;
@@ -20,10 +14,6 @@ namespace Protectos.Domain.Entities.Corretoras
             InscricaoEstadual = inscricaoEstadual;
             InscricaoMunicipal = inscricaoMunicipal;
             Site = site;
-            DataCadastro = dataCadastro;
-            Enderecos = new List<CorretoraEndereco>();
-            Telefones = new List<CorretoraTelefone>();
-            Emails = new List<CorretoraEmail>();
         }
         protected Corretora()
         {
@@ -34,8 +24,7 @@ namespace Protectos.Domain.Entities.Corretoras
         public string Cnpj { get; private set; }
         public string InscricaoEstadual { get; private set; }
         public string InscricaoMunicipal { get; private set; }
-        public string Site { get; private set; }
-        public DateTime DataCadastro { get; private set; }
+        public string Site { get; private set; }        
         public virtual ICollection<CorretoraEndereco> Enderecos { get; private set; }
         public virtual ICollection<CorretoraEmail> Emails { get; private set; }
         public virtual ICollection<CorretoraTelefone> Telefones { get; private set; }

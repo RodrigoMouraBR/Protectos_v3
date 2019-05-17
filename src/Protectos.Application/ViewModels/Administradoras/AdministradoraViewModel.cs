@@ -39,6 +39,13 @@ namespace Protectos.Application.ViewModels.Administradoras
         public bool Ativo { get;  set; }
         [ScaffoldColumn(false)]
         public DateTime DataCadastro { get; set; }
+        [ScaffoldColumn(false)]
+        public Guid CadastradoPor { get; protected set; }
+        [ScaffoldColumn(false)]
+        public DateTime DataAlteracao { get; protected set; }
+        [ScaffoldColumn(false)]
+        public Guid AlteradoPor { get; protected set; }
+
         public virtual IEnumerable<AdministradoraEnderecoViewModel> Enderecos { get; set; }
         public virtual IEnumerable<AdministradoraTelefoneViewModel> Telefones { get;  set; }
         public virtual IEnumerable<AdministradoraEmailViewModel> Emails { get;  set; }

@@ -144,5 +144,20 @@ namespace Protectos.Application.ApplicationServices.Operadoras
             _OperadoraEndrecoRepository.Dispose();
             _OperadoraService.Dispose();
         }
+
+        public OperadoraEnderecoViewModel EntidadeEnderecoObterPorId(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public OperadoraEnderecoViewModel EntidadeEmailObterPorId(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public OperadoraEnderecoViewModel EntidadeTelefoneObterPorId(Guid id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

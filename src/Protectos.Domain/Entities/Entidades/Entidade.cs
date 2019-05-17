@@ -8,7 +8,7 @@ namespace Protectos.Domain.Entities.Entidades
 {
     public class Entidade : Entity<Entidade>
     {
-        public Entidade(string razaoSocial, string nomeFantasia, string cnpj, string inscricaoEstadual, string inscricaoMunicipal, string site, DateTime dataCadastro)
+        public Entidade(string razaoSocial, string nomeFantasia, string cnpj, string inscricaoEstadual, string inscricaoMunicipal, string site)
         {
             RazaoSocial = razaoSocial;
             NomeFantasia = nomeFantasia;
@@ -16,10 +16,6 @@ namespace Protectos.Domain.Entities.Entidades
             InscricaoEstadual = inscricaoEstadual;
             InscricaoMunicipal = inscricaoMunicipal;
             Site = site;
-            DataCadastro = dataCadastro;
-            Enderecos = new List<EntidadeEndereco>();
-            Telefones = new List<EntidadeTelefone>();
-            Emails = new List<EntidadeEmail>();
         }
         protected Entidade()
         {
@@ -30,8 +26,7 @@ namespace Protectos.Domain.Entities.Entidades
         public string Cnpj { get; private set; }
         public string InscricaoEstadual { get; private set; }
         public string InscricaoMunicipal { get; private set; }
-        public string Site { get; private set; }
-        public DateTime DataCadastro { get; private set; }
+        public string Site { get; private set; }        
         public virtual ICollection<EntidadeEndereco> Enderecos { get; private set; }
         public virtual ICollection<EntidadeEmail> Emails { get; private set; }
         public virtual ICollection<EntidadeTelefone> Telefones { get; private set; }

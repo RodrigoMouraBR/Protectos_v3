@@ -16,8 +16,7 @@ namespace Protectos.Domain.Entities.TabelaPreco
         public Decimal ValorPlanoAgregado { get; private set; }
         public Decimal ValorPlanoTitularNet { get; private set; }
         public Decimal ValorPlanoDependenteNet { get; set; }
-        public Decimal ValorPlanoAgregadoNet { get; private set; }
-        public DateTime DataCadastro { get; private set; }
+        public Decimal ValorPlanoAgregadoNet { get; private set; }        
         public DateTime DataInicio { get; private set; }
         public Decimal ValorPorcentagemPFP { get; private set; }
         public EStatus Status { get; private set; }

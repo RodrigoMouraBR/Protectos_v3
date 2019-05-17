@@ -151,5 +151,15 @@ namespace Protectos.Application.ApplicationServices.Entidades
             _entidadeEndrecoRepository.Dispose();
             _entidadeService.Dispose();
         }
+
+        public EntidadeEnderecoViewModel EntidadeEmailObterPorId(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public EntidadeEnderecoViewModel EntidadeTelefoneObterPorId(Guid id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

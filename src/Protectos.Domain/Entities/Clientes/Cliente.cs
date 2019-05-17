@@ -6,7 +6,7 @@ namespace Protectos.Domain.Entities.Clientes
 {
     public class Cliente : Entity<Cliente>
     {
-        public Cliente(string razaoSocial, string nomeFantasia, string cnpj, string inscricaoEstadual, string inscricaoMunicipal, string site, DateTime dataCadastro)
+        public Cliente(string razaoSocial, string nomeFantasia, string cnpj, string inscricaoEstadual, string inscricaoMunicipal, string site)
         {
             RazaoSocial = razaoSocial;
             NomeFantasia = nomeFantasia;
@@ -14,10 +14,6 @@ namespace Protectos.Domain.Entities.Clientes
             InscricaoEstadual = inscricaoEstadual;
             InscricaoMunicipal = inscricaoMunicipal;
             Site = site;
-            DataCadastro = dataCadastro;
-            Enderecos = new List<ClienteEndereco>();
-            Telefones = new List<ClienteTelefone>();
-            Emails = new List<ClienteEmail>();
         }
         protected Cliente()
         {                
@@ -27,8 +23,7 @@ namespace Protectos.Domain.Entities.Clientes
         public string Cnpj { get; private set; }
         public string InscricaoEstadual { get; private set; }
         public string InscricaoMunicipal { get; private set; }
-        public string Site { get; private set; }
-        public DateTime DataCadastro { get; private set; }
+        public string Site { get; private set; }       
         public virtual ICollection<ClienteEndereco> Enderecos { get; private set; }
         public virtual ICollection<ClienteTelefone> Telefones { get; private set; }
         public virtual ICollection<ClienteEmail> Emails { get; private set; }

@@ -24,9 +24,7 @@ namespace Protectos.Domain.Entities.Planos
         public string Coparticipacao { get; private set; }
         public string CodigoAcomodacao { get; set; }
         public string CodigoPlanoSuspenso { get; private set; }
-
         public virtual ICollection<RelacaoFaturaPlano> FaturaPlano { get; private set; }
-
         public override bool IsValid()
         {
             throw new NotImplementedException();

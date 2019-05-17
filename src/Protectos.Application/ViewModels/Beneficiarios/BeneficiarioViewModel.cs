@@ -26,6 +26,12 @@ namespace Protectos.Application.ViewModels.Beneficiarios
 
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
+        [ScaffoldColumn(false)]
+        public Guid CadastradoPor { get; protected set; }
+        [ScaffoldColumn(false)]
+        public DateTime DataAlteracao { get; protected set; }
+        [ScaffoldColumn(false)]
+        public Guid AlteradoPor { get; protected set; }
         public virtual ICollection<BeneficiarioEnderecoViewModel> BeneficiarioEndereco { get; set; }
         public virtual ICollection<BeneficiarioTelefoneViewModel> BeneficiarioTelefone { get; set; }
         public virtual ICollection<BeneficiarioEmailViewModel> BeneficiarioEmail { get; set; }

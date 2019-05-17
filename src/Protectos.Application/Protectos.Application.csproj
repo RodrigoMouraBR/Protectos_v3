@@ -101,6 +101,7 @@
     <Compile Include="ViewModels\Operadoras\OperadoraEnderecoViewModel.cs" />
     <Compile Include="ViewModels\Operadoras\OperadoraTelefoneViewModel.cs" />
     <Compile Include="ViewModels\Operadoras\OperadoraViewModel.cs" />
+    <Compile Include="ViewModels\Planos\PlanoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Protectos.Domain.Core\Protectos.Domain.Core.csproj">

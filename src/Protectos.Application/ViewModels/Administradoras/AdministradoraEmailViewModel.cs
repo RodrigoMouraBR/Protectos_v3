@@ -23,6 +23,12 @@ namespace Protectos.Application.ViewModels.Administradoras
         public string TipoEmail { get; set; }
         [ScaffoldColumn(false)]
         public Guid AdministradoraId { get; set; }
+        [ScaffoldColumn(false)]
+        public Guid CadastradoPor { get; protected set; }
+        [ScaffoldColumn(false)]
+        public DateTime DataAlteracao { get; protected set; }
+        [ScaffoldColumn(false)]
+        public Guid AlteradoPor { get; protected set; }
         public virtual AdministradoraViewModel Administradora { get; set; }
     }
 }

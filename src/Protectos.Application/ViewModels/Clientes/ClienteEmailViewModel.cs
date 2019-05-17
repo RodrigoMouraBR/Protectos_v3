@@ -22,6 +22,14 @@ namespace Protectos.Application.ViewModels.Clientes
         public string TipoEmail { get; set; }
         [ScaffoldColumn(false)]
         public Guid ClienteId { get; set; }
+        [ScaffoldColumn(false)]
+        public DateTime DataCadastro { get; protected set; }
+        [ScaffoldColumn(false)]
+        public Guid CadastradoPor { get; protected set; }
+        [ScaffoldColumn(false)]
+        public DateTime DataAlteracao { get; protected set; }
+        [ScaffoldColumn(false)]
+        public Guid AlteradoPor { get; protected set; }
         public virtual ClienteViewModel Cliente { get; set; }
     }
 }

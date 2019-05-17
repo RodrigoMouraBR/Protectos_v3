@@ -141,5 +141,20 @@ namespace Protectos.Application.ApplicationServices.Corretoras
             _corretoraEndrecoRepository.Dispose();            
             _corretoraService.Dispose();
         }
+
+        public CorretoraEnderecoViewModel CorretoraEnderecoObterPorId(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CorretoraEnderecoViewModel CorretoraEmailObterPorId(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CorretoraEnderecoViewModel CorretoraTelefoneObterPorId(Guid id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Protectos.Application.Interfaces.Clientes;
 using Protectos.Application.ViewModels.Clientes;
 using Protectos.Domain.Entities.Clientes.Interfaces.Repositories;
+using Protectos.Infra.Data.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,16 @@ namespace Protectos.Application.ApplicationServices.Clientes
     public class ClienteApplicationService : ApplicationService, IClienteApplicationService
     {
 
-        private readonly IClienteRepository _clienteRepository;
-        private readonly IClienteEmailRepository _clienteEmailRepository;
-        private readonly IClienteTelefoneRepository _clienteTelefoneRepository;
-        private readonly IClienteEnderecoRepository _clienteEndrecoRepository;
-        private readonly IClienteService _clienteService;
+        //private readonly IClienteRepository _clienteRepository;
+        //private readonly IClienteEmailRepository _clienteEmailRepository;
+        //private readonly IClienteTelefoneRepository _clienteTelefoneRepository;
+        //private readonly IClienteEnderecoRepository _clienteEndrecoRepository;
+
+        public ClienteApplicationService(IUnitOfWork uow) : base(uow)
+        {
+        }
+
+        // private readonly IClienteService _clienteService;
 
         public ClienteViewModel ClienteAtualizar(ClienteViewModel clienteViewModel)
         {

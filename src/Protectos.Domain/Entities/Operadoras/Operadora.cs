@@ -9,12 +9,7 @@ namespace Protectos.Domain.Entities.Operadoras
 {
     public class Operadora : Entity<Operadora>
     {
-        public Operadora(string razaoSocial,
-                               string nomeFantasia, string cnpj,
-                               string inscricaoEstadual,
-                               string inscricaoMunicipal,
-                               string site,
-                               DateTime dataCadastro)
+        public Operadora(string razaoSocial, string nomeFantasia, string cnpj, string inscricaoEstadual, string inscricaoMunicipal, string site)
         {
             RazaoSocial = razaoSocial;
             NomeFantasia = nomeFantasia;
@@ -22,10 +17,6 @@ namespace Protectos.Domain.Entities.Operadoras
             InscricaoEstadual = inscricaoEstadual;
             InscricaoMunicipal = inscricaoMunicipal;
             Site = site;
-            DataCadastro = dataCadastro;
-            Enderecos = new List<OperadoraEndereco>();
-            Telefones = new List<OperadoraTelefone>();
-            Emails = new List<OperadoraEmail>();
         }
         protected Operadora()
         {
@@ -35,8 +26,7 @@ namespace Protectos.Domain.Entities.Operadoras
         public string Cnpj { get; private set; }
         public string InscricaoEstadual { get; private set; }
         public string InscricaoMunicipal { get; private set; }
-        public string Site { get; private set; }
-        public DateTime DataCadastro { get; private set; }
+        public string Site { get; private set; }       
         public virtual ICollection<OperadoraEndereco> Enderecos { get; private set; }
         public virtual ICollection<OperadoraTelefone> Telefones { get; private set; }
         public virtual ICollection<OperadoraEmail> Emails { get; private set; }

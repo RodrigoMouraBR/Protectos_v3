@@ -111,6 +111,7 @@
     <Compile Include="Repositories\Operadoras\OperadoraEnderecoRepository.cs" />
     <Compile Include="Repositories\Operadoras\OperadoraRepository.cs" />
     <Compile Include="Repositories\Operadoras\OperadoraTelefoneRepository.cs" />
+    <Compile Include="Repositories\Planos\PlanoRepository.cs" />
     <Compile Include="UoW\UnitOfWOrk.cs" />
   </ItemGroup>
   <ItemGroup>

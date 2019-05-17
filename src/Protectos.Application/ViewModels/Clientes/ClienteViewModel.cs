@@ -39,7 +39,13 @@ namespace Protectos.Application.ViewModels.Clientes
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]
-        public DateTime DataCadastro { get; set; }
+        public DateTime DataCadastro { get; protected set; }
+        [ScaffoldColumn(false)]
+        public Guid CadastradoPor { get; protected set; }
+        [ScaffoldColumn(false)]
+        public DateTime DataAlteracao { get; protected set; }
+        [ScaffoldColumn(false)]
+        public Guid AlteradoPor { get; protected set; }
         public virtual IEnumerable<ClienteEnderecoViewModel> Enderecos { get; set; }
         public virtual IEnumerable<ClienteTelefoneViewModel> Telefones { get; set; }
         public virtual IEnumerable<ClienteEmailViewModel> Emails { get; set; }
