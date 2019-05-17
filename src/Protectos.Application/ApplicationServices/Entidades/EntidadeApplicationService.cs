@@ -113,6 +113,11 @@ namespace Protectos.Application.ApplicationServices.Entidades
         {
             return Mapper.Map<IEnumerable<EntidadeEnderecoViewModel>>(_entidadeEndrecoRepository.GetAll());
         }
+        public EntidadeEnderecoViewModel EntidadeEnderecoObterPorId(Guid id)
+        {
+            return Mapper.Map<EntidadeEnderecoViewModel>(_entidadeEndrecoRepository.GetbyId(id));
+        }
+
         public IEnumerable<EntidadeViewModel> EntidadeObterAtivo()
         {
             return Mapper.Map<IEnumerable<EntidadeViewModel>>(_entidadeRepository.EntidadeObterAtivo());

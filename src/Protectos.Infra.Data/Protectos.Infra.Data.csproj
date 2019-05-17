@@ -94,6 +94,10 @@
     <Compile Include="Repositories\Beneficiarios\BeneficiarioEnderecoRepository.cs" />
     <Compile Include="Repositories\Beneficiarios\BeneficiarioRepository.cs" />
     <Compile Include="Repositories\Beneficiarios\BeneficiarioTelefoneRepository.cs" />
+    <Compile Include="Repositories\Clientes\ClienteEmailRepository.cs" />
+    <Compile Include="Repositories\Clientes\ClienteEnderecoRepository.cs" />
+    <Compile Include="Repositories\Clientes\ClienteRepository.cs" />
+    <Compile Include="Repositories\Clientes\ClienteTelefoneRepository.cs" />
     <Compile Include="Repositories\Corretoras\CorretoraEmailRepository.cs" />
     <Compile Include="Repositories\Corretoras\CorretoraEnderecoRepository.cs" />
     <Compile Include="Repositories\Corretoras\CorretoraRepository.cs" />

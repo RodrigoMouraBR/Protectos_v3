@@ -71,6 +71,16 @@
     <Compile Include="Entities\Beneficiarios\Interfaces\Repositories\IBeneficiarioTelefoneRepository.cs" />
     <Compile Include="Entities\Beneficiarios\Interfaces\Services\IBeneficiarioService.cs" />
     <Compile Include="Entities\Beneficiarios\Services\BeneficiarioService.cs" />
+    <Compile Include="Entities\Clientes\Cliente.cs" />
+    <Compile Include="Entities\Clientes\ClienteEmail.cs" />
+    <Compile Include="Entities\Clientes\ClienteEndereco.cs" />
+    <Compile Include="Entities\Clientes\ClienteTelefone.cs" />
+    <Compile Include="Entities\Clientes\Interfaces\Repositories\IClienteEmailRepository.cs" />
+    <Compile Include="Entities\Clientes\Interfaces\Repositories\IClienteEnderecoRepository.cs" />
+    <Compile Include="Entities\Clientes\Interfaces\Repositories\IClienteRepository.cs" />
+    <Compile Include="Entities\Clientes\Interfaces\Repositories\IClienteTelefoneRepository.cs" />
+    <Compile Include="Entities\Clientes\Interfaces\Services\IClienteService.cs" />
+    <Compile Include="Entities\Clientes\Services\ClienteService.cs" />
     <Compile Include="Entities\Configuracoes\RelacaoFaturaPlano.cs" />
     <Compile Include="Entities\Configuracoes\RelacaoOperadoraEntidade.cs" />
     <Compile Include="Entities\Corretoras\Corretora.cs" />

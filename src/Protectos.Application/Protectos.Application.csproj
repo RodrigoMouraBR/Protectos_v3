@@ -55,6 +55,7 @@
     <Compile Include="ApplicationServices\Administradoras\AdministradoraApplicationService.cs" />
     <Compile Include="ApplicationServices\ApplicationService.cs" />
     <Compile Include="ApplicationServices\Beneficiarios\BeneficiarioApplicationService.cs" />
+    <Compile Include="ApplicationServices\Clientes\ClienteApplicationService.cs" />
     <Compile Include="ApplicationServices\Corretoras\CorretoraApplicationService.cs" />
     <Compile Include="ApplicationServices\Entidades\EntidadeApplicationService.cs" />
     <Compile Include="ApplicationServices\Faturas\FaturaApplicationService.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Interfaces\Administradoras\IAdministradoraApplicationService.cs" />
     <Compile Include="Interfaces\Beneficiarios\IBeneficiarioApplicationService.cs" />
+    <Compile Include="Interfaces\Clientes\IClienteApplicationService.cs" />
     <Compile Include="Interfaces\Corretoras\ICorretoraApplicationService.cs" />
     <Compile Include="Interfaces\Entidades\IEntidadeApplicationService.cs" />
     <Compile Include="Interfaces\Fatura\IFaturaApplicationService.cs" />
@@ -79,9 +81,12 @@
     <Compile Include="ViewModels\Beneficiarios\BeneficiarioEnderecoViewModel.cs" />
     <Compile Include="ViewModels\Beneficiarios\BeneficiarioTelefoneViewModel.cs" />
     <Compile Include="ViewModels\Beneficiarios\BeneficiarioViewModel.cs" />
+    <Compile Include="ViewModels\Clientes\ClienteEmailViewModel.cs" />
+    <Compile Include="ViewModels\Clientes\ClienteEnderecoViewModel.cs" />
+    <Compile Include="ViewModels\Clientes\ClienteTelefoneViewModel.cs" />
+    <Compile Include="ViewModels\Clientes\ClienteViewModel.cs" />
     <Compile Include="ViewModels\Configuracoes\RelacaoFaturaPlanoViewModel.cs" />
     <Compile Include="ViewModels\Configuracoes\RelacaoOperadoraEntidadeViewModel.cs" />
-    <Compile Include="ViewModels\Corretoras\CorretoraDtoViewModel.cs" />
     <Compile Include="ViewModels\Corretoras\CorretoraEmailViewModel.cs" />
     <Compile Include="ViewModels\Corretoras\CorretoraEnderecoViewModel.cs" />
     <Compile Include="ViewModels\Corretoras\CorretoraTelefoneViewModel.cs" />

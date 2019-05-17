@@ -3,6 +3,7 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\D
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Infra.Data.pdb
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\EntityFramework.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\EntityFramework.SqlServerCompact.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\FluentValidation.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Domain.Core.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Domain.dll
@@ -11,6 +12,7 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\D
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Domain.pdb
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\EntityFramework.xml
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\EntityFramework.SqlServerCompact.xml
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\FluentValidation.xml
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\obj\Debug\Protectos.Infra.Data.csprojAssemblyReference.cache
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\obj\Debug\Protectos.Infra.Data.csproj.CoreCompileInputs.cache

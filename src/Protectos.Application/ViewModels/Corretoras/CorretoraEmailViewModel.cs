@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Protectos.Application.ViewModels.Corretoras
 {
@@ -16,14 +12,11 @@ namespace Protectos.Application.ViewModels.Corretoras
         }
         [Key]
         public Guid Id { get; set; }
-       
-        public string Prefixo { get; set; }
-       
-        public string Numero { get; set; }
-      
-        public string TipoTelefone { get; set; }
-        [ScaffoldColumn(false)]
-        public bool Ativo { get; set; }
+        [Required(ErrorMessage = "Preencha o campo Prefixo")]       
+        public string Email { get; set; }
+        [Required(ErrorMessage = "Preencha o campo Tipo")]        
+        [DisplayName("Tipo Email")]
+        public string TipoEmail { get; set; }
         [ScaffoldColumn(false)]
         public Guid CorretoraId { get; set; }
         public virtual CorretoraViewModel Corretora { get; set; }

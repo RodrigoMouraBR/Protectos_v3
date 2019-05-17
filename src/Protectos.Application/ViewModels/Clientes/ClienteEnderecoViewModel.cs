@@ -1,12 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-namespace Protectos.Application.ViewModels.Corretoras
+namespace Protectos.Application.ViewModels.Clientes
 {
-    public class CorretoraEnderecoViewModel
+    public class ClienteEnderecoViewModel
     {
-        public CorretoraEnderecoViewModel()
+        public ClienteEnderecoViewModel()
         {
-            Id = Guid.NewGuid();            
+            Id = Guid.NewGuid();
         }
         [Key]
         public Guid Id { get; set; }
@@ -20,9 +20,9 @@ namespace Protectos.Application.ViewModels.Corretoras
         public string UF { get; set; }
         public string Pais { get; set; }
         [ScaffoldColumn(false)]
-        public Guid CorretoraId { get; set; }
+        public Guid ClienteId { get; set; }
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
-        public virtual CorretoraViewModel Corretora { get; set; }
+        public virtual ClienteViewModel Cliente { get; set; }
     }
 }

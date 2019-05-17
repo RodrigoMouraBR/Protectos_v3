@@ -298,10 +298,6 @@
       <Project>{6BC002AD-DC92-4819-BD2C-1801705F3157}</Project>
       <Name>Protectos.Infra.CrossCutting.IoC</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Protectos.Infra.Data\Protectos.Infra.Data.csproj">
-      <Project>{955272FD-2B5A-4E65-8594-59C3D3B9AB7C}</Project>
-      <Name>Protectos.Infra.Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

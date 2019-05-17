@@ -22,7 +22,37 @@ namespace Protectos.Infra.Data.Context
     {
         public ProtectosContext() : base("DefaultConnection")
         {
+            Database.SetInitializer<ProtectosContext>(null);
         }
+        public virtual DbSet<Beneficiario> Beneficiario { get; set; }
+        public virtual DbSet<BeneficiarioDependente> BeneficiarioDependente { get; set; }
+        public virtual DbSet<BeneficiarioEmail> BeneficiarioEmail { get; set; }
+        public virtual DbSet<BeneficiarioEndereco> BeneficiarioEndereco { get; set; }
+        public virtual DbSet<BeneficiarioTelefone> BeneficiarioTelefone { get; set; }
+
+        public virtual DbSet<Operadora> Operadora { get; set; }
+        public virtual DbSet<OperadoraEmail> OperadoraEmail { get; set; }
+        public virtual DbSet<OperadoraEndereco> OperadoraEndereco { get; set; }
+        public virtual DbSet<OperadoraTelefone> OperadoraTelefone { get; set; }
+
+        public virtual DbSet<Entidade> Entidade { get; set; }
+        public virtual DbSet<EntidadeEmail> EntidadeEmail { get; set; }
+        public virtual DbSet<EntidadeEndereco> EntidadeEndereco { get; set; }
+        public virtual DbSet<EntidadeTelefone> EntidadeTelefone { get; set; }
+
+        public virtual DbSet<Corretora> Corretora { get; set; }
+        public virtual DbSet<CorretoraEmail> CorretoraEmail { get; set; }
+        public virtual DbSet<CorretoraEndereco> CorretoraEndereco { get; set; }
+        public virtual DbSet<CorretoraTelefone> CorretoraTelefone { get; set; }
+
+        public virtual DbSet<Administradora> Administradora { get; set; }
+        public virtual DbSet<AdministradoraEmail> AdministradoraEmail { get; set; }
+        public virtual DbSet<AdministradoraEndereco> AdministradoraEndereco { get; set; }
+        public virtual DbSet<AdministradoraTelefone> AdministradoraTelefone { get; set; }
+
+        public virtual DbSet<Fatura> Fatura { get; set; }
+        public virtual DbSet<FaturaCarencia> FaturaCarencia { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
@@ -58,11 +88,11 @@ namespace Protectos.Infra.Data.Context
             modelBuilder.Configurations.Add(new FaturaMapping());
             modelBuilder.Configurations.Add(new FaturaCarenciaMapping());
 
-
             modelBuilder.Properties<string>()
                 .Configure(p => p.HasColumnType("varchar"));
             modelBuilder.Properties<string>()
-                .Configure(p => p.HasMaxLength(100));            
+                .Configure(p => p.HasMaxLength(100));
+
             base.OnModelCreating(modelBuilder);
         }
 
@@ -74,64 +104,15 @@ namespace Protectos.Infra.Data.Context
                 {
                     entry.Property("DataCadastro").CurrentValue = DateTime.Now;
                 }
-
                 if (entry.State == EntityState.Modified)
                 {
                     entry.Property("DataCadastro").IsModified = false;
                 }
             }
-
             return base.SaveChanges();
         }
 
 
-        public DbSet<Beneficiario> Beneficiario { get; set; }
-        public DbSet<BeneficiarioDependente> BeneficiarioDependente { get; set; }
-        public DbSet<BeneficiarioEmail> BeneficiarioEmail { get; set; }
-        public DbSet<BeneficiarioEndereco> BeneficiarioEndereco { get; set; }
-        public DbSet<BeneficiarioTelefone> BeneficiarioTelefone { get; set; }
-
-        public DbSet<Operadora> Operadora { get; set; }
-        public DbSet<OperadoraEmail> OperadoraEmail { get; set; }
-        public DbSet<OperadoraEndereco> OperadoraEndereco { get; set; }
-        public DbSet<OperadoraTelefone> OperadoraTelefone { get; set; }
-
-        public DbSet<Entidade> Entidade { get; set; }
-        public DbSet<EntidadeEmail> EntidadeEmail { get; set; }
-        public DbSet<EntidadeEndereco> EntidadeEndereco { get; set; }
-        public DbSet<EntidadeTelefone> EntidadeTelefone { get; set; }
-
-        public DbSet<Corretora> Corretora { get; set; }
-        public DbSet<CorretoraEmail> CorretoraEmail { get; set; }
-        public DbSet<CorretoraEndereco> CorretoraEndereco { get; set; }
-        public DbSet<CorretoraTelefone> CorretoraTelefone { get; set; }
-
-        public DbSet<Administradora> Administradora { get; set; }
-        public DbSet<AdministradoraEmail> AdministradoraEmail { get; set; }
-        public DbSet<AdministradoraEndereco> AdministradoraEndereco { get; set; }
-        public DbSet<AdministradoraTelefone> AdministradoraTelefone { get; set; }
-
-        public DbSet<Fatura> Fatura { get; set; }
-        public DbSet<FaturaCarencia> FaturaCarencia { get; set; }
-
-
-        //public override int SaveChanges()
-        //{
-        //    foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
-        //    {
-        //        if (entry.State == EntityState.Added)
-        //        {
-        //            entry.Property("DataCadastro").CurrentValue = DateTime.Now;
-        //        }
-
-        //        if (entry.State == EntityState.Modified)
-        //        {
-        //            entry.Property("DataCadastro").IsModified = false;
-        //        }
-        //    }
-
-        //    return base.SaveChanges();
-        //}
 
     }
 }

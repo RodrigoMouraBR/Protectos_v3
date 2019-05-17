@@ -15,18 +15,21 @@ namespace Protectos.Application.Interfaces.Corretoras
         CorretoraViewModel CorretoraAtualizar(CorretoraViewModel corretoraViewModel);
         void DeleteCorretora(Guid id);
 
-        //Endereco//        
+        //Endereco//     
+        CorretoraEnderecoViewModel CorretoraEnderecoObterPorId(Guid id);
         IEnumerable<CorretoraEnderecoViewModel> CorretoraEnderecoObterTodos();
         CorretoraEnderecoViewModel CorretoraEnderecoAdicionar(CorretoraEnderecoViewModel corretoraEnderecoViewModel);
         CorretoraEnderecoViewModel CorretoraEnderecoAtualizar(CorretoraEnderecoViewModel corretoraEnderecoViewModel);
         void DeleteCorretoraEndereco(Guid id);
-        //Email//      
+        //Email//    
+        CorretoraEnderecoViewModel CorretoraEmailObterPorId(Guid id);
         IEnumerable<CorretoraEmailViewModel> CorretoraEmailObterTodos();
         CorretoraEmailViewModel CorretoraEmailAdicionar(CorretoraEmailViewModel corretoraEmailViewModel);
         CorretoraEmailViewModel CorretoraEmailAtualizar(CorretoraEmailViewModel corretoraEmailViewModel);
         void DeleteCorretoraEmail(Guid id);
 
-        //Telefone//     
+        //Telefone//    
+        CorretoraEnderecoViewModel CorretoraTelefoneObterPorId(Guid id);
         IEnumerable<CorretoraTelefoneViewModel> CorretoraTelefoneObterTodos();
         CorretoraTelefoneViewModel CorretoraTelefoneAdicionar(CorretoraTelefoneViewModel corretoraTelefoneViewModel);
         CorretoraTelefoneViewModel CorretoraTelefoneAtualizar(CorretoraTelefoneViewModel corretoraTelefoneViewModel);

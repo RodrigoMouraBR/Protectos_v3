@@ -16,19 +16,22 @@ namespace Protectos.Application.Interfaces.Entidades
         void DeleteEntidade(Guid id);
 
 
-        //Endereco//        
+        //Endereco//         
+        EntidadeEnderecoViewModel EntidadeEnderecoObterPorId(Guid id);
         IEnumerable<EntidadeEnderecoViewModel> EntidadeEnderecoObterTodos();
         EntidadeEnderecoViewModel EntidadeEnderecoAdicionar(EntidadeEnderecoViewModel entidadeEnderecoViewModel);
         EntidadeEnderecoViewModel EntidadeEnderecoAtualizar(EntidadeEnderecoViewModel entidadeEnderecoViewModel);
         void DeleteEntidadeEndereco(Guid id);
 
-        //Email//      
+        //Email//     
+        EntidadeEnderecoViewModel EntidadeEmailObterPorId(Guid id);
         IEnumerable<EntidadeEmailViewModel> EntidadeEmailObterTodos();
         EntidadeEmailViewModel EntidadeEmailAdicionar(EntidadeEmailViewModel entidadeEmailViewModel);
         EntidadeEmailViewModel EntidadeEmailAtualizar(EntidadeEmailViewModel entidadeEmailViewModel);
         void DeleteEntidadeEmail(Guid id);
 
         //Telefone//     
+        EntidadeEnderecoViewModel EntidadeTelefoneObterPorId(Guid id);
         IEnumerable<EntidadeTelefoneViewModel> EntidadeTelefoneObterTodos();
         EntidadeTelefoneViewModel EntidadeTelefoneAdicionar(EntidadeTelefoneViewModel entidadeTelefoneViewModel);
         EntidadeTelefoneViewModel EntidadeTelefoneAtualizar(EntidadeTelefoneViewModel entidadeTelefoneViewModel);

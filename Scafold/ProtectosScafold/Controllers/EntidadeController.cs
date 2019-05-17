@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using Protectos.Application.Interfaces.Entidades;
+using Protectos.Application.ViewModels.Entidades;
+using System;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Protectos.Application.Interfaces.Entidades;
-using Protectos.Application.ViewModels.Entidades;
-using ProtectosScafold.Models;
-
 namespace ProtectosScafold.Controllers
 {
     public class EntidadeController : Controller
@@ -22,7 +18,7 @@ namespace ProtectosScafold.Controllers
         public ActionResult Index()
         {
             return View(_entidadeApplicationService.EntidadeObterTodos());
-        }        
+        }       
         public ActionResult Details(Guid? id)
         {
             if (id == null)
@@ -35,22 +31,22 @@ namespace ProtectosScafold.Controllers
                 return HttpNotFound();
             }
             return View(entidadeViewModel);
-        }       
+        }        
         public ActionResult Create()
         {
             return View();
-        }       
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(EntidadeViewModel entidadeViewModel)
         {
             if (ModelState.IsValid)
-            {               
+            {
+                _entidadeApplicationService.EntidadeAdicionar(entidadeViewModel);
                 return RedirectToAction("Index");
             }
-
             return View(entidadeViewModel);
-        }       
+        }
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
@@ -69,28 +65,30 @@ namespace ProtectosScafold.Controllers
         public ActionResult Edit(EntidadeViewModel entidadeViewModel)
         {
             if (ModelState.IsValid)
-            {                
+            {
+                _entidadeApplicationService.EntidadeAdicionar(entidadeViewModel);
                 return RedirectToAction("Index");
             }
             return View(entidadeViewModel);
-        }       
+        }        
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EntidadeViewModel entidadeViewModel = _entidadeApplicationService.EntidadeObterPorId(id.Value);
+            var entidadeViewModel = _entidadeApplicationService.EntidadeObterPorId(id.Value);
             if (entidadeViewModel == null)
             {
                 return HttpNotFound();
             }
             return View(entidadeViewModel);
-        }        
+        }       
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
-        {            
+        {
+            _entidadeApplicationService.DeleteEntidade(id);
             return RedirectToAction("Index");
         }
         protected override void Dispose(bool disposing)
@@ -100,6 +98,85 @@ namespace ProtectosScafold.Controllers
                 _entidadeApplicationService.Dispose();
             }
             base.Dispose(disposing);
+        }
+        //Endereco       
+        public ActionResult ListarEnderecos(Guid id)
+        {
+            ViewBag.AdministradoraId = id;
+            return PartialView("_EnderecosList", _entidadeApplicationService.EntidadeObterPorId(id).Enderecos);
+        }
+        public ActionResult AdicionarEndereco(Guid id)
+        {
+            ViewBag.AdministradoraId = id;
+            return PartialView("_AdicionarEndereco");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdicionarEndereco(EntidadeEnderecoViewModel enderecoViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                _entidadeApplicationService.EntidadeEnderecoAdicionar(enderecoViewModel);
+                string url = Url.Action("ListarEnderecos", "Administradora", new { id = enderecoViewModel.AdministradoraId });
+                return Json(new { success = true, url = url });
+            }
+
+            return PartialView("_AdicionarEndereco", enderecoViewModel);
+        }
+        public ActionResult AtualizarEndereco(Guid id)
+        {
+            return PartialView("_AtualizarEndereco", _entidadeApplicationService.EntidadeEnderecoObterPorId(id));
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AtualizarEndereco(EntidadeEnderecoViewModel enderecoViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                _entidadeApplicationService.EntidadeEnderecoAtualizar(enderecoViewModel);
+
+                string url = Url.Action("ListarEnderecos", "Administradora", new { id = enderecoViewModel.AdministradoraId });
+                return Json(new { success = true, url = url });
+            }
+            return PartialView("_AtualizarEndereco", enderecoViewModel);
+        }
+        public ActionResult DeletarEndereco(Guid? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var enderecoViewModel = _entidadeApplicationService.EntidadeEnderecoObterPorId(id.Value);
+            if (enderecoViewModel == null)
+            {
+                return HttpNotFound();
+            }
+            return PartialView("_DeletarEndereco", enderecoViewModel);
+        }
+        [HttpPost, ActionName("DeletarEndereco")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletarEnderecoConfirmed(Guid id)
+        {
+            var administradoraId = _entidadeApplicationService.EntidadeEnderecoObterPorId(id).AdministradoraId;
+            _entidadeApplicationService.DeleteEntidadeEndereco(id);
+            string url = Url.Action("ListarEnderecos", "Administradora", new { id = administradoraId });
+            return Json(new { success = true, url = url });
+        }
+        public ActionResult ObterImagemCliente(Guid id)
+        {
+            var root = @"C:\Users\rodri\Pictures\Spartacus\";
+            var foto = Directory.GetFiles(root, id + "*").FirstOrDefault();
+            if (foto != null && !foto.StartsWith(root))
+            {
+                // Validando qualquer acesso indevido além da pasta permitida
+                throw new HttpException(403, "Acesso Negado");
+            }
+            if (foto == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            return File(foto, "image/jpeg");
         }
     }
 }

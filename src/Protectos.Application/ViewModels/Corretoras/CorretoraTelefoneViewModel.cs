@@ -12,11 +12,12 @@ namespace Protectos.Application.ViewModels.Corretoras
         }
         [Key]
         public Guid Id { get; set; }
-       
+        [Required(ErrorMessage = "Preencha o campo Prefixo")]       
         public string Prefixo { get; set; }
-      
+        [Required(ErrorMessage = "Preencha o campo Numero")]       
         public string Numero { get; set; }
-       
+        [Required(ErrorMessage = "Preencha o campo Tipo")]       
+        [DisplayName("Tipo Telefone")]
         public string TipoTelefone { get; set; }
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }

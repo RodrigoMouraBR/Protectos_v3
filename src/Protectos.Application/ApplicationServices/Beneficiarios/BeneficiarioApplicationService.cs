@@ -135,6 +135,20 @@ namespace Protectos.Application.ApplicationServices.Beneficiarios
         {
             return Mapper.Map<BeneficiarioViewModel>(_beneficiarioRepository.GetbyId(id));
         }
+        public BeneficiarioEnderecoViewModel BeneficiarioEnderecoObterPorId(Guid id)
+        {
+            return Mapper.Map<BeneficiarioEnderecoViewModel>(_beneficiarioEnderecoRepository.GetbyId(id));
+        }
+
+        public BeneficiarioEmailViewModel BeneficiarioEmailObterPorId(Guid id)
+        {
+            return Mapper.Map<BeneficiarioEmailViewModel>(_beneficiarioEmailRepository.GetbyId(id));
+        }
+
+        public BeneficiarioTelefoneViewModel BeneficiarioTelefoneObterPorId(Guid id)
+        {
+            return Mapper.Map<BeneficiarioTelefoneViewModel>(_beneficiarioTelefoneRepository.GetbyId(id));
+        }
 
         //Especificado
         public BeneficiarioViewModel BeneficiarioObterPorCpf(string cpf)
@@ -170,6 +184,6 @@ namespace Protectos.Application.ApplicationServices.Beneficiarios
             _beneficiarioEnderecoRepository.Dispose();
             _beneficiarioDependenteRepository.Dispose();
             _beneficiarioService.Dispose();
-        }
+        }        
     }
 }

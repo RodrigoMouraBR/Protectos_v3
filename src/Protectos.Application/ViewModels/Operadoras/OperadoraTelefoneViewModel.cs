@@ -12,17 +12,11 @@ namespace Protectos.Application.ViewModels.Operadoras
         }
         [Key]
         public Guid Id { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Prefixo")]
-        [MaxLength(10, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [Required(ErrorMessage = "Preencha o campo Prefixo")]       
         public string Prefixo { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Numero")]
-        [MaxLength(10, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [Required(ErrorMessage = "Preencha o campo Numero")]       
         public string Numero { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Tipo")]
-        [MaxLength(10, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [Required(ErrorMessage = "Preencha o campo Tipo")]        
         [DisplayName("Tipo Telefone")]
         public string TipoTelefone { get; set; }
         [ScaffoldColumn(false)]

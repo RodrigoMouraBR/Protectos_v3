@@ -15,19 +15,22 @@ namespace Protectos.Application.Interfaces.Operadoras
         OperadoraViewModel OperadoraAtualizar(OperadoraViewModel operadoraViewModel);
         void DeleteOperadora(Guid id);
 
-        //Endereco//        
+        //Endereco//   
+        OperadoraEnderecoViewModel EntidadeEnderecoObterPorId(Guid id);
         IEnumerable<OperadoraEnderecoViewModel> OperadoraEnderecoObterTodos();
         OperadoraEnderecoViewModel OperadoraEnderecoAdicionar(OperadoraEnderecoViewModel operadoraEnderecoViewModel);
         OperadoraEnderecoViewModel OperadoraEnderecoAtualizar(OperadoraEnderecoViewModel operadoraEnderecoViewModel);
         void DeleteOperadoraEndereco(Guid id);
 
-        //Email//      
+        //Email//    
+        OperadoraEnderecoViewModel EntidadeEmailObterPorId(Guid id);
         IEnumerable<OperadoraEmailViewModel> OperadoraEmailObterTodos();
         OperadoraEmailViewModel OperadoraEmailAdicionar(OperadoraEmailViewModel operadoraEmailViewModel);
         OperadoraEmailViewModel OperadoraEmailAtualizar(OperadoraEmailViewModel operadoraEmailViewModel);
         void DeleteOperadoraEmail(Guid id);
 
         //Telefone//     
+        OperadoraEnderecoViewModel EntidadeTelefoneObterPorId(Guid id);
         IEnumerable<OperadoraTelefoneViewModel> OperadoraTelefoneObterTodos();
         OperadoraTelefoneViewModel OperadoraTelefoneAdicionar(OperadoraTelefoneViewModel operadoraTelefoneViewModel);
         OperadoraTelefoneViewModel OperadoraTelefoneAtualizar(OperadoraTelefoneViewModel operadoraTelefoneViewModel);
