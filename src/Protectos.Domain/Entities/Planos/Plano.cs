@@ -1,4 +1,5 @@
 ﻿using Protectos.Domain.Core.Models;
+using Protectos.Domain.Entities.Cobrancas;
 using Protectos.Domain.Entities.Faturas;
 using Protectos.Domain.Entities.Planos.Enums;
 using System;
@@ -25,6 +26,9 @@ namespace Protectos.Domain.Entities.Planos
         public string CodigoAcomodacao { get; set; }
         public string CodigoPlanoSuspenso { get; private set; }
         public virtual ICollection<FaturaPlano> FaturaPlano { get; private set; }
+        public virtual ICollection<Precificacao> Precificacao { get; private set; }
+
+        
         public override bool IsValid()
         {
             throw new NotImplementedException();

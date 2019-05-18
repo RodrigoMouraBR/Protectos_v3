@@ -1,8 +1,8 @@
 ﻿using Protectos.Domain.Core.Models;
+using Protectos.Domain.Entities.Cobrancas;
 using Protectos.Domain.Entities.Entidades;
 using Protectos.Domain.Entities.Faturas.Enums;
 using Protectos.Domain.Entities.Operadoras;
-using Protectos.Domain.Entities.Relacoes;
 using Protectos.Domain.Generics.Enums;
 using System;
 using System.Collections.Generic;
@@ -69,6 +69,7 @@ namespace Protectos.Domain.Entities.Faturas
         public virtual Operadora Operadora { get; private set; }
         public virtual ICollection<FaturaCarencia> FaturaCarencia { get; private set; }
         public virtual ICollection<FaturaPlano> FaturaPlano { get; private set; }
+        public virtual ICollection<Precificacao> Precificacao { get; private set; }
         public override bool IsValid()
         {
             throw new NotImplementedException();

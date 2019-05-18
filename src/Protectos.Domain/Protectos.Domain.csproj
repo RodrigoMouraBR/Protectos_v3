@@ -60,6 +60,7 @@
     <Compile Include="Entities\Administradoras\Interfaces\Services\IAdministradoraService.cs" />
     <Compile Include="Entities\Administradoras\Services\AdministradoraService.cs" />
     <Compile Include="Entities\Beneficiarios\Beneficiario.cs" />
+    <Compile Include="Entities\Beneficiarios\BeneficiarioDeclaracaoSaude.cs" />
     <Compile Include="Entities\Beneficiarios\BeneficiarioDependente.cs" />
     <Compile Include="Entities\Beneficiarios\BeneficiarioEmail.cs" />
     <Compile Include="Entities\Beneficiarios\BeneficiarioEndereco.cs" />
@@ -83,7 +84,9 @@
     <Compile Include="Entities\Clientes\Interfaces\Services\IClienteService.cs" />
     <Compile Include="Entities\Clientes\Services\ClienteService.cs" />
     <Compile Include="Entities\Cobrancas\Banco.cs" />
+    <Compile Include="Entities\Cobrancas\BancoAgencia.cs" />
     <Compile Include="Entities\Cobrancas\MotivoExclusao.cs" />
+    <Compile Include="Entities\Cobrancas\Precificacao.cs" />
     <Compile Include="Entities\Corretoras\Corretora.cs" />
     <Compile Include="Entities\Corretoras\CorretoraEmail.cs" />
     <Compile Include="Entities\Corretoras\CorretoraEndereco.cs" />
@@ -122,6 +125,10 @@
     <Compile Include="Entities\Faturas\Interfaces\Repositories\IFaturaRepository.cs" />
     <Compile Include="Entities\Faturas\Interfaces\Services\IFaturaService.cs" />
     <Compile Include="Entities\Faturas\Services\FaturaService.cs" />
+    <Compile Include="Entities\Filiais\Filial.cs" />
+    <Compile Include="Entities\Filiais\FilialEmail.cs" />
+    <Compile Include="Entities\Filiais\FilialEndereco.cs" />
+    <Compile Include="Entities\Filiais\FilialTelefone.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraEmailRepository.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraEnderecoRepository.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraRepository.cs" />
@@ -143,7 +150,6 @@
     <Compile Include="Entities\Propostas\Proposta.cs" />
     <Compile Include="Entities\Propostas\PropostaItem.cs" />
     <Compile Include="Entities\Propostas\TipoVencimentoReferencia.cs" />
-    <Compile Include="Entities\TabelaPreco\Precificacao.cs" />
     <Compile Include="Generics\Enums\EFaturaPlanoTipo.cs" />
     <Compile Include="Generics\Enums\EFormaPagamento.cs" />
     <Compile Include="Generics\Enums\EParentesco.cs" />
@@ -159,7 +165,17 @@
     <Compile Include="ValuesObjects\CNPJ.cs" />
     <Compile Include="ValuesObjects\CPF.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Entities\Cobrancas\Interfaces\Repositories\" />
+    <Folder Include="Entities\Cobrancas\Interfaces\services\" />
+    <Folder Include="Entities\Cobrancas\Services\" />
+    <Folder Include="Entities\Filiais\Interfaces\Repositories\" />
+    <Folder Include="Entities\Filiais\Interfaces\Services\" />
+    <Folder Include="Entities\Filiais\Services\" />
+    <Folder Include="Entities\Propostas\Interfaces\Repositories\" />
+    <Folder Include="Entities\Propostas\Interfaces\Services\" />
+    <Folder Include="Entities\Propostas\Services\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

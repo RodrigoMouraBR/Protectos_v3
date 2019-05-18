@@ -84,6 +84,10 @@
     <Compile Include="Mappings\Faturas\FaturaCarenciaMapping.cs" />
     <Compile Include="Mappings\Faturas\FaturaMapping.cs" />
     <Compile Include="Mappings\Faturas\FaturaPlanoMapping.cs" />
+    <Compile Include="Mappings\Filiais\FilialEmailMapping.cs" />
+    <Compile Include="Mappings\Filiais\FilialEnderecoMapping.cs" />
+    <Compile Include="Mappings\Filiais\FilialMapping.cs" />
+    <Compile Include="Mappings\Filiais\FilialTelefoneMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraEmailMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraEnderecoMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraMapping.cs" />
@@ -136,6 +140,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mappings\Propostas\" />
+    <Folder Include="Repositories\Filiais\" />
+    <Folder Include="Repositories\Propostas\" />
+    <Folder Include="Repositories\TabelaPreco\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
