@@ -98,7 +98,13 @@
     <Compile Include="Entities\Corretores\Corretor.cs" />
     <Compile Include="Entities\Corretores\CorretorEmail.cs" />
     <Compile Include="Entities\Corretores\CorretorEndereco.cs" />
-    <Compile Include="Entities\Corretores\CorretoTelefone.cs" />
+    <Compile Include="Entities\Corretores\CorretorTelefone.cs" />
+    <Compile Include="Entities\Corretores\Interfaces\Repositories\ICorretorEmailRepository.cs" />
+    <Compile Include="Entities\Corretores\Interfaces\Repositories\ICorretorEnderecoRepository.cs" />
+    <Compile Include="Entities\Corretores\Interfaces\Repositories\ICorretorRepository.cs" />
+    <Compile Include="Entities\Corretores\Interfaces\Repositories\ICorretorTelefoneRepository.cs" />
+    <Compile Include="Entities\Corretores\Interfaces\Services\ICorretorService.cs" />
+    <Compile Include="Entities\Corretores\Services\CorretorService.cs" />
     <Compile Include="Entities\Entidades\Entidade.cs" />
     <Compile Include="Entities\Entidades\EntidadeEmail.cs" />
     <Compile Include="Entities\Entidades\EntidadeEndereco.cs" />

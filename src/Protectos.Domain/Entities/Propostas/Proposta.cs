@@ -85,8 +85,7 @@ namespace Protectos.Domain.Entities.Propostas
         public virtual Entidade Entidade { get; private set; }
         public virtual Beneficiario Beneficiario { get; private set; }
         public virtual Corretor Corretor { get; private set; }
-        public virtual Cliente Cliente { get; private set; }
-       
+        public virtual Cliente Cliente { get; private set; }       
 
         public override bool IsValid()
         {
