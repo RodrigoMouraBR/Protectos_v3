@@ -17,7 +17,7 @@ namespace Protectos.Domain.Entities.Faturas
         }
         public string numeroFaturaCarencia { get; private set; }
         public string Descricao { get; private set; }
-        public EStatus Status { get; private set; }
+        public EStatus Status { get; private set; }        
         public Guid FaturaId { get; private set; }
         public virtual Fatura Fatura { get; private set; }
         public override bool IsValid()

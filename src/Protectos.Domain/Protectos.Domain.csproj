@@ -72,6 +72,7 @@
     <Compile Include="Entities\Beneficiarios\Interfaces\Services\IBeneficiarioService.cs" />
     <Compile Include="Entities\Beneficiarios\Services\BeneficiarioService.cs" />
     <Compile Include="Entities\Clientes\Cliente.cs" />
+    <Compile Include="Entities\Clientes\ClienteBeneficiario.cs" />
     <Compile Include="Entities\Clientes\ClienteEmail.cs" />
     <Compile Include="Entities\Clientes\ClienteEndereco.cs" />
     <Compile Include="Entities\Clientes\ClienteTelefone.cs" />
@@ -83,8 +84,6 @@
     <Compile Include="Entities\Clientes\Services\ClienteService.cs" />
     <Compile Include="Entities\Cobrancas\Banco.cs" />
     <Compile Include="Entities\Cobrancas\MotivoExclusao.cs" />
-    <Compile Include="Entities\Configuracoes\RelacaoFaturaPlano.cs" />
-    <Compile Include="Entities\Configuracoes\RelacaoOperadoraEntidade.cs" />
     <Compile Include="Entities\Corretoras\Corretora.cs" />
     <Compile Include="Entities\Corretoras\CorretoraEmail.cs" />
     <Compile Include="Entities\Corretoras\CorretoraEndereco.cs" />
@@ -118,7 +117,6 @@
     <Compile Include="Entities\Faturas\Enums\EFaturaTipo.cs" />
     <Compile Include="Entities\Faturas\Fatura.cs" />
     <Compile Include="Entities\Faturas\FaturaCarencia.cs" />
-    <Compile Include="Entities\Faturas\FaturaPlano.cs" />
     <Compile Include="Entities\Faturas\Interfaces\Repositories\IFaturaCarencia.cs" />
     <Compile Include="Entities\Faturas\Interfaces\Repositories\IFaturaRepository.cs" />
     <Compile Include="Entities\Faturas\Interfaces\Services\IFaturaService.cs" />
@@ -129,8 +127,10 @@
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraTelefoneRepository.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\Services\IOperadoraService.cs" />
     <Compile Include="Entities\Operadoras\Operadora.cs" />
+    <Compile Include="Entities\Operadoras\OperadoraCongenere.cs" />
     <Compile Include="Entities\Operadoras\OperadoraEmail.cs" />
     <Compile Include="Entities\Operadoras\OperadoraEndereco.cs" />
+    <Compile Include="Entities\Operadoras\OperadoraEntidade.cs" />
     <Compile Include="Entities\Operadoras\OperadoraTelefone.cs" />
     <Compile Include="Entities\Operadoras\Services\OperadoraService.cs" />
     <Compile Include="Entities\Planos\Enums\EPlanoTipo.cs" />
@@ -138,9 +138,11 @@
     <Compile Include="Entities\Planos\Interfaces\Services\IPlanoService.cs" />
     <Compile Include="Entities\Planos\Plano.cs" />
     <Compile Include="Entities\Planos\Services\PlanoService.cs" />
+    <Compile Include="Entities\Propostas\Enums\EPropostaItemStatus.cs" />
     <Compile Include="Entities\Propostas\Proposta.cs" />
     <Compile Include="Entities\Propostas\PropostaItem.cs" />
     <Compile Include="Entities\Propostas\TipoVencimentoReferencia.cs" />
+    <Compile Include="Entities\Relacoes\FaturaPlano.cs" />
     <Compile Include="Entities\TabelaPreco\Precificacao.cs" />
     <Compile Include="Generics\Enums\EFaturaPlanoTipo.cs" />
     <Compile Include="Generics\Enums\EFormaPagamento.cs" />

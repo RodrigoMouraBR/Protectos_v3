@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Protectos.Domain.Core.Models;
+using Protectos.Domain.Entities.Clientes;
 using Protectos.Domain.Generics.Enums;
-using Protectos.Domain.ValuesObjects;
 using System;
 using System.Collections.Generic;
 namespace Protectos.Domain.Entities.Beneficiarios
@@ -38,6 +38,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
         public virtual ICollection<BeneficiarioTelefone> Telefones { get; private set; }
         public virtual ICollection<BeneficiarioEmail> Emails { get; private set; }
         public virtual ICollection<BeneficiarioDependente> Dependentes { get; private set; }
+        public virtual ICollection<ClienteBeneficiario> ClienteBeneficiario { get; private set; }
         public override bool IsValid()
         {
             Validation();

@@ -27,6 +27,7 @@ namespace Protectos.Domain.Entities.Clientes
         public virtual ICollection<ClienteEndereco> Enderecos { get; private set; }
         public virtual ICollection<ClienteTelefone> Telefones { get; private set; }
         public virtual ICollection<ClienteEmail> Emails { get; private set; }
+        public virtual ICollection<ClienteBeneficiario> ClienteBeneficiario { get; private set; }
         public override bool IsValid()
         {
             Validation();
