@@ -8,6 +8,13 @@ namespace Protectos.Infra.Data.Mappings.Beneficiarios
         public BeneficiarioDependenteMapping()
         {
             HasKey(c => c.Id);
+            Property(c => c.Ativo);
+            Property(c => c.DataCadastro)
+                .IsRequired();
+            Property(c => c.CadastradoPor)
+                .IsRequired();
+            Property(c => c.DataAlteracao);
+            Property(c => c.AlteradoPor);
             Property(c => c.Nome)
                 .HasColumnType("varchar")
                 .HasMaxLength(50)

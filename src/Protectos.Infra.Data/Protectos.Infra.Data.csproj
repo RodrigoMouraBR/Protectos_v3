@@ -69,6 +69,10 @@
     <Compile Include="Mappings\Beneficiarios\BeneficiarioEnderecoMapping.cs" />
     <Compile Include="Mappings\Beneficiarios\BeneficiarioMapping.cs" />
     <Compile Include="Mappings\Beneficiarios\BeneficiarioTelefoneMapping.cs" />
+    <Compile Include="Mappings\Clientes\ClienteEmailMapping.cs" />
+    <Compile Include="Mappings\Clientes\ClienteEnderecoMapping.cs" />
+    <Compile Include="Mappings\Clientes\ClienteMapping.cs" />
+    <Compile Include="Mappings\Clientes\ClienteTelefoneMapping.cs" />
     <Compile Include="Mappings\Corretoras\CorretoraEmailMapping.cs" />
     <Compile Include="Mappings\Corretoras\CorretoraEnderecoMapping.cs" />
     <Compile Include="Mappings\Corretoras\CorretoraMapping.cs" />
@@ -79,10 +83,12 @@
     <Compile Include="Mappings\Entidades\EntidadeTelefoneMapping.cs" />
     <Compile Include="Mappings\Faturas\FaturaCarenciaMapping.cs" />
     <Compile Include="Mappings\Faturas\FaturaMapping.cs" />
+    <Compile Include="Mappings\Faturas\FaturaPlanoMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraEmailMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraEnderecoMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraTelefoneMapping.cs" />
+    <Compile Include="Mappings\Planos\PlanoMapping.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraEmailRepository.cs" />
@@ -128,7 +134,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Mappings\Propostas\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

@@ -1,19 +1,14 @@
 ﻿using Protectos.Domain.Entities.Faturas;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Protectos.Infra.Data.Mappings.Faturas
 {
-    public class FaturaCarenciaMapping : EntityTypeConfiguration<FaturaCarencia>
+    public class FaturaPlanoMapping : EntityTypeConfiguration<FaturaPlano>
     {
-        public FaturaCarenciaMapping()
+        public FaturaPlanoMapping()
         {
             HasKey(c => c.Id);
-            Property(c => c.Ativo);
+            Property(c => c.Ativo);            
             Property(c => c.DataCadastro)
                 .IsRequired();
             Property(c => c.CadastradoPor)
@@ -21,14 +16,14 @@ namespace Protectos.Infra.Data.Mappings.Faturas
             Property(c => c.DataAlteracao);
             Property(c => c.AlteradoPor);
             HasRequired(c => c.Fatura)
-               .WithMany(a => a.FaturaCarencia)
-               .HasForeignKey(c => c.FaturaId);
+              .WithMany(a => a.FaturaPlano)
+              .HasForeignKey(c => c.FaturaId);
+            HasRequired(c => c.Plano)
+              .WithMany(a => a.FaturaPlano)
+              .HasForeignKey(c => c.PlanoId);
             Ignore(c => c.CascadeMode);
             Ignore(c => c.ValidationResult);
-
-            ToTable("FaturaCarencia");
-
-
-        }
+            ToTable("FaturaPlano");
+        }        
     }
 }

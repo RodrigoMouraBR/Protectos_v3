@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Protectos.Domain.Core.Models;
+using Protectos.Domain.Entities.Propostas;
 using Protectos.Domain.Generics.Enums;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,7 @@ namespace Protectos.Domain.Entities.Corretores
         public virtual ICollection<CorretorEndereco> Enderecos { get; private set; }
         public virtual ICollection<CorretorTelefone> Telefones { get; private set; }
         public virtual ICollection<CorretorEmail> Emails { get; private set; }
+        public virtual ICollection<Proposta> Proposta { get; private set; }
         public override bool IsValid()
         {
             Validation();

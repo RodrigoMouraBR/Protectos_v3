@@ -1,6 +1,6 @@
 ﻿using Protectos.Domain.Core.Models;
+using Protectos.Domain.Entities.Faturas;
 using Protectos.Domain.Entities.Planos.Enums;
-using Protectos.Domain.Entities.Relacoes;
 using System;
 using System.Collections.Generic;
 namespace Protectos.Domain.Entities.Planos

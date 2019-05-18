@@ -1,8 +1,12 @@
 ﻿using Protectos.Domain.Core.Models;
-using Protectos.Domain.Entities.Faturas;
 using Protectos.Domain.Entities.Planos;
 using System;
-namespace Protectos.Domain.Entities.Relacoes
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Protectos.Domain.Entities.Faturas
 {
     public class FaturaPlano : Entity<FaturaPlano>
     {
@@ -12,7 +16,7 @@ namespace Protectos.Domain.Entities.Relacoes
             PlanoId = planoId;
         }
         protected FaturaPlano()
-        {                
+        {
         }
         public Guid FaturaId { get; private set; }
         public Guid PlanoId { get; private set; }

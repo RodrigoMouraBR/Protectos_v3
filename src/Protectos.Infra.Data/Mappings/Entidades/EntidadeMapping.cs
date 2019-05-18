@@ -9,6 +9,13 @@ namespace Protectos.Infra.Data.Mappings.Entidades
         public EntidadeMapping()
         {
             HasKey(c => c.Id);
+            Property(c => c.Ativo);
+            Property(c => c.DataCadastro)
+                .IsRequired();
+            Property(c => c.CadastradoPor)
+                .IsRequired();
+            Property(c => c.DataAlteracao);
+            Property(c => c.AlteradoPor);
             Property(c => c.RazaoSocial)
                 .HasColumnType("varchar")
                 .HasMaxLength(100)
