@@ -1,0 +1,282 @@
+﻿
+@{
+    ViewBag.Titulo = "Beneficiario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-lg-12 col-md-12">
+    <div class="card">
+        <div class="card-header card-header-tabs card-header-rose">
+            <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                    <span class="nav-tabs-title">Beneficiario:</span>
+                    <ul class="nav nav-tabs" data-tabs="tabs">
+                        <li class="nav-item">
+                            <a class="nav-link  active show" href="#dados" data-toggle="tab">
+                                <i class="material-icons">bug_report</i> Dados
+                                <div class="ripple-container"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#produto" data-toggle="tab">
+                                <i class="material-icons">code</i> Produtos
+                                <div class="ripple-container"></div>
+                                <div class="ripple-container"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#settings" data-toggle="tab">
+                                <i class="material-icons">cloud</i> Server
+                                <div class="ripple-container"></div>
+                                <div class="ripple-container"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="tab-content">
+                <div class="tab-pane  active show" id="dados">
+                    <!-- dados-->
+                    <form role="form">
+
+                        <div class="row">
+                            <input type="hidden" id="id" name="id">
+
+                            <div class="col-md-2">
+                                <div class="form-group bmd-form-group">
+                                    <label class="bmd-label-floating">Nome:</label>
+                                    <input type="text" id="Nome" name="Nome" class="form-control text-uppercase">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group bmd-form-group">
+                                    <label class="bmd-label-floating">Sobrenome:</label>
+                                    <input type="text" id="Sobrenome" name="Sobrenome" class="form-control text-uppercase">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group bmd-form-group is-filled">
+                                    <label class="bmd-label-floating">Data Nascimento:</label>
+                                    <input type="text" class="form-control datepicker" value="19/05/2019">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group bmd-form-group">
+                                    <label class="bmd-label-floating">Cpf</label>
+                                    <input type="text" id="Cpf" name="Cpf" class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="row">
+
+                            <div class="col-sm-4">
+                                <div class="form-group bmd-form-group">
+                                    <div class="dropdown bootstrap-select show-tick show">
+                                        <select id="sexo" class="selectpicker" data-style="select-with-transition" title="Escolha o sexo" data-size="7" tabindex="-98">
+                                            <option value="1">FEMININO </option>
+                                            <option value="2">MASCULINO</option>
+                                            <option value="3">OUTRO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group bmd-form-group">
+                                    <div class="dropdown bootstrap-select show-tick show">
+                                        <select id="estadocivil" class="selectpicker" data-style="select-with-transition" title="Escolha o sexo" data-size="7" tabindex="-98">
+                                            <option value="1">Solteiro(a)         </option>
+                                            <option selected="selected" value="2">Casado(a)           </option>
+                                            <option value="3">Divorciado(a)       </option>
+                                            <option value="4">Viúvo(a)            </option>
+                                            <option value="5">Separado(a)         </option>
+                                            <option value="6">Companheiro(a)      </option>
+                                            <option value="7">Não informado       </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group bmd-form-group">
+                                    <label class="bmd-label-floating">Cartão Nacional de Saude</label>
+                                    <input type="text" id="CNS" name="CNS" class="form-control">
+                                </div>
+                            </div>
+                        </div><!--//row-->
+
+
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="form-group bmd-form-group">
+                                    <label class="bmd-label-floating">RG:</label>
+                                    <input type="text" id="RG" name="RG" class="form-control text-uppercase">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group bmd-form-group">
+                                    <label class="bmd-label-floating">Orgão Emissor:</label>
+                                    <input type="text" id="OrgaoEmissor" name="OrgaoEmissor" class="form-control text-uppercase">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group bmd-form-group ">
+                                    <label class="bmd-label-floating">Data Expedição:</label>
+                                    <input type="text" class="form-control datepicker" value="19/05/2019">
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--row 3-->
+
+
+
+                    </form>
+
+
+                    <!--//dados-->
+                </div>
+                <div class="tab-pane" id="produto">
+                    <!--PRODUTO-->
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-rose card-header-icon">
+                                <div class="card-icon">
+                                    <i class="material-icons">assignment</i>
+                                </div>
+                                <h4 class="card-title">Produtos</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">#</th>
+                                                <th>Produto</th>
+                                                <th>Tipo</th>
+                                                <th>Desde</th>
+                                                <th class="text-right">Staus</th>
+                                                <th class="text-right">Açoes</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">1</td>
+                                                <td>Unimed</td>
+                                                <td>Individual</td>
+                                                <td>2013</td>
+                                                <td class="text-right">Ativo</td>
+                                                <td class="td-actions text-right">
+                                                    <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
+                                                        <i class="material-icons">person</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                        <i class="material-icons">edit</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                        <i class="material-icons">close</i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">2</td>
+                                                <td>Intermedica</td>
+                                                <td>Adesao</td>
+                                                <td>2012</td>
+                                                <td class="text-right">Cancelado</td>
+                                                <td class="td-actions text-right">
+                                                    <button type="button" rel="tooltip" class="btn btn-info btn-round" data-original-title="" title="">
+                                                        <i class="material-icons">person</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" class="btn btn-success btn-round" data-original-title="" title="">
+                                                        <i class="material-icons">edit</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-original-title="" title="">
+                                                        <i class="material-icons">close</i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- // PRODUTO-->
+
+
+
+
+                
+                   
+                </div>
+                <div class="tab-pane" id="settings">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value="">
+                                            <span class="form-check-sign">
+                                                <span class="check"></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                                <td class="td-actions text-right">
+                                    <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                    <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
+                                        <i class="material-icons">close</i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value="" checked="">
+                                            <span class="form-check-sign">
+                                                <span class="check"></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                                </td>
+                                <td class="td-actions text-right">
+                                    <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                    <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
+                                        <i class="material-icons">close</i>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Titulo = "Administradora";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-icon card-header-rose">
+            <div class="card-icon">
+                <i class="material-icons">extension</i>
+            </div>
+            <h4 class="card-title">
+                Editar -
+                <small class="category">Dados da Administradora</small>
+            </h4>
+        </div>
+        <div class="card-body">
+            <form>
+
+                <div class="row">
+                    <input type="hidden" id="id" name="id">
+
+                    <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                            <label class="bmd-label-floating">Razão Social</label>
+                            <input type="text" id="RazaoSocial" name="RazaoSocial" class="form-control text-uppercase">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group bmd-form-group">
+                            <label class="bmd-label-floating">Nome Fantasia</label>
+                            <input type="text" id="NomeFantasia" name="NomeFantasia" class="form-control text-uppercase">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group bmd-form-group">
+                            <label class="bmd-label-floating">Cnpj</label>
+                            <input type="text" id="Cnpj" name="Cnpj" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group bmd-form-group">
+                            <label class="bmd-label-floating">Insc. Estadual</label>
+                            <input type="text" id="InscricaoEstadual" name="InscricaoEstadual" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group bmd-form-group">
+                            <label class="bmd-label-floating">Insc. Municipal</label>
+                            <input type="text" id="InscricaoMunicipal" name="InscricaoMunicipal" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                            <label class="bmd-label-floating">Site</label>
+                            <input type="text" id="Site" name="Site" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-rose pull-right">Salvar</button>
+                <div class="clearfix"></div>
+            </form>
+
+        </div>
+    </div>
+</div>

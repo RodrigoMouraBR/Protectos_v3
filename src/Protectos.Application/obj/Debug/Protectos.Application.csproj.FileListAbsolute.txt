@@ -22,3 +22,4 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.csproj.CopyComplete
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Application\obj\Debug\Protectos.Application.pdb
+C:\PROJETO\Protectos\src\Protectos.Application\obj\Debug\Protectos.Application.csprojResolveAssemblyReference.cache

@@ -20,3 +20,4 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.csproj.CopyComplete
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.pdb
+C:\PROJETO\Protectos\src\Protectos.Domain\obj\Debug\Protectos.Domain.csprojResolveAssemblyReference.cache
