@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protectos.Infra.CrossCuttin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protectos.Web", "src\Protectos.Web\Protectos.Web.csproj", "{5137979B-9D18-49AD-AB66-5695B67EDE89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protectos.Service", "src\Protectos.Service\Protectos.Service.csproj", "{9BF9FEA9-3248-45C7-981E-BE79B8E94D2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{5137979B-9D18-49AD-AB66-5695B67EDE89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5137979B-9D18-49AD-AB66-5695B67EDE89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5137979B-9D18-49AD-AB66-5695B67EDE89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BF9FEA9-3248-45C7-981E-BE79B8E94D2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF9FEA9-3248-45C7-981E-BE79B8E94D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF9FEA9-3248-45C7-981E-BE79B8E94D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF9FEA9-3248-45C7-981E-BE79B8E94D2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +99,7 @@ Global
 		{7BC32D22-8488-4496-A1C0-07416D7FB5E8} = {32EFD1DD-77EA-414F-8EFA-004C16FF5C74}
 		{FF56073C-4223-4EDC-85AD-680664BC446E} = {C60EB84B-FCA5-498D-B46B-6C1A3A294DBA}
 		{5137979B-9D18-49AD-AB66-5695B67EDE89} = {32EFD1DD-77EA-414F-8EFA-004C16FF5C74}
+		{9BF9FEA9-3248-45C7-981E-BE79B8E94D2F} = {8C2FD6D1-8789-41BC-A746-C3B2A0A470F8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C3839CE0-53AE-4343-803B-BE189A463404}
