@@ -22,8 +22,8 @@ namespace Protectos.Domain.Entities.Entidades.Services
         //Entidade
         public Entidade EntidadeAdicionar(Entidade Entidade)
         {
-            if (!Entidade.IsValid())
-                return Entidade;
+            //if (!Entidade.IsValid())
+            //    return Entidade;
             _entidadeRepository.Add(Entidade);
             return Entidade;
         }
@@ -38,8 +38,8 @@ namespace Protectos.Domain.Entities.Entidades.Services
         //Endereco
         public EntidadeEndereco EntidadeEnderecoAdicionar(EntidadeEndereco entidadeEndereco)
         {
-            if (!entidadeEndereco.IsValid())
-                return entidadeEndereco;
+            //if (!entidadeEndereco.IsValid())
+            //    return entidadeEndereco;
             _entidadeEnderecoRepository.Add(entidadeEndereco);
             return entidadeEndereco;
         }
@@ -54,8 +54,8 @@ namespace Protectos.Domain.Entities.Entidades.Services
         //Email
         public EntidadeEmail EntidadeEmailAdicionar(EntidadeEmail entidadeEmail)
         {
-            if (!entidadeEmail.IsValid())
-                return entidadeEmail;
+            //if (!entidadeEmail.IsValid())
+            //    return entidadeEmail;
             _entidadeEmailRepository.Add(entidadeEmail);
             return entidadeEmail;
         }
@@ -70,8 +70,8 @@ namespace Protectos.Domain.Entities.Entidades.Services
         //Telefone
         public EntidadeTelefone EntidadeTelefoneAdicionar(EntidadeTelefone entidadeTelefone)
         {
-            if (!entidadeTelefone.IsValid())
-                return entidadeTelefone;
+            //if (!entidadeTelefone.IsValid())
+            //    return entidadeTelefone;
             _entidadeTelefoneRepository.Add(entidadeTelefone);
             return entidadeTelefone;
         }

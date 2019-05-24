@@ -39,7 +39,8 @@ namespace Protectos.Infra.Data.Mappings.Planos
             Property(c => c.CodigoPlanoSuspenso)
                 .HasColumnType("varchar")
                 .HasMaxLength(100)
-                .IsRequired();           
+                .IsRequired();          
+
             Ignore(c => c.CascadeMode);
             Ignore(c => c.ValidationResult);
             ToTable("Plano");

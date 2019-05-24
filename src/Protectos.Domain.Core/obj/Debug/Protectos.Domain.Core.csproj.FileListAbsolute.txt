@@ -15,6 +15,7 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.csproj.CopyComplete
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.pdb
+<<<<<<< HEAD
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.csprojAssemblyReference.cache
 C:\PROJETO\Protectos\src\Protectos.Domain.Core\bin\Debug\Protectos.Domain.Core.dll
 C:\PROJETO\Protectos\src\Protectos.Domain.Core\bin\Debug\Protectos.Domain.Core.pdb
@@ -23,3 +24,5 @@ C:\PROJETO\Protectos\src\Protectos.Domain.Core\bin\Debug\System.ComponentModel.A
 C:\PROJETO\Protectos\src\Protectos.Domain.Core\bin\Debug\FluentValidation.xml
 C:\PROJETO\Protectos\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.dll
 C:\PROJETO\Protectos\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.pdb
+=======
+>>>>>>> desenv

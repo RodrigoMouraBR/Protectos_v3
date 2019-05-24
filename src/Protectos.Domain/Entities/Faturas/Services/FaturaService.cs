@@ -16,15 +16,15 @@ namespace Protectos.Domain.Entities.Faturas.Services
         }
         public Fatura FaturaAdicionar(Fatura entidadeEmail)
         {
-            if (!entidadeEmail.IsValid())
-                return entidadeEmail;
+            //if (!entidadeEmail.IsValid())
+            //    return entidadeEmail;
             _faturaRepository.Add(entidadeEmail);
             return entidadeEmail;
         }
         public Fatura FaturaAtualizar(Fatura entidadeEmail)
         {
-            if (!entidadeEmail.IsValid())
-                return entidadeEmail;
+            //if (!entidadeEmail.IsValid())
+            //    return entidadeEmail;
             _faturaRepository.Update(entidadeEmail);
             return entidadeEmail;
         }

@@ -1,4 +1,5 @@
-﻿using Protectos.Domain.Core.Models;
+﻿using FluentValidation;
+using Protectos.Domain.Core.Models;
 using Protectos.Domain.Entities.Cobrancas;
 using Protectos.Domain.Entities.Entidades;
 using Protectos.Domain.Entities.Faturas.Enums;
@@ -44,7 +45,7 @@ namespace Protectos.Domain.Entities.Faturas
             Status = status;
             EntidadeId = entidadeId;
             OperadoraId = operadoraId;
-            FaturaCarencia = new List<FaturaCarencia>();
+           //FaturaCarencia = new List<FaturaCarencia>();
         }
         protected Fatura()
         {
@@ -72,7 +73,24 @@ namespace Protectos.Domain.Entities.Faturas
         public virtual ICollection<Precificacao> Precificacao { get; private set; }
         public override bool IsValid()
         {
-            throw new NotImplementedException();
+            Validate();
+            return ValidationResult.IsValid;
         }
+        private void Validate()
+        {
+            ValidateProperty();
+            ValidationResult = Validate(this);
+        }
+        private void ValidateProperty()
+        {
+            RuleFor(c => c.NomeFatura)
+                .NotEmpty().WithMessage("o telefone precisa ser fornecido")
+                .Length(2, 100).WithMessage("o telefone precisa ter entre 2 e 100 caracteres");
+
+            RuleFor(c => c.NumeroFatura)
+                .NotEmpty().WithMessage("o telefone precisa ser fornecido")
+                .Length(2, 10).WithMessage("o telefone precisa ter entre 2 e 10 caracteres");
+        }
+
     }
 }

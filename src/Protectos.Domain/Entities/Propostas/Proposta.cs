@@ -1,4 +1,5 @@
-﻿using Protectos.Domain.Core.Models;
+﻿using FluentValidation;
+using Protectos.Domain.Core.Models;
 using Protectos.Domain.Entities.Beneficiarios;
 using Protectos.Domain.Entities.Clientes;
 using Protectos.Domain.Entities.Cobrancas;
@@ -10,28 +11,7 @@ namespace Protectos.Domain.Entities.Propostas
 {
     public class Proposta : Entity<Proposta>
     {
-        public Proposta(string numeroProposta, 
-                        Guid propostaPai, 
-                        DateTime dataVigencia, 
-                        Guid beneficiarioId, 
-                        Guid entidadeId, 
-                        Guid corretorId, 
-                        Guid tipoVencimentoReferenciaId, 
-                        Guid bancoId, 
-                        Guid motivoExclusaoId, 
-                        Guid pessoaIdPagadora, 
-                        Guid clienteIdPagadora, 
-                        EFormaPagamento myProperty, 
-                        int diaVencimentoReferencia, 
-                        string numeroAgenciaBanco, 
-                        string digitoAgenciaBanco, 
-                        string numeroContaCorrente, 
-                        string numeroDigitoContaCorrente, 
-                        string cPFPagador, 
-                        string cNPJPagador, 
-                        decimal taxaJuros, 
-                        decimal taxaMulta, 
-                        decimal taxaBancaria)
+        public Proposta(string numeroProposta, Guid propostaPai, DateTime dataVigencia, Guid beneficiarioId, Guid entidadeId, Guid corretorId, Guid tipoVencimentoReferenciaId, Guid bancoId, Guid motivoExclusaoId, Guid pessoaIdPagadora, Guid clienteIdPagadora, EFormaPagamento formaPagamento, int diaVencimentoReferencia, string numeroAgenciaBanco, string digitoAgenciaBanco, string numeroContaCorrente, string numeroDigitoContaCorrente, string cPFPagador, string cNPJPagador, decimal taxaJuros, decimal taxaMulta, decimal taxaBancaria)
         {
             NumeroProposta = numeroProposta;
             PropostaPai = propostaPai;
@@ -44,7 +24,7 @@ namespace Protectos.Domain.Entities.Propostas
             MotivoExclusaoId = motivoExclusaoId;
             PessoaIdPagadora = pessoaIdPagadora;
             ClienteIdPagadora = clienteIdPagadora;
-            MyProperty = myProperty;
+            FormaPagamento = formaPagamento;
             DiaVencimentoReferencia = diaVencimentoReferencia;
             NumeroAgenciaBanco = numeroAgenciaBanco;
             DigitoAgenciaBanco = digitoAgenciaBanco;
@@ -56,19 +36,22 @@ namespace Protectos.Domain.Entities.Propostas
             TaxaMulta = taxaMulta;
             TaxaBancaria = taxaBancaria;
         }
+        protected Proposta()
+        {
+        }
         public string NumeroProposta { get; private set; }
         public Guid PropostaPai { get; private set; }
         public DateTime DataVigencia { get; private set; }
         public Guid BeneficiarioId { get; private set; }
-        public Guid EntidadeId { get; set; }
-        public Guid CorretorId { get; set; }
+        public Guid EntidadeId { get; private set; }
+        public Guid CorretorId { get; private set; }
         public Guid TipoVencimentoReferenciaId { get; private set; }
         public Guid BancoId { get; private set; }
         public Guid MotivoExclusaoId { get; private set; }
         public Guid PessoaIdPagadora { get; private set; }
         public Guid ClienteIdPagadora { get; private set; }
-        public EFormaPagamento MyProperty { get; private set; }
-        public int DiaVencimentoReferencia { get; private set; }        
+        public EFormaPagamento FormaPagamento { get; private set; }
+        public int DiaVencimentoReferencia { get; private set; }
         public string NumeroAgenciaBanco { get; private set; }
         public string DigitoAgenciaBanco { get; private set; }
         public string NumeroContaCorrente { get; private set; }
@@ -79,17 +62,29 @@ namespace Protectos.Domain.Entities.Propostas
         public Decimal TaxaMulta { get; private set; }
         public Decimal TaxaBancaria { get; private set; }
 
-        public virtual TipoVencimentoReferencia TipoVencimentoReferencia { get; private set; }
-        public virtual MotivoExclusao MotivoExclusao { get; private set; }
+        public virtual Beneficiario Beneficiarios { get; private set; }//
+        public virtual TipoVencimentoReferencia TipoVencimentoReferencia { get; private set; }//
+        public virtual MotivoExclusao MotivoExclusao { get; private set; }        
         public virtual Banco Banco { get; private set; }
         public virtual Entidade Entidade { get; private set; }
-        public virtual Beneficiario Beneficiario { get; private set; }
         public virtual Corretor Corretor { get; private set; }
-        public virtual Cliente Cliente { get; private set; }       
+        public virtual Cliente Cliente { get; private set; }
 
         public override bool IsValid()
         {
-            throw new NotImplementedException();
+            Validate();
+            return ValidationResult.IsValid;
+        }
+        private void Validate()
+        {
+            ValidateProperty();
+            ValidationResult = Validate(this);
+        }
+        private void ValidateProperty()
+        {
+            RuleFor(c => c.NumeroProposta)
+                .NotEmpty().WithMessage("o numero da proposta precisa ser fornecido")
+                .Length(1, 50).WithMessage("o numero da proposta precisa ter entre 1 e 10 caracteres");
         }
     }
 }

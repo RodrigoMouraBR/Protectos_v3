@@ -14,44 +14,57 @@ namespace Protectos.Domain.Entities.Corretoras
             InscricaoEstadual = inscricaoEstadual;
             InscricaoMunicipal = inscricaoMunicipal;
             Site = site;
+            Enderecos = new List<CorretoraEndereco>();
+            Telefones = new List<CorretoraTelefone>();
+            Emails = new List<CorretoraEmail>();
         }
         protected Corretora()
         {
 
-        }       
+        }        
         public string RazaoSocial { get; private set; }
         public string NomeFantasia { get; private set; }
         public string Cnpj { get; private set; }
         public string InscricaoEstadual { get; private set; }
         public string InscricaoMunicipal { get; private set; }
-        public string Site { get; private set; }        
+        public string Site { get; private set; }
         public virtual ICollection<CorretoraEndereco> Enderecos { get; private set; }
         public virtual ICollection<CorretoraEmail> Emails { get; private set; }
         public virtual ICollection<CorretoraTelefone> Telefones { get; private set; }
+
         public override bool IsValid()
         {
-            Validation();
+            Validate();
             return ValidationResult.IsValid;
-        }       
-        private void Validation()
+        }
+        private void Validate()
         {
-            ValidationProperties();
+            ValidateProperty();
             ValidationResult = Validate(this);
         }
-        private void ValidationProperties()
+        private void ValidateProperty()
         {
             RuleFor(c => c.RazaoSocial)
-                .NotEmpty().WithMessage("a razão social precisa ser fornecido")
-                .Length(2, 150).WithMessage("a razão precisa ter entre 2 e 150 caracteres");
+                .NotEmpty().WithMessage("A razão social precisa ser fornecido")
+                .Length(2, 100).WithMessage("A razão social precisa ter entre 2 e 100 caracteres");
+
             RuleFor(c => c.NomeFantasia)
                 .NotEmpty().WithMessage("O nome fantasia precisa ser fornecido")
-                .Length(2, 150).WithMessage("O nome fantasia precisa ter entre 2 e 150 caracteres");
+                .Length(2, 100).WithMessage("O nome fantasia precisa ter entre 2 e 100 caracteres");
+
             RuleFor(c => c.Cnpj)
                 .NotEmpty().WithMessage("O cnpj precisa ser fornecido")
                 .Length(14).WithMessage("O cnpj precisa ter 14 caracteres");
+
             RuleFor(c => c.InscricaoEstadual)
-                .NotEmpty().WithMessage("O nome fantasia precisa ser fornecido")
-                .Length(2, 14).WithMessage("O nome fantasia precisa ter entre 2 e 150 caracteres");
+                .NotEmpty().WithMessage("O nome do evento precisa ser fornecido")
+                .Length(2, 14).WithMessage("O nome do evento precisa ter 14 caracteres");
+
+            RuleFor(c => c.InscricaoMunicipal)
+                .NotEmpty().WithMessage("O nome do evento precisa ser fornecido")
+                .Length(2, 14).WithMessage("O nome do evento precisa ter entre 2 e 150 caracteres");
         }
+
+
     }
 }

@@ -177,10 +177,10 @@ namespace Protectos.Application.ApplicationServices.Administradoras
             BeginTransaction();
             var administradoraReturn = _administradoraService.AdministradoraAdicionar(administradora);
             administradoraCadastroViewModel = Mapper.Map<AdministradoraCadastroViewModel>(administradoraReturn);
-            if (!administradoraReturn.ValidationResult.IsValid)
-            {
-                return administradoraCadastroViewModel;
-            }
+            //if (!administradoraReturn.ValidationResult.IsValid)
+            //{
+            //    return administradoraCadastroViewModel;
+            //}
             if (!SalvarImagemCliente(foto, administradora.Id))
             {
                 // Tomada de decisão caso a imagem não seja gravada.              

@@ -1,4 +1,5 @@
-﻿using Protectos.Domain.Core.Models;
+﻿using FluentValidation;
+using Protectos.Domain.Core.Models;
 using Protectos.Domain.Entities.Beneficiarios;
 using Protectos.Domain.Entities.Cobrancas;
 using Protectos.Domain.Entities.Faturas;
@@ -45,15 +46,28 @@ namespace Protectos.Domain.Entities.Propostas
         public DateTime DataVigencia { get; private set; }
         public Guid OperadoraCongenereId { get; private set; }
         public Guid FaturaCarenciaId { get; private set; }
-        public virtual Plano Plano { get; private set; }
-        public virtual Fatura Fatura { get; private set; }
-        public virtual Beneficiario Beneficiario { get; private set; }
-        public virtual MotivoExclusao MotivoExclusao { get; private set; }
-        public virtual FaturaCarencia FaturaCarencia { get; private set; }
-        public virtual OperadoraCongenere OperadoraCongenere { get; private set; }
+        //public virtual Plano Plano { get; private set; }
+        //public virtual Fatura Fatura { get; private set; }
+        //public virtual Beneficiario Beneficiario { get; private set; }
+        //public virtual MotivoExclusao MotivoExclusao { get; private set; }
+        //public virtual FaturaCarencia FaturaCarencia { get; private set; }
+        //public virtual OperadoraCongenere OperadoraCongenere { get; private set; }
+
         public override bool IsValid()
         {
-            throw new NotImplementedException();
+            Validate();
+            return ValidationResult.IsValid;
         }
+        private void Validate()
+        {
+            ValidateProperty();
+            ValidationResult = Validate(this);
+        }
+        private void ValidateProperty()
+        {
+            RuleFor(c => c.PropostaItemStatus)
+                .NotEmpty().WithMessage("a proposta status precisa ser fornecido");                
+        }
+
     }
 }

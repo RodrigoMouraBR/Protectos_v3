@@ -7,11 +7,7 @@ namespace Protectos.Domain.Entities.Beneficiarios.Interfaces.Services
     {
         Beneficiario BeneficiarioAdicionar(Beneficiario beneficiario);
         Beneficiario BeneficiarioAtualizar(Beneficiario beneficiario);
-        void BeneficiarioDelete(Guid id);
-
-        BeneficiarioDependente BeneficiarioDependenteAtualizar(BeneficiarioDependente beneficiarioDependente);
-        BeneficiarioDependente BeneficiarioDependenteAdicionar(BeneficiarioDependente beneficiarioDependente);
-        void BeneficiarioDependenteDelete(Guid id);
+        void BeneficiarioDelete(Guid id);       
 
         BeneficiarioEndereco BeneficiarioEnderecoAdicionar(BeneficiarioEndereco beneficiarioEndereco);
         BeneficiarioEndereco BeneficiarioEnderecoAtualizar(BeneficiarioEndereco beneficiarioEndereco);

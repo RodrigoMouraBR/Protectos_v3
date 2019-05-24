@@ -11,23 +11,20 @@ namespace Protectos.Application.ApplicationServices.Beneficiarios
 {
     public class BeneficiarioApplicationService : ApplicationService, IBeneficiarioApplicationService
     {
-        private readonly IBeneficiarioRepository _beneficiarioRepository;
-        private readonly IBeneficiarioDependenteRepository _beneficiarioDependenteRepository;
+        private readonly IBeneficiarioRepository _beneficiarioRepository;        
         private readonly IBeneficiarioEnderecoRepository _beneficiarioEnderecoRepository;
         private readonly IBeneficiarioTelefoneRepository _beneficiarioTelefoneRepository;
         private readonly IBeneficiarioEmailRepository _beneficiarioEmailRepository;
         private readonly IBeneficiarioService _beneficiarioService;
 
 
-        public BeneficiarioApplicationService(IBeneficiarioRepository beneficiarioRepository,
-            IBeneficiarioDependenteRepository beneficiarioDependenteRepository,
+        public BeneficiarioApplicationService(IBeneficiarioRepository beneficiarioRepository,           
             IBeneficiarioEnderecoRepository beneficiarioEnderecoRepository,
             IBeneficiarioTelefoneRepository beneficiarioTelefoneRepository,
             IBeneficiarioEmailRepository beneficiarioEmailRepository,
             IBeneficiarioService beneficiarioService, IUnitOfWork uow) : base(uow)
         {
-            _beneficiarioRepository = beneficiarioRepository;
-            _beneficiarioDependenteRepository = beneficiarioDependenteRepository;
+            _beneficiarioRepository = beneficiarioRepository;            
             _beneficiarioEnderecoRepository = beneficiarioEnderecoRepository;
             _beneficiarioTelefoneRepository = beneficiarioTelefoneRepository;
             _beneficiarioEmailRepository = beneficiarioEmailRepository;
@@ -49,20 +46,8 @@ namespace Protectos.Application.ApplicationServices.Beneficiarios
             Commit();
             return beneficiarioViewModel;
         }
-        public BeneficiarioDependenteViewModel BeneficiarioDependenteAdicionar(BeneficiarioDependenteViewModel beneficiarioDependenteViewModel)
-        {
-            var beneficiario = Mapper.Map<BeneficiarioDependente>(beneficiarioDependenteViewModel);
-            _beneficiarioService.BeneficiarioDependenteAdicionar(beneficiario);
-            Commit();
-            return beneficiarioDependenteViewModel;
-        }
-        public BeneficiarioDependenteViewModel BeneficiarioDependenteAtualizar(BeneficiarioDependenteViewModel beneficiarioDependenteViewModel)
-        {
-            var beneficiario = Mapper.Map<BeneficiarioDependente>(beneficiarioDependenteViewModel);
-            _beneficiarioService.BeneficiarioDependenteAtualizar(beneficiario);
-            Commit();
-            return beneficiarioDependenteViewModel;
-        }       
+       
+           
         public BeneficiarioEmailViewModel BeneficiarioEmailAdicionar(BeneficiarioEmailViewModel beneficiarioEmailViewModel)
         {
             var beneficiario = Mapper.Map<BeneficiarioEmail>(beneficiarioEmailViewModel);
@@ -123,14 +108,8 @@ namespace Protectos.Application.ApplicationServices.Beneficiarios
         {
             return Mapper.Map<IEnumerable<BeneficiarioEnderecoViewModel>>(_beneficiarioEnderecoRepository.GetAll());
         }
-        public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterTodos()
-        {
-            return Mapper.Map<IEnumerable<BeneficiarioDependenteViewModel>>(_beneficiarioDependenteRepository.GetAll());
-        }        
-        public BeneficiarioDependenteViewModel BeneficiarioDependenteObterPorId(Guid id)
-        {
-            throw new NotImplementedException();
-        }
+        
+       
         public BeneficiarioViewModel BeneficiarioObterPorId(Guid id)
         {
             return Mapper.Map<BeneficiarioViewModel>(_beneficiarioRepository.GetbyId(id));
@@ -163,26 +142,14 @@ namespace Protectos.Application.ApplicationServices.Beneficiarios
         {
             return Mapper.Map<IEnumerable<BeneficiarioViewModel>>(_beneficiarioRepository.BeneficiarioObterInativo());
         }
-        public BeneficiarioDependenteViewModel BeneficiarioDependenteObterPorCpf(string cpf)
-        {
-            return Mapper.Map<BeneficiarioDependenteViewModel>(_beneficiarioDependenteRepository.BeneficiarioDependenteObterPorCpf(cpf));
-        }
-        public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterAtivo()
-        {
-            return Mapper.Map<IEnumerable<BeneficiarioDependenteViewModel>>(_beneficiarioDependenteRepository.BeneficiarioDependenteObterAtivo());
-        }
-        public IEnumerable<BeneficiarioDependenteViewModel> BeneficiarioDependenteObterInativo()
-        {
-            return Mapper.Map<IEnumerable<BeneficiarioDependenteViewModel>>(_beneficiarioDependenteRepository.BeneficiarioDependenteObterInativo());
-        }
+        
 
         public void Dispose()
         {
             _beneficiarioRepository.Dispose();
             _beneficiarioEmailRepository.Dispose();
             _beneficiarioTelefoneRepository.Dispose();
-            _beneficiarioEnderecoRepository.Dispose();
-            _beneficiarioDependenteRepository.Dispose();
+            _beneficiarioEnderecoRepository.Dispose();           
             _beneficiarioService.Dispose();
         }        
     }

@@ -22,8 +22,8 @@ namespace Protectos.Domain.Entities.Corretoras.Services
         //Corretora
         public Corretora CorretoraAdicionar(Corretora Corretora)
         {
-            if (!Corretora.IsValid())
-                return Corretora;
+            //if (!Corretora.IsValid())
+            //    return Corretora;
             _CorretoraRepository.Add(Corretora);
             return Corretora;
         }
@@ -38,8 +38,8 @@ namespace Protectos.Domain.Entities.Corretoras.Services
         //Endereco
         public CorretoraEndereco CorretoraEnderecoAdicionar(CorretoraEndereco corretoraEndereco)
         {
-            if (!corretoraEndereco.IsValid())
-                return corretoraEndereco;
+            //if (!corretoraEndereco.IsValid())
+            //    return corretoraEndereco;
             _CorretoraEnderecoRepository.Add(corretoraEndereco);
             return corretoraEndereco;
         }
@@ -54,8 +54,8 @@ namespace Protectos.Domain.Entities.Corretoras.Services
         //Email
         public CorretoraEmail CorretoraEmailAdicionar(CorretoraEmail corretoraEmail)
         {
-            if (!corretoraEmail.IsValid())
-                return corretoraEmail;
+            //if (!corretoraEmail.IsValid())
+            //    return corretoraEmail;
             _CorretoraEmailRepository.Add(corretoraEmail);
             return corretoraEmail;
         }
@@ -70,8 +70,8 @@ namespace Protectos.Domain.Entities.Corretoras.Services
         //Telefone
         public CorretoraTelefone CorretoraTelefoneAdicionar(CorretoraTelefone corretoraTelefone)
         {
-            if (!corretoraTelefone.IsValid())
-                return corretoraTelefone;
+            //if (!corretoraTelefone.IsValid())
+            //    return corretoraTelefone;
             _CorretoraTelefoneRepository.Add(corretoraTelefone);
             return corretoraTelefone;
         }

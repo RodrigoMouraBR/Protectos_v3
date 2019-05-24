@@ -1,4 +1,5 @@
-﻿using Protectos.Domain.Core.Models;
+﻿using FluentValidation;
+using Protectos.Domain.Core.Models;
 using System;
 
 namespace Protectos.Domain.Entities.Cobrancas
@@ -35,10 +36,12 @@ namespace Protectos.Domain.Entities.Cobrancas
         public string CodigoAgencia { get; private set; }
         public string NomeAgenciaBanco { get; private set; }
         public string Logradouro { get; private set; }
-        public string Complemento { get; private set; }
+        public string Numero { get; private set; }
         public string Bairro { get; private set; }
         public string Cep { get; private set; }
+        public string Complemento { get; private set; }
         public string Cidade { get; private set; }
+        public string Estado { get; private set; }
         public string UF { get; private set; }
         public string DDD { get; private set; }
         public string Fone { get; private set; }
@@ -46,7 +49,23 @@ namespace Protectos.Domain.Entities.Cobrancas
         public virtual Banco Banco { get; private set; }
         public override bool IsValid()
         {
-            throw new NotImplementedException();
+            Validate();
+            return ValidationResult.IsValid;
         }
+        private void Validate()
+        {
+            ValidateProperty();
+            ValidationResult = Validate(this);
+        }
+        private void ValidateProperty()
+        {
+            RuleFor(c => c.CodigoAgencia)
+                .NotEmpty().WithMessage("o telefone precisa ser fornecido");                
+
+            RuleFor(c => c.NomeAgenciaBanco)
+                .NotEmpty().WithMessage("o telefone precisa ser fornecido")
+                .Length(2, 100).WithMessage("o telefone precisa ter entre 2 e 100 caracteres");
+        }
+
     }
 }

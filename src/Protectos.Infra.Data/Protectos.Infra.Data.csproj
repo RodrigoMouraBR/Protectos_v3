@@ -32,18 +32,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.6.3.0-preview5-19254-05\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.6.3.0-preview5-19254-05\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.SqlServerCompact.6.2.0\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
     </Reference>
     <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FluentValidation.8.3.0\lib\net45\FluentValidation.dll</HintPath>
+      <HintPath>..\..\packages\FluentValidation.8.4.0\lib\net45\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -64,7 +67,6 @@
     <Compile Include="Mappings\Administradoras\AdministradoraEnderecoMapping.cs" />
     <Compile Include="Mappings\Administradoras\AdministradoraMapping.cs" />
     <Compile Include="Mappings\Administradoras\AdministradoraTelefoneMapping.cs" />
-    <Compile Include="Mappings\Beneficiarios\BeneficiarioDependenteMapping.cs" />
     <Compile Include="Mappings\Beneficiarios\BeneficiarioEmailMapping.cs" />
     <Compile Include="Mappings\Beneficiarios\BeneficiarioEnderecoMapping.cs" />
     <Compile Include="Mappings\Beneficiarios\BeneficiarioMapping.cs" />
@@ -73,10 +75,18 @@
     <Compile Include="Mappings\Clientes\ClienteEnderecoMapping.cs" />
     <Compile Include="Mappings\Clientes\ClienteMapping.cs" />
     <Compile Include="Mappings\Clientes\ClienteTelefoneMapping.cs" />
+    <Compile Include="Mappings\Cobrancas\BancoAgenciaMapping.cs" />
+    <Compile Include="Mappings\Cobrancas\BancoMapping.cs" />
+    <Compile Include="Mappings\Cobrancas\MotivoExclusaoMapping.cs" />
+    <Compile Include="Mappings\Cobrancas\PrecificacaoMapping.cs" />
     <Compile Include="Mappings\Corretoras\CorretoraEmailMapping.cs" />
     <Compile Include="Mappings\Corretoras\CorretoraEnderecoMapping.cs" />
     <Compile Include="Mappings\Corretoras\CorretoraMapping.cs" />
     <Compile Include="Mappings\Corretoras\CorretoraTelefoneMapping.cs" />
+    <Compile Include="Mappings\Corretores\CorretorEmailMapping.cs" />
+    <Compile Include="Mappings\Corretores\CorretorEnderecoMapping.cs" />
+    <Compile Include="Mappings\Corretores\CorretorMapping.cs" />
+    <Compile Include="Mappings\Corretores\CorretorTelefoneMapping.cs" />
     <Compile Include="Mappings\Entidades\EntidadeEmailMapping.cs" />
     <Compile Include="Mappings\Entidades\EntidadeEnderecoMapping.cs" />
     <Compile Include="Mappings\Entidades\EntidadeMapping.cs" />
@@ -88,17 +98,24 @@
     <Compile Include="Mappings\Filiais\FilialEnderecoMapping.cs" />
     <Compile Include="Mappings\Filiais\FilialMapping.cs" />
     <Compile Include="Mappings\Filiais\FilialTelefoneMapping.cs" />
+    <Compile Include="Mappings\Operadoras\OperadoraCongenereMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraEmailMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraEnderecoMapping.cs" />
+    <Compile Include="Mappings\Operadoras\OperadoraEntidadeMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraTelefoneMapping.cs" />
     <Compile Include="Mappings\Planos\PlanoMapping.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Mappings\Propostas\PropostaMapping.cs" />
+    <Compile Include="Mappings\Propostas\TipoVencimentoReferenciaMapping.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+>>>>>>> desenv
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraEmailRepository.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraEnderecoRepository.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraRepository.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraTelefoneRepository.cs" />
-    <Compile Include="Repositories\Beneficiarios\BeneficiarioDependenteRepository.cs" />
     <Compile Include="Repositories\Beneficiarios\BeneficiarioEmailRepository.cs" />
     <Compile Include="Repositories\Beneficiarios\BeneficiarioEnderecoRepository.cs" />
     <Compile Include="Repositories\Beneficiarios\BeneficiarioRepository.cs" />
@@ -138,7 +155,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Mappings\Propostas\" />
     <Folder Include="Repositories\Filiais\" />
     <Folder Include="Repositories\Propostas\" />
     <Folder Include="Repositories\TabelaPreco\" />

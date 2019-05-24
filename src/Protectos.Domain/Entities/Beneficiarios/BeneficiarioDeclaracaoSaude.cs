@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace Protectos.Domain.Entities.Beneficiarios
 {
-    public class BeneficiarioDeclaracaoSaude : Entity<BeneficiarioDeclaracaoSaude>
+    public class BeneficiarioDeclaracaoSaude
     {
-        public override bool IsValid()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

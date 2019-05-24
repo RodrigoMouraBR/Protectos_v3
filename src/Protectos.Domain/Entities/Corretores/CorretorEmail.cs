@@ -19,21 +19,28 @@ namespace Protectos.Domain.Entities.Corretores
         public Guid CorretorId { get; private set; }
         public ETipoEmail TipoEmail { get; private set; }
         public virtual Corretor Corretor { get; private set; }
+
         public override bool IsValid()
         {
-            Validation();
+            Validate();
             return ValidationResult.IsValid;
         }
-        private void Validation()
+        private void Validate()
         {
-            ValidationProperties();
+            ValidateProperty();
             ValidationResult = Validate(this);
         }
-        private void ValidationProperties()
+        private void ValidateProperty()
         {
-            RuleFor(s => s.Email).NotEmpty().WithMessage("É necessário um endereço de e-mail")
-                     .EmailAddress().WithMessage("Um e-mail válido é obrigatório");
-            RuleFor(s => s.TipoEmail).NotEmpty().WithMessage("É necessário um tipo de e-mail");
+            RuleFor(c => c.Email)
+                .NotEmpty().WithMessage("o email precisa ser fornecido")
+                .Length(2, 50).WithMessage("o email precisa ter entre 2 e 50 caracteres");
+
+            RuleFor(s => s.TipoEmail)
+                .NotEmpty()
+                .WithMessage("É necessário um tipo de e-mail");
         }
+
+
     }
 }

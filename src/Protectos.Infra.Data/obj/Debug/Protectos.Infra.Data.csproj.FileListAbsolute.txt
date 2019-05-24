@@ -7,9 +7,11 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\D
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\FluentValidation.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Domain.Core.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Domain.dll
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\System.Data.SqlServerCe.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Domain.Core.pdb
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Domain.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\Protectos.Domain.dll.config
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\EntityFramework.xml
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.Data\bin\Debug\EntityFramework.SqlServerCompact.xml

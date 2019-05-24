@@ -30,9 +30,11 @@ namespace Protectos.Infra.Data.Mappings.Corretoras
                 .IsRequired();
             Property(c => c.TipoTelefone)                
                 .IsRequired();
+
             HasRequired(c => c.Corretora)
                 .WithMany(a => a.Telefones)
                 .HasForeignKey(c => c.CorretoraId);
+
             Ignore(c => c.CascadeMode);
             Ignore(c => c.ValidationResult);
             ToTable("CorretoraTelefone");
