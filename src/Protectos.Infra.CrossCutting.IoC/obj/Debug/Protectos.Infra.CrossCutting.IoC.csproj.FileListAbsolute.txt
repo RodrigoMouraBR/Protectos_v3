@@ -36,6 +36,7 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutti
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\bin\Debug\EntityFramework.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\bin\Debug\Protectos.Application.pdb
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\bin\Debug\Protectos.Domain.pdb
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\bin\Debug\Protectos.Domain.dll.config
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\bin\Debug\Protectos.Infra.Data.pdb
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\bin\Debug\Protectos.Infra.Data.dll.config
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Infra.CrossCutting.IoC\bin\Debug\SimpleInjector.xml

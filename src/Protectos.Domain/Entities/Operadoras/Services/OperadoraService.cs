@@ -25,8 +25,8 @@ namespace Protectos.Domain.Entities.Operadoras.Services
         //Operadora
         public Operadora OperadoraAdicionar(Operadora operadora)
         {
-            if (!operadora.IsValid())
-                return operadora;
+            //if (!operadora.IsValid())
+            //    return operadora;
             _operadoraRepository.Add(operadora);
             return operadora;
         }
@@ -41,8 +41,8 @@ namespace Protectos.Domain.Entities.Operadoras.Services
         //Endereco
         public OperadoraEndereco OperadoraEnderecoAdicionar(OperadoraEndereco operadoraEndereco)
         {
-            if (!operadoraEndereco.IsValid())
-                return operadoraEndereco;
+            //if (!operadoraEndereco.IsValid())
+            //    return operadoraEndereco;
             _operadoraEnderecoRepository.Add(operadoraEndereco);
             return operadoraEndereco;
         }
@@ -57,8 +57,8 @@ namespace Protectos.Domain.Entities.Operadoras.Services
         //Email
         public OperadoraEmail OperadoraEmailAdicionar(OperadoraEmail operadoraEmail)
         {
-            if (!operadoraEmail.IsValid())
-                return operadoraEmail;
+            //if (!operadoraEmail.IsValid())
+            //    return operadoraEmail;
             _operadoraEmailRepository.Add(operadoraEmail);
             return operadoraEmail;
         }
@@ -73,8 +73,8 @@ namespace Protectos.Domain.Entities.Operadoras.Services
         //Telefone
         public OperadoraTelefone OperadoraTelefoneAdicionar(OperadoraTelefone operadoraTelefone)
         {
-            if (!operadoraTelefone.IsValid())
-                return operadoraTelefone;
+            //if (!operadoraTelefone.IsValid())
+            //    return operadoraTelefone;
             _operadoraTelefoneRepository.Add(operadoraTelefone);
             return operadoraTelefone;
         }

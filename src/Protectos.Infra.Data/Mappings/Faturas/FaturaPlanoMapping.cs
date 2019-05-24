@@ -18,9 +18,11 @@ namespace Protectos.Infra.Data.Mappings.Faturas
             HasRequired(c => c.Fatura)
               .WithMany(a => a.FaturaPlano)
               .HasForeignKey(c => c.FaturaId);
+
             HasRequired(c => c.Plano)
               .WithMany(a => a.FaturaPlano)
               .HasForeignKey(c => c.PlanoId);
+
             Ignore(c => c.CascadeMode);
             Ignore(c => c.ValidationResult);
             ToTable("FaturaPlano");

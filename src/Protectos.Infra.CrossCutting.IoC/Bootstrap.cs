@@ -66,7 +66,7 @@ namespace Protectos.Infra.CrossCutting.IoC
             container.Register<IBeneficiarioEnderecoRepository, BeneficiarioEnderecoRepository>(Lifestyle.Scoped);
             container.Register<IBeneficiarioEmailRepository, BeneficiarioEmailRepository>(Lifestyle.Scoped);
             container.Register<IBeneficiarioTelefoneRepository, BeneficiarioTelefoneRepository>(Lifestyle.Scoped);
-            container.Register<IBeneficiarioDependenteRepository, BeneficiarioDependenteRepository>(Lifestyle.Scoped);
+            
 
             container.Register<IEntidadeRepository, EntidadeRepository>(Lifestyle.Scoped);
             container.Register<IEntidadeEmailRepository, EntidadeEmailRepository>(Lifestyle.Scoped);

@@ -15,4 +15,3 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.csproj.CopyComplete
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.pdb
-C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain.Core\obj\Debug\Protectos.Domain.Core.csprojAssemblyReference.cache

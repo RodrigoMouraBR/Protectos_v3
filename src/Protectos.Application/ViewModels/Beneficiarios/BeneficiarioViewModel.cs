@@ -11,8 +11,7 @@ namespace Protectos.Application.ViewModels.Beneficiarios
             Id = Guid.NewGuid();
             BeneficiarioEndereco = new List<BeneficiarioEnderecoViewModel>();
             BeneficiarioTelefone = new List<BeneficiarioTelefoneViewModel>();
-            BeneficiarioEmail = new List<BeneficiarioEmailViewModel>();
-            BeneficiarioDependente = new List<BeneficiarioDependenteViewModel>();
+            BeneficiarioEmail = new List<BeneficiarioEmailViewModel>();           
         }
         public Guid Id { get; set; }
         public string Nome { get; set; }
@@ -34,8 +33,7 @@ namespace Protectos.Application.ViewModels.Beneficiarios
         public Guid AlteradoPor { get; protected set; }
         public virtual ICollection<BeneficiarioEnderecoViewModel> BeneficiarioEndereco { get; set; }
         public virtual ICollection<BeneficiarioTelefoneViewModel> BeneficiarioTelefone { get; set; }
-        public virtual ICollection<BeneficiarioEmailViewModel> BeneficiarioEmail { get; set; }
-        public virtual ICollection<BeneficiarioDependenteViewModel> BeneficiarioDependente { get; set; }
+        public virtual ICollection<BeneficiarioEmailViewModel> BeneficiarioEmail { get; set; }        
 
         [ScaffoldColumn(false)]
         public FluentValidation.Results.ValidationResult ValidationResult { get; set; }

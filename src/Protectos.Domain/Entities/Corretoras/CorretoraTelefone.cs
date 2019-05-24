@@ -25,24 +25,28 @@ namespace Protectos.Domain.Entities.Corretoras
 
         public override bool IsValid()
         {
-            Validation();
+            Validate();
             return ValidationResult.IsValid;
         }
-        private void Validation()
+        private void Validate()
         {
-            ValidationProperties();
+            ValidateProperty();
             ValidationResult = Validate(this);
         }
-        private void ValidationProperties()
+        private void ValidateProperty()
         {
             RuleFor(c => c.Prefixo)
-                .NotEmpty().WithMessage("O prefixo precisa ser fornecido")
-                .Length(2, 5).WithMessage("O prefixo precisa ter entre 2 e 5 caracteres");
+                .NotEmpty().WithMessage("o telefone precisa ser fornecido")
+                .Length(2, 5).WithMessage("o telefone precisa ter entre 2 e 5 caracteres");
+
             RuleFor(c => c.Numero)
-                .NotEmpty().WithMessage("O numero precisa ser fornecido")
-                .Length(9, 10).WithMessage("O numero precisa ter entre 9 e 10 caracteres");
-            RuleFor(c => c.TipoTelefone)
-                .NotEmpty().WithMessage("O Tipo telefone precisa ser fornecido");
+                .NotEmpty().WithMessage("o telefone precisa ser fornecido")
+                .Length(2, 10).WithMessage("o telefone precisa ter entre 2 e 10 caracteres");
+
+            RuleFor(s => s.TipoTelefone)
+                .NotEmpty()
+                .WithMessage("É necessário um tipo de telefone");
         }
+
     }
 }

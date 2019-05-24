@@ -22,8 +22,8 @@ namespace Protectos.Domain.Entities.Administradoras.Services
         //Administradora
         public Administradora AdministradoraAdicionar(Administradora administradora)
         {
-            if (!administradora.IsValid())
-                return administradora;
+            //if (!administradora.IsValid())
+            //    return administradora;
             _administradoraRepository.Add(administradora);
             return administradora;
         }
@@ -38,8 +38,8 @@ namespace Protectos.Domain.Entities.Administradoras.Services
         //Endereco
         public AdministradoraEndereco AdministradoraEnderecoAdicionar(AdministradoraEndereco administradoraEndereco)
         {
-            if (!administradoraEndereco.IsValid())
-                return administradoraEndereco;
+            //if (!administradoraEndereco.IsValid())
+            //    return administradoraEndereco;
             _administradoraEnderecoRepository.Add(administradoraEndereco);
             return administradoraEndereco;
         }
@@ -54,8 +54,8 @@ namespace Protectos.Domain.Entities.Administradoras.Services
         //Email
         public AdministradoraEmail AdministradoraEmailAdicionar(AdministradoraEmail administradoraEmail)
         {
-            if (!administradoraEmail.IsValid())
-                return administradoraEmail;
+            //if (!administradoraEmail.IsValid())
+            //    return administradoraEmail;
             _administradoraEmailRepository.Add(administradoraEmail);
             return administradoraEmail;
         }
@@ -70,8 +70,8 @@ namespace Protectos.Domain.Entities.Administradoras.Services
         //Telefone
         public AdministradoraTelefone AdministradoraTelefoneAdicionar(AdministradoraTelefone administradoraTelefone)
         {
-            if (!administradoraTelefone.IsValid())
-                return administradoraTelefone;
+            //if (!administradoraTelefone.IsValid())
+            //    return administradoraTelefone;
             _administradoraTelefoneRepository.Add(administradoraTelefone);
             return administradoraTelefone;
         }

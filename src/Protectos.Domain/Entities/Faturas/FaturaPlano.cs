@@ -1,4 +1,5 @@
-﻿using Protectos.Domain.Core.Models;
+﻿using FluentValidation;
+using Protectos.Domain.Core.Models;
 using Protectos.Domain.Entities.Planos;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,25 @@ namespace Protectos.Domain.Entities.Faturas
         public Guid PlanoId { get; private set; }
         public virtual Fatura Fatura { get; private set; }
         public virtual Plano Plano { get; private set; }
-
         public override bool IsValid()
         {
-            throw new NotImplementedException();
+            Validate();
+            return ValidationResult.IsValid;
         }
+        private void Validate()
+        {
+            ValidateProperty();
+            ValidationResult = Validate(this);
+        }
+        private void ValidateProperty()
+        {
+            RuleFor(c => c.FaturaId)
+                .NotEmpty().WithMessage("o telefone precisa ser fornecido");
+
+            RuleFor(c => c.FaturaId)
+                .NotEmpty().WithMessage("o telefone precisa ser fornecido");                
+        }
+
+
     }
 }
