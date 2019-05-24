@@ -8,6 +8,7 @@ C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\bi
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.csprojResolveAssemblyReference.cache
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.dll
 C:\Users\ma4ci\Documents\GitHub\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.pdb
+C:\PROJETO\Protectos\src\Protectos.Domain\obj\Debug\Protectos.Domain.csprojResolveAssemblyReference.cache
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\bin\Debug\Protectos.Domain.dll.config
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\bin\Debug\Protectos.Domain.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\bin\Debug\Protectos.Domain.pdb
@@ -16,9 +17,8 @@ C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\bin\Debug
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\bin\Debug\Protectos.Domain.Core.pdb
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\bin\Debug\FluentValidation.xml
-C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.csprojAssemblyReference.cache
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.csproj.CoreCompileInputs.cache
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.csproj.CopyComplete
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.dll
 C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.pdb
-C:\PROJETO\Protectos\src\Protectos.Domain\obj\Debug\Protectos.Domain.csprojResolveAssemblyReference.cache
+C:\Users\rodri\Documents\Repositorio\Protectos_v3\src\Protectos.Domain\obj\Debug\Protectos.Domain.csprojAssemblyReference.cache

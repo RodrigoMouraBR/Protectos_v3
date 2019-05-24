@@ -103,12 +103,15 @@
     <Compile Include="ViewModels\Planos\PlanoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Protectos.Domain.Core\Protectos.Domain.Core.csproj">
-      <Project>{5A548C53-282E-47C4-8A11-4517BAE41FCB}</Project>
+      <Project>{5a548c53-282e-47c4-8a11-4517bae41fcb}</Project>
       <Name>Protectos.Domain.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Protectos.Domain\Protectos.Domain.csproj">
-      <Project>{A4D67B2C-9F59-4D2F-A109-F82C4B338736}</Project>
+      <Project>{a4d67b2c-9f59-4d2f-a109-f82c4b338736}</Project>
       <Name>Protectos.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Protectos.Infra.CrossCutting.MvcFilters\Protectos.Infra.CrossCutting.MvcFilters.csproj">
@@ -120,9 +123,5 @@
       <Name>Protectos.Infra.Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

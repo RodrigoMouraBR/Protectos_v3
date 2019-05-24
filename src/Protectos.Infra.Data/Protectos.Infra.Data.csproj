@@ -105,12 +105,11 @@
     <Compile Include="Mappings\Operadoras\OperadoraMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraTelefoneMapping.cs" />
     <Compile Include="Mappings\Planos\PlanoMapping.cs" />
-<<<<<<< HEAD
-=======
+
     <Compile Include="Mappings\Propostas\PropostaMapping.cs" />
     <Compile Include="Mappings\Propostas\TipoVencimentoReferenciaMapping.cs" />
     <Compile Include="Migrations\Configuration.cs" />
->>>>>>> desenv
+
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraEmailRepository.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraEnderecoRepository.cs" />
