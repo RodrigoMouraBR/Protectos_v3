@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-
 namespace Protectos.Application.ViewModels.Administradoras
 {
     public class AdministradoraTelefoneViewModel
@@ -30,10 +29,12 @@ namespace Protectos.Application.ViewModels.Administradoras
         [MaxLength(10, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(8, ErrorMessage = "Mínimo {0} caracteres")]
         public string Numero { get; set; }
-        [DisplayName("Tipo Email")]
+        [DisplayName("Tipo Telfone")]
         public string TipoTelefone { get; set; }
         [ScaffoldColumn(false)]
         public Guid AdministradoraId { get; set; }
         public virtual AdministradoraViewModel Administradora { get; set; }
+        [ScaffoldColumn(false)]
+        public FluentValidation.Results.ValidationResult ValidationResult { get; set; }
     }
 }
