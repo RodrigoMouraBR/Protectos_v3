@@ -12,12 +12,10 @@ namespace Protectos.Infra.Data.Mappings.Entidades
             Property(c => c.Ativo)
                 .IsRequired();
             Property(c => c.DataCadastro)
-                .HasColumnType("DateTime")
                 .IsRequired();
             Property(c => c.CadastradoPor)
                 .IsRequired();
             Property(c => c.DataAlteracao)
-                .HasColumnType("DateTime")
                 .IsOptional();
             Property(c => c.AlteradoPor)
                 .IsOptional();
@@ -50,7 +48,6 @@ namespace Protectos.Infra.Data.Mappings.Entidades
                 .IsOptional();
             Ignore(c => c.CascadeMode);
             Ignore(c => c.ValidationResult);
-
             ToTable("Entidade");//Table
         }
     }

@@ -39,6 +39,7 @@ namespace Protectos.Infra.Data.Context
         public virtual DbSet<BeneficiarioEmail> BeneficiarioEmail { get; set; }
         public virtual DbSet<BeneficiarioEndereco> BeneficiarioEndereco { get; set; }
         public virtual DbSet<BeneficiarioTelefone> BeneficiarioTelefone { get; set; }
+        public virtual DbSet<BeneficiarioDependente> BeneficiarioDependente { get; set; }
 
         public virtual DbSet<Proposta> Proposta { get; set; }
         public virtual DbSet<TipoVencimentoReferencia> TipoVencimentoReferencia { get; set; }
@@ -102,6 +103,7 @@ namespace Protectos.Infra.Data.Context
             modelBuilder.Configurations.Add(new BeneficiarioEmailMapping());
             modelBuilder.Configurations.Add(new BeneficiarioEnderecoMapping());
             modelBuilder.Configurations.Add(new BeneficiarioTelefoneMapping());
+            modelBuilder.Configurations.Add(new BeneficiarioDependenteMapping());
 
             modelBuilder.Configurations.Add(new PropostaMapping());
             modelBuilder.Configurations.Add(new TipoVencimentoReferenciaMapping());
@@ -152,18 +154,6 @@ namespace Protectos.Infra.Data.Context
             modelBuilder.Configurations.Add(new CorretoraEnderecoMapping());
             modelBuilder.Configurations.Add(new CorretoraEmailMapping());
             modelBuilder.Configurations.Add(new CorretoraTelefoneMapping());
-
-
-
-
-
-
-
-
-
-
-
-
 
             modelBuilder.Properties<string>()
                 .Configure(p => p.HasColumnType("varchar"));

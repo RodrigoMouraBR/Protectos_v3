@@ -19,7 +19,6 @@ namespace Protectos.Domain.Entities.Beneficiarios
             Pais = pais;
             BeneficiarioId = beneficiarioId;
         }
-
         protected BeneficiarioEndereco() { }
         public string Logradouro { get; private set; }
         public string Numero { get; private set; }

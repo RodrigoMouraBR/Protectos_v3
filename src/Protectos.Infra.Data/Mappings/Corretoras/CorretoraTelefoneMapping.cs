@@ -13,22 +13,33 @@ namespace Protectos.Infra.Data.Mappings.Corretoras
         public CorretoraTelefoneMapping()
         {
             HasKey(c => c.Id);
-            Property(c => c.Ativo);
+
+            Property(c => c.Ativo)
+                .IsRequired();
+
             Property(c => c.DataCadastro)
                 .IsRequired();
+
             Property(c => c.CadastradoPor)
                 .IsRequired();
-            Property(c => c.DataAlteracao);
-            Property(c => c.AlteradoPor);
+
+            Property(c => c.DataAlteracao)
+                .IsOptional();
+
+            Property(c => c.AlteradoPor)
+                .IsOptional();
+
             Property(c => c.Prefixo)
                 .HasColumnType("char")
                 .HasMaxLength(5)
                 .IsRequired();
+
             Property(c => c.Numero)
                 .HasMaxLength(10)
                 .HasColumnType("varchar")
                 .IsRequired();
-            Property(c => c.TipoTelefone)                
+
+            Property(c => c.TipoTelefone)
                 .IsRequired();
 
             HasRequired(c => c.Corretora)

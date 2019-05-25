@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Protectos.Application.ViewModels.Administradoras
 {
@@ -11,29 +8,62 @@ namespace Protectos.Application.ViewModels.Administradoras
     {
         public AdministradoraEnderecoViewModel()
         {
-            Id = Guid.NewGuid();            
+            Id = Guid.NewGuid();
         }
         [Key]
-        public Guid Id { get; set; }        
-        public string Logradouro { get; set; }//        
-        public string Numero { get; set; }//      
-        public string Bairro { get; set; }//      
-        public string Cep { get; set; }//       
-        public string Complemento { get; set; }       
-        public string Cidade { get; set; }     
-        public string Estado { get; set; }     
-        public string UF { get; set; }       
-        public string Pais { get; set; }
-        [ScaffoldColumn(false)]
-        public Guid AdministradoraId { get; set; }
+        public Guid Id { get; set; }
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]
-        public Guid CadastradoPor { get; protected set; }
+        public DateTime DataCadastro { get; set; }
         [ScaffoldColumn(false)]
-        public DateTime DataAlteracao { get; protected set; }
+        public Guid CadastradoPor { get; set; }
         [ScaffoldColumn(false)]
-        public Guid AlteradoPor { get; protected set; }
+        public DateTime DataAlteracao { get; set; }
+        [ScaffoldColumn(false)]
+        public string AlteradoPor { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("Logradouro")]
+        public string Logradouro { get; set; }
+        [MaxLength(10, ErrorMessage = "Máximo {0} caracteres")]
+        [DisplayName("Numero")]
+        public string Numero { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [MaxLength(50, ErrorMessage = "Máximo {0} caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("Bairro")]
+        public string Bairro { get; set; }
+        [MaxLength(10, ErrorMessage = "Máximo {0} caracteres")]
+        [DisplayName("CEP")]
+        public string Cep { get; set; }
+        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("Complemento")]
+        public string Complemento { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [MaxLength(50, ErrorMessage = "Máximo {0} caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("Cidade")]
+        public string Cidade { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [MaxLength(50, ErrorMessage = "Máximo {0} caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("Estado")]
+        public string Estado { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [MaxLength(2, ErrorMessage = "Máximo {0} caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("UF")]
+        public string UF { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [MaxLength(50, ErrorMessage = "Máximo {0} caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("País")]
+        public string Pais { get; set; }
+        [ScaffoldColumn(false)]
+        public Guid AdministradoraId { get; set; }
         public virtual AdministradoraViewModel Administradora { get; set; }
     }
 }

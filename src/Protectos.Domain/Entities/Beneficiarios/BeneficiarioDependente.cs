@@ -1,32 +1,13 @@
 ﻿using FluentValidation;
 using Protectos.Domain.Core.Models;
-using Protectos.Domain.Entities.Clientes;
-using Protectos.Domain.Entities.Propostas;
 using Protectos.Domain.Generics.Enums;
 using System;
-using System.Collections.Generic;
 namespace Protectos.Domain.Entities.Beneficiarios
 {
-    public class Beneficiario : Entity<Beneficiario>
+    public class BeneficiarioDependente : Entity<BeneficiarioDependente>
     {
-        public Beneficiario(string nome, string sobrenome, DateTime dataNascimento, ESexo sexo, string cpf, string rG, DateTime dataEmissaoRG, string orgaoEmissor, EEstadoCivil estadoCivil)
-        {
-            Nome = nome;
-            Sobrenome = sobrenome;
-            DataNascimento = dataNascimento;
-            Sexo = sexo;
-            Cpf = cpf;
-            RG = rG;
-            DataEmissaoRG = dataEmissaoRG;
-            OrgaoEmissor = orgaoEmissor;
-            EstadoCivil = estadoCivil;
-            Enderecos = new List<BeneficiarioEndereco>();
-            Telefones = new List<BeneficiarioTelefone>();
-            Emails = new List<BeneficiarioEmail>();
-            Propostas = new List<Proposta>();
-            Dependentes = new List<BeneficiarioDependente>();
-        }
-        protected Beneficiario()
+       
+        protected BeneficiarioDependente()
         {
         }
         public string Nome { get; private set; }
@@ -38,12 +19,8 @@ namespace Protectos.Domain.Entities.Beneficiarios
         public DateTime DataEmissaoRG { get; private set; }
         public string OrgaoEmissor { get; private set; }
         public EEstadoCivil EstadoCivil { get; private set; }
-        public virtual ICollection<BeneficiarioEndereco> Enderecos { get; private set; }
-        public virtual ICollection<BeneficiarioTelefone> Telefones { get; private set; }
-        public virtual ICollection<BeneficiarioEmail> Emails { get; private set; }        
-        public virtual ICollection<Proposta> Propostas { get; private set; }
-        public virtual ICollection<BeneficiarioDependente> Dependentes { get; private set; }
-
+        public Guid BeneficiarioId { get; private set; }
+        public virtual Beneficiario Beneficiarios { get; private set; }
         public override bool IsValid()
         {
             Validate();
@@ -69,7 +46,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
                .GreaterThan(DateTime.Now).WithErrorCode("O Campo data de Nascimento não poderá ser maior que a data vigente");
 
             RuleFor(c => c.Sexo)
-                .NotEmpty().WithMessage("O campo sexo precisa ser fornecido");            
+                .NotEmpty().WithMessage("O campo sexo precisa ser fornecido");
 
             int idade = CalculaIdadeBeneficiario(DataNascimento);
             if (idade >= 8)

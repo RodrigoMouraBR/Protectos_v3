@@ -11,13 +11,11 @@ namespace Protectos.Infra.Data.Mappings.Administradoras
             HasKey(c => c.Id);
             Property(c => c.Ativo)
                 .IsRequired();
-            Property(c => c.DataCadastro)
-                .HasColumnType("DateTime")
+            Property(c => c.DataCadastro)                
                 .IsRequired();
             Property(c => c.CadastradoPor)
                 .IsRequired();
-            Property(c => c.DataAlteracao)
-                .HasColumnType("DateTime")
+            Property(c => c.DataAlteracao)                
                 .IsOptional();
             Property(c => c.AlteradoPor)
                 .IsOptional();

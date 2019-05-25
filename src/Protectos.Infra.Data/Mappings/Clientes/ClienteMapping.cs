@@ -12,12 +12,10 @@ namespace Protectos.Infra.Data.Mappings.Clientes
             Property(c => c.Ativo)
                 .IsRequired();
             Property(c => c.DataCadastro)
-                .HasColumnType("DateTime")
                 .IsRequired();
             Property(c => c.CadastradoPor)
                 .IsRequired();
             Property(c => c.DataAlteracao)
-                .HasColumnType("DateTime")
                 .IsOptional();
             Property(c => c.AlteradoPor)
                 .IsOptional();
@@ -35,6 +33,7 @@ namespace Protectos.Infra.Data.Mappings.Clientes
                .IsFixedLength()
                .HasColumnAnnotation("Index", new IndexAnnotation(
                    new IndexAttribute("IX_CNPJ_Cliente") { IsUnique = true }));//index
+
             Property(c => c.InscricaoEstadual)
                 .HasColumnType("char")
                 .HasMaxLength(14)

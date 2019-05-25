@@ -18,14 +18,12 @@ namespace Protectos.Infra.Data.Mappings.Clientes
                 .IsRequired();
 
             Property(c => c.DataCadastro)
-                .HasColumnType("DateTime")
                 .IsRequired();
 
             Property(c => c.CadastradoPor)
                 .IsRequired();
 
             Property(c => c.DataAlteracao)
-                .HasColumnType("DateTime")
                 .IsOptional();
 
             Property(c => c.AlteradoPor)
@@ -38,7 +36,7 @@ namespace Protectos.Infra.Data.Mappings.Clientes
 
             Property(c => c.TipoEmail)
                 .IsRequired();
-          
+
             HasRequired(c => c.Cliente)
                     .WithMany(a => a.Emails)
                     .HasForeignKey(c => c.ClienteId);

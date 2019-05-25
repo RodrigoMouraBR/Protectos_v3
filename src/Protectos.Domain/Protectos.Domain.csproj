@@ -60,7 +60,7 @@
     <Compile Include="Entities\Administradoras\Interfaces\Services\IAdministradoraService.cs" />
     <Compile Include="Entities\Administradoras\Services\AdministradoraService.cs" />
     <Compile Include="Entities\Beneficiarios\Beneficiario.cs" />
-    <Compile Include="Entities\Beneficiarios\BeneficiarioDeclaracaoSaude.cs" />
+    <Compile Include="Entities\Beneficiarios\BeneficiarioDependente.cs" />
     <Compile Include="Entities\Beneficiarios\BeneficiarioEmail.cs" />
     <Compile Include="Entities\Beneficiarios\BeneficiarioEndereco.cs" />
     <Compile Include="Entities\Beneficiarios\BeneficiarioTelefone.cs" />
@@ -129,6 +129,10 @@
     <Compile Include="Entities\Filiais\FilialEmail.cs" />
     <Compile Include="Entities\Filiais\FilialEndereco.cs" />
     <Compile Include="Entities\Filiais\FilialTelefone.cs" />
+    <Compile Include="Entities\Fornecedores\Fornecedor.cs" />
+    <Compile Include="Entities\Fornecedores\FornecedorEmail.cs" />
+    <Compile Include="Entities\Fornecedores\FornecedorEndereco.cs" />
+    <Compile Include="Entities\Fornecedores\FornecedorTelefone.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraEmailRepository.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraEnderecoRepository.cs" />
     <Compile Include="Entities\Operadoras\Interfaces\IOperadoraRepository.cs" />

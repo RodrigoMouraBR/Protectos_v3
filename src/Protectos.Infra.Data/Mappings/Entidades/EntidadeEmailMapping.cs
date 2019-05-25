@@ -12,14 +12,12 @@ namespace Protectos.Infra.Data.Mappings.Entidades
                 .IsRequired();
 
             Property(c => c.DataCadastro)
-                .HasColumnType("DateTime")
                 .IsRequired();
 
             Property(c => c.CadastradoPor)
                 .IsRequired();
 
             Property(c => c.DataAlteracao)
-                .HasColumnType("DateTime")
                 .IsOptional();
 
             Property(c => c.AlteradoPor)
@@ -32,6 +30,7 @@ namespace Protectos.Infra.Data.Mappings.Entidades
 
             Property(c => c.TipoEmail)
                 .IsRequired();
+
             HasRequired(c => c.Entidade)
                 .WithMany(a => a.Emails)
                 .HasForeignKey(c => c.EntidadeId);

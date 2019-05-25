@@ -67,6 +67,7 @@
     <Compile Include="Mappings\Administradoras\AdministradoraEnderecoMapping.cs" />
     <Compile Include="Mappings\Administradoras\AdministradoraMapping.cs" />
     <Compile Include="Mappings\Administradoras\AdministradoraTelefoneMapping.cs" />
+    <Compile Include="Mappings\Beneficiarios\BeneficiarioDependenteMapping.cs" />
     <Compile Include="Mappings\Beneficiarios\BeneficiarioEmailMapping.cs" />
     <Compile Include="Mappings\Beneficiarios\BeneficiarioEnderecoMapping.cs" />
     <Compile Include="Mappings\Beneficiarios\BeneficiarioMapping.cs" />
@@ -105,11 +106,9 @@
     <Compile Include="Mappings\Operadoras\OperadoraMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraTelefoneMapping.cs" />
     <Compile Include="Mappings\Planos\PlanoMapping.cs" />
-
     <Compile Include="Mappings\Propostas\PropostaMapping.cs" />
     <Compile Include="Mappings\Propostas\TipoVencimentoReferenciaMapping.cs" />
     <Compile Include="Migrations\Configuration.cs" />
-
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraEmailRepository.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraEnderecoRepository.cs" />

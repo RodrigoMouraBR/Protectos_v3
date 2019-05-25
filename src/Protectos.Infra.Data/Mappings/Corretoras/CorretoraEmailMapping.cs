@@ -18,14 +18,12 @@ namespace Protectos.Infra.Data.Mappings.Corretoras
                 .IsRequired();
 
             Property(c => c.DataCadastro)
-                .HasColumnType("DateTime")
                 .IsRequired();
 
             Property(c => c.CadastradoPor)
                 .IsRequired();
 
             Property(c => c.DataAlteracao)
-                .HasColumnType("DateTime")
                 .IsOptional();
 
             Property(c => c.AlteradoPor)
@@ -38,6 +36,7 @@ namespace Protectos.Infra.Data.Mappings.Corretoras
 
             Property(c => c.TipoEmail)
                 .IsRequired();
+
             HasRequired(c => c.Corretora)
                 .WithMany(a => a.Emails)
                 .HasForeignKey(c => c.CorretoraId);
