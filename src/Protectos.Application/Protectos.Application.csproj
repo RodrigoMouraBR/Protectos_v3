@@ -102,6 +102,7 @@
     <Compile Include="ViewModels\Operadoras\OperadoraTelefoneViewModel.cs" />
     <Compile Include="ViewModels\Operadoras\OperadoraViewModel.cs" />
     <Compile Include="ViewModels\Planos\PlanoViewModel.cs" />
+    <Compile Include="ViewModels\Propostas\PropostaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
