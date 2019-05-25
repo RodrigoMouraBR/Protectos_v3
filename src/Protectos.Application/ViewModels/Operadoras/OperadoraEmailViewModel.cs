@@ -12,17 +12,27 @@ namespace Protectos.Application.ViewModels.Operadoras
         }
         [Key]
         public Guid Id { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Prefixo")]       
-        public string Prefixo { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Numero")]       
-        public string Numero { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Tipo")]      
-        [DisplayName("Tipo Telefone")]
-        public string TipoTelefone { get; set; }
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]
+        public DateTime DataCadastro { get; set; }
+        [ScaffoldColumn(false)]
+        public Guid CadastradoPor { get; set; }
+        [ScaffoldColumn(false)]
+        public DateTime DataAlteracao { get; set; }
+        [ScaffoldColumn(false)]
+        public string AlteradoPor { get; set; }
+        [Required]
+        [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "E-mail em formato inválido.")]
+        public string Email { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [DisplayName("Tipo Email")]
+        public string TipoEmail { get; set; }
+        [ScaffoldColumn(false)]
         public Guid OperadoraId { get; set; }
         public virtual OperadoraViewModel Operadora { get; set; }
+        [ScaffoldColumn(false)]
+        public FluentValidation.Results.ValidationResult ValidationResult { get; set; }
     }
 }
