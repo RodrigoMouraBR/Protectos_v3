@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Protectos.Application.ViewModels.Beneficiarios
@@ -9,52 +10,62 @@ namespace Protectos.Application.ViewModels.Beneficiarios
         {
             Id = Guid.NewGuid();
         }
+        [Key]
         public Guid Id { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Logradouro")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Logradouro { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Numero")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Numero { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Bairro")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Bairro { get; set; }
-        [Required(ErrorMessage = "Preencha o campo CEP")]
-        [MaxLength(8, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(8, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Cep { get; set; }
-        [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Complemento { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Cidade")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Cidade { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Estado")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Estado { get; set; }
-        [Required(ErrorMessage = "Preencha o campo UF")]
-        [MaxLength(2, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string UF { get; set; }
-        [Required(ErrorMessage = "Preencha o campo País")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string Pais { get; set; }
-        [ScaffoldColumn(false)]
-        public Guid BeneficiarioId { get;  set; }
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]
-        public Guid CadastradoPor { get; protected set; }
+        public DateTime DataCadastro { get; set; }
         [ScaffoldColumn(false)]
-        public DateTime DataAlteracao { get; protected set; }
+        public Guid CadastradoPor { get; set; }
         [ScaffoldColumn(false)]
-        public Guid AlteradoPor { get; protected set; }
+        public DateTime DataAlteracao { get; set; }
+        [ScaffoldColumn(false)]
+        public string AlteradoPor { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("Logradouro")]
+        public string Logradouro { get; set; }
+        [MaxLength(10, ErrorMessage = "Máximo {0} caracteres")]
+        [DisplayName("Numero")]
+        public string Numero { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [MaxLength(50, ErrorMessage = "Máximo {0} caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("Bairro")]
+        public string Bairro { get; set; }
+        [MaxLength(10, ErrorMessage = "Máximo {0} caracteres")]
+        [DisplayName("CEP")]
+        public string Cep { get; set; }
+        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("Complemento")]
+        public string Complemento { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [MaxLength(50, ErrorMessage = "Máximo {0} caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("Cidade")]
+        public string Cidade { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [MaxLength(50, ErrorMessage = "Máximo {0} caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("Estado")]
+        public string Estado { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [MaxLength(2, ErrorMessage = "Máximo {0} caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("UF")]
+        public string UF { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [MaxLength(50, ErrorMessage = "Máximo {0} caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [DisplayName("País")]
+        public string Pais { get; set; }
+        [ScaffoldColumn(false)]
+        public Guid BeneficiarioId { get; set; }
         public virtual BeneficiarioViewModel Beneficiario { get; set; }
+        [ScaffoldColumn(false)]
+        public FluentValidation.Results.ValidationResult ValidationResult { get; set; }
     }
 }

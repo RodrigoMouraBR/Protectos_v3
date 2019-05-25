@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-
 namespace Protectos.Application.ViewModels.Beneficiarios
 {
-    public class BeneficiarioViewModel
+    public class BeneficiarioDependenteViewModel
     {
-        public BeneficiarioViewModel()
+        public BeneficiarioDependenteViewModel()
         {
-            Id = Guid.NewGuid();                  
+            Id = Guid.NewGuid();
         }
         [Key]
         public Guid Id { get; set; }
@@ -37,14 +35,13 @@ namespace Protectos.Application.ViewModels.Beneficiarios
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataNascimento { get; private set; }
         [Required(ErrorMessage = "Campo obrigatório")]
-        public string Sexo { get; private set; }
-        [Required(ErrorMessage = "Campo obrigatório")]
+        public string Sexo { get; private set; }        
         [MaxLength(11, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(11, ErrorMessage = "Mínimo {0} caracteres")]
         [DisplayName("CPF")]
         public string Cpf { get; private set; }
         [Required(ErrorMessage = "Campo obrigatório")]
-        [MaxLength(11, ErrorMessage = "Máximo {0} caracteres")]        
+        [MaxLength(11, ErrorMessage = "Máximo {0} caracteres")]
         [DisplayName("RG")]
         public string RG { get; private set; }
         [Required(ErrorMessage = "Campo obrigatório")]
@@ -55,10 +52,9 @@ namespace Protectos.Application.ViewModels.Beneficiarios
         public string OrgaoEmissor { get; private set; }
         [Required(ErrorMessage = "Campo obrigatório")]
         public string EstadoCivil { get; private set; }
-        public virtual IEnumerable<BeneficiarioEnderecoViewModel> BeneficiarioEndereco { get; set; }
-        public virtual IEnumerable<BeneficiarioTelefoneViewModel> BeneficiarioTelefone { get; set; }
-        public virtual IEnumerable<BeneficiarioEmailViewModel> BeneficiarioEmail { get; set; }        
-
+        [ScaffoldColumn(false)]
+        public Guid BeneficiarioId { get; set; }
+        public virtual BeneficiarioViewModel Beneficiario { get; set; }
         [ScaffoldColumn(false)]
         public FluentValidation.Results.ValidationResult ValidationResult { get; set; }
     }

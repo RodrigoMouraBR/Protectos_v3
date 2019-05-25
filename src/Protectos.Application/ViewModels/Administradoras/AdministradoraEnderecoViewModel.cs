@@ -65,5 +65,7 @@ namespace Protectos.Application.ViewModels.Administradoras
         [ScaffoldColumn(false)]
         public Guid AdministradoraId { get; set; }
         public virtual AdministradoraViewModel Administradora { get; set; }
+        [ScaffoldColumn(false)]
+        public FluentValidation.Results.ValidationResult ValidationResult { get; set; }
     }
 }

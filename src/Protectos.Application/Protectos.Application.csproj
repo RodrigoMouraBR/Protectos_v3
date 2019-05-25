@@ -76,6 +76,7 @@
     <Compile Include="ViewModels\Administradoras\AdministradoraEnderecoViewModel.cs" />
     <Compile Include="ViewModels\Administradoras\AdministradoraTelefoneViewModel.cs" />
     <Compile Include="ViewModels\Administradoras\AdministradoraViewModel.cs" />
+    <Compile Include="ViewModels\Beneficiarios\BeneficiarioDependenteViewModel.cs" />
     <Compile Include="ViewModels\Beneficiarios\BeneficiarioEmailViewModel.cs" />
     <Compile Include="ViewModels\Beneficiarios\BeneficiarioEnderecoViewModel.cs" />
     <Compile Include="ViewModels\Beneficiarios\BeneficiarioTelefoneViewModel.cs" />
