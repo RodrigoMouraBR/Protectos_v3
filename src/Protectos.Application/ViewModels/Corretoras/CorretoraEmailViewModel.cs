@@ -12,13 +12,27 @@ namespace Protectos.Application.ViewModels.Corretoras
         }
         [Key]
         public Guid Id { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Prefixo")]       
+        [ScaffoldColumn(false)]
+        public bool Ativo { get; set; }
+        [ScaffoldColumn(false)]
+        public DateTime DataCadastro { get; set; }
+        [ScaffoldColumn(false)]
+        public Guid CadastradoPor { get; set; }
+        [ScaffoldColumn(false)]
+        public DateTime DataAlteracao { get; set; }
+        [ScaffoldColumn(false)]
+        public string AlteradoPor { get; set; }
+        [Required]
+        [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "E-mail em formato inválido.")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Preencha o campo Tipo")]        
+        [Required(ErrorMessage = "Campo obrigatório")]
         [DisplayName("Tipo Email")]
         public string TipoEmail { get; set; }
         [ScaffoldColumn(false)]
         public Guid CorretoraId { get; set; }
         public virtual CorretoraViewModel Corretora { get; set; }
+        [ScaffoldColumn(false)]
+        public FluentValidation.Results.ValidationResult ValidationResult { get; set; }
     }
 }
