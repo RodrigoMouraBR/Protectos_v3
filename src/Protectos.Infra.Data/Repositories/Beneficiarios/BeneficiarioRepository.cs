@@ -21,7 +21,8 @@ namespace Protectos.Infra.Data.Repositories.Beneficiarios
         }
         public Beneficiario BeneficiarioObterPorCpf(string cpf)
         {
-            return Search(b => b.Cpf.Numero == cpf).FirstOrDefault();
+            return null;
+           // return Search(b => b.Cpf.Numero == cpf).FirstOrDefault();
         }       
     }
 }

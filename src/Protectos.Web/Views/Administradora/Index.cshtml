@@ -1,62 +1,152 @@
-﻿
+﻿@model IEnumerable<Protectos.Application.ViewModels.Administradoras.AdministradoraViewModel>
 @{
-    ViewBag.Titulo = "Administradora";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutContent.cshtml";
+}
+
+
+@section header
+{
+    <section class="content-header">
+        <h1>
+            Index administradora
+            <small>Administradora configurada</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+            <li class="active">Here</li>
+        </ol>
+    </section>
 }
 
 <div class="row">
     <div class="col-md-12">
-        <div class="card">
-            <div class="card-header card-header-primary card-header-icon">
-                <div class="card-icon">
-                    <i class="material-icons">assignment</i>
+        <div class="box">
+            <div class="box box-danger">
+                <div class="box-header">
+                    <h3 class="box-title">Simple Full Width Table</h3>                   
+
                 </div>
-                <h4 class="card-title">Administradoras cadastradas</h4>
-            </div>
-            <div class="card-body">
-                <div class="toolbar">
-                    <!--        Here you can write extra buttons/actions for the toolbar              -->
-                </div>
-                <div class="material-datatables">
-                    <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>Cnpj</th>
-                                <th>Razao Social</th>
-                                <th class="disabled-sorting text-right">Ações</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Cnpj</th>
-                                <th>Razao Social</th>
-                                <th class="text-right">Ações</th>
-                            </tr>
-                        </tfoot>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <table class="table">
                         <tbody>
                             <tr>
-                                <td>9999999999999</td>
-                                <td>POTENCIAL ADMINISTRADORA DE SEGUROS LTDA</td>
-                                <td class="text-right">
-                                    <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
-                                    <a href="@Url.Action("Edit")" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
-                                    <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
+                                <th style="width: 10px">#</th>
+                                <th>Task</th>
+                                <th>Progress</th>
+                                <th style="width: 40px">Label</th>
+                            </tr>
+                            <tr>
+                                <td>1.</td>
+                                <td>Update software</td>
+                                <td>
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                    </div>
                                 </td>
-                                
+                                <td><span class="badge bg-red">55%</span></td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td>Clean database</td>
+                                <td>
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-yellow">70%</span></td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td>Cron job running</td>
+                                <td>
+                                    <div class="progress progress-xs progress-striped active">
+                                        <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-light-blue">30%</span></td>
+                            </tr>
+                            <tr>
+                                <td>4.</td>
+                                <td>Fix and squish bugs</td>
+                                <td>
+                                    <div class="progress progress-xs progress-striped active">
+                                        <div class="progress-bar progress-bar-success" style="width: 90%"></div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-green">90%</span></td>
                             </tr>
                         </tbody>
                     </table>
+
+                    <table class="table table-striped">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.RazaoSocial)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NomeFantasia)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Cnpj)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.InscricaoEstadual)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.InscricaoMunicipal)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Site)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RazaoSocial)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NomeFantasia)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cnpj)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.InscricaoEstadual)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.InscricaoMunicipal)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Site)
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Editar", "Administradora", new {id = item.Id})" class="btn btn-warning btn-xs">
+                                        <span title="Editar" class="glyphicon glyphicon-pencil"></span>
+                                    </a>
+                                    <a href="@Url.Action("Detalhe", "Administradora", new {id = item.Id})" class="btn btn-primary btn-xs">
+                                        <span title="Detalhes" class="glyphicon glyphicon-search"></span>
+                                    </a>
+                                    <a href="@Url.Action("Delete", "Administradora", new {id = item.Id})" class="btn btn-danger btn-xs">
+                                        <span title="Excluir" class="glyphicon glyphicon-trash"></span>
+                                    </a>
+
+                                </td>
+                            </tr>
+                        }
+                    </table>
+
+
+
                 </div>
+                <!-- /.box-body -->
             </div>
-            <!-- end content-->
-
-
-
-
-
         </div>
-        <!--  end card  -->
+        <!-- /.box -->
+
     </div>
-    <!-- end col-md-12 -->
 </div>
-<!-- end row -->

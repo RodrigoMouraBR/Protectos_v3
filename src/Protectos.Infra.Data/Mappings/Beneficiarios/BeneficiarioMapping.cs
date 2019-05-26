@@ -27,10 +27,10 @@ namespace Protectos.Infra.Data.Mappings.Beneficiarios
                .IsRequired();
             Property(c => c.Sexo)
                .IsRequired();
-            Property(c => c.Cpf.Numero)
-              .IsRequired()
-              .HasMaxLength(11)
-              .IsFixedLength();
+            //Property(c => c.Cpf.Numero)
+            //  .IsRequired()
+            //  .HasMaxLength(11)
+            //  .IsFixedLength();
             Property(c => c.RG)
              .HasColumnType("char")
              .HasMaxLength(14);
