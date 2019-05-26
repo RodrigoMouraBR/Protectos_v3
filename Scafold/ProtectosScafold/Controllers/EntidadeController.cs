@@ -117,7 +117,7 @@ namespace ProtectosScafold.Controllers
             if (ModelState.IsValid)
             {
                 _entidadeApplicationService.EntidadeEnderecoAdicionar(enderecoViewModel);
-                string url = Url.Action("ListarEnderecos", "Administradora", new { id = enderecoViewModel.AdministradoraId });
+                string url = Url.Action("ListarEnderecos", "Entidade", new { id = enderecoViewModel.EntidadeId });
                 return Json(new { success = true, url = url });
             }
 
@@ -135,7 +135,7 @@ namespace ProtectosScafold.Controllers
             {
                 _entidadeApplicationService.EntidadeEnderecoAtualizar(enderecoViewModel);
 
-                string url = Url.Action("ListarEnderecos", "Administradora", new { id = enderecoViewModel.AdministradoraId });
+                string url = Url.Action("ListarEnderecos", "Entidade", new { id = enderecoViewModel.EntidadeId });
                 return Json(new { success = true, url = url });
             }
             return PartialView("_AtualizarEndereco", enderecoViewModel);
@@ -158,9 +158,9 @@ namespace ProtectosScafold.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeletarEnderecoConfirmed(Guid id)
         {
-            var administradoraId = _entidadeApplicationService.EntidadeEnderecoObterPorId(id).AdministradoraId;
+            var entidadeId = _entidadeApplicationService.EntidadeEnderecoObterPorId(id).EntidadeId;
             _entidadeApplicationService.DeleteEntidadeEndereco(id);
-            string url = Url.Action("ListarEnderecos", "Administradora", new { id = administradoraId });
+            string url = Url.Action("ListarEnderecos", "Administradora", new { id = entidadeId });
             return Json(new { success = true, url = url });
         }
         public ActionResult ObterImagemCliente(Guid id)

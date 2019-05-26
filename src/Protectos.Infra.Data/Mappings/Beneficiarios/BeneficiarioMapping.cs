@@ -33,18 +33,10 @@ namespace Protectos.Infra.Data.Mappings.Beneficiarios
 
             Property(c => c.Sexo)
                .IsRequired();
-<<<<<<< HEAD
 
             Property(c => c.Cpf)
               .HasMaxLength(11);            
-            
 
-=======
-            //Property(c => c.Cpf.Numero)
-            //  .IsRequired()
-            //  .HasMaxLength(11)
-            //  .IsFixedLength();
->>>>>>> desenv
             Property(c => c.RG)
              .HasColumnType("char")
              .HasMaxLength(14);

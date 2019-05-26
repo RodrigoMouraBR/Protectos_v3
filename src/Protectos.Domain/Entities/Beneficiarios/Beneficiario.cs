@@ -72,22 +72,13 @@ namespace Protectos.Domain.Entities.Beneficiarios
                 .NotEmpty().WithMessage("O campo sexo precisa ser fornecido");            
 
             int idade = CalculaIdadeBeneficiario(DataNascimento);
-<<<<<<< HEAD
+
             if (idade >= 8)
             {
                 RuleFor(c => c.Cpf)
                     .NotEmpty().WithErrorCode("O Campo CPF precisa ser fornecido")
                     .Length(11).WithMessage("O nome do evento precisa 11 caracteres");
             }
-
-=======
-            //if (idade >= 8)
-            //{
-            //    RuleFor(c => c.Cpf.Numero)
-            //        .NotEmpty().WithErrorCode("O Campo CPF � Obrigatorio!")
-            //        .Length(11, 11).WithMessage("O nome do evento precisa 11 caracteres");
-            //}
->>>>>>> desenv
             RuleFor(c => c.RG)
                    .NotEmpty().WithErrorCode("O Campo Registro Geral precisa ser fornecido")
                    .Length(9, 14).WithMessage("O nome do evento precisa 14 caracteres");
