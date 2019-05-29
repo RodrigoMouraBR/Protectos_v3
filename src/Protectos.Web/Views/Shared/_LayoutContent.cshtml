@@ -4,8 +4,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@RenderSection("style", required: false)
+
 
    <div class="content-wrapper" style="min-height: 524px;">
+
         <!-- Content Header (Page header) -->
         @RenderSection("header", required: true)
         <!-- Main content -->
@@ -14,3 +17,6 @@
         </section>
         <!-- /.content -->
     </div>
+
+
+@RenderSection("scripts", required: false)
