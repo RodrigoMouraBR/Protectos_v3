@@ -6662,9 +6662,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_Menu.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Shared\_Usuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -6679,9 +6676,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Header.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Administradora\Index.cshtml" />
@@ -7198,6 +7192,15 @@
     <Content Include="Views\Administradora\_DeletarEndereco.cshtml" />
     <Content Include="Views\Administradora\_Endereco.cshtml" />
     <Content Include="Views\Administradora\_EnderecosList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Footer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Menu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Beneficiario\Incluir.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
