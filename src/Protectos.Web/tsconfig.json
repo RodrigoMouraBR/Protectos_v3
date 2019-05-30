@@ -1,14 +1,38 @@
+//{
+//  "compilerOptions": {
+//    "noImplicitAny": false,
+//    "noEmitOnError": true,
+//    "removeComments": false,
+//    "sourceMap": true,
+//    "target": "es5"
+//  },
+//  "exclude": [
+//    "[\"**/*.spec.ts\",\"app_/**/*.ts\",\"**/*.d.ts\",\"node_modules\"]"
+//    //  "node_modules",
+//    //  "wwwroot"
+
+//  ]
+//}
 {
   "compilerOptions": {
-    "noImplicitAny": false,
-    "noEmitOnError": true,
-    "removeComments": false,
-    "sourceMap": true,
-    "target": "es5"
+    "allowJs": true,
+    "noEmit": true,
+    "module": "system",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true
   },
+  "include": [
+    "**/*"
+  ],
   "exclude": [
-  //  "node_modules",
-  //  "wwwroot"
-
-  ]
+    "assets",
+    "node_modules",
+    "bower_components",
+    "jspm_packages"
+  ],
+  "typeAcquisition": {
+    "enable": true
+  }
 }
