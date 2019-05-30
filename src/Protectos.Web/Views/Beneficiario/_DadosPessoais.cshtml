@@ -1,0 +1,120 @@
+﻿@model Protectos.Application.ViewModels.Beneficiarios.BeneficiarioViewModel
+
+<div class="row">
+    <!--row 1-->
+    <div class="col-sm-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cpf) :
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                @Html.EditorFor(model => model.Cpf, new { htmlAttributes = new { @class = "form-control", placeholder = "Cpf" } })
+            </div>
+            @Html.ValidationMessageFor(model => model.Cpf, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome) :
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control text-uppercase", placeholder = "Nome" } })
+            </div>
+            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sobrenome) :
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                @Html.EditorFor(model => model.Sobrenome, new { htmlAttributes = new { @class = "form-control text-uppercase", placeholder = "Sobrenome" } })
+            </div>
+            @Html.ValidationMessageFor(model => model.Sobrenome, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+</div><!--//row-->
+
+<div class="row">
+    <!--row 2-->
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label>Sexo:</label>
+            <select class="form-control text-uppercase" name="sexo">
+                <option>Feminino</option>
+                <option>Masculino</option>
+                <option>Outro</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label>Estado Civil:</label>
+            <select class="form-control text-uppercase" name="estadocivil">
+                <option value="1">Solteiro(a)         </option>
+                <option selected="selected" value="2">Casado(a)           </option>
+                <option value="3">Divorciado(a)       </option>
+                <option value="4">Viúvo(a)            </option>
+                <option value="5">Separado(a)         </option>
+                <option value="6">Companheiro(a)      </option>
+                <option value="7">Não informado       </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label>Data Nascimento:</label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+            </div>
+            <!-- /.input group -->
+        </div>
+    </div>
+</div><!--//row-->
+<div class="row">
+    <!--row 3-->
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label>Cartão Nacional de Saúde:</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                <input type="text" class="form-control" placeholder="Cartão Nacional de Saúde">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label>RG:</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                <input type="text" class="form-control" placeholder="Registro Geral">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label>Orgão Emissor:</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                <input type="text" class="form-control" placeholder="Orgão Emissor">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label>Data Expedição:</label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+            </div>
+            <!-- /.input group -->
+        </div>
+    </div>
+
+</div><!--//row-->
