@@ -31,11 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.6.3.0-preview5-19254-05\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.6.3.0-preview5-19254-05\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.SqlServerCompact.6.2.0\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
@@ -102,6 +105,7 @@
     <Compile Include="Mappings\Filiais\FilialEnderecoMapping.cs" />
     <Compile Include="Mappings\Filiais\FilialMapping.cs" />
     <Compile Include="Mappings\Filiais\FilialTelefoneMapping.cs" />
+    <Compile Include="Mappings\Fornecedores\FornecedorMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraCongenereMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraEmailMapping.cs" />
     <Compile Include="Mappings\Operadoras\OperadoraEnderecoMapping.cs" />
@@ -111,6 +115,7 @@
     <Compile Include="Mappings\Planos\PlanoMapping.cs" />
     <Compile Include="Mappings\Propostas\PropostaMapping.cs" />
     <Compile Include="Mappings\Propostas\TipoVencimentoReferenciaMapping.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraEmailRepository.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraEnderecoRepository.cs" />

@@ -23,7 +23,7 @@ namespace ProtectosScafold.Controllers
         }
         public ActionResult Index()
         {           
-            return View();
+            return View(_administradoraApplicationService.AdministradoraObterAtivo());
         }
         public ActionResult Details(Guid? id)
         {

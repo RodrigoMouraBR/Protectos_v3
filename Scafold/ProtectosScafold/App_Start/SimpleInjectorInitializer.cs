@@ -4,7 +4,7 @@ namespace ProtectosScafold.App_Start
 {
     using System.Reflection;
     using System.Web.Mvc;
-
+    using Protectos.Infra.CrossCutting.IoC;
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
@@ -17,7 +17,7 @@ namespace ProtectosScafold.App_Start
             var container = new Container();
             container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
             
-            //InitializeContainer(container);
+            InitializeContainer(container);
 
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
             
@@ -26,12 +26,9 @@ namespace ProtectosScafold.App_Start
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
         }
      
-        //private static void InitializeContainer(Container container)
-        //{
-
-    
-        //    // For instance:
-        //     container.Register<IUserRepository, SqlUserRepository>(Lifestyle.Scoped);
-        //}
+        private static void InitializeContainer(Container container)
+        {
+            Bootstrap.Register(container);
+        }
     }
 }

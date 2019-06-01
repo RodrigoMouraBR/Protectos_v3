@@ -8,7 +8,12 @@ namespace Protectos.Application.ViewModels.Administradoras
     {
         public AdministradoraViewModel()
         {
-            Id = Guid.NewGuid();           
+            Id = Guid.NewGuid();
+            Ativo = true;
+            DataCadastro = DateTime.Now;
+            CadastradoPor = Guid.NewGuid();
+            DataAlteracao = DateTime.Now;
+            AlteradoPor = Guid.NewGuid();
         }
         [Key]
         public Guid Id { get;  set; }
@@ -21,7 +26,7 @@ namespace Protectos.Application.ViewModels.Administradoras
         [ScaffoldColumn(false)]
         public DateTime DataAlteracao { get;  set; }
         [ScaffoldColumn(false)]
-        public string AlteradoPor { get;  set; }
+        public Guid AlteradoPor { get;  set; }
         [Required(ErrorMessage = "Campo obrigatório")]
         [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]

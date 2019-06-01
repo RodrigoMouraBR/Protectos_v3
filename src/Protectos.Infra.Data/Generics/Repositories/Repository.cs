@@ -10,7 +10,7 @@ namespace Protectos.Infra.Data.Generics.Repositories
 {
     public class Repository<T> : IRepository<T> where T : Entity<T>
     {     
-        private readonly ProtectosContext _protectosContext;
+        protected readonly ProtectosContext _protectosContext;
         protected DbSet<T> _dbSet;
         public Repository(ProtectosContext protectosContext)
         {

@@ -1,6 +1,6 @@
 using FluentValidation;
 using Protectos.Domain.Core.Models;
-using System;
+using Protectos.Domain.ValuesObjects;
 using System.Collections.Generic;
 namespace Protectos.Domain.Entities.Administradoras
 {
@@ -11,11 +11,12 @@ namespace Protectos.Domain.Entities.Administradoras
                               string cnpj,
                               string inscricaoEstadual,
                               string inscricaoMunicipal,
+                              string cnpjNumero,
                               string site)
         {
+            AtribuirCnpj(cnpjNumero);
             RazaoSocial = razaoSocial;
-            NomeFantasia = nomeFantasia;
-            Cnpj = cnpj;
+            NomeFantasia = nomeFantasia;            
             InscricaoEstadual = inscricaoEstadual;
             InscricaoMunicipal = inscricaoMunicipal;
             Site = site;
@@ -23,13 +24,15 @@ namespace Protectos.Domain.Entities.Administradoras
             Telefones = new List<AdministradoraTelefone>();
             Emails = new List<AdministradoraEmail>();
         }
-        protected Administradora() { }
+        protected Administradora() {
+           
+        }
         public string RazaoSocial { get; private set; }
         public string NomeFantasia { get; private set; }
-        public string Cnpj { get; private set; }
         public string InscricaoEstadual { get; private set; }
         public string InscricaoMunicipal { get; private set; }
-        public string Site { get; private set; }       
+        public string Site { get; private set; }
+        public CNPJ Cnpj { get; private set; }
         public virtual ICollection<AdministradoraEndereco> Enderecos { get; private set; }
         public virtual ICollection<AdministradoraTelefone> Telefones { get; private set; }
         public virtual ICollection<AdministradoraEmail> Emails { get; private set; }
@@ -38,6 +41,23 @@ namespace Protectos.Domain.Entities.Administradoras
             Validate();
             return ValidationResult.IsValid;
         }
+        private bool AtribuirCnpj(string cnpjNumero)
+        {
+            var cnpj = new CNPJ(cnpjNumero);
+            if (!cnpj.Validar())
+            {
+                RuleFor(c => c.Cnpj.Numero)
+                  .Equal(c => c.Cnpj.Numero).WithMessage("O número do CNPJ é Inválido");
+                return false;
+            }
+            else
+            {
+                Cnpj = cnpj;
+            }           
+           
+            return true;
+        }
+       
         private void Validate()
         {
             ValidateProperty();
@@ -45,22 +65,19 @@ namespace Protectos.Domain.Entities.Administradoras
         }
         private void ValidateProperty()
         {
+           
             RuleFor(c => c.RazaoSocial)
                 .NotEmpty().WithMessage("A razão social precisa ser fornecido")
                 .Length(2, 100).WithMessage("A razão social precisa ter entre 2 e 100 caracteres");
-
             RuleFor(c => c.NomeFantasia)
                 .NotEmpty().WithMessage("O nome fantasia precisa ser fornecido")
                 .Length(2, 100).WithMessage("O nome fantasia precisa ter entre 2 e 100 caracteres");
-
-            RuleFor(c => c.Cnpj)
+            RuleFor(c => c.Cnpj.Numero)
                 .NotEmpty().WithMessage("O cnpj precisa ser fornecido")
                 .Length(14).WithMessage("O cnpj precisa ter 14 caracteres");
-
             RuleFor(c => c.InscricaoEstadual)
                 .NotEmpty().WithMessage("O nome do evento precisa ser fornecido")
                 .Length(2, 14).WithMessage("O nome do evento precisa ter 14 caracteres");
-
             RuleFor(c => c.InscricaoMunicipal)
                 .NotEmpty().WithMessage("O nome do evento precisa ser fornecido")
                 .Length(2, 14).WithMessage("O nome do evento precisa ter entre 2 e 150 caracteres");

@@ -261,8 +261,6 @@ paket-files/
 __pycache__/
 *.pyc
 
-# Migrations EF
-**/Migrations/*
 
 #Pastas
 obj/

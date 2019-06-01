@@ -1,36 +1,46 @@
 using System;
+using Protectos.Domain.DTO;
 using Protectos.Domain.Entities.Administradoras.Interfaces.Repositories;
 using Protectos.Domain.Entities.Administradoras.Interfaces.Services;
+using Protectos.Domain.Generics.Interfaces.Services;
+
 namespace Protectos.Domain.Entities.Administradoras.Services
 {
     public class AdministradoraService : IAdministradoraService
-    {       
+    {
         private readonly IAdministradoraRepository _administradoraRepository;
         private readonly IAdministradoraEmailRepository _administradoraEmailRepository;
         private readonly IAdministradoraTelefoneRepository _administradoraTelefoneRepository;
         private readonly IAdministradoraEnderecoRepository _administradoraEnderecoRepository;
-        public AdministradoraService(IAdministradoraRepository administradoraRepository, 
-                                     IAdministradoraEmailRepository administradoraEmailRepository, 
-                                     IAdministradoraTelefoneRepository administradoraTelefoneRepository, 
-                                     IAdministradoraEnderecoRepository administradoraEnderecoRepository)
+        private readonly IViaCepExternalService _viaCepExternalService;
+
+        public AdministradoraService(IAdministradoraRepository administradoraRepository,
+                                     IAdministradoraEmailRepository administradoraEmailRepository,
+                                     IAdministradoraTelefoneRepository administradoraTelefoneRepository,
+                                     IAdministradoraEnderecoRepository administradoraEnderecoRepository,
+                                     IViaCepExternalService viaCepExternalService
+                                    )
         {
             _administradoraRepository = administradoraRepository;
             _administradoraEmailRepository = administradoraEmailRepository;
             _administradoraTelefoneRepository = administradoraTelefoneRepository;
             _administradoraEnderecoRepository = administradoraEnderecoRepository;
+            _viaCepExternalService = viaCepExternalService;
         }
         //Administradora
         public Administradora AdministradoraAdicionar(Administradora administradora)
         {
-            //if (!administradora.IsValid())
-            //    return administradora;
+
+
+            if (!administradora.IsValid())
+                return administradora;
             _administradoraRepository.Add(administradora);
             return administradora;
         }
         public Administradora AdministradoraAtualizar(Administradora administradora)
         {
             return _administradoraRepository.Update(administradora);
-        }  
+        }
         public void DeleteAdministradora(Guid id)
         {
             _administradoraRepository.Delete(id);
@@ -38,8 +48,8 @@ namespace Protectos.Domain.Entities.Administradoras.Services
         //Endereco
         public AdministradoraEndereco AdministradoraEnderecoAdicionar(AdministradoraEndereco administradoraEndereco)
         {
-            //if (!administradoraEndereco.IsValid())
-            //    return administradoraEndereco;
+            if (!administradoraEndereco.IsValid())
+                return administradoraEndereco;
             _administradoraEnderecoRepository.Add(administradoraEndereco);
             return administradoraEndereco;
         }
@@ -54,8 +64,8 @@ namespace Protectos.Domain.Entities.Administradoras.Services
         //Email
         public AdministradoraEmail AdministradoraEmailAdicionar(AdministradoraEmail administradoraEmail)
         {
-            //if (!administradoraEmail.IsValid())
-            //    return administradoraEmail;
+            if (!administradoraEmail.IsValid())
+                return administradoraEmail;
             _administradoraEmailRepository.Add(administradoraEmail);
             return administradoraEmail;
         }
@@ -70,8 +80,8 @@ namespace Protectos.Domain.Entities.Administradoras.Services
         //Telefone
         public AdministradoraTelefone AdministradoraTelefoneAdicionar(AdministradoraTelefone administradoraTelefone)
         {
-            //if (!administradoraTelefone.IsValid())
-            //    return administradoraTelefone;
+            if (!administradoraTelefone.IsValid())
+                return administradoraTelefone;
             _administradoraTelefoneRepository.Add(administradoraTelefone);
             return administradoraTelefone;
         }
@@ -91,5 +101,11 @@ namespace Protectos.Domain.Entities.Administradoras.Services
             _administradoraTelefoneRepository.Dispose();
             _administradoraEnderecoRepository.Dispose();
         }
-    }
+
+        public ViaCep ConsultaraServicoViaCEP(string cep)
+        {
+            var retorno = _viaCepExternalService.ConsultarCEP(cep);
+            return retorno;
+        }
+    }    
 }

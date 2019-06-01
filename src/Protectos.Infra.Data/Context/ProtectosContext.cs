@@ -7,6 +7,7 @@ using Protectos.Domain.Entities.Corretores;
 using Protectos.Domain.Entities.Entidades;
 using Protectos.Domain.Entities.Faturas;
 using Protectos.Domain.Entities.Filiais;
+using Protectos.Domain.Entities.Fornecedores;
 using Protectos.Domain.Entities.Operadoras;
 using Protectos.Domain.Entities.Planos;
 using Protectos.Domain.Entities.Propostas;
@@ -19,6 +20,7 @@ using Protectos.Infra.Data.Mappings.Corretores;
 using Protectos.Infra.Data.Mappings.Entidades;
 using Protectos.Infra.Data.Mappings.Faturas;
 using Protectos.Infra.Data.Mappings.Filiais;
+using Protectos.Infra.Data.Mappings.Fornecedores;
 using Protectos.Infra.Data.Mappings.Operadoras;
 using Protectos.Infra.Data.Mappings.Planos;
 using Protectos.Infra.Data.Mappings.Propostas;
@@ -33,7 +35,7 @@ namespace Protectos.Infra.Data.Context
     {
         public ProtectosContext() : base("DefaultConnection")
         {            
-        }      
+        }     
 
         public virtual DbSet<Beneficiario> Beneficiario { get; set; }
         public virtual DbSet<BeneficiarioEmail> BeneficiarioEmail { get; set; }
@@ -90,9 +92,7 @@ namespace Protectos.Infra.Data.Context
         public virtual DbSet<CorretoraEmail> CorretoraEmail { get; set; }
         public virtual DbSet<CorretoraEndereco> CorretoraEndereco { get; set; }
         public virtual DbSet<CorretoraTelefone> CorretoraTelefone { get; set; }
-
-
-
+        public virtual DbSet<Fornecedor> Fornecedor { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
@@ -155,6 +155,8 @@ namespace Protectos.Infra.Data.Context
             modelBuilder.Configurations.Add(new CorretoraEmailMapping());
             modelBuilder.Configurations.Add(new CorretoraTelefoneMapping());
 
+            modelBuilder.Configurations.Add(new FornecedorMapping());
+
             modelBuilder.Properties<string>()
                 .Configure(p => p.HasColumnType("varchar"));
             modelBuilder.Properties<string>()
@@ -162,7 +164,6 @@ namespace Protectos.Infra.Data.Context
 
             base.OnModelCreating(modelBuilder);
         }
-
         public override int SaveChanges()
         {
             foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
