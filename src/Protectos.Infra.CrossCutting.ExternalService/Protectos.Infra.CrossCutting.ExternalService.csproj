@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6BC002AD-DC92-4819-BD2C-1801705F3157}</ProjectGuid>
+    <ProjectGuid>{106BFAAA-CA22-42CA-8CFD-D3E7FD5BB261}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Protectos.Infra.CrossCutting.IoC</RootNamespace>
-    <AssemblyName>Protectos.Infra.CrossCutting.IoC</AssemblyName>
+    <RootNamespace>Protectos.Infra.CrossCutting.ExternalService</RootNamespace>
+    <AssemblyName>Protectos.Infra.CrossCutting.ExternalService</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,11 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SimpleInjector, Version=4.6.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SimpleInjector.4.6.0\lib\net45\SimpleInjector.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.6.9.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RestSharp.106.6.9\lib\net452\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,29 +48,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ViaCepExternalService.cs" />
+    <Compile Include="Utils\TextoHelper.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Protectos.Application\Protectos.Application.csproj">
-      <Project>{0379C7B9-A59E-4913-B97E-E9521F870629}</Project>
-      <Name>Protectos.Application</Name>
+    <ProjectReference Include="..\Protectos.Domain.Core\Protectos.Domain.Core.csproj">
+      <Project>{5a548c53-282e-47c4-8a11-4517bae41fcb}</Project>
+      <Name>Protectos.Domain.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Protectos.Domain\Protectos.Domain.csproj">
       <Project>{A4D67B2C-9F59-4D2F-A109-F82C4B338736}</Project>
       <Name>Protectos.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Protectos.Infra.CrossCutting.ExternalService\Protectos.Infra.CrossCutting.ExternalService.csproj">
-      <Project>{106BFAAA-CA22-42CA-8CFD-D3E7FD5BB261}</Project>
-      <Name>Protectos.Infra.CrossCutting.ExternalService</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Protectos.Infra.Data\Protectos.Infra.Data.csproj">
       <Project>{955272FD-2B5A-4E65-8594-59C3D3B9AB7C}</Project>
       <Name>Protectos.Infra.Data</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

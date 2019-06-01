@@ -33,14 +33,19 @@ namespace Protectos.Application.ApplicationServices.Administradoras
             _administradoraService = administradoraService;
         }
 
-        //AdministradoraServices
-        //public AdministradoraViewModel AdministradoraAdicionar(AdministradoraViewModel administradoraViewModel)
-        //{
-        //    var administradora = Mapper.Map<Administradora>(administradoraViewModel);
-        //    _administradoraService.AdministradoraAdicionar(administradora);
-        //    Commit();
-        //    return administradoraViewModel;
-        //}
+        // AdministradoraServices
+        public AdministradoraViewModel AdministradoraAdicionar(AdministradoraViewModel administradoraViewModel)
+        {
+            var administradora = Mapper.Map<Administradora>(administradoraViewModel);
+            BeginTransaction();
+            var administradoraReturn = _administradoraService.AdministradoraAdicionar(administradora);
+            if (!administradoraReturn.ValidationResult.IsValid)
+            {
+                return administradoraViewModel;
+            }
+            Commit();
+            return administradoraViewModel;
+        }
         public AdministradoraViewModel AdministradoraAtualizar(AdministradoraViewModel administradoraViewModel)
         {
             var administradora = Mapper.Map<Administradora>(administradoraViewModel);
@@ -166,21 +171,28 @@ namespace Protectos.Application.ApplicationServices.Administradoras
         }
         public AdministradoraCadastroViewModel AdministradoraCadastroAdicionar(AdministradoraCadastroViewModel administradoraCadastroViewModel)
         {
+            _administradoraService.ConsultaraServicoViaCEP("07263000");
+
             var administradora = Mapper.Map<Administradora>(administradoraCadastroViewModel.Administradora);
             var endereco = Mapper.Map<AdministradoraEndereco>(administradoraCadastroViewModel.Endereco);
+            #region
             //var telefone = Mapper.Map<AdministradoraTelefone>(administradoraCadastroViewModel);
             //var email = Mapper.Map<AdministradoraEmail>(administradoraCadastroViewModel);
+            #endregion
             administradora.Enderecos.Add(endereco);
             var foto = administradoraCadastroViewModel.Foto;
+            #region
+
             //administradora.Telefones.Add(telefone);
             //administradora.Emails.Add(email);
+            #endregion
             BeginTransaction();
             var administradoraReturn = _administradoraService.AdministradoraAdicionar(administradora);
             administradoraCadastroViewModel = Mapper.Map<AdministradoraCadastroViewModel>(administradoraReturn);
-            //if (!administradoraReturn.ValidationResult.IsValid)
-            //{
-            //    return administradoraCadastroViewModel;
-            //}
+            if (!administradoraReturn.ValidationResult.IsValid)
+            {
+                return administradoraCadastroViewModel;
+            }
             if (!SalvarImagemCliente(foto, administradora.Id))
             {
                 // Tomada de decisão caso a imagem não seja gravada.              

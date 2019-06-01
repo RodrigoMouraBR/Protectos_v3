@@ -1,4 +1,3 @@
-using System;
 namespace Protectos.Domain.ValuesObjects
 {
     public class CPF

@@ -1,3 +1,5 @@
+using Protectos.Domain.DTO;
+using Protectos.Domain.Generics.Interfaces.Services;
 using System;
 
 namespace Protectos.Domain.Entities.Administradoras.Interfaces.Services
@@ -8,6 +10,8 @@ namespace Protectos.Domain.Entities.Administradoras.Interfaces.Services
         Administradora AdministradoraAdicionar(Administradora administradora);
         Administradora AdministradoraAtualizar(Administradora administradora);
         void DeleteAdministradora(Guid id);
+
+        ViaCep ConsultaraServicoViaCEP(string cep);
 
         //Email
         AdministradoraEmail AdministradoraEmailAdicionar(AdministradoraEmail administradoraEmail);

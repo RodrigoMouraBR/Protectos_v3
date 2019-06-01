@@ -33,7 +33,7 @@ namespace Protectos.Application.AutoMapper
             CreateMap<CorretoraEmail, CorretoraEmailViewModel>();
             CreateMap<CorretoraTelefone, CorretoraTelefoneViewModel>();
 
-            CreateMap<Administradora, AdministradoraViewModel>();
+            CreateMap<Administradora, AdministradoraViewModel>().ForPath(dest => dest.Cnpj, opt => opt.MapFrom(src => src.Cnpj.Numero));
             CreateMap<AdministradoraEndereco, AdministradoraEnderecoViewModel>();
             CreateMap<AdministradoraEmail, AdministradoraEmailViewModel>();
             CreateMap<AdministradoraTelefone, AdministradoraTelefoneViewModel>();
@@ -51,7 +51,7 @@ namespace Protectos.Application.AutoMapper
 
             CreateMap<Fatura, FaturaViewModel>();
 
-            
+
 
         }
     }
