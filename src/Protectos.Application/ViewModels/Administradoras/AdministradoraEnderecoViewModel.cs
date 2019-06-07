@@ -8,7 +8,7 @@ namespace Protectos.Application.ViewModels.Administradoras
     {
         public AdministradoraEnderecoViewModel()
         {
-            Id = Guid.NewGuid();
+            EnderecoId = Guid.NewGuid();
             Ativo = true;
             DataCadastro = DateTime.Now;
             CadastradoPor = Guid.NewGuid();
@@ -16,7 +16,7 @@ namespace Protectos.Application.ViewModels.Administradoras
             AlteradoPor = Guid.NewGuid();
         }
         [Key]
-        public Guid Id { get; set; }
+        public Guid EnderecoId { get; set; }
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]
@@ -69,6 +69,7 @@ namespace Protectos.Application.ViewModels.Administradoras
         public string Pais { get; set; }
         [ScaffoldColumn(false)]
         public Guid AdministradoraId { get; set; }
+
         public virtual AdministradoraViewModel Administradora { get; set; }
         [ScaffoldColumn(false)]
         public FluentValidation.Results.ValidationResult ValidationResult { get; set; }

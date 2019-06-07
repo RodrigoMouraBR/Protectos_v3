@@ -71,10 +71,10 @@
                     @Html.DisplayFor(modelItem => item.Pais)
                 </td>
                 <td>
-                    <a href="@Url.Action("AtualizarEndereco", "Administradora", new {id = item.Id})" data-modal="" class="btn btn-default">
+                    <a href="@Url.Action("AtualizarEndereco", "Administradora", new {id = item.EnderecoId})" data-modal="" class="btn btn-default">
                         <span title="Editar" class="glyphicon glyphicon-pencil"></span>
                     </a>
-                    <a href="@Url.Action("DeletarEndereco", "Administradora", new {id = item.Id})" data-modal="" class="btn btn-danger">
+                    <a href="@Url.Action("DeletarEndereco", "Administradora", new {id = item.EnderecoId})" data-modal="" class="btn btn-danger">
                         <span title="Excluir" class="glyphicon glyphicon-trash"></span>
                     </a>
                 </td>

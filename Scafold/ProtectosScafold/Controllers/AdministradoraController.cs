@@ -22,7 +22,7 @@ namespace ProtectosScafold.Controllers
             _administradoraApplicationService = administradoraApplicationService;
         }
         public ActionResult Index()
-        {           
+        {
             return View(_administradoraApplicationService.AdministradoraObterAtivo());
         }
         public ActionResult Details(Guid? id)
@@ -48,7 +48,7 @@ namespace ProtectosScafold.Controllers
         {
             if (ModelState.IsValid)
             {
-               var administradora = _administradoraApplicationService.AdministradoraCadastroAdicionar(administradoraCadastroViewModel);
+                var administradora = _administradoraApplicationService.AdministradoraCadastroAdicionar(administradoraCadastroViewModel);
 
                 if (!administradora.ValidationResult.IsValid)
                 {
@@ -104,7 +104,7 @@ namespace ProtectosScafold.Controllers
                 return HttpNotFound();
             }
             return View(administradoraViewModel);
-        }       
+        }
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
@@ -126,29 +126,28 @@ namespace ProtectosScafold.Controllers
         {
             ViewBag.AdministradoraId = id;
             return PartialView("_EnderecosList", _administradoraApplicationService.AdministradoraObterPorId(id).Enderecos);
-        }              
+        }
         public ActionResult AdicionarEndereco(Guid id)
         {
             ViewBag.AdministradoraId = id;
             return PartialView("_AdicionarEndereco");
-        }              
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AdicionarEndereco(AdministradoraEnderecoViewModel enderecoViewModel)
         {
             if (ModelState.IsValid)
-            {
+            {              
                 _administradoraApplicationService.AdministradoraEnderecoAdicionar(enderecoViewModel);
                 string url = Url.Action("ListarEnderecos", "Administradora", new { id = enderecoViewModel.AdministradoraId });
                 return Json(new { success = true, url = url });
             }
-
             return PartialView("_AdicionarEndereco", enderecoViewModel);
-        }                
+        }
         public ActionResult AtualizarEndereco(Guid id)
         {
             return PartialView("_AtualizarEndereco", _administradoraApplicationService.AdministradoraEnderecoObterPorId(id));
-        }               
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AtualizarEndereco(AdministradoraEnderecoViewModel enderecoViewModel)
@@ -158,11 +157,11 @@ namespace ProtectosScafold.Controllers
                 _administradoraApplicationService.AdministradoraEnderecoAtualizar(enderecoViewModel);
 
                 string url = Url.Action("ListarEnderecos", "Administradora", new { id = enderecoViewModel.AdministradoraId });
-                return Json(new { success = true, url = url });               
+                return Json(new { success = true, url = url });
             }
 
             return PartialView("_AtualizarEndereco", enderecoViewModel);
-        }               
+        }
         public ActionResult DeletarEndereco(Guid? id)
         {
             if (id == null)
@@ -176,7 +175,7 @@ namespace ProtectosScafold.Controllers
                 return HttpNotFound();
             }
             return PartialView("_DeletarEndereco", enderecoViewModel);
-        }               
+        }
         [HttpPost, ActionName("DeletarEndereco")]
         [ValidateAntiForgeryToken]
         public ActionResult DeletarEnderecoConfirmed(Guid id)

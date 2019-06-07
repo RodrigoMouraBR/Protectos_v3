@@ -9,6 +9,9 @@ namespace Protectos.Application.ViewModels.Administradoras
         public AdministradoraViewModel()
         {
             Id = Guid.NewGuid();
+            Enderecos = new List<AdministradoraEnderecoViewModel>();
+            Emails = new List<AdministradoraEmailViewModel>();
+            Telefones = new List<AdministradoraTelefoneViewModel>();
             Ativo = true;
             DataCadastro = DateTime.Now;
             CadastradoPor = Guid.NewGuid();
