@@ -27,7 +27,7 @@
             <div class="box-header">
                 <h4 class="box-title">Dados gerais:</h4>
             </div>
-            <div class="box-body">
+            <div class="box-body no-pad-top">
                 @using (Html.BeginForm())
                 {
                     @Html.AntiForgeryToken()
@@ -76,8 +76,12 @@
 
                     </div>
                     <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Atualizar" class="btn btn-success" />
+                        <div class="col-md-10">
+
+                            <button type="submit" value="Atualizar" class="btn  btn-social btn-success">
+                                 <i class="fa fa-save"></i> Salvar alterações
+                            </button>                         
+
                         </div>
                     </div>
 
@@ -92,17 +96,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-                        @*<div id="myModal" class="modal fade in">
+                        <div id="myModal" class="modal fade in">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div id="myModalContent"></div>
@@ -112,7 +106,7 @@
 
                 <div id="replacetarget">
                     @Html.Partial("_EnderecosList", Model.Enderecos)
-                </div>*@
+                </div>
 
 
 

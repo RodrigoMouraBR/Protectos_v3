@@ -2,6 +2,7 @@
 using Protectos.Application.ViewModels.Administradoras;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -13,6 +14,8 @@ namespace Protectos.Web.Controllers
 
     public class AdministradoraController : BaseController
     {
+        private readonly string caminhoImagens = ConfigurationManager.AppSettings["Imagens"];
+
         private readonly IAdministradoraApplicationService _administradoraApplicationService;
 
         public AdministradoraController(IAdministradoraApplicationService administradoraApplicationService)
@@ -190,9 +193,9 @@ namespace Protectos.Web.Controllers
 
         public ActionResult ObterImagemCliente(Guid id)
         {
-            var root = @"C:\Users\rodri\Pictures\Spartacus\";
-            var foto = Directory.GetFiles(root, id + "*").FirstOrDefault();
-            if (foto != null && !foto.StartsWith(root))
+            //var root = caminhoImagens;
+            var foto = Directory.GetFiles(caminhoImagens, id + "*").FirstOrDefault();
+            if (foto != null && !foto.StartsWith(caminhoImagens))
             {
                 // Validando qualquer acesso indevido além da pasta permitida
                 throw new HttpException(403, "Acesso Negado");

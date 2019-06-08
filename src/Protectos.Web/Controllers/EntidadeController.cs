@@ -2,6 +2,7 @@
 using Protectos.Application.ViewModels.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -14,6 +15,8 @@ namespace Protectos.Web.Controllers
 
     public class EntidadeController : Controller
     {
+        private readonly string caminhoImagens = ConfigurationManager.AppSettings["Imagens"];
+
         private readonly IEntidadeApplicationService _entidadeApplicationService;
         public EntidadeController(IEntidadeApplicationService entidadeApplicationService)
         {
@@ -169,9 +172,9 @@ namespace Protectos.Web.Controllers
         }
         public ActionResult ObterImagemEntidade(Guid id)
         {
-            var root = @"C:\Users\rodri\Pictures\Spartacus\";
-            var foto = Directory.GetFiles(root, id + "*").FirstOrDefault();
-            if (foto != null && !foto.StartsWith(root))
+            //var root = @"C:\Users\rodri\Pictures\Spartacus\";
+            var foto = Directory.GetFiles(caminhoImagens, id + "*").FirstOrDefault();
+            if (foto != null && !foto.StartsWith(caminhoImagens))
             {
                 // Validando qualquer acesso indevido além da pasta permitida
                 throw new HttpException(403, "Acesso Negado");

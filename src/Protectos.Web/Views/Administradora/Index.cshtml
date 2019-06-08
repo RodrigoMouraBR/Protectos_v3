@@ -65,8 +65,7 @@
                                     <td>
                                         <a href="@Url.Action("Editar", "Administradora", new {id = item.Id})" class="btn btn-warning btn-xs">
                                             <span title="Editar" class="glyphicon glyphicon-pencil"></span>
-                                        </a>
-                                        @*@Url.Action("Detalhe", "Administradora", new { id = item.Id })*@
+                                        </a>                                     
                                         <a href="#" data-titulo="Detalhes" data-value="@item.Id" class="btn btn-primary btn-xs btn-detalhe">
                                             <span title="Detalhes" class="glyphicon glyphicon-search"></span>
                                         </a>
@@ -102,13 +101,14 @@
                 var id = $(this).data("value");
                 var titulo = $(this).data("titulo");
 
-                $("#modal-primary .conteudoModal").load("/Administradora/Detalhe/"+ id,
+                $("#modal-default .conteudoModal").load("/Administradora/Detalhe/"+ id,
                     function () {
-                        $("#modal-primary .modal-title").text(titulo);
-                        $("#modal-primary .btn-salvar").addClass("hide"); 
-                        $("#modal-primary .btn-fechar").removeClass("pull-left"); 
+                        $("#modal-default .modal-title").text(titulo);
+                        $("#modal-default .btn-salvar").addClass("hide");  
+                        $("#modal-default .modal-dialog").addClass("modal-lg"); //Tamanho Modal
+                        $("#modal-default .btn-fechar").removeClass("pull-left"); 
                        
-                        $("#modal-primary").modal("show");
+                        $("#modal-default").modal("show");
                     });
             });
         });
