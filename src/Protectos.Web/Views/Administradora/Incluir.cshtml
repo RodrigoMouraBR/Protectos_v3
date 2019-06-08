@@ -29,6 +29,7 @@
             </div>
             <div class="box-body">
 
+
                 @using (Html.BeginForm("Incluir", "Administradora", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
@@ -76,9 +77,7 @@
                                 @Html.ValidationMessageFor(model => model.Foto, "", new { @class = "text-danger" })
                             </div>
                         </div>
-
-
-
+                                                                     
 
                         <h4>Endereço:</h4>
                         <hr />
@@ -139,32 +138,34 @@
                         <h4>Email:</h4>
                         <hr />
                         <div class="form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-8">
                                 @Html.LabelFor(model => model.Email.Email)
                                 @Html.EditorFor(model => model.Email.Email, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Email.Email, "", new { @class = "text-danger" })
                             </div>
-                        </div>
-                            @*<div class="col-md-4">
-                @Html.LabelFor(model => model.Email.TipoEmail)
-                @Html.EditorFor(model => modeL.TI, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email.TipoEmail, "", new { @class = "text-danger" })
-            </div>*@
-                        </div>
-                    <hr />
-                    <div class="row">
-                        <div class="form-group">
                             <div class="col-md-4">
-                                <input type="submit" value="Adicionar" class="btn btn-success" />
-                                @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
+                                @Html.LabelFor(model => model.Email.TipoEmail)
+                                @Html.DropDownList("Email.TipoEmail",
+                                 EnumHelper.GetSelectList(typeof(Protectos.Domain.Generics.Enums.ETipoEmail)) ,
+                                 "Selecione o Tipo de Email",
+                                 new { @class = "form-control" })
+                            </div>
+
+
+                        </div>
+
+                        <hr />
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <input type="submit" value="Adicionar" class="btn btn-success" />
+                                    @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
+                                </div>
                             </div>
                         </div>
                     </div>
                 }
-
-
-
-
+                
 
             </div>
             <!-- /.box-body -->

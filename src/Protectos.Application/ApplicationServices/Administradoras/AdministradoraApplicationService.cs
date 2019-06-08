@@ -203,7 +203,7 @@ namespace Protectos.Application.ApplicationServices.Administradoras
         private static bool SalvarImagemCliente(HttpPostedFileBase img, Guid id)
         {
             if (img == null || img.ContentLength <= 0) return false;
-            const string directory = @"C:\Users\rodri\Pictures\Spartacus\";
+            const string directory = @"C:\Users\ma4ci\Documents\img\";
             var fileName = id + Path.GetExtension(img.FileName);
             img.SaveAs(Path.Combine(directory, fileName));
             return File.Exists(Path.Combine(directory, fileName));

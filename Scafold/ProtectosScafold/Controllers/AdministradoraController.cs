@@ -188,7 +188,7 @@ namespace ProtectosScafold.Controllers
 
         public ActionResult ObterImagemCliente(Guid id)
         {
-            var root = @"C:\Users\rodri\Pictures\Spartacus\";
+            var root = @"C:\Users\ma4ci\Documents\img\";
             var foto = Directory.GetFiles(root, id + "*").FirstOrDefault();
             if (foto != null && !foto.StartsWith(root))
             {

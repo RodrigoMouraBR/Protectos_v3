@@ -23,7 +23,7 @@ namespace Protectos.Web.Controllers
         {
             return View(_administradoraApplicationService.AdministradoraObterAtivo());
         }
-        public ActionResult Details(Guid? id)
+        public ActionResult Detalhe(Guid? id)
         {
             if (id == null)
             {
@@ -34,7 +34,9 @@ namespace Protectos.Web.Controllers
             {
                 return HttpNotFound();
             }
-            return View(administradoraViewModel);
+            TempData["TituloModal"]="Detalhes";
+
+            return PartialView("_Detalhe",administradoraViewModel);
         }
         public ActionResult Incluir()
         {

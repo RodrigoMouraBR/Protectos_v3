@@ -115,6 +115,10 @@
     <Compile Include="Mappings\Planos\PlanoMapping.cs" />
     <Compile Include="Mappings\Propostas\PropostaMapping.cs" />
     <Compile Include="Mappings\Propostas\TipoVencimentoReferenciaMapping.cs" />
+    <Compile Include="Migrations\201906061950157_Inicio.cs" />
+    <Compile Include="Migrations\201906061950157_Inicio.Designer.cs">
+      <DependentUpon>201906061950157_Inicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Administradoras\AdministradoraEmailRepository.cs" />
@@ -163,6 +167,11 @@
     <Folder Include="Repositories\Filiais\" />
     <Folder Include="Repositories\Propostas\" />
     <Folder Include="Repositories\TabelaPreco\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906061950157_Inicio.resx">
+      <DependentUpon>201906061950157_Inicio.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
