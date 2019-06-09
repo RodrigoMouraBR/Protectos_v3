@@ -3504,7 +3504,8 @@ table.text-center th {
 .bg-light-blue,
 .label-primary,
 .modal-primary .modal-body {
-  background-color: #3c8dbc !important;
+    /*background-color: #3c8dbc !important;*/
+    background-color: white !important;
 }
 .bg-green,
 .callout.callout-success,

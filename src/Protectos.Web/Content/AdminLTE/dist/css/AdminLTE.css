@@ -4479,7 +4479,8 @@ table.text-center th {
 .bg-light-blue,
 .label-primary,
 .modal-primary .modal-body {
-  background-color: #3c8dbc !important;
+    /*background-color: #3c8dbc !important;*/
+    background-color: antiquewhite !important;
 }
 .bg-green,
 .callout.callout-success,

@@ -6620,6 +6620,7 @@
     <Content Include="Content\AdminLTE\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="Content\AdminLTE\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Content\AdminLTE\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

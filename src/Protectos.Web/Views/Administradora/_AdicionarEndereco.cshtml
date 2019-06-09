@@ -1,13 +1,6 @@
 ﻿
 @model Protectos.Application.ViewModels.Administradoras.AdministradoraEnderecoViewModel
 
-<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">
-        <span aria-hidden="true">×</span><span class="sr-only">Close</span>
-    </button>
-    <h4 class="modal-title">Novo Endereço</h4>
-</div>
-
 
 @using (Html.BeginForm())
 {
@@ -20,10 +13,14 @@
 
             @Html.Partial("_Endereco")
 
-            <div class="modal-footer">
-                <input type="submit" value="Adicionar" class="btn btn-success" />
-                <input type="button" class="btn btn-default" data-dismiss="modal" value="Fechar" />
-            </div>
+
         </div>
     </div>
 }
+
+    <script>
+        $(document).ready(function () {
+            $('.btn-salvar').removeClass('hidden');
+            $('.btn-excluir').addClass('hidden');
+        });
+    </script>

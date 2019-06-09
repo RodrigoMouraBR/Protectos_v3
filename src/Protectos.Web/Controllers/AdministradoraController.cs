@@ -37,8 +37,7 @@ namespace Protectos.Web.Controllers
             {
                 return HttpNotFound();
             }
-            TempData["TituloModal"]="Detalhes";
-
+            
             return PartialView("_Detalhe",administradoraViewModel);
         }
         public ActionResult Incluir()

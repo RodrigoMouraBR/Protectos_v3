@@ -11,8 +11,19 @@
                 <div class="conteudoModal"></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left btn-fechar" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary btn-salvar">Salvar</button>
+               
+                <button type="submit" value="Atualizar" class="btn btn-default pull-left btn-fechar btn-social " data-dismiss="modal">
+                    <i class="fa fa-close"></i> Fechar janela
+                </button>
+
+                <button type="submit" value="Atualizar" class="btn btn-excluir btn-submit-modal hidden btn-social btn-danger">
+                    <i class="fa fa-save"></i> Excluir
+                </button>
+
+                <button type="submit" value="Atualizar" class="btn btn-salvar btn-submit-modal hidden btn-social btn-success">
+                    <i class="fa fa-save"></i> Salvar
+                </button>
+
             </div>
         </div>
         <!-- /.modal-content -->
@@ -130,3 +141,22 @@
     <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+
+<script>
+    $(".btn-submit-modal").on("click", function (e) {
+        $('.modal form').submit();
+        return false;
+    });
+
+    //$('.modal .btn-submit-modal').on('submit', function (e) {
+    //    $('#myModal').modal('show');
+    //    e.preventDefault();
+    //});
+
+    //$('.modal .btn-submit-modal').submit(function (e) {
+    //    e.preventDefault();
+    //    // Coding
+    //    $('#IDModal').modal('toggle'); //or  $('#IDModal').modal('hide');
+    //    return false;
+    //});
+</script>
