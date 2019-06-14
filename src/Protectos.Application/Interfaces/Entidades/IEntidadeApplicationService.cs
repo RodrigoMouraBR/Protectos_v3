@@ -31,7 +31,7 @@ namespace Protectos.Application.Interfaces.Entidades
         void DeleteEntidadeEmail(Guid id);
 
         //Telefone//     
-        EntidadeEnderecoViewModel EntidadeTelefoneObterPorId(Guid id);
+        EntidadeTelefoneViewModel EntidadeTelefoneObterPorId(Guid id);
         IEnumerable<EntidadeTelefoneViewModel> EntidadeTelefoneObterTodos();
         EntidadeTelefoneViewModel EntidadeTelefoneAdicionar(EntidadeTelefoneViewModel entidadeTelefoneViewModel);
         EntidadeTelefoneViewModel EntidadeTelefoneAtualizar(EntidadeTelefoneViewModel entidadeTelefoneViewModel);

@@ -149,7 +149,7 @@ namespace Protectos.Application.ApplicationServices.Operadoras
         {
             return Mapper.Map<OperadoraEnderecoViewModel>(_OperadoraEndrecoRepository.GetbyId(id));
         }
-        public OperadoraEnderecoViewModel EntidadeEmailObterPorId(Guid id)
+        public OperadoraEmailViewModel EntidadeEmailObterPorId(Guid id)
         {
             return Mapper.Map<OperadoraEnderecoViewModel>(_OperadoraEmailRepository.GetbyId(id));
         }

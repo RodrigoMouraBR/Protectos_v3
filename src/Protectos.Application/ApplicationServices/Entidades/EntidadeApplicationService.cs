@@ -157,7 +157,7 @@ namespace Protectos.Application.ApplicationServices.Entidades
             throw new NotImplementedException();
         }
 
-        public EntidadeEnderecoViewModel EntidadeTelefoneObterPorId(Guid id)
+        public EntidadeTelefoneViewModel EntidadeTelefoneObterPorId(Guid id)
         {
             throw new NotImplementedException();
         }

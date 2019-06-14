@@ -23,7 +23,7 @@ namespace Protectos.Application.Interfaces.Operadoras
         void DeleteOperadoraEndereco(Guid id);
 
         //Email//    
-        OperadoraEnderecoViewModel EntidadeEmailObterPorId(Guid id);
+        OperadoraEmailViewModel EntidadeEmailObterPorId(Guid id);
         IEnumerable<OperadoraEmailViewModel> OperadoraEmailObterTodos();
         OperadoraEmailViewModel OperadoraEmailAdicionar(OperadoraEmailViewModel operadoraEmailViewModel);
         OperadoraEmailViewModel OperadoraEmailAtualizar(OperadoraEmailViewModel operadoraEmailViewModel);
