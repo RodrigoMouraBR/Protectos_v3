@@ -44,7 +44,7 @@ namespace Protectos.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Incluir(BeneficiarioViewModel beneficiarioViewModel)
         {
-            //TO DO : VALIDAÇÃO DO ENDEREÇO
+            
             if (ModelState.IsValid)
             {
                 var beneficiario = _beneficiarioApplicationService.BeneficiarioAdicionar(beneficiarioViewModel);

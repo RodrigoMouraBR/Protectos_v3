@@ -1,5 +1,5 @@
-﻿using Protectos.Application.Interfaces.Entidades;
-using Protectos.Application.ViewModels.Entidades;
+﻿using Protectos.Application.Interfaces.Corretoras;
+using Protectos.Application.ViewModels.Corretoras;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -9,23 +9,23 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace Protectos.Web.Controllers
 {
-  
-
-    public class EntidadeController : Controller
+    public class CorretoraController : BaseController
     {
+        // GET: Corretora
         private readonly string caminhoImagens = ConfigurationManager.AppSettings["Imagens"];
 
-        private readonly IEntidadeApplicationService _entidadeApplicationService;
+        private readonly ICorretoraApplicationService _corretoraApplicationService;
 
-        public EntidadeController(IEntidadeApplicationService entidadeApplicationService)
+        public CorretoraController(ICorretoraApplicationService corretoraApplicationService)
         {
-            _entidadeApplicationService = entidadeApplicationService;
+            _corretoraApplicationService = corretoraApplicationService;
         }
         public ActionResult Index()
         {
-            return View(_entidadeApplicationService.EntidadeObterAtivo());
+            return View(_corretoraApplicationService.CorretoraObterAtivo());
         }
         public ActionResult Detalhe(Guid? id)
         {
@@ -33,13 +33,13 @@ namespace Protectos.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var entidadeViewModel = _entidadeApplicationService.EntidadeObterPorId(id.Value);
-            if (entidadeViewModel == null)
+            var corretoraViewModel = _corretoraApplicationService.CorretoraObterPorId(id.Value);
+            if (corretoraViewModel == null)
             {
                 return HttpNotFound();
             }
 
-            return PartialView("_Detalhe", entidadeViewModel);
+            return PartialView("_Detalhe", corretoraViewModel);
         }
         public ActionResult Incluir()
         {
@@ -47,29 +47,29 @@ namespace Protectos.Web.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Incluir(EntidadeViewModel entidadeViewModel)
+        public ActionResult Incluir(CorretoraViewModel corretoraViewModel)
         {
 
             if (ModelState.IsValid)
             {
-                var entidade = _entidadeApplicationService.EntidadeAdicionar(entidadeViewModel);
+                var corretora = _corretoraApplicationService.CorretoraAdicionar(corretoraViewModel);
 
-                if (!entidade.ValidationResult.IsValid)
+                if (!corretora.ValidationResult.IsValid)
                 {
-                    foreach (var erro in entidade.ValidationResult.Errors)
+                    foreach (var erro in corretora.ValidationResult.Errors)
                     {
                         ModelState.AddModelError(string.Empty, erro.ErrorMessage);
                     }
-                    return View(entidade);
+                    return View(corretora);
                 }
-                if (entidade.ValidationResult.ToString() != string.Empty)
+                if (corretora.ValidationResult.ToString() != string.Empty)
                 {
-                    ViewBag.Sucesso = entidade.ValidationResult.Errors.ToList();
-                    return View(entidade);
+                    ViewBag.Sucesso = corretora.ValidationResult.Errors.ToList();
+                    return View(corretora);
                 }
                 return RedirectToAction("Index");
             }
-            return View(entidadeViewModel);
+            return View(corretoraViewModel);
         }
         public ActionResult Editar(Guid? id)
         {
@@ -77,24 +77,24 @@ namespace Protectos.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var entidadeViewModel = _entidadeApplicationService.EntidadeObterPorId(id.Value);
-            if (entidadeViewModel == null)
+            var corretoraViewModel = _corretoraApplicationService.CorretoraObterPorId(id.Value);
+            if (corretoraViewModel == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.EntidadeId = id;
-            return View(entidadeViewModel);
+            ViewBag.CorretoraId = id;
+            return View(corretoraViewModel);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Editar(EntidadeViewModel entidadeViewModel)
+        public ActionResult Editar(CorretoraViewModel corretoraViewModel)
         {
             if (ModelState.IsValid)
             {
-                _entidadeApplicationService.EntidadeAtualizar(entidadeViewModel);
+                _corretoraApplicationService.CorretoraAtualizar(corretoraViewModel);
                 return RedirectToAction("Index");
             }
-            return View(entidadeViewModel);
+            return View(corretoraViewModel);
         }
         public ActionResult Delete(Guid? id)
         {
@@ -102,25 +102,25 @@ namespace Protectos.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var entidadeViewModel = _entidadeApplicationService.EntidadeObterPorId(id.Value);
-            if (entidadeViewModel == null)
+            var corretoraViewModel = _corretoraApplicationService.CorretoraObterPorId(id.Value);
+            if (corretoraViewModel == null)
             {
                 return HttpNotFound();
             }
-            return View(entidadeViewModel);
+            return View(corretoraViewModel);
         }
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            _entidadeApplicationService.DeleteEntidade(id);
+            _corretoraApplicationService.DeleteCorretora(id);
             return RedirectToAction("Index");
         }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
-                _entidadeApplicationService.Dispose();
+                _corretoraApplicationService.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -128,22 +128,22 @@ namespace Protectos.Web.Controllers
         //Endereco       
         public ActionResult ListarEnderecos(Guid id)
         {
-            ViewBag.EntidadeId = id;
-            return PartialView("_EnderecosList", _entidadeApplicationService.EntidadeObterPorId(id).Enderecos);
+            ViewBag.CorretoraId = id;
+            return PartialView("_EnderecosList", _corretoraApplicationService.CorretoraObterPorId(id).Enderecos);
         }
         public ActionResult AdicionarEndereco(Guid id)
         {
-            ViewBag.EntidadeId = id;
+            ViewBag.CorretoraId = id;
             return PartialView("_AdicionarEndereco");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AdicionarEndereco(EntidadeEnderecoViewModel enderecoViewModel)
+        public ActionResult AdicionarEndereco(CorretoraEnderecoViewModel enderecoViewModel)
         {
             if (ModelState.IsValid)
             {
-                _entidadeApplicationService.EntidadeEnderecoAdicionar(enderecoViewModel);
-                string url = Url.Action("ListarEnderecos", "Entidade", new { id = enderecoViewModel.EntidadeId });
+                _corretoraApplicationService.CorretoraEnderecoAdicionar(enderecoViewModel);
+                string url = Url.Action("ListarEnderecos", "Corretora", new { id = enderecoViewModel.CorretoraId });
                 return Json(new { success = true, url = url });
             }
 
@@ -151,17 +151,17 @@ namespace Protectos.Web.Controllers
         }
         public ActionResult AtualizarEndereco(Guid id)
         {
-            return PartialView("_AtualizarEndereco", _entidadeApplicationService.EntidadeEnderecoObterPorId(id));
+            return PartialView("_AtualizarEndereco", _corretoraApplicationService.CorretoraEnderecoObterPorId(id));
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AtualizarEndereco(EntidadeEnderecoViewModel enderecoViewModel)
+        public ActionResult AtualizarEndereco(CorretoraEnderecoViewModel enderecoViewModel)
         {
             if (ModelState.IsValid)
             {
-                _entidadeApplicationService.EntidadeEnderecoAtualizar(enderecoViewModel);
+                _corretoraApplicationService.CorretoraEnderecoAtualizar(enderecoViewModel);
 
-                string url = Url.Action("ListarEnderecos", "Entidade", new { id = enderecoViewModel.EntidadeId });
+                string url = Url.Action("ListarEnderecos", "Corretora", new { id = enderecoViewModel.CorretoraId });
                 return Json(new { success = true, url = url });
             }
 
@@ -174,7 +174,7 @@ namespace Protectos.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var enderecoViewModel = _entidadeApplicationService.EntidadeEnderecoObterPorId(id.Value);
+            var enderecoViewModel = _corretoraApplicationService.CorretoraEnderecoObterPorId(id.Value);
             if (enderecoViewModel == null)
             {
                 return HttpNotFound();
@@ -185,9 +185,9 @@ namespace Protectos.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeletarEnderecoConfirmed(Guid id)
         {
-            var entidadeId = _entidadeApplicationService.EntidadeEnderecoObterPorId(id).EntidadeId;
-            _entidadeApplicationService.DeleteEntidadeEndereco(id);
-            string url = Url.Action("ListarEnderecos", "Entidade", new { id = entidadeId });
+            var corretoraId = _corretoraApplicationService.CorretoraEnderecoObterPorId(id).CorretoraId;
+            _corretoraApplicationService.DeleteCorretoraEndereco(id);
+            string url = Url.Action("ListarEnderecos", "Corretora", new { id = corretoraId });
             return Json(new { success = true, url = url });
         }
 
@@ -195,22 +195,22 @@ namespace Protectos.Web.Controllers
         //Email       
         public ActionResult ListarEmails(Guid id)
         {
-            ViewBag.EntidadeId = id;
-            return PartialView("_EmailsList", _entidadeApplicationService.EntidadeObterPorId(id).Emails);
+            ViewBag.CorretoraId = id;
+            return PartialView("_EmailsList", _corretoraApplicationService.CorretoraObterPorId(id).Emails);
         }
         public ActionResult AdicionarEmail(Guid id)
         {
-            ViewBag.EntidadeId = id;
+            ViewBag.CorretoraId = id;
             return PartialView("_AdicionarEmail");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AdicionarEmail(EntidadeEmailViewModel emailViewModel)
+        public ActionResult AdicionarEmail(CorretoraEmailViewModel emailViewModel)
         {
             if (ModelState.IsValid)
             {
-                _entidadeApplicationService.EntidadeEmailAdicionar(emailViewModel);
-                string url = Url.Action("ListarEmails", "Entidade", new { id = emailViewModel.EntidadeId });
+                _corretoraApplicationService.CorretoraEmailAdicionar(emailViewModel);
+                string url = Url.Action("ListarEmails", "Corretora", new { id = emailViewModel.CorretoraId });
                 return Json(new { success = true, url = url });
             }
 
@@ -218,17 +218,17 @@ namespace Protectos.Web.Controllers
         }
         public ActionResult AtualizarEmail(Guid id)
         {
-            return PartialView("_AtualizarEmail", _entidadeApplicationService.EntidadeEmailObterPorId(id));
+            return PartialView("_AtualizarEmail", _corretoraApplicationService.CorretoraEmailObterPorId(id));
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AtualizarEmail(EntidadeEmailViewModel emailViewModel)
+        public ActionResult AtualizarEmail(CorretoraEmailViewModel emailViewModel)
         {
             if (ModelState.IsValid)
             {
-                _entidadeApplicationService.EntidadeEmailAtualizar(emailViewModel);
+                _corretoraApplicationService.CorretoraEmailAtualizar(emailViewModel);
 
-                string url = Url.Action("ListarEmails", "Entidade", new { id = emailViewModel.EntidadeId });
+                string url = Url.Action("ListarEmails", "Corretora", new { id = emailViewModel.CorretoraId });
                 return Json(new { success = true, url = url });
             }
 
@@ -241,7 +241,7 @@ namespace Protectos.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var emailViewModel = _entidadeApplicationService.EntidadeEmailObterPorId(id.Value);
+            var emailViewModel = _corretoraApplicationService.CorretoraEmailObterPorId(id.Value);
             if (emailViewModel == null)
             {
                 return HttpNotFound();
@@ -252,9 +252,9 @@ namespace Protectos.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeletarEmailConfirmed(Guid id)
         {
-            var entidadeId = _entidadeApplicationService.EntidadeEmailObterPorId(id).EntidadeId;
-            _entidadeApplicationService.DeleteEntidadeEmail(id);
-            string url = Url.Action("ListarEmails", "Entidade", new { id = entidadeId });
+            var corretoraId = _corretoraApplicationService.CorretoraEmailObterPorId(id).CorretoraId;
+            _corretoraApplicationService.DeleteCorretoraEmail(id);
+            string url = Url.Action("ListarEmails", "Corretora", new { id = corretoraId });
             return Json(new { success = true, url = url });
         }
 
@@ -277,7 +277,4 @@ namespace Protectos.Web.Controllers
             return File(foto, "image/jpeg");
         }
     }
-
-
-
 }

@@ -48,7 +48,7 @@ namespace Protectos.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Incluir(AdministradoraCadastroViewModel administradoraCadastroViewModel)
         {
-            //TO DO : VALIDAÇÃO DO ENDEREÇO
+            
             if (ModelState.IsValid)
             {
                 var administradora = _administradoraApplicationService.AdministradoraCadastroAdicionar(administradoraCadastroViewModel);
@@ -189,6 +189,76 @@ namespace Protectos.Web.Controllers
             string url = Url.Action("ListarEnderecos", "Administradora", new { id = administradoraId });
             return Json(new { success = true, url = url });
         }
+
+
+        //Email       
+        public ActionResult ListarEmails(Guid id)
+        {
+            ViewBag.AdministradoraId = id;
+            return PartialView("_EmailsList", _administradoraApplicationService.AdministradoraObterPorId(id).Emails);
+        }
+        public ActionResult AdicionarEmail(Guid id)
+        {
+            ViewBag.AdministradoraId = id;
+            return PartialView("_AdicionarEmail");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdicionarEmail(AdministradoraEmailViewModel emailViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                _administradoraApplicationService.AdministradoraEmailAdicionar(emailViewModel);
+                string url = Url.Action("ListarEmails", "Administradora", new { id = emailViewModel.AdministradoraId });
+                return Json(new { success = true, url = url });
+            }
+
+            return PartialView("_AdicionarEmail", emailViewModel);
+        }
+        public ActionResult AtualizarEmail(Guid id)
+        {
+            return PartialView("_AtualizarEmail", _administradoraApplicationService.AdministradoraEmailObterPorId(id));
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AtualizarEmail(AdministradoraEmailViewModel emailViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                _administradoraApplicationService.AdministradoraEmailAtualizar(emailViewModel);
+
+                string url = Url.Action("ListarEmails", "Administradora", new { id = emailViewModel.AdministradoraId });
+                return Json(new { success = true, url = url });
+            }
+
+            return PartialView("_AtualizarEmail", emailViewModel);
+        }
+        public ActionResult DeletarEmail(Guid? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var emailViewModel = _administradoraApplicationService.AdministradoraEmailObterPorId(id.Value);
+            if (emailViewModel == null)
+            {
+                return HttpNotFound();
+            }
+            return PartialView("_DeletarEmail", emailViewModel);
+        }
+        [HttpPost, ActionName("DeletarEmail")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletarEmailConfirmed(Guid id)
+        {
+            var administradoraId = _administradoraApplicationService.AdministradoraEmailObterPorId(id).AdministradoraId;
+            _administradoraApplicationService.DeleteAdministradoraEmail(id);
+            string url = Url.Action("ListarEmails", "Administradora", new { id = administradoraId });
+            return Json(new { success = true, url = url });
+        }
+
+
+
 
         public ActionResult ObterImagemCliente(Guid id)
         {
