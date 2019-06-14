@@ -6676,9 +6676,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_Usuario.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Protectos.Application\Protectos.Application.csproj">
       <Project>{0379c7b9-a59e-4913-b97e-e9521f870629}</Project>
       <Name>Protectos.Application</Name>
