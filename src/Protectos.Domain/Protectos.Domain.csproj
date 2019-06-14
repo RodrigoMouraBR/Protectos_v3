@@ -51,7 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\AtividadePrincipal.cs" />
+    <Compile Include="DTO\AtividadeSecundaria.cs" />
     <Compile Include="DTO\Paged.cs" />
+    <Compile Include="DTO\ReceitaWs.cs" />
     <Compile Include="DTO\ViaCep.cs" />
     <Compile Include="Entities\Administradoras\Administradora.cs" />
     <Compile Include="Entities\Administradoras\AdministradoraEmail.cs" />

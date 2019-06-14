@@ -53,9 +53,6 @@ namespace Protectos.Infra.Data.Mappings.Fornecedores
             Ignore(c => c.CascadeMode);
             Ignore(c => c.ValidationResult);
             ToTable("Fornecedor");
-
-
-
         }
     }
 }
