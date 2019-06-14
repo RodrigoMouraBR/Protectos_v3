@@ -11,6 +11,7 @@ namespace Protectos.Domain.Entities.Operadoras
     {
         public Operadora(string razaoSocial, string nomeFantasia, string cnpj, string inscricaoEstadual, string inscricaoMunicipal, string site)
         {
+            AtribuirCnpj(cnpj);
             RazaoSocial = razaoSocial;
             NomeFantasia = nomeFantasia;
             Cnpj = cnpj;
@@ -67,6 +68,21 @@ namespace Protectos.Domain.Entities.Operadoras
             RuleFor(c => c.InscricaoMunicipal)
                 .NotEmpty().WithMessage("O nome do evento precisa ser fornecido")
                 .Length(2, 14).WithMessage("O nome do evento precisa ter entre 2 e 150 caracteres");
+        }
+        private bool AtribuirCnpj(string cnpjNumero)
+        {
+            var cnpj = new CNPJ(cnpjNumero);
+            if (!cnpj.Validar())
+            {
+                RuleFor(c => c.Cnpj)
+                  .Equal(c => c.Cnpj).WithMessage("O número do CNPJ é Inválido");
+                return false;
+            }
+            else
+            {
+                Cnpj = cnpj.Numero;
+            }
+            return true;
         }
     }
 }
