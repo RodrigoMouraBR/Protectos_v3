@@ -166,10 +166,15 @@
     <Compile Include="Controllers\AdministradoraController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BeneficiarioController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\CorretoraController.cs" />
+    <Compile Include="Controllers\CorretorController.cs" />
     <Compile Include="Controllers\EntidadeController.cs" />
     <Compile Include="Controllers\FaturaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OperadoraController.cs" />
+    <Compile Include="Controllers\PlanoController.cs" />
+    <Compile Include="Controllers\PropostaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -6649,9 +6654,14 @@
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Cliente\" />
+    <Folder Include="Views\Corretora\" />
+    <Folder Include="Views\Corretor\" />
     <Folder Include="Views\Entidade\" />
     <Folder Include="Views\Fatura\" />
     <Folder Include="Views\Operadora\" />
+    <Folder Include="Views\Plano\" />
+    <Folder Include="Views\Proposta\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -7208,6 +7218,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Administradora\_Detalhe.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Administradora\_EmailsList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Administradora\_Email.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Administradora\_AdicionarEmail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Administradora\_AtualizarEmail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Administradora\_DadosEmail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Administradora\_DeletarEmail.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

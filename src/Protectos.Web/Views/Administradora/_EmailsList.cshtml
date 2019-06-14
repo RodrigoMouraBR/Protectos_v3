@@ -1,5 +1,5 @@
 ﻿
-@model IEnumerable<Protectos.Application.ViewModels.Administradoras.AdministradoraEnderecoViewModel>
+@model IEnumerable<Protectos.Application.ViewModels.Administradoras.AdministradoraEmailViewModel>
 
 
 <div class="row">
@@ -7,7 +7,7 @@
         <div class="box">
             <div class="box box-danger">
                 <div class="box-header">
-                    <h3 class="box-title">Endereços cadastrados</h3>
+                    <h3 class="box-title">Emails cadastrados</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body no-padding">
@@ -16,23 +16,12 @@
                         <table class="table table-hover">
                             <tr>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Logradouro)
+                                    @Html.DisplayNameFor(model => model.Email)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Numero)
+                                    @Html.DisplayNameFor(model => model.TipoEmail)
                                 </th>                               
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Bairro)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Cep)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Cidade)
-                                </th>                                
-                                <th>
-                                    @Html.DisplayNameFor(model => model.UF)
-                                </th>
+                            
                              
                                 <th></th>
                             </tr>
@@ -41,28 +30,17 @@
                             {
                                 <tr>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Logradouro)
+                                        @Html.DisplayFor(modelItem => item.Email)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Numero)
+                                        @Html.DisplayFor(modelItem => item.TipoEmail)
                                     </td>                              
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Bairro)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Cep)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Cidade)
-                                    </td>                      
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.UF)
-                                    </td>                          
+                                   
                                     <td class="text-right">                 
-                                        <a href="@Url.Action("AtualizarEndereco", "Administradora", new {id = item.EnderecoId})" data-titulo="Alterar Endereço" class="btn btn-warning btn-xs btn-modal">
+                                        <a href="@Url.Action("AtualizarEmail", "Administradora", new {id = item.Id})" data-titulo="Alterar Email" class="btn btn-warning btn-xs btn-modal">
                                             <span title="Editar" class="glyphicon glyphicon-pencil"></span>
                                         </a>                                 
-                                        <a href="@Url.Action("DeletarEndereco", "Administradora", new {id = item.EnderecoId})" data-titulo="Tem certeza que deseja excluir este endereço?" class="btn btn-danger btn-xs btn-modal">
+                                        <a href="@Url.Action("DeletarEmail", "Administradora", new {id = item.Id})" data-titulo="Tem certeza que deseja excluir este Email?" class="btn btn-danger btn-xs btn-modal">
                                             <span title="Excluir" class="glyphicon glyphicon-trash"></span>
                                         </a>
                                     </td>
@@ -75,7 +53,7 @@
                         <table class="table">
                             <tr>
                                 <th>
-                                    Nenhum Endereço Cadastrado.
+                                    Nenhum Email Cadastrado.
                                 </th>
                             </tr>
                         </table>
@@ -96,8 +74,8 @@
         <a href="@Url.Action("Index", "Administradora", new { id = ViewBag.AdministradoraId })"  class="btn  btn-social btn-default ">
             <i class="fa fa-arrow-left"></i> Voltar
         </a>
-        <a href="@Url.Action("AdicionarEndereco", "Administradora", new { id = ViewBag.AdministradoraId })" data_titulo="Adicionar endereço" class="btn  btn-social btn-bitbucket btn-modal">
-            <i class="fa fa-plus"></i> Novo endereço
+        <a href="@Url.Action("AdicionarEmail", "Administradora", new { id = ViewBag.AdministradoraId })" data_titulo="Adicionar email" class="btn  btn-social btn-bitbucket btn-modal">
+            <i class="fa fa-plus"></i> Novo email
         </a>
     </div>
 </div>
@@ -135,7 +113,7 @@
                 success: function (result) {
                     if (result.success) {
                         $('#modal-default').modal('hide');
-                        $('#replacetargetEnderecos').load(result.url); // Carrega o resultado HTML para a div demarcada
+                        $('#replacetargetEmails').load(result.url); // Carrega o resultado HTML para a div demarcada
                     } else {
                         $('#modal-default .conteudoModal').html(result);
                         bindForm(dialog);
