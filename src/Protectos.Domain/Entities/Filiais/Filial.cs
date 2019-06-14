@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Protectos.Domain.Core.Models;
+using Protectos.Domain.ValuesObjects;
 using System.Collections.Generic;
 
 namespace Protectos.Domain.Entities.Filiais
@@ -13,6 +14,7 @@ namespace Protectos.Domain.Entities.Filiais
                         string inscricaoMunicipal, 
                         string site)
         {
+            AtribuirCnpj(cnpj);
             RazaoSocial = razaoSocial;
             NomeFantasia = nomeFantasia;
             Cnpj = cnpj;
@@ -37,6 +39,21 @@ namespace Protectos.Domain.Entities.Filiais
         {
             Validate();
             return ValidationResult.IsValid;
+        }
+        private bool AtribuirCnpj(string cnpjNumero)
+        {
+            var cnpj = new CNPJ(cnpjNumero);
+            if (!cnpj.Validar())
+            {
+                RuleFor(c => c.Cnpj)
+                  .Equal(c => c.Cnpj).WithMessage("O número do CNPJ é Inválido");
+                return false;
+            }
+            else
+            {
+                Cnpj = cnpj.Numero;
+            }
+            return true;
         }
         private void Validate()
         {

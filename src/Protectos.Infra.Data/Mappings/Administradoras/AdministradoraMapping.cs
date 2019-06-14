@@ -35,7 +35,7 @@ namespace Protectos.Infra.Data.Mappings.Administradoras
             //   .HasColumnAnnotation("Index", new IndexAnnotation(
             //       new IndexAttribute("IX_CNPJ_Administradora") { IsUnique = true }));//index
 
-            Property(c => c.Cnpj.Numero)
+            Property(c => c.Cnpj)
                 .HasColumnName("CNPJ")
                .IsRequired()
                .HasMaxLength(14)

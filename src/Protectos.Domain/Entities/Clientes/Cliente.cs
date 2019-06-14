@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Protectos.Domain.Core.Models;
 using Protectos.Domain.Entities.Propostas;
-using System;
+using Protectos.Domain.ValuesObjects;
 using System.Collections.Generic;
 namespace Protectos.Domain.Entities.Clientes
 {
@@ -9,31 +9,49 @@ namespace Protectos.Domain.Entities.Clientes
     {
         public Cliente(string razaoSocial, string nomeFantasia, string cnpj, string inscricaoEstadual, string inscricaoMunicipal, string site)
         {
+            AtribuirCnpj(cnpj);
             RazaoSocial = razaoSocial;
             NomeFantasia = nomeFantasia;
             Cnpj = cnpj;
             InscricaoEstadual = inscricaoEstadual;
             InscricaoMunicipal = inscricaoMunicipal;
             Site = site;
+            Enderecos = new List<ClienteEndereco>();
+            Telefones = new List<ClienteTelefone>();
+            Emails = new List<ClienteEmail>();
         }
         protected Cliente()
-        {                
+        {
         }
         public string RazaoSocial { get; private set; }
         public string NomeFantasia { get; private set; }
         public string Cnpj { get; private set; }
         public string InscricaoEstadual { get; private set; }
         public string InscricaoMunicipal { get; private set; }
-        public string Site { get; private set; }       
+        public string Site { get; private set; }
         public virtual ICollection<ClienteEndereco> Enderecos { get; private set; }
         public virtual ICollection<ClienteTelefone> Telefones { get; private set; }
-        public virtual ICollection<ClienteEmail> Emails { get; private set; }       
+        public virtual ICollection<ClienteEmail> Emails { get; private set; }
         public virtual ICollection<Proposta> Propostas { get; private set; }
-
         public override bool IsValid()
         {
             Validate();
             return ValidationResult.IsValid;
+        }
+        private bool AtribuirCnpj(string cnpjNumero)
+        {
+            var cnpj = new CNPJ(cnpjNumero);
+            if (!cnpj.Validar())
+            {
+                RuleFor(c => c.Cnpj)
+                  .Equal(c => c.Cnpj).WithMessage("O número do CNPJ é Inválido");
+                return false;
+            }
+            else
+            {
+                Cnpj = cnpj.Numero;
+            }
+            return true;
         }
         private void Validate()
         {

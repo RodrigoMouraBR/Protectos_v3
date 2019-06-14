@@ -29,7 +29,7 @@ namespace Protectos.Infra.Data.Mappings.Fornecedores
                 .HasMaxLength(100)
                 .IsRequired();
            
-            Property(c => c.CNPJ.Numero)
+            Property(c => c.Cnpj)
                 .HasColumnName("CNPJ")
                .IsRequired()
                .HasMaxLength(14)
