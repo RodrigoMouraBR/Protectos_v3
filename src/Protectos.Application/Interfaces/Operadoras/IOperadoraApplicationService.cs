@@ -30,7 +30,7 @@ namespace Protectos.Application.Interfaces.Operadoras
         void DeleteOperadoraEmail(Guid id);
 
         //Telefone//     
-        OperadoraEnderecoViewModel EntidadeTelefoneObterPorId(Guid id);
+        OperadoraTelefoneViewModel EntidadeTelefoneObterPorId(Guid id);
         IEnumerable<OperadoraTelefoneViewModel> OperadoraTelefoneObterTodos();
         OperadoraTelefoneViewModel OperadoraTelefoneAdicionar(OperadoraTelefoneViewModel operadoraTelefoneViewModel);
         OperadoraTelefoneViewModel OperadoraTelefoneAtualizar(OperadoraTelefoneViewModel operadoraTelefoneViewModel);

@@ -147,17 +147,15 @@ namespace Protectos.Application.ApplicationServices.Operadoras
 
         public OperadoraEnderecoViewModel EntidadeEnderecoObterPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<OperadoraEnderecoViewModel>(_OperadoraEndrecoRepository.GetbyId(id));
         }
-
         public OperadoraEnderecoViewModel EntidadeEmailObterPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<OperadoraEnderecoViewModel>(_OperadoraEmailRepository.GetbyId(id));
         }
-
-        public OperadoraEnderecoViewModel EntidadeTelefoneObterPorId(Guid id)
+        public OperadoraTelefoneViewModel EntidadeTelefoneObterPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<OperadoraTelefoneViewModel>(_OperadoraTelefoneRepository.GetbyId(id));
         }
     }
 }
