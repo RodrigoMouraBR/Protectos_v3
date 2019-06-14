@@ -6686,9 +6686,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_Header.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Administradora\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -7233,6 +7230,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Administradora\_DeletarEmail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_MenuHeaderUsuario.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
