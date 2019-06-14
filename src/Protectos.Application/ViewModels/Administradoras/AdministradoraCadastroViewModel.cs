@@ -9,10 +9,7 @@ namespace Protectos.Application.ViewModels.Administradoras
         public AdministradoraViewModel Administradora { get; set; }
         public AdministradoraEnderecoViewModel Endereco { get; set; } 
         public AdministradoraEmailViewModel Email { get; set; }
-        //public AdministradoraTelefoneViewModel Telefones { get; set; }
-
-
-        //[FileSize(10240000)]
+        public AdministradoraTelefoneViewModel Telefones { get; set; }
 
         [FileTypes("jpg,jpeg,png")]
         public HttpPostedFileBase Foto { get; set; }

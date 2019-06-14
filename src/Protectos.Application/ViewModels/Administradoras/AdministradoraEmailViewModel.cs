@@ -8,10 +8,10 @@ namespace Protectos.Application.ViewModels.Administradoras
     {
         public AdministradoraEmailViewModel()
         {
-            Id = Guid.NewGuid();
+            EmailId = Guid.NewGuid();
         }
         [Key]
-        public Guid Id { get; set; }
+        public Guid EmailId { get; set; }
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]

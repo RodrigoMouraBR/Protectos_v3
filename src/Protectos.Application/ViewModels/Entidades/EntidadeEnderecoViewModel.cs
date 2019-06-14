@@ -7,11 +7,11 @@ namespace Protectos.Application.ViewModels.Entidades
     {
         public EntidadeEnderecoViewModel()
         {
-            Id = Guid.NewGuid();
+            EnderecoId = Guid.NewGuid();
             Ativo = true;
         }
         [Key]
-        public Guid Id { get; set; }
+        public Guid EnderecoId { get; set; }
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]

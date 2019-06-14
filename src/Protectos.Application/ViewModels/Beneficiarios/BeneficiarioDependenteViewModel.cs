@@ -7,10 +7,10 @@ namespace Protectos.Application.ViewModels.Beneficiarios
     {
         public BeneficiarioDependenteViewModel()
         {
-            Id = Guid.NewGuid();
+            DependenteId = Guid.NewGuid();
         }
         [Key]
-        public Guid Id { get; set; }
+        public Guid DependenteId { get; set; }
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]

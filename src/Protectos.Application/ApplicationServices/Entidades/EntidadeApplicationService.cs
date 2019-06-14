@@ -113,10 +113,7 @@ namespace Protectos.Application.ApplicationServices.Entidades
         {
             return Mapper.Map<IEnumerable<EntidadeEnderecoViewModel>>(_entidadeEndrecoRepository.GetAll());
         }
-        public EntidadeEnderecoViewModel EntidadeEnderecoObterPorId(Guid id)
-        {
-            return Mapper.Map<EntidadeEnderecoViewModel>(_entidadeEndrecoRepository.GetbyId(id));
-        }
+        
 
         public IEnumerable<EntidadeViewModel> EntidadeObterAtivo()
         {
@@ -152,14 +149,18 @@ namespace Protectos.Application.ApplicationServices.Entidades
             _entidadeService.Dispose();
         }
 
-        public EntidadeEnderecoViewModel EntidadeEmailObterPorId(Guid id)
+        public EntidadeEmailViewModel EntidadeEmailObterPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<EntidadeEmailViewModel>(_entidadeEmailRepository.GetbyId(id));
         }
-
         public EntidadeTelefoneViewModel EntidadeTelefoneObterPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<EntidadeTelefoneViewModel>(_entidadeTelefoneRepository.GetbyId(id));
         }
+        public EntidadeEnderecoViewModel EntidadeEnderecoObterPorId(Guid id)
+        {
+            return Mapper.Map<EntidadeEnderecoViewModel>(_entidadeEndrecoRepository.GetbyId(id));
+        }
+
     }
 }

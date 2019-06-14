@@ -151,7 +151,7 @@ namespace Protectos.Application.ApplicationServices.Operadoras
         }
         public OperadoraEmailViewModel EntidadeEmailObterPorId(Guid id)
         {
-            return Mapper.Map<OperadoraEnderecoViewModel>(_OperadoraEmailRepository.GetbyId(id));
+            return Mapper.Map<OperadoraEmailViewModel>(_OperadoraEmailRepository.GetbyId(id));
         }
         public OperadoraTelefoneViewModel EntidadeTelefoneObterPorId(Guid id)
         {

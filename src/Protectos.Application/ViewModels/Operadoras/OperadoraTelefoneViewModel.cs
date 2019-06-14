@@ -8,10 +8,10 @@ namespace Protectos.Application.ViewModels.Operadoras
     {
         public OperadoraTelefoneViewModel()
         {
-            Id = Guid.NewGuid();
+            TelefoneId = Guid.NewGuid();
         }
         [Key]
-        public Guid Id { get; set; }
+        public Guid TelefoneId { get; set; }
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]

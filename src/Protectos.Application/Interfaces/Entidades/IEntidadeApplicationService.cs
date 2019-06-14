@@ -24,7 +24,7 @@ namespace Protectos.Application.Interfaces.Entidades
         void DeleteEntidadeEndereco(Guid id);
 
         //Email//     
-        EntidadeEnderecoViewModel EntidadeEmailObterPorId(Guid id);
+        EntidadeEmailViewModel EntidadeEmailObterPorId(Guid id);
         IEnumerable<EntidadeEmailViewModel> EntidadeEmailObterTodos();
         EntidadeEmailViewModel EntidadeEmailAdicionar(EntidadeEmailViewModel entidadeEmailViewModel);
         EntidadeEmailViewModel EntidadeEmailAtualizar(EntidadeEmailViewModel entidadeEmailViewModel);

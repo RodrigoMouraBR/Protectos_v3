@@ -8,10 +8,10 @@ namespace Protectos.Application.ViewModels.Beneficiarios
     {
         public BeneficiarioTelefoneViewModel()
         {
-            Id = Guid.NewGuid();
+            TelefoneId = Guid.NewGuid();
         }
         [Key]
-        public Guid Id { get; set; }
+        public Guid TelefoneId { get; set; }
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]

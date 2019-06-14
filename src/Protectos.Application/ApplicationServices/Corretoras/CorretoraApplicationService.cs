@@ -132,7 +132,6 @@ namespace Protectos.Application.ApplicationServices.Corretoras
         {
             return Mapper.Map<IEnumerable<CorretoraTelefoneViewModel>>(_corretoraTelefoneRepository.GetAll());
         }
-
         public void Dispose()
         {
             _corretoraRepository.Dispose();
@@ -141,20 +140,17 @@ namespace Protectos.Application.ApplicationServices.Corretoras
             _corretoraEndrecoRepository.Dispose();            
             _corretoraService.Dispose();
         }
-
         public CorretoraEnderecoViewModel CorretoraEnderecoObterPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<CorretoraEnderecoViewModel>(_corretoraEndrecoRepository.GetbyId(id));
         }
-
-        public CorretoraEnderecoViewModel CorretoraEmailObterPorId(Guid id)
+        public CorretoraEmailViewModel CorretoraEmailObterPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<CorretoraEmailViewModel>(_corretoraEmailRepository.GetbyId(id));
         }
-
-        public CorretoraEnderecoViewModel CorretoraTelefoneObterPorId(Guid id)
+        public CorretoraTelefoneViewModel CorretoraTelefoneObterPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<CorretoraTelefoneViewModel>(_corretoraTelefoneRepository.GetbyId(id));
         }
     }
 }

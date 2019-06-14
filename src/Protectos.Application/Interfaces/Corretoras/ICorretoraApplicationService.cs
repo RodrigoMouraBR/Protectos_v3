@@ -22,14 +22,14 @@ namespace Protectos.Application.Interfaces.Corretoras
         CorretoraEnderecoViewModel CorretoraEnderecoAtualizar(CorretoraEnderecoViewModel corretoraEnderecoViewModel);
         void DeleteCorretoraEndereco(Guid id);
         //Email//    
-        CorretoraEnderecoViewModel CorretoraEmailObterPorId(Guid id);
+        CorretoraEmailViewModel CorretoraEmailObterPorId(Guid id);
         IEnumerable<CorretoraEmailViewModel> CorretoraEmailObterTodos();
         CorretoraEmailViewModel CorretoraEmailAdicionar(CorretoraEmailViewModel corretoraEmailViewModel);
         CorretoraEmailViewModel CorretoraEmailAtualizar(CorretoraEmailViewModel corretoraEmailViewModel);
         void DeleteCorretoraEmail(Guid id);
 
         //Telefone//    
-        CorretoraEnderecoViewModel CorretoraTelefoneObterPorId(Guid id);
+        CorretoraTelefoneViewModel CorretoraTelefoneObterPorId(Guid id);
         IEnumerable<CorretoraTelefoneViewModel> CorretoraTelefoneObterTodos();
         CorretoraTelefoneViewModel CorretoraTelefoneAdicionar(CorretoraTelefoneViewModel corretoraTelefoneViewModel);
         CorretoraTelefoneViewModel CorretoraTelefoneAtualizar(CorretoraTelefoneViewModel corretoraTelefoneViewModel);

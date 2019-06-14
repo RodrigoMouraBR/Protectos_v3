@@ -7,10 +7,10 @@ namespace Protectos.Application.ViewModels.Entidades
     {
         public EntidadeTelefoneViewModel()
         {
-            Id = Guid.NewGuid();
+            TelefoneId = Guid.NewGuid();
         }
         [Key]
-        public Guid Id { get; set; }
+        public Guid TelefoneId { get; set; }
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]

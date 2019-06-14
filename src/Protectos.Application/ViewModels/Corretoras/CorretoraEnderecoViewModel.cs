@@ -7,10 +7,10 @@ namespace Protectos.Application.ViewModels.Corretoras
     {
         public CorretoraEnderecoViewModel()
         {
-            Id = Guid.NewGuid();            
+            EnderecoId = Guid.NewGuid();            
         }
         [Key]
-        public Guid Id { get; set; }
+        public Guid EnderecoId { get; set; }
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
         [ScaffoldColumn(false)]
