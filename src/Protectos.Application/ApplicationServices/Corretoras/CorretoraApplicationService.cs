@@ -28,12 +28,12 @@ namespace Protectos.Application.ApplicationServices.Corretoras
             _corretoraEndrecoRepository = corretoraEndrecoRepository;
             _corretoraService = corretoraService;
         }
-        public CorretoraViewModel CorretoraAdicionar(CorretoraViewModel corretoraViewModel)
+        public CorretoraCadastroViewModel CorretoraAdicionar(CorretoraCadastroViewModel corretoraCadastroViewModel)
         {
-            var corretora = Mapper.Map<Corretora>(corretoraViewModel);
+            var corretora = Mapper.Map<Corretora>(corretoraCadastroViewModel);
             _corretoraService.CorretoraAdicionar(corretora);
             Commit();
-            return corretoraViewModel;
+            return corretoraCadastroViewModel;
         }
         public CorretoraViewModel CorretoraAtualizar(CorretoraViewModel corretoraViewModel)
         {

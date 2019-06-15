@@ -1,4 +1,4 @@
-﻿@model Protectos.Application.ViewModels.Corretoras.CorretoraViewModel
+﻿@model Protectos.Application.ViewModels.Corretoras.CorretoraCadastroViewModel
 @{
     ViewData["Title"] = "Nova";
     Layout = "~/Views/Shared/_LayoutContent.cshtml";
@@ -9,8 +9,8 @@
 {
 <section class="content-header">
     <h1>
-        Nova administradora
-        <small>Cadastrar uma nova administradora</small>
+        Nova corretora
+        <small>Cadastrar uma nova corretora</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -37,44 +37,44 @@
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group">
                         <div class="col-md-6">
-                            @Html.LabelFor(model => model.RazaoSocial)
-                            @Html.EditorFor(model => model.RazaoSocial, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.RazaoSocial, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Corretora.RazaoSocial)
+                            @Html.EditorFor(model => model.Corretora.RazaoSocial, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Corretora.RazaoSocial, "", new { @class = "text-danger" })
                         </div>
                         <div class="col-md-6">
-                            @Html.LabelFor(model => model.NomeFantasia)
-                            @Html.EditorFor(model => model.NomeFantasia, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.NomeFantasia, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Corretora.NomeFantasia)
+                            @Html.EditorFor(model => model.Corretora.NomeFantasia, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Corretora.NomeFantasia, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-4">
-                            @Html.LabelFor(model => model.Cnpj)
-                            @Html.EditorFor(model => model.Cnpj, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Cnpj, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Corretora.Cnpj)
+                            @Html.EditorFor(model => model.Corretora.Cnpj, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Corretora.Cnpj, "", new { @class = "text-danger" })
                         </div>
                         <div class="col-md-4">
-                            @Html.LabelFor(model => model.InscricaoEstadual)
-                            @Html.EditorFor(model => model.InscricaoEstadual, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.InscricaoEstadual, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Corretora.InscricaoEstadual)
+                            @Html.EditorFor(model => model.Corretora.InscricaoEstadual, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Corretora.InscricaoEstadual, "", new { @class = "text-danger" })
                         </div>
                         <div class="col-md-4">
-                            @Html.LabelFor(model => model.InscricaoMunicipal)
-                            @Html.EditorFor(model => model.InscricaoMunicipal, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.InscricaoMunicipal, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Corretora.InscricaoMunicipal)
+                            @Html.EditorFor(model => model.Corretora.InscricaoMunicipal, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Corretora.InscricaoMunicipal, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-12">
-                            @Html.LabelFor(model => model.Site)
-                            @Html.EditorFor(model => model.Site, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Site, "", new { @class = "text-danger" })
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Corretora.Site)
+                            @Html.EditorFor(model => model.Corretora.Site, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Corretora.Site, "", new { @class = "text-danger" })
                         </div>
-                        @*<div class="col-md-6">
+                        <div class="col-md-6">
                             @Html.LabelFor(model => model.Foto)
                             <input type="file" name="foto" id="foto" class="filestyle input-sm" data-placeholder="Nenhuma Foto" data-buttonname="btn-primary" data-buttontext="Procurar">
                             @Html.ValidationMessageFor(model => model.Foto, "", new { @class = "text-danger" })
-                        </div>*@
+                        </div>
                     </div>
 
 

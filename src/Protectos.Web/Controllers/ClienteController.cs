@@ -47,16 +47,16 @@ namespace Protectos.Web.Controllers
         }
 
 
-        //TODO FALTA  O METODO _clienteApplicationService.ClienteAdicionar
 
+        //TODO _clienteApplicationService.ClienteAdicionar(clienteCadastroViewModel);
         //[HttpPost]
         //[ValidateAntiForgeryToken]
-        //public ActionResult Incluir(ClienteViewModel clienteViewModel)
+        //public ActionResult Incluir(ClienteCadastroViewModel clienteCadastroViewModel)
         //{
 
         //    if (ModelState.IsValid)
         //    {
-        //        var cliente = _clienteApplicationService.ClienteAdicionar(clienteViewModel);
+        //        var cliente = _clienteApplicationService.ClienteAdicionar(clienteCadastroViewModel);
 
         //        if (!cliente.ValidationResult.IsValid)
         //        {
@@ -73,7 +73,7 @@ namespace Protectos.Web.Controllers
         //        }
         //        return RedirectToAction("Index");
         //    }
-        //    return View(clienteViewModel);
+        //    return View(clienteCadastroViewModel);
         //}
 
         public ActionResult Editar(Guid? id)

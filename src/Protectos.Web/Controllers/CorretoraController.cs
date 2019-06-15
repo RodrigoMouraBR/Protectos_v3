@@ -47,12 +47,12 @@ namespace Protectos.Web.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Incluir(CorretoraViewModel corretoraViewModel)
+        public ActionResult Incluir(CorretoraCadastroViewModel corretoraCadastroViewModel)
         {
 
             if (ModelState.IsValid)
             {
-                var corretora = _corretoraApplicationService.CorretoraAdicionar(corretoraViewModel);
+                var corretora = _corretoraApplicationService.CorretoraAdicionar(corretoraCadastroViewModel);
 
                 if (!corretora.ValidationResult.IsValid)
                 {
@@ -69,7 +69,7 @@ namespace Protectos.Web.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            return View(corretoraViewModel);
+            return View(corretoraCadastroViewModel);
         }
         public ActionResult Editar(Guid? id)
         {

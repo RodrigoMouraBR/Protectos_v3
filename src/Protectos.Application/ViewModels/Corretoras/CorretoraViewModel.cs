@@ -32,7 +32,7 @@ namespace Protectos.Application.ViewModels.Corretoras
         [Required(ErrorMessage = "Campo obrigatório")]
         [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        [DisplayName("Razão Social")]
+        [DisplayName("Nome Fantasia")]
         public string NomeFantasia { get; set; }
         [Required(ErrorMessage = "Campo obrigatório")]
         [MaxLength(14, ErrorMessage = "Máximo {0} caracteres")]

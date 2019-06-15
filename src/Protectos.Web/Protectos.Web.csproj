@@ -6678,6 +6678,14 @@
       <Project>{0379c7b9-a59e-4913-b97e-e9521f870629}</Project>
       <Name>Protectos.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Protectos.Domain\Protectos.Domain.csproj">
+      <Project>{A4D67B2C-9F59-4D2F-A109-F82C4B338736}</Project>
+      <Name>Protectos.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Protectos.Infra.CrossCutting.ExternalService\Protectos.Infra.CrossCutting.ExternalService.csproj">
+      <Project>{106BFAAA-CA22-42CA-8CFD-D3E7FD5BB261}</Project>
+      <Name>Protectos.Infra.CrossCutting.ExternalService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Protectos.Infra.CrossCutting.IoC\Protectos.Infra.CrossCutting.IoC.csproj">
       <Project>{6bc002ad-dc92-4819-bd2c-1801705f3157}</Project>
       <Name>Protectos.Infra.CrossCutting.IoC</Name>

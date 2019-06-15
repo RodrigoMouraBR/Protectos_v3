@@ -11,7 +11,7 @@ namespace Protectos.Application.Interfaces.Corretoras
         IEnumerable<CorretoraViewModel> CorretoraObterTodos();
         IEnumerable<CorretoraViewModel> CorretoraObterAtivo();
         IEnumerable<CorretoraViewModel> CorretoraObterInativo();
-        CorretoraViewModel CorretoraAdicionar(CorretoraViewModel corretoraViewModel);
+        CorretoraCadastroViewModel CorretoraAdicionar(CorretoraCadastroViewModel corretoraCadastroViewModel);
         CorretoraViewModel CorretoraAtualizar(CorretoraViewModel corretoraViewModel);
         void DeleteCorretora(Guid id);
 

@@ -6,7 +6,7 @@ namespace Protectos.Application.ViewModels.Corretoras
 {
     public class CorretoraCadastroViewModel
     {
-        public CorretoraViewModel Administradora { get; set; }
+        public CorretoraViewModel Corretora { get; set; }
         public CorretoraEnderecoViewModel Endereco { get; set; }
         public CorretoraEmailViewModel Email { get; set; }
         public CorretoraTelefoneViewModel Telefones { get; set; }
