@@ -217,8 +217,7 @@ namespace Protectos.Web.Controllers
             }
 
             return PartialView("_AdicionarEmail", emailViewModel);
-        }
-        //TODO IMPLEMENTAR _operadoraApplicationService.OperadoraEnderecoObterPorId
+        }        
         //public ActionResult AtualizarEmail(Guid id)
         //{
         //    return PartialView("_AtualizarEmail", _operadoraApplicationService.OperadoraEmailObterPorId(id));

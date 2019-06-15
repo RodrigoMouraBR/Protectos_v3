@@ -6654,8 +6654,6 @@
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Cliente\" />
-    <Folder Include="Views\Corretora\" />
     <Folder Include="Views\Corretor\" />
     <Folder Include="Views\Entidade\" />
     <Folder Include="Views\Fatura\" />
@@ -7236,6 +7234,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_MenuHeaderUsuario.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cliente\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Corretora\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Corretora\Incluir.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
