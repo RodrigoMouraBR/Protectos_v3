@@ -43,6 +43,11 @@ namespace Protectos.Application.AutoMapper
             CreateMap<AdministradoraCadastroViewModel, AdministradoraEmail>();
             CreateMap<AdministradoraCadastroViewModel, AdministradoraTelefone>();
 
+            CreateMap<CorretoraCadastroViewModel, Corretora>();
+            CreateMap<CorretoraCadastroViewModel, CorretoraEndereco>();
+            CreateMap<CorretoraCadastroViewModel, CorretoraEmail>();
+            CreateMap<CorretoraCadastroViewModel, CorretoraTelefone>();
+
 
             CreateMap<EntidadeViewModel, Entidade>();
             CreateMap<EntidadeEnderecoViewModel, EntidadeEndereco>();

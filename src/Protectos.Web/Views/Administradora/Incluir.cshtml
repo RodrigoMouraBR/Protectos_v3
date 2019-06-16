@@ -37,22 +37,23 @@
                         <hr />
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="form-group">
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.Administradora.RazaoSocial)
-                                @Html.EditorFor(model => model.Administradora.RazaoSocial, new { htmlAttributes = new { @class = "form-control edit-razao-social" } })
-                                @Html.ValidationMessageFor(model => model.Administradora.RazaoSocial, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.Administradora.NomeFantasia)
-                                @Html.EditorFor(model => model.Administradora.NomeFantasia, new { htmlAttributes = new { @class = "form-control edit-nome-fantasia" } })
-                                @Html.ValidationMessageFor(model => model.Administradora.NomeFantasia, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <div class="col-md-4">
                                 @Html.LabelFor(model => model.Administradora.Cnpj)
                                 @Html.EditorFor(model => model.Administradora.Cnpj, new { htmlAttributes = new { @class = "form-control edit-cnpj" } })
                                 @Html.ValidationMessageFor(model => model.Administradora.Cnpj, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-8">
+                                @Html.LabelFor(model => model.Administradora.RazaoSocial)
+                                @Html.EditorFor(model => model.Administradora.RazaoSocial, new { htmlAttributes = new { @class = "form-control edit-razao-social" } })
+                                @Html.ValidationMessageFor(model => model.Administradora.RazaoSocial, "", new { @class = "text-danger" })
+                            </div>
+                          
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                @Html.LabelFor(model => model.Administradora.NomeFantasia)
+                                @Html.EditorFor(model => model.Administradora.NomeFantasia, new { htmlAttributes = new { @class = "form-control edit-nome-fantasia" } })
+                                @Html.ValidationMessageFor(model => model.Administradora.NomeFantasia, "", new { @class = "text-danger" })
                             </div>
                             <div class="col-md-4">
                                 @Html.LabelFor(model => model.Administradora.InscricaoEstadual)
@@ -174,43 +175,6 @@
 
 @section scripts{
 
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-
-            $('.edit-cnpj').focusout(function () {
-              
-                var cnpj = this.value;
-
-                $.ajax({
-                    type: 'GET',
-                    url: '@Url.Action("ObterEmpresaPorCNPJ","Base")',
-                    data: { id: cnpj },
-                    success: function (data) {
-                        debugger;
-                        var empresa = data.data 
-                        document.querySelector('.edit-razao-social').value = empresa.Nome != null ? empresa.Nome : '';
-                        document.querySelector('.edit-nome-fantasia').value = empresa.Fantasia != null ? empresa.Fantasia : '';
-                        document.querySelector('.edit-logradouro').value = empresa.Logradouro != null ? empresa.Logradouro : '' ;
-                        document.querySelector('.edit-bairro').value = empresa.Bairro != null ? empresa.Bairro : '';
-                        document.querySelector('.edit-cidade').value = empresa.Municipio != null ? empresa.Municipio : '';
-                        document.querySelector('.edit-complemento').value = empresa.Complemento != null ? empresa.Complemento : '';
-                        document.querySelector('.edit-numero').value = empresa.Numero != null ? empresa.Numero : '';
-                        document.querySelector('.edit-uf').value = empresa.Uf != null ? empresa.Uf : '';                        
-                        document.querySelector('.edit-cep').value = empresa.Cep != null? empresa.Cep.replace(/[^0-9]/g, '') :'';
-
-                        document.querySelector('.edit-email').value = empresa.Email != null ? empresa.Email : '';
-                        if (empresa.Email != null) {
-                            document.querySelector('.edit-tipo-email option:checked').value = 2;
-                            document.querySelector('.edit-tipo-email option:checked').text = "Empresarial";
-                        }
-                     
-                    }
-                });
-            });
-        });
-
-    </script>
-
-
+<script src="~/Scripts/helperJS.js"></script>
+  
 }

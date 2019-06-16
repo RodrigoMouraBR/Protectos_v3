@@ -7,6 +7,7 @@ using Protectos.Domain.Entities.Administradoras.Interfaces.Services;
 using Protectos.Infra.Data.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Web;
 
@@ -193,17 +194,17 @@ namespace Protectos.Application.ApplicationServices.Administradoras
             {
                 return administradoraCadastroViewModel;
             }
-            if (!SalvarImagemCliente(foto, administradora.Id))
+            if (! SalvarImagem(foto, administradora.Id))
             {
                 // Tomada de decisão caso a imagem não seja gravada.              
             }
             Commit();
             return administradoraCadastroViewModel;
         }
-        private static bool SalvarImagemCliente(HttpPostedFileBase img, Guid id)
+        private static bool SalvarImagem(HttpPostedFileBase img, Guid id)
         {
             if (img == null || img.ContentLength <= 0) return false;
-            const string directory = @"C:\Users\ma4ci\Documents\img\";
+            string directory = ConfigurationManager.AppSettings["Imagens"];
             var fileName = id + Path.GetExtension(img.FileName);
             img.SaveAs(Path.Combine(directory, fileName));
             return File.Exists(Path.Combine(directory, fileName));

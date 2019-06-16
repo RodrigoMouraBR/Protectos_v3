@@ -52,7 +52,7 @@ namespace Protectos.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                var corretora = _corretoraApplicationService.CorretoraAdicionar(corretoraCadastroViewModel);
+                var corretora = _corretoraApplicationService.CorretoraCadastroAdicionar(corretoraCadastroViewModel);
 
                 if (!corretora.ValidationResult.IsValid)
                 {

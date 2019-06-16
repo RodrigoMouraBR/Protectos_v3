@@ -7,6 +7,10 @@ using Protectos.Domain.Entities.Corretoras.Interfaces.Services;
 using Protectos.Infra.Data.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
+using System.Web;
+
 namespace Protectos.Application.ApplicationServices.Corretoras
 {
     public class CorretoraApplicationService : ApplicationService, ICorretoraApplicationService
@@ -28,13 +32,47 @@ namespace Protectos.Application.ApplicationServices.Corretoras
             _corretoraEndrecoRepository = corretoraEndrecoRepository;
             _corretoraService = corretoraService;
         }
-        public CorretoraCadastroViewModel CorretoraAdicionar(CorretoraCadastroViewModel corretoraCadastroViewModel)
+
+        public CorretoraCadastroViewModel CorretoraCadastroAdicionar(CorretoraCadastroViewModel corretoraCadastroViewModel)
         {
-            var corretora = Mapper.Map<Corretora>(corretoraCadastroViewModel);
-            _corretoraService.CorretoraAdicionar(corretora);
+            //_corretoraService.ConsultaraServicoViaCEP("07263000");
+
+            var corretora = Mapper.Map<Corretora>(corretoraCadastroViewModel.Corretora);
+            var endereco = Mapper.Map<CorretoraEndereco>(corretoraCadastroViewModel.Endereco);
+            var email = Mapper.Map<CorretoraEmail>(corretoraCadastroViewModel.Email);
+            #region
+            //var telefone = Mapper.Map<AdministradoraTelefone>(administradoraCadastroViewModel);
+
+            #endregion
+            corretora.Enderecos.Add(endereco);
+            corretora.Emails.Add(email);
+
+
+            var foto = corretoraCadastroViewModel.Foto;
+            #region
+
+       
+            #endregion
+            BeginTransaction();
+            var corretoraReturn = _corretoraService.CorretoraAdicionar(corretora);
+            corretoraCadastroViewModel = Mapper.Map<CorretoraCadastroViewModel>(corretoraReturn);
+            if (!corretoraReturn.ValidationResult.IsValid)
+            {
+                return corretoraCadastroViewModel;
+            }
+            if (!SalvarImagem(foto, corretora.Id))
+            {
+                // Tomada de decisão caso a imagem não seja gravada.              
+            }
             Commit();
             return corretoraCadastroViewModel;
         }
+
+
+
+
+
+
         public CorretoraViewModel CorretoraAtualizar(CorretoraViewModel corretoraViewModel)
         {
             var corretora = Mapper.Map<Corretora>(corretoraViewModel);
@@ -151,6 +189,15 @@ namespace Protectos.Application.ApplicationServices.Corretoras
         public CorretoraTelefoneViewModel CorretoraTelefoneObterPorId(Guid id)
         {
             return Mapper.Map<CorretoraTelefoneViewModel>(_corretoraTelefoneRepository.GetbyId(id));
+        }
+
+        private static bool SalvarImagem(HttpPostedFileBase img, Guid id)
+        {
+            if (img == null || img.ContentLength <= 0) return false;
+            string directory = ConfigurationManager.AppSettings["Imagens"];
+            var fileName = id + Path.GetExtension(img.FileName);
+            img.SaveAs(Path.Combine(directory, fileName));
+            return File.Exists(Path.Combine(directory, fileName));
         }
     }
 }

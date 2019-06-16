@@ -7,17 +7,18 @@
 
 @section header
 {
-<section class="content-header">
-    <h1>
-        Nova corretora
-        <small>Cadastrar uma nova corretora</small>
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-    </ol>
-</section>
+    <section class="content-header">
+        <h1>
+            Nova corretora
+            <small>Cadastrar uma nova corretora</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+            <li class="active">Here</li>
+        </ol>
+    </section>
 }
+
 
 
 <div class="row">
@@ -31,137 +32,138 @@
 
                 @using (Html.BeginForm("Incluir", "Corretora", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
-                @Html.AntiForgeryToken()
-                <div class="form-horizontal">
-                    <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        <div class="col-md-6">
-                            @Html.LabelFor(model => model.Corretora.RazaoSocial)
-                            @Html.EditorFor(model => model.Corretora.RazaoSocial, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Corretora.RazaoSocial, "", new { @class = "text-danger" })
+                    @Html.AntiForgeryToken()
+                    <div class="form-horizontal">
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                @Html.LabelFor(model => model.Corretora.Cnpj)
+                                @Html.EditorFor(model => model.Corretora.Cnpj, new { htmlAttributes = new { @class = "form-control edit-cnpj" } })
+                                @Html.ValidationMessageFor(model => model.Corretora.Cnpj, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-8">
+                                @Html.LabelFor(model => model.Corretora.RazaoSocial)
+                                @Html.EditorFor(model => model.Corretora.RazaoSocial, new { htmlAttributes = new { @class = "form-control edit-razao-social" } })
+                                @Html.ValidationMessageFor(model => model.Corretora.RazaoSocial, "", new { @class = "text-danger" })
+                            </div>
+
                         </div>
-                        <div class="col-md-6">
-                            @Html.LabelFor(model => model.Corretora.NomeFantasia)
-                            @Html.EditorFor(model => model.Corretora.NomeFantasia, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Corretora.NomeFantasia, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                @Html.LabelFor(model => model.Corretora.NomeFantasia)
+                                @Html.EditorFor(model => model.Corretora.NomeFantasia, new { htmlAttributes = new { @class = "form-control edit-nome-fantasia" } })
+                                @Html.ValidationMessageFor(model => model.Corretora.NomeFantasia, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-4">
+                                @Html.LabelFor(model => model.Corretora.InscricaoEstadual)
+                                @Html.EditorFor(model => model.Corretora.InscricaoEstadual, new { htmlAttributes = new { @class = "form-control edit-inscricao-estadual" } })
+                                @Html.ValidationMessageFor(model => model.Corretora.InscricaoEstadual, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-4">
+                                @Html.LabelFor(model => model.Corretora.InscricaoMunicipal)
+                                @Html.EditorFor(model => model.Corretora.InscricaoMunicipal, new { htmlAttributes = new { @class = "form-control edit-inscricao-municipal" } })
+                                @Html.ValidationMessageFor(model => model.Corretora.InscricaoMunicipal, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                @Html.LabelFor(model => model.Corretora.Site)
+                                @Html.EditorFor(model => model.Corretora.Site, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Corretora.Site, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.LabelFor(model => model.Foto)
+                                <input type="file" name="foto" id="foto" class="filestyle input-sm" data-placeholder="Nenhuma Foto" data-buttonname="btn-primary" data-buttontext="Procurar">
+                                @Html.ValidationMessageFor(model => model.Foto, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <h4>Endereço:</h4>
+                        <hr />
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.LabelFor(model => model.Endereco.Logradouro)
+                                @Html.EditorFor(model => model.Endereco.Logradouro, new { htmlAttributes = new { @class = "form-control edit-logradouro" } })
+                                @Html.ValidationMessageFor(model => model.Endereco.Logradouro, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.Endereco.Numero)
+                                @Html.EditorFor(model => model.Endereco.Numero, new { htmlAttributes = new { @class = "form-control edit-numero" } })
+                                @Html.ValidationMessageFor(model => model.Endereco.Numero, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                @Html.LabelFor(model => model.Endereco.Complemento)
+                                @Html.EditorFor(model => model.Endereco.Complemento, new { htmlAttributes = new { @class = "form-control edit-complemento" } })
+                                @Html.ValidationMessageFor(model => model.Endereco.Complemento, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-4">
+                                @Html.LabelFor(model => model.Endereco.Bairro)
+                                @Html.EditorFor(model => model.Endereco.Bairro, new { htmlAttributes = new { @class = "form-control edit-bairro" } })
+                                @Html.ValidationMessageFor(model => model.Endereco.Bairro, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.Endereco.Cep)
+                                @Html.EditorFor(model => model.Endereco.Cep, new { htmlAttributes = new { @class = "form-control edit-cep" } })
+                                @Html.ValidationMessageFor(model => model.Endereco.Cep, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-md-4">
+                                @Html.LabelFor(model => model.Endereco.Cidade)
+                                @Html.EditorFor(model => model.Endereco.Cidade, new { htmlAttributes = new { @class = "form-control edit-cidade" } })
+                                @Html.ValidationMessageFor(model => model.Endereco.Cidade, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-4">
+                                @Html.LabelFor(model => model.Endereco.Estado)
+                                @Html.EditorFor(model => model.Endereco.Estado, new { htmlAttributes = new { @class = "form-control edit-estado" } })
+                                @Html.ValidationMessageFor(model => model.Endereco.Estado, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.Endereco.UF)
+                                @Html.EditorFor(model => model.Endereco.UF, new { htmlAttributes = new { @class = "form-control edit-uf" } })
+                                @Html.ValidationMessageFor(model => model.Endereco.UF, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-3">
+                                @Html.LabelFor(model => model.Endereco.Pais)
+                                @Html.EditorFor(model => model.Endereco.Pais, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Endereco.Pais, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <h4>Email:</h4>
+                        <hr />
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                @Html.LabelFor(model => model.Email.Email)
+                                @Html.EditorFor(model => model.Email.Email, new { htmlAttributes = new { @class = "form-control edit-email" } })
+                                @Html.ValidationMessageFor(model => model.Email.Email, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-4">
+                                @Html.LabelFor(model => model.Email.TipoEmail)
+                                @Html.DropDownList("Email.TipoEmail",
+                                 EnumHelper.GetSelectList(typeof(Protectos.Domain.Generics.Enums.ETipoEmail)) ,
+                                 "Selecione o Tipo de Email",
+                                 new { @class = "form-control edit-tipo-email" })
+                            </div>
+
+
+                        </div>
+
+                        <hr />
+
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="submit" value="Atualizar" class="btn btn-success" />
+                                @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            @Html.LabelFor(model => model.Corretora.Cnpj)
-                            @Html.EditorFor(model => model.Corretora.Cnpj, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Corretora.Cnpj, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-4">
-                            @Html.LabelFor(model => model.Corretora.InscricaoEstadual)
-                            @Html.EditorFor(model => model.Corretora.InscricaoEstadual, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Corretora.InscricaoEstadual, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-4">
-                            @Html.LabelFor(model => model.Corretora.InscricaoMunicipal)
-                            @Html.EditorFor(model => model.Corretora.InscricaoMunicipal, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Corretora.InscricaoMunicipal, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-6">
-                            @Html.LabelFor(model => model.Corretora.Site)
-                            @Html.EditorFor(model => model.Corretora.Site, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Corretora.Site, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-6">
-                            @Html.LabelFor(model => model.Foto)
-                            <input type="file" name="foto" id="foto" class="filestyle input-sm" data-placeholder="Nenhuma Foto" data-buttonname="btn-primary" data-buttontext="Procurar">
-                            @Html.ValidationMessageFor(model => model.Foto, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-
-                    <h4>Endereço:</h4>
-                    <hr />
-                    <div class="form-group">
-                        <div class="col-md-10">
-                            @Html.LabelFor(model => model.Endereco.Logradouro)
-                            @Html.EditorFor(model => model.Endereco.Logradouro, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Endereco.Logradouro, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-2">
-                            @Html.LabelFor(model => model.Endereco.Numero)
-                            @Html.EditorFor(model => model.Endereco.Numero, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Endereco.Numero, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-6">
-                            @Html.LabelFor(model => model.Endereco.Complemento)
-                            @Html.EditorFor(model => model.Endereco.Complemento, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Endereco.Complemento, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-4">
-                            @Html.LabelFor(model => model.Endereco.Bairro)
-                            @Html.EditorFor(model => model.Endereco.Bairro, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Endereco.Bairro, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-2">
-                            @Html.LabelFor(model => model.Endereco.Cep)
-                            @Html.EditorFor(model => model.Endereco.Cep, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Endereco.Cep, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-
-                        <div class="col-md-4">
-                            @Html.LabelFor(model => model.Endereco.Cidade)
-                            @Html.EditorFor(model => model.Endereco.Cidade, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Endereco.Cidade, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-4">
-                            @Html.LabelFor(model => model.Endereco.Estado)
-                            @Html.EditorFor(model => model.Endereco.Estado, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Endereco.Estado, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-1">
-                            @Html.LabelFor(model => model.Endereco.UF)
-                            @Html.EditorFor(model => model.Endereco.UF, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Endereco.UF, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-3">
-                            @Html.LabelFor(model => model.Endereco.Pais)
-                            @Html.EditorFor(model => model.Endereco.Pais, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Endereco.Pais, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-
-                    <h4>Email:</h4>
-                    <hr />
-                    <div class="form-group">
-                        <div class="col-md-8">
-                            @Html.LabelFor(model => model.Email.Email)
-                            @Html.EditorFor(model => model.Email.Email, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Email.Email, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-4">
-                            @Html.LabelFor(model => model.Email.TipoEmail)
-                            @Html.DropDownList("Email.TipoEmail",
-                            EnumHelper.GetSelectList(typeof(Protectos.Domain.Generics.Enums.ETipoEmail)) ,
-                            "Selecione o Tipo de Email",
-                            new { @class = "form-control" })
-                        </div>
-
-
-                    </div>
-
-                    <hr />
-
-                    <div class="form-group">
-                        <div class="col-md-10">
-                            <input type="submit" value="Atualizar" class="btn btn-success" />
-                            @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
-                        </div>
-                    </div>
-                </div>
                 }
 
 
@@ -170,3 +172,9 @@
         </div>
     </div>
 </div>
+
+@section scripts{
+
+    <script src="~/Scripts/helperJS.js"></script>
+
+}
