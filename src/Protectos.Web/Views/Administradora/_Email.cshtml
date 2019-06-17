@@ -11,12 +11,13 @@
 <div class="form-group">
     @Html.LabelFor(model => model.TipoEmail, htmlAttributes: new { @class = "control-label col-md-2" })
     <div class="col-md-10">
-        @Html.DropDownList("Email.TipoEmail",
-  EnumHelper.GetSelectList(typeof(Protectos.Domain.Generics.Enums.ETipoEmail)) ,
-  "Selecione o Tipo de Email",
-  new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.TipoEmail,
+                     new SelectList(Enum.GetValues(typeof(Protectos.Domain.Generics.Enums.ETipoEmail))),
+                     "Selecione o Tipo de Email",
+   new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model.TipoEmail, "", new { @class = "text-danger" })
     </div>
 </div>
+
 
 

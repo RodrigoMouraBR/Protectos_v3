@@ -1,5 +1,6 @@
 ﻿using Protectos.Application.Interfaces.Administradoras;
 using Protectos.Application.ViewModels.Administradoras;
+using Protectos.Domain.Generics.Enums;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -37,8 +38,8 @@ namespace Protectos.Web.Controllers
             {
                 return HttpNotFound();
             }
-            
-            return PartialView("_Detalhe",administradoraViewModel);
+
+            return PartialView("_Detalhe", administradoraViewModel);
         }
         public ActionResult Incluir()
         {
@@ -48,7 +49,7 @@ namespace Protectos.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Incluir(AdministradoraCadastroViewModel administradoraCadastroViewModel)
         {
-            
+
             if (ModelState.IsValid)
             {
                 var administradora = _administradoraApplicationService.AdministradoraCadastroAdicionar(administradoraCadastroViewModel);
@@ -77,6 +78,7 @@ namespace Protectos.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var administradoraViewModel = _administradoraApplicationService.AdministradoraObterPorId(id.Value);
+
             if (administradoraViewModel == null)
             {
                 return HttpNotFound();
@@ -206,6 +208,7 @@ namespace Protectos.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AdicionarEmail(AdministradoraEmailViewModel emailViewModel)
         {
+            
             if (ModelState.IsValid)
             {
                 _administradoraApplicationService.AdministradoraEmailAdicionar(emailViewModel);
@@ -262,7 +265,7 @@ namespace Protectos.Web.Controllers
 
         public ActionResult ObterImagemCliente(Guid id)
         {
-            //var root = caminhoImagens;
+
             var foto = Directory.GetFiles(caminhoImagens, id + "*").FirstOrDefault();
             if (foto != null && !foto.StartsWith(caminhoImagens))
             {

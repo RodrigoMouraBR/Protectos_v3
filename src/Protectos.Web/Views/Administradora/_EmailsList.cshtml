@@ -37,10 +37,10 @@
                                     </td>                              
                                    
                                     <td class="text-right">                 
-                                        <a href="@Url.Action("AtualizarEmail", "Administradora", new {id = item.Id})" data-titulo="Alterar Email" class="btn btn-warning btn-xs btn-modal">
+                                        <a href="@Url.Action("AtualizarEmail", "Administradora", new {id = item.EmailId})" data-titulo="Alterar Email" class="btn btn-warning btn-xs btn-modal">
                                             <span title="Editar" class="glyphicon glyphicon-pencil"></span>
                                         </a>                                 
-                                        <a href="@Url.Action("DeletarEmail", "Administradora", new {id = item.Id})" data-titulo="Tem certeza que deseja excluir este Email?" class="btn btn-danger btn-xs btn-modal">
+                                        <a href="@Url.Action("DeletarEmail", "Administradora", new {id = item.EmailId})" data-titulo="Tem certeza que deseja excluir este Email?" class="btn btn-danger btn-xs btn-modal">
                                             <span title="Excluir" class="glyphicon glyphicon-trash"></span>
                                         </a>
                                     </td>
