@@ -7,7 +7,7 @@ namespace Protectos.Domain.Entities.Entidades
 {
     public class EntidadeEmail : Entity<EntidadeEmail>
     {
-        public EntidadeEmail(string email, ETipoEmailEmpresa tipoEmail, Guid entidadeId)
+        public EntidadeEmail(string email, string tipoEmail, Guid entidadeId)
         {
             Email = email;
             TipoEmail = tipoEmail;
@@ -17,7 +17,7 @@ namespace Protectos.Domain.Entities.Entidades
         {
         }
         public string Email { get; private set; }
-        public ETipoEmailEmpresa TipoEmail { get; private set; }
+        public string TipoEmail { get; private set; }
         public Guid EntidadeId { get; private set; }
         public virtual Entidade Entidade { get; private set; }
 

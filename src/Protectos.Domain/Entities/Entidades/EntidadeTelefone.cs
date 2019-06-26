@@ -7,7 +7,7 @@ namespace Protectos.Domain.Entities.Entidades
 {
     public class EntidadeTelefone : Entity<EntidadeTelefone>
     {
-        public EntidadeTelefone(string prefixo, string numero, ETipoTelefoneEmpresa tipoTelefone, Guid entidadeId)
+        public EntidadeTelefone(string prefixo, string numero, string tipoTelefone, Guid entidadeId)
         {
             Prefixo = prefixo;
             Numero = numero;
@@ -19,7 +19,7 @@ namespace Protectos.Domain.Entities.Entidades
         }
         public string Prefixo { get; private set; }
         public string Numero { get;private  set; }
-        public ETipoTelefoneEmpresa TipoTelefone { get;private  set; }
+        public string TipoTelefone { get;private  set; }
         public Guid EntidadeId { get;private  set; }
         public virtual Entidade Entidade { get; private set; }
 

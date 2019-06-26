@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Protectos.Application.Enums;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -31,7 +32,7 @@ namespace Protectos.Application.ViewModels.Operadoras
         [MinLength(8, ErrorMessage = "Mínimo {0} caracteres")]
         public string Numero { get; set; }
         [DisplayName("Tipo Telfone")]
-        public string TipoTelefone { get; set; }
+        public ETipoTelefoneEmpresa TipoTelefone { get; set; }
         [ScaffoldColumn(false)]
         public Guid OperadoraId { get; set; }
         public virtual OperadoraViewModel Operadora { get; set; }

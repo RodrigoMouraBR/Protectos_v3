@@ -11,7 +11,7 @@ namespace Protectos.Domain.Entities.Clientes
 {
     public class ClienteTelefone : Entity<ClienteTelefone>
     {
-        public ClienteTelefone(string prefixo, string numero, ETipoTelefoneEmpresa tipoTelefone, Guid clienteId)
+        public ClienteTelefone(string prefixo, string numero, string tipoTelefone, Guid clienteId)
         {
             Prefixo = prefixo;
             Numero = numero;
@@ -23,7 +23,7 @@ namespace Protectos.Domain.Entities.Clientes
         }
         public string Prefixo { get; private set; }
         public string Numero { get; private set; }
-        public ETipoTelefoneEmpresa TipoTelefone { get; private set; }
+        public string TipoTelefone { get; private set; }
         public Guid ClienteId { get; private set; }
         public virtual Cliente Cliente { get; private set; }
 

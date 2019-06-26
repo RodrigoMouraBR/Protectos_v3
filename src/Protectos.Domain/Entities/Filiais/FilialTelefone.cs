@@ -6,7 +6,7 @@ namespace Protectos.Domain.Entities.Filiais
 {
     public class FilialTelefone : Entity<FilialTelefone>
     {
-        public FilialTelefone(string prefixo, string numero, ETipoTelefoneEmpresa tipoTelefone, Guid filialId)
+        public FilialTelefone(string prefixo, string numero, string tipoTelefone, Guid filialId)
         {
             Prefixo = prefixo;
             Numero = numero;

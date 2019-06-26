@@ -167,10 +167,7 @@
     <Compile Include="Generics\Enums\EEstadoCivil.cs" />
     <Compile Include="Generics\Enums\ESexo.cs" />
     <Compile Include="Generics\Enums\EStatus.cs" />
-    <Compile Include="Generics\Enums\ETipoEmail.cs" />
     <Compile Include="Generics\Enums\ETipoEmailEmpresa.cs" />
-    <Compile Include="Generics\Enums\ETipoTelefone.cs" />
-    <Compile Include="Generics\Enums\ETipoTelefoneEmpresa.cs" />
     <Compile Include="Generics\Interfaces\IRepository.cs" />
     <Compile Include="Generics\Interfaces\Services\IViaCepExternalService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,4 @@
-namespace Protectos.Domain.Generics.Enums
+namespace Protectos.Application.Enums
 {
     public enum ETipoTelefoneEmpresa
     {

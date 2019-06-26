@@ -69,6 +69,16 @@
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Enums\EEstadoCivil.cs" />
+    <Compile Include="Enums\EFaturaPlanoTipo.cs" />
+    <Compile Include="Enums\EFormaPagamento.cs" />
+    <Compile Include="Enums\EParentesco.cs" />
+    <Compile Include="Enums\ESexo.cs" />
+    <Compile Include="Enums\EStatus.cs" />
+    <Compile Include="Enums\ETipoEmail.cs" />
+    <Compile Include="Enums\ETipoEmailEmpresa.cs" />
+    <Compile Include="Enums\ETipoTelefone.cs" />
+    <Compile Include="Enums\ETipoTelefoneEmpresa.cs" />
     <Compile Include="Interfaces\Administradoras\IAdministradoraApplicationService.cs" />
     <Compile Include="Interfaces\Beneficiarios\IBeneficiarioApplicationService.cs" />
     <Compile Include="Interfaces\Clientes\IClienteApplicationService.cs" />

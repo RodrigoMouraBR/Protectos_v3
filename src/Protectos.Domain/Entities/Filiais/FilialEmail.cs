@@ -6,7 +6,7 @@ namespace Protectos.Domain.Entities.Filiais
 {
     public class FilialEmail : Entity<FilialEmail>
     {
-        public FilialEmail(string email, ETipoEmailEmpresa tipoEmail, Guid filialId)
+        public FilialEmail(string email, string tipoEmail, Guid filialId)
         {
             Email = email;
             TipoEmail = tipoEmail;
@@ -16,7 +16,7 @@ namespace Protectos.Domain.Entities.Filiais
         {
         }
         public string Email { get; private set; }
-        public ETipoEmailEmpresa TipoEmail { get; private set; }
+        public string TipoEmail { get; private set; }
         public Guid FilialId { get; private set; }
         public virtual Filial Filial { get; private set; }
 

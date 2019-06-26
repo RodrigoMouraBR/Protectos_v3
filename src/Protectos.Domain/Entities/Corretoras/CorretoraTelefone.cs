@@ -7,7 +7,7 @@ namespace Protectos.Domain.Entities.Corretoras
 {
     public class CorretoraTelefone : Entity<CorretoraTelefone>
     {
-        public CorretoraTelefone(string prefixo, string numero, ETipoTelefoneEmpresa tipoTelefone, Guid corretoraId)
+        public CorretoraTelefone(string prefixo, string numero, string tipoTelefone, Guid corretoraId)
         {
             Prefixo = prefixo;
             Numero = numero;
@@ -19,7 +19,7 @@ namespace Protectos.Domain.Entities.Corretoras
         }
         public string Prefixo { get; private set; }
         public string Numero { get; private set; }
-        public ETipoTelefoneEmpresa TipoTelefone { get; private set; }
+        public string TipoTelefone { get; private set; }
         public Guid CorretoraId { get; private set; }
         public virtual Corretora Corretora { get; private set; }
 

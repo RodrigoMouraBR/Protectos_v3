@@ -7,7 +7,7 @@ namespace Protectos.Domain.Entities.Administradoras
 {
     public class AdministradoraTelefone : Entity<AdministradoraTelefone>
     {
-        public AdministradoraTelefone(string prefixo, string numero, ETipoTelefoneEmpresa tipoTelefone, Guid administradoraId)
+        public AdministradoraTelefone(string prefixo, string numero, string tipoTelefone, Guid administradoraId)
         {
             Prefixo = prefixo;
             Numero = numero;
@@ -20,7 +20,7 @@ namespace Protectos.Domain.Entities.Administradoras
         }
         public string Prefixo { get; private set; }
         public string Numero { get; private set; }
-        public ETipoTelefoneEmpresa TipoTelefone { get; private set; }
+        public string TipoTelefone { get; private set; }
         public Guid AdministradoraId { get; private set; }
         public virtual Administradora Administradora { get; private set; }
 
@@ -45,7 +45,7 @@ namespace Protectos.Domain.Entities.Administradoras
                 .Length(2, 10).WithMessage("o telefone precisa ter entre 2 e 10 caracteres");
 
             RuleFor(s => s.TipoTelefone)
-                .NotEmpty()
+                .NotEmpty().WithMessage("o tipo telefone precisa ser fornecido")
                 .WithMessage("É necessário um tipo de telefone");
         }
 
