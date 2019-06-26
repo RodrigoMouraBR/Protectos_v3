@@ -1,0 +1,193 @@
+﻿
+@model IEnumerable<Protectos.Application.ViewModels.Filiais.FilialEnderecoViewModel>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box box-danger">
+                <div class="box-header">
+                    <h3 class="box-title">Endereços cadastrados</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    @if (Model.Any())
+                    {
+                        <table class="table table-hover">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Logradouro)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Numero)
+                                </th>                               
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Bairro)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Cep)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Cidade)
+                                </th>                                
+                                <th>
+                                    @Html.DisplayNameFor(model => model.UF)
+                                </th>
+                             
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Logradouro)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Numero)
+                                    </td>                              
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Bairro)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cep)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cidade)
+                                    </td>                      
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UF)
+                                    </td>                          
+                                    <td class="text-right">                 
+                                        <a href="@Url.Action("AtualizarEndereco", "Filial", new {id = item.EnderecoId})" data-titulo="Alterar Endereço" class="btn btn-warning btn-xs btn-modal">
+                                            <span title="Editar" class="glyphicon glyphicon-pencil"></span>
+                                        </a>                                 
+                                        <a href="@Url.Action("DeletarEndereco", "Filial", new {id = item.EnderecoId})" data-titulo="Tem certeza que deseja excluir este endereço?" class="btn btn-danger btn-xs btn-modal">
+                                            <span title="Excluir" class="glyphicon glyphicon-trash"></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                    else
+                    {
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    Nenhum Endereço Cadastrado.
+                                </th>
+                            </tr>
+                        </table>
+                    }
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <!-- /.box -->
+
+    </div>
+</div>
+
+
+<div>
+    <div class="form-group">    
+
+        <a href="@Url.Action("Index", "Filial", new { id = ViewBag.FilialId })"  class="btn  btn-social btn-default ">
+            <i class="fa fa-arrow-left"></i> Voltar
+        </a>
+        <a href="@Url.Action("AdicionarEndereco", "Filial", new { id = ViewBag.FilialId })" data_titulo="Adicionar endereço" class="btn  btn-social btn-bitbucket btn-modal">
+            <i class="fa fa-plus"></i> Novo endereço
+        </a>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+
+    $(function () {
+        $.ajaxSetup({ cache: false });
+
+        $(".btn-modal").on("click", function (e) {
+            var titulo = this.attributes[1].nodeValue;
+            
+            $("#modal-default .modal-title").text(titulo);
+            
+            $('#modal-default .conteudoModal').load(this.href, function () {
+                
+                $('#modal-default').modal({
+                    /*backdrop: 'static',*/
+                    keyboard: true
+                }, 'show');
+                bindForm(this);
+            });
+            return false;
+        });
+    });
+
+    function bindForm(dialog) {
+        $('form', dialog).submit(function () {
+            $.ajax({
+                url: this.action,
+                type: this.method,
+                data: $(this).serialize(),
+                success: function (result) {
+                    if (result.success) {
+                        $('#modal-default').modal('hide');
+                        $('#replacetargetEnderecos').load(result.url); // Carrega o resultado HTML para a div demarcada
+                    } else {
+                        $('#modal-default .conteudoModal').html(result);
+                        bindForm(dialog);
+                    }
+                }
+            });
+            return false;
+        });
+    }
+</script>
+
+
+
+
+
+
+@*<script type="text/javascript">
+
+
+    $(function () {
+        $.ajaxSetup({ cache: false });
+
+        $("a[data-modal]").on("click", function (e) {
+            $('#myModalContent').load(this.href, function () {
+                $('#myModal').modal({
+                    /*backdrop: 'static',*/
+                    keyboard: true
+                }, 'show');
+                bindForm(this);
+            });
+            return false;
+        });
+    });
+
+    function bindForm(dialog) {
+        $('form', dialog).submit(function () {
+            $.ajax({
+                url: this.action,
+                type: this.method,
+                data: $(this).serialize(),
+                success: function (result) {
+                    if (result.success) {
+                        $('#myModal').modal('hide');
+                        $('#replacetarget').load(result.url); // Carrega o resultado HTML para a div demarcada
+                    } else {
+                        $('#myModalContent').html(result);
+                        bindForm(dialog);
+                    }
+                }
+            });
+            return false;
+        });
+    }
+</script>*@
+

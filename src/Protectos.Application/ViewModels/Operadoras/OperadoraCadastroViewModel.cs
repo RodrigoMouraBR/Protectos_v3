@@ -5,7 +5,7 @@ namespace Protectos.Application.ViewModels.Operadoras
 {
     public class OperadoraCadastroViewModel
     {
-        public OperadoraViewModel Administradora { get; set; }
+        public OperadoraViewModel Operadora { get; set; }
         public OperadoraEnderecoViewModel Endereco { get; set; }
         public OperadoraEmailViewModel Email { get; set; }
         public OperadoraTelefoneViewModel Telefones { get; set; }

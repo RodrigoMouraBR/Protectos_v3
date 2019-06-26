@@ -1,0 +1,26 @@
+﻿@model Protectos.Application.ViewModels.Operadoras.OperadoraEnderecoViewModel
+
+
+
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.OperadoraId)
+
+        @Html.Partial("_Endereco")
+
+    </div>
+
+}
+
+    <script>
+        $(document).ready(function () {
+            $('.btn-salvar').removeClass('hidden');
+            $('.btn-excluir').addClass('hidden');
+        });
+    </script>

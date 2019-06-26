@@ -1,0 +1,120 @@
+﻿@model IEnumerable<Protectos.Application.ViewModels.Entidades.EntidadeCadastroViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutContent.cshtml";
+}
+
+
+@section header
+{
+    <section class="content-header">
+        <h1>
+            Entidade
+            <small>Entidade configurada</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+            <li class="active">Here</li>
+        </ol>
+    </section>
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box box-danger">
+                <div class="box-header">
+                    <h3 class="box-title">Entidade</h3>
+
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RazaoSocial)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NomeFantasia)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Cnpj)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Site)
+                                </th>
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RazaoSocial)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NomeFantasia)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cnpj)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Site)
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("Editar", "Entidade", new {id = item.Id})" class="btn btn-warning btn-xs">
+                                            <span title="Editar" class="glyphicon glyphicon-pencil"></span>
+                                        </a>                                     
+                                        <a href="#" data-titulo="Detalhes" data-value="@item.Id" class="btn btn-primary btn-xs btn-detalhe">
+                                            <span title="Detalhes" class="glyphicon glyphicon-search"></span>
+                                        </a>
+                                        <a href="@Url.Action("Delete", "Entidade", new {id = item.Id})" class="btn btn-danger btn-xs">
+                                            <span title="Excluir" class="glyphicon glyphicon-trash"></span>
+                                        </a>
+
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <!-- /.box -->
+
+    </div>
+</div>
+
+
+@Html.Partial("_Modais")
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".btn-detalhe").click(function () {
+                var id = $(this).data("value");
+                var titulo = $(this).data("titulo");
+
+                $("#modal-default .conteudoModal").load("/Entidade/Detalhe/"+ id,
+                    function () {
+                        $("#modal-default .modal-title").text(titulo);
+                        $("#modal-default .btn-salvar").addClass("hide");  
+                        $("#modal-default .modal-dialog").addClass("modal-lg"); //Tamanho Modal
+                        $("#modal-default .btn-fechar").removeClass("pull-left"); 
+                       
+                        $("#modal-default").modal("show");
+                    });
+            });
+        });
+
+
+    </script>
+
+    
+    }

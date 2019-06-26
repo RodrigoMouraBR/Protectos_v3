@@ -1,0 +1,22 @@
+﻿@model Protectos.Application.ViewModels.Operadoras.OperadoraEmailViewModel
+
+
+
+
+    <div class="form-horizontal">
+
+        @Html.Partial("_DadosEmail")
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+ 
+        }
+    </div>
+
+<script>
+    $(document).ready(function () {         
+        $('.btn-salvar').addClass('hidden');
+        $('.btn-excluir').removeClass('hidden');
+    });
+</script>

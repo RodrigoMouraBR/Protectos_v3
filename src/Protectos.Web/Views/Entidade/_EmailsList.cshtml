@@ -1,0 +1,131 @@
+﻿
+@model IEnumerable<Protectos.Application.ViewModels.Entidades.EntidadeEmailViewModel>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box box-danger">
+                <div class="box-header">
+                    <h3 class="box-title">Emails cadastrados</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    @if (Model.Any())
+                    {
+                        <table class="table table-hover">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TipoEmail)
+                                </th>                               
+                            
+                             
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TipoEmail)
+                                    </td>                              
+                                   
+                                    <td class="text-right">                 
+                                        <a href="@Url.Action("AtualizarEmail", "Entidade", new {id = item.EntidadeId})" data-titulo="Alterar Email" class="btn btn-warning btn-xs btn-modal">
+                                            <span title="Editar" class="glyphicon glyphicon-pencil"></span>
+                                        </a>                                 
+                                        <a href="@Url.Action("DeletarEmail", "Entidade", new {id = item.EntidadeId})" data-titulo="Tem certeza que deseja excluir este Email?" class="btn btn-danger btn-xs btn-modal">
+                                            <span title="Excluir" class="glyphicon glyphicon-trash"></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                    else
+                    {
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    Nenhum Email Cadastrado.
+                                </th>
+                            </tr>
+                        </table>
+                    }
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <!-- /.box -->
+
+    </div>
+</div>
+
+
+<div>
+    <div class="form-group">    
+
+        <a href="@Url.Action("Index", "Entidade", new { id = ViewBag.EntidadeId })"  class="btn  btn-social btn-default ">
+            <i class="fa fa-arrow-left"></i> Voltar
+        </a>
+        <a href="@Url.Action("AdicionarEmail", "Entidade", new { id = ViewBag.EntidadeId })" data_titulo="Adicionar email" class="btn  btn-social btn-bitbucket btn-modal">
+            <i class="fa fa-plus"></i> Novo email
+        </a>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+
+    $(function () {
+        $.ajaxSetup({ cache: false });
+
+        $(".btn-modal").on("click", function (e) {
+            var titulo = this.attributes[1].nodeValue;
+            
+            $("#modal-default .modal-title").text(titulo);
+            
+            $('#modal-default .conteudoModal').load(this.href, function () {
+                
+                $('#modal-default').modal({
+                    /*backdrop: 'static',*/
+                    keyboard: true
+                }, 'show');
+                bindForm(this);
+            });
+            return false;
+        });
+    });
+
+    function bindForm(dialog) {
+        $('form', dialog).submit(function () {
+            $.ajax({
+                url: this.action,
+                type: this.method,
+                data: $(this).serialize(),
+                success: function (result) {
+                    if (result.success) {
+                        $('#modal-default').modal('hide');
+                        $('#replacetargetEmails').load(result.url); // Carrega o resultado HTML para a div demarcada
+                    } else {
+                        $('#modal-default .conteudoModal').html(result);
+                        bindForm(dialog);
+                    }
+                }
+            });
+            return false;
+        });
+    }
+</script>
+
+
+
+
+

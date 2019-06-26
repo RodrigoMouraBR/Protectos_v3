@@ -147,7 +147,7 @@
                             <div class="col-md-4">
                                 @Html.LabelFor(model => model.Email.TipoEmail)
                                 @Html.DropDownList("Email.TipoEmail",
-                                 EnumHelper.GetSelectList(typeof(Protectos.Domain.Generics.Enums.ETipoEmail)) ,
+                                 EnumHelper.GetSelectList(typeof(Protectos.Application.Enums.ETipoEmailEmpresa)) ,
                                  "Selecione o Tipo de Email",
                                  new { @class = "form-control edit-tipo-email" })
                             </div>

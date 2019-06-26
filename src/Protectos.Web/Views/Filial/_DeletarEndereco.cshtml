@@ -1,0 +1,22 @@
+﻿@model Protectos.Application.ViewModels.Filiais.FilialEnderecoViewModel
+
+
+
+
+    <div class="form-horizontal">
+
+        @Html.Partial("_DadosEndereco")
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+ 
+        }
+    </div>
+
+<script>
+    $(document).ready(function () {         
+        $('.btn-salvar').addClass('hidden');
+        $('.btn-excluir').removeClass('hidden');
+    });
+</script>

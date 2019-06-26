@@ -1,4 +1,4 @@
-﻿@model Protectos.Application.ViewModels.Administradoras.AdministradoraEmailViewModel
+﻿@model Protectos.Application.ViewModels.Corretoras.CorretoraEmailViewModel
 
 <div class="form-group">
     @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -12,7 +12,7 @@
     @Html.LabelFor(model => model.TipoEmail, htmlAttributes: new { @class = "control-label col-md-2" })
     <div class="col-md-10">
         @Html.DropDownList("Email.TipoEmail",
-  EnumHelper.GetSelectList(typeof(Protectos.Domain.Generics.Enums.ETipoEmail)) ,
+  EnumHelper.GetSelectList(typeof(Protectos.Application.Enums.ETipoEmailEmpresa)) ,
   "Selecione o Tipo de Email",
   new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model.TipoEmail, "", new { @class = "text-danger" })

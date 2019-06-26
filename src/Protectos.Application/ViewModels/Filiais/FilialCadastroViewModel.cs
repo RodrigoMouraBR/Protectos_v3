@@ -5,7 +5,7 @@ namespace Protectos.Application.ViewModels.Filiais
 {
     public class FilialCadastroViewModel
     {
-        public FilialViewModel Administradora { get; set; }
+        public FilialViewModel Filial { get; set; }
         public FilialEnderecoViewModel Endereco { get; set; }
         public FilialEmailViewModel Email { get; set; }
         public FilialTelefoneViewModel Telefones { get; set; }

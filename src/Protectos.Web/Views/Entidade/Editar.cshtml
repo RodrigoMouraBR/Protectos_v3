@@ -1,0 +1,127 @@
+﻿@model Protectos.Application.ViewModels.Entidades.EntidadeViewModel
+@{
+    ViewData["Title"] = "Nova";
+    Layout = "~/Views/Shared/_LayoutContent.cshtml";
+}
+
+
+@section header
+{
+    <section class="content-header">
+        <h1>
+            Editar Entidade
+            <small>Alterar dados da corretora</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+            <li class="active">Here</li>
+        </ol>
+    </section>
+}
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-header">
+                <h4 class="box-title">Dados gerais:</h4>
+            </div>
+            <div class="box-body no-pad-top">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+
+                    <div class="form-horizontal">
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                @Html.LabelFor(model => model.RazaoSocial)
+                                @Html.EditorFor(model => model.RazaoSocial, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.RazaoSocial, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.LabelFor(model => model.NomeFantasia)
+                                @Html.EditorFor(model => model.NomeFantasia, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.NomeFantasia, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                @Html.LabelFor(model => model.Cnpj)
+                                @Html.EditorFor(model => model.Cnpj, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Cnpj, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-4">
+                                @Html.LabelFor(model => model.InscricaoEstadual)
+                                @Html.EditorFor(model => model.InscricaoEstadual, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.InscricaoEstadual, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-4">
+                                @Html.LabelFor(model => model.InscricaoMunicipal)
+                                @Html.EditorFor(model => model.InscricaoMunicipal, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.InscricaoMunicipal, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                @Html.LabelFor(model => model.Site)
+                                @Html.EditorFor(model => model.Site, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Site, "", new { @class = "text-danger" })
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+
+                                <button type="submit" value="Atualizar" class="btn  btn-social btn-success">
+                                    <i class="fa fa-save"></i> Salvar alterações
+                                </button>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                }
+
+
+
+                <div id="myModal" class="modal fade in">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title">Modal do editar</h4>
+                            </div>
+
+
+                            <div id="myModalContent"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="replacetargetEnderecos">
+                    @Html.Partial("_EnderecosList", Model.Enderecos)
+                </div>
+
+                <div id="replacetargetEmails">
+                    @Html.Partial("_EmailsList", Model.Emails)
+                </div>
+
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_Modais")

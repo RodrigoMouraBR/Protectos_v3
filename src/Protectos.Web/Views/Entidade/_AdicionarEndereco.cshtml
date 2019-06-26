@@ -1,0 +1,26 @@
+﻿
+@model Protectos.Application.ViewModels.Entidades.EntidadeEnderecoViewModel
+
+
+@using (Html.BeginForm())
+{
+    <div class="modal-body">
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.Hidden("EntidadeId", (Guid?)ViewBag.EntidadeId)
+
+            @Html.Partial("_Endereco")
+
+
+        </div>
+    </div>
+}
+
+    <script>
+        $(document).ready(function () {
+            $('.btn-salvar').removeClass('hidden');
+            $('.btn-excluir').addClass('hidden');
+        });
+    </script>

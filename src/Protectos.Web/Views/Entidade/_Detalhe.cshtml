@@ -1,0 +1,62 @@
+﻿@model Protectos.Application.ViewModels.Entidades.EntidadeViewModel
+
+
+<div class="row">
+    <div class="col-md-3 col-lg-3 " align="center"> <img src="@Url.Action("ObterImagemCliente", "Entidade", new { id = Model.Id })" alt="@Model.RazaoSocial" class="img-responsive"> </div>
+
+    <div class=" col-md-9 col-lg-9 ">
+        <table class="table table-user-information">
+            <tbody>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Site)</td>
+                    <td><a href="mailto:@Model.Site">@Model.Site</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.RazaoSocial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.RazaoSocial)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.NomeFantasia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.NomeFantasia)
+                    </td>
+                </tr>
+                <tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Cnpj)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Cnpj)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.InscricaoEstadual)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.InscricaoEstadual)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.InscricaoMunicipal)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.InscricaoMunicipal)
+                    </td>
+                </tr>              
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

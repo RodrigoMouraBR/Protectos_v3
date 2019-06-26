@@ -171,6 +171,7 @@
     <Compile Include="Controllers\CorretorController.cs" />
     <Compile Include="Controllers\EntidadeController.cs" />
     <Compile Include="Controllers\FaturaController.cs" />
+    <Compile Include="Controllers\FilialController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OperadoraController.cs" />
     <Compile Include="Controllers\PlanoController.cs" />
@@ -6655,9 +6656,7 @@
     <Folder Include="Models\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Corretor\" />
-    <Folder Include="Views\Entidade\" />
     <Folder Include="Views\Fatura\" />
-    <Folder Include="Views\Operadora\" />
     <Folder Include="Views\Plano\" />
     <Folder Include="Views\Proposta\" />
   </ItemGroup>
@@ -7251,6 +7250,76 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Corretora\Incluir.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Corretora\Editar.cshtml" />
+    <Content Include="Views\Corretora\_AdicionarEmail.cshtml" />
+    <Content Include="Views\Corretora\_AdicionarEndereco.cshtml" />
+    <Content Include="Views\Corretora\_AtualizarEmail.cshtml" />
+    <Content Include="Views\Corretora\_AtualizarEndereco.cshtml" />
+    <Content Include="Views\Corretora\_DadosEmail.cshtml" />
+    <Content Include="Views\Corretora\_DadosEndereco.cshtml" />
+    <Content Include="Views\Corretora\_DeletarEmail.cshtml" />
+    <Content Include="Views\Corretora\_DeletarEndereco.cshtml" />
+    <Content Include="Views\Corretora\_Detalhe.cshtml" />
+    <Content Include="Views\Corretora\_Email.cshtml" />
+    <Content Include="Views\Corretora\_EmailsList.cshtml" />
+    <Content Include="Views\Corretora\_Endereco.cshtml" />
+    <Content Include="Views\Corretora\_EnderecosList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Entidade\Editar.cshtml" />
+    <Content Include="Views\Entidade\Incluir.cshtml" />
+    <Content Include="Views\Entidade\Index.cshtml" />
+    <Content Include="Views\Entidade\_AdicionarEmail.cshtml" />
+    <Content Include="Views\Entidade\_AdicionarEndereco.cshtml" />
+    <Content Include="Views\Entidade\_AtualizarEmail.cshtml" />
+    <Content Include="Views\Entidade\_AtualizarEndereco.cshtml" />
+    <Content Include="Views\Entidade\_DadosEmail.cshtml" />
+    <Content Include="Views\Entidade\_DadosEndereco.cshtml" />
+    <Content Include="Views\Entidade\_DeletarEmail.cshtml" />
+    <Content Include="Views\Entidade\_DeletarEndereco.cshtml" />
+    <Content Include="Views\Entidade\_Detalhe.cshtml" />
+    <Content Include="Views\Entidade\_Email.cshtml" />
+    <Content Include="Views\Entidade\_EmailsList.cshtml" />
+    <Content Include="Views\Entidade\_Endereco.cshtml" />
+    <Content Include="Views\Entidade\_EnderecosList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Operadora\Editar.cshtml" />
+    <Content Include="Views\Operadora\Incluir.cshtml" />
+    <Content Include="Views\Operadora\Index.cshtml" />
+    <Content Include="Views\Operadora\_AdicionarEmail.cshtml" />
+    <Content Include="Views\Operadora\_AdicionarEndereco.cshtml" />
+    <Content Include="Views\Operadora\_AtualizarEmail.cshtml" />
+    <Content Include="Views\Operadora\_AtualizarEndereco.cshtml" />
+    <Content Include="Views\Operadora\_DadosEmail.cshtml" />
+    <Content Include="Views\Operadora\_DadosEndereco.cshtml" />
+    <Content Include="Views\Operadora\_DeletarEmail.cshtml" />
+    <Content Include="Views\Operadora\_DeletarEndereco.cshtml" />
+    <Content Include="Views\Operadora\_Detalhe.cshtml" />
+    <Content Include="Views\Operadora\_Email.cshtml" />
+    <Content Include="Views\Operadora\_EmailsList.cshtml" />
+    <Content Include="Views\Operadora\_Endereco.cshtml" />
+    <Content Include="Views\Operadora\_EnderecosList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Filial\Editar.cshtml" />
+    <Content Include="Views\Filial\Incluir.cshtml" />
+    <Content Include="Views\Filial\Index.cshtml" />
+    <Content Include="Views\Filial\_AdicionarEmail.cshtml" />
+    <Content Include="Views\Filial\_AdicionarEndereco.cshtml" />
+    <Content Include="Views\Filial\_AtualizarEmail.cshtml" />
+    <Content Include="Views\Filial\_AtualizarEndereco.cshtml" />
+    <Content Include="Views\Filial\_DadosEmail.cshtml" />
+    <Content Include="Views\Filial\_DadosEndereco.cshtml" />
+    <Content Include="Views\Filial\_DeletarEmail.cshtml" />
+    <Content Include="Views\Filial\_DeletarEndereco.cshtml" />
+    <Content Include="Views\Filial\_Detalhe.cshtml" />
+    <Content Include="Views\Filial\_Email.cshtml" />
+    <Content Include="Views\Filial\_EmailsList.cshtml" />
+    <Content Include="Views\Filial\_Endereco.cshtml" />
+    <Content Include="Views\Filial\_EnderecosList.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

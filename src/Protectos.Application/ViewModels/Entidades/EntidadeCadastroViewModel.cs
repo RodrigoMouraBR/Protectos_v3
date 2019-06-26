@@ -6,7 +6,7 @@ namespace Protectos.Application.ViewModels.Entidades
 {
     public class EntidadeCadastroViewModel
     {
-        public EntidadeViewModel Administradora { get; set; }
+        public EntidadeViewModel Entidade { get; set; }
         public EntidadeEnderecoViewModel Endereco { get; set; }
         public EntidadeEmailViewModel Email { get; set; }
         public EntidadeTelefoneViewModel Telefones { get; set; }
