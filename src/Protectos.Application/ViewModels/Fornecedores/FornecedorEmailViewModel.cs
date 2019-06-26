@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Protectos.Application.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -32,7 +33,7 @@ namespace Protectos.Application.ViewModels.Fornecedores
         public string Email { get; set; }
         [Required(ErrorMessage = "Campo obrigatório")]
         [DisplayName("Tipo Email")]
-        public string TipoEmail { get; set; }
+        public ETipoEmailEmpresa TipoEmail { get; set; }
         [ScaffoldColumn(false)]
         public Guid FornecedorId { get; set; }
 

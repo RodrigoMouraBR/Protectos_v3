@@ -8,7 +8,7 @@ namespace Protectos.Domain.Entities.Corretores
     {
         public CorretorTelefone(string prefixo,
                                 string numero,
-                                ETipoTelefone tipoTelefone,
+                                string tipoTelefone,
                                 Guid corretorId)
         {
             Prefixo = prefixo;
@@ -21,7 +21,7 @@ namespace Protectos.Domain.Entities.Corretores
         }
         public string Prefixo { get; private set; }
         public string Numero { get; private set; }
-        public ETipoTelefone TipoTelefone { get; private set; }
+        public string TipoTelefone { get; private set; }
         public Guid CorretorId { get; private set; }
         public virtual Corretor Corretor { get; private set; }
 

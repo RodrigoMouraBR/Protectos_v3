@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Protectos.Application.Enums;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 namespace Protectos.Application.ViewModels.Administradoras
@@ -30,7 +31,7 @@ namespace Protectos.Application.ViewModels.Administradoras
         [MinLength(8, ErrorMessage = "Mínimo {0} caracteres")]
         public string Numero { get; set; }
         [DisplayName("Tipo Telfone")]
-        public string TipoTelefone { get; set; }
+        public ETipoTelefoneEmpresa TipoTelefone { get; private set; }
         [ScaffoldColumn(false)]
         public Guid AdministradoraId { get; set; }
         public virtual AdministradoraViewModel Administradora { get; set; }

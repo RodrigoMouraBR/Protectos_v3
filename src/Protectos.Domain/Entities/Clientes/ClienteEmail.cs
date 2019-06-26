@@ -6,7 +6,7 @@ namespace Protectos.Domain.Entities.Clientes
 {
     public class ClienteEmail : Entity<ClienteEmail>
     {
-        public ClienteEmail(string email, ETipoEmailEmpresa tipoEmail, Guid clienteId)
+        public ClienteEmail(string email, string tipoEmail, Guid clienteId)
         {
             Email = email;
             TipoEmail = tipoEmail;
@@ -17,7 +17,7 @@ namespace Protectos.Domain.Entities.Clientes
 
         }
         public string Email { get; private set; }
-        public ETipoEmailEmpresa TipoEmail { get; private set; }
+        public string TipoEmail { get; private set; }
         public Guid ClienteId { get; private set; }
         public virtual Cliente Cliente { get; private set; }
 

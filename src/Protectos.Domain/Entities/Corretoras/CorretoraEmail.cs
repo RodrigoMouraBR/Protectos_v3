@@ -7,7 +7,7 @@ namespace Protectos.Domain.Entities.Corretoras
 {
     public class CorretoraEmail : Entity<CorretoraEmail>
     {
-        public CorretoraEmail(string email, ETipoEmailEmpresa tipoEmail, Guid corretoraId)
+        public CorretoraEmail(string email, string tipoEmail, Guid corretoraId)
         {
             Email = email;
             TipoEmail = tipoEmail;
@@ -17,7 +17,7 @@ namespace Protectos.Domain.Entities.Corretoras
         {
         }
         public string Email { get; private set; }       
-        public ETipoEmailEmpresa TipoEmail { get; private set; }
+        public string TipoEmail { get; private set; }
         public Guid CorretoraId { get; private set; }
         public virtual Corretora Corretora { get; private set; }
 

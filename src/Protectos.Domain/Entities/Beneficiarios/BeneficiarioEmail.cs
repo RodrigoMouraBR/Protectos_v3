@@ -7,7 +7,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
 {
     public class BeneficiarioEmail : Entity<BeneficiarioEmail>
     {
-        public BeneficiarioEmail(string email, Guid beneficiarioId, ETipoEmail tipoEmail)
+        public BeneficiarioEmail(string email, Guid beneficiarioId, string tipoEmail)
         {
             Email = email;
             BeneficiarioId = beneficiarioId;
@@ -18,7 +18,7 @@ namespace Protectos.Domain.Entities.Beneficiarios
         }
         public string Email { get; private set; }
         public Guid BeneficiarioId { get; private set; }
-        public ETipoEmail TipoEmail { get; private set; }
+        public string TipoEmail { get; private set; }
         public virtual Beneficiario Beneficiarios { get; private set; }
 
         public override bool IsValid()

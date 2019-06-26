@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Protectos.Application.Enums;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 namespace Protectos.Application.ViewModels.Clientes
@@ -30,7 +31,7 @@ namespace Protectos.Application.ViewModels.Clientes
         [MinLength(8, ErrorMessage = "Mínimo {0} caracteres")]
         public string Numero { get; set; }
         [DisplayName("Tipo Telefone")]
-        public string TipoTelefone { get; set; }
+        public ETipoTelefoneEmpresa TipoTelefone { get; set; }
         [ScaffoldColumn(false)]
         public Guid ClienteId { get; set; }
         public virtual ClienteViewModel Cliente { get; set; }

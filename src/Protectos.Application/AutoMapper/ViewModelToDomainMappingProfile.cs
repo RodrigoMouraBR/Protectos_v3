@@ -20,7 +20,7 @@ namespace Protectos.Application.AutoMapper
         {
             CreateMap<BeneficiarioViewModel, Beneficiario>();
             CreateMap<BeneficiarioEnderecoViewModel, BeneficiarioEndereco>();
-            CreateMap<BeneficiarioEmailViewModel, BeneficiarioEmail>();
+            CreateMap<BeneficiarioEmailViewModel, BeneficiarioEmail>()
             CreateMap<BeneficiarioTelefoneViewModel, BeneficiarioTelefone>();
 
             CreateMap<OperadoraViewModel, Operadora>();

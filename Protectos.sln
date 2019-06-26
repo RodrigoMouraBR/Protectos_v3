@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protectos.Service", "src\Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protectos.Infra.CrossCutting.ExternalService", "src\Protectos.Infra.CrossCutting.ExternalService\Protectos.Infra.CrossCutting.ExternalService.csproj", "{106BFAAA-CA22-42CA-8CFD-D3E7FD5BB261}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protectos.Infra.CrossCutting.Identity", "src\Protectos.Infra.CrossCutting.Identity\Protectos.Infra.CrossCutting.Identity.csproj", "{BE5BCA87-0F4D-40ED-B231-82E65D348D0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +91,10 @@ Global
 		{106BFAAA-CA22-42CA-8CFD-D3E7FD5BB261}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{106BFAAA-CA22-42CA-8CFD-D3E7FD5BB261}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{106BFAAA-CA22-42CA-8CFD-D3E7FD5BB261}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE5BCA87-0F4D-40ED-B231-82E65D348D0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE5BCA87-0F4D-40ED-B231-82E65D348D0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE5BCA87-0F4D-40ED-B231-82E65D348D0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE5BCA87-0F4D-40ED-B231-82E65D348D0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +113,7 @@ Global
 		{5137979B-9D18-49AD-AB66-5695B67EDE89} = {32EFD1DD-77EA-414F-8EFA-004C16FF5C74}
 		{9BF9FEA9-3248-45C7-981E-BE79B8E94D2F} = {8C2FD6D1-8789-41BC-A746-C3B2A0A470F8}
 		{106BFAAA-CA22-42CA-8CFD-D3E7FD5BB261} = {C60EB84B-FCA5-498D-B46B-6C1A3A294DBA}
+		{BE5BCA87-0F4D-40ED-B231-82E65D348D0F} = {C60EB84B-FCA5-498D-B46B-6C1A3A294DBA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C3839CE0-53AE-4343-803B-BE189A463404}
