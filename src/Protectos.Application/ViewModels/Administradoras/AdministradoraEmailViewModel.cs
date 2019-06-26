@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-﻿using Protectos.Domain.Generics.Enums;
-=======
 ﻿using Protectos.Application.Enums;
->>>>>>> desenv
+
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -33,11 +30,8 @@ namespace Protectos.Application.ViewModels.Administradoras
         public string Email { get; set; }
         [Required(ErrorMessage = "Campo obrigatório")]       
         [DisplayName("Tipo Email")]
-<<<<<<< HEAD
-        public ETipoEmail TipoEmail { get; set; }
-=======
         public ETipoEmailEmpresa TipoEmail { get; private set; }
->>>>>>> desenv
+
         [ScaffoldColumn(false)]
         public Guid AdministradoraId { get; set; }
 

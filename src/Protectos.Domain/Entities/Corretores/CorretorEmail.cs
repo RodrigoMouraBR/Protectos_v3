@@ -6,7 +6,7 @@ namespace Protectos.Domain.Entities.Corretores
 {
     public class CorretorEmail : Entity<CorretorEmail>
     {
-        public CorretorEmail(string email, Guid corretorId, ETipoEmail tipoEmail)
+        public CorretorEmail(string email, Guid corretorId, string tipoEmail)
         {
             Email = email;
             CorretorId = corretorId;
@@ -17,7 +17,7 @@ namespace Protectos.Domain.Entities.Corretores
         }
         public string Email { get; private set; }
         public Guid CorretorId { get; private set; }
-        public ETipoEmail TipoEmail { get; private set; }
+        public string TipoEmail { get; private set; }
         public virtual Corretor Corretor { get; private set; }
 
         public override bool IsValid()

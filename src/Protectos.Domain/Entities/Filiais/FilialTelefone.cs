@@ -18,7 +18,7 @@ namespace Protectos.Domain.Entities.Filiais
         }
         public string Prefixo { get; private set; }
         public string Numero { get; private set; }
-        public ETipoTelefoneEmpresa TipoTelefone { get; private set; }
+        public string TipoTelefone { get; private set; }
         public Guid FilialId { get; private set; }
         public virtual Filial Filial { get; private set; }
 
